@@ -1487,7 +1487,6 @@ BattleScript_EffectBlazingSoul::
     call BattleScript_EffectHit_Ret
 	seteffectwithchance
 	tryfaintmon BS_TARGET
-	jumpifbattleend BattleScript_MoveEnd
 	jumpifmovehadnoeffect BattleScript_MoveEnd
 	tryblazingsoul BS_ATTACKER, BattleScript_MoveEnd
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE

@@ -11167,7 +11167,6 @@ static void Cmd_various(void)
 
         if ((battlerAbility == ABILITY_APPETITE)
           && HasAttackerFaintedTarget()
-          && !NoAliveMonsForEitherParty()
           && !BATTLER_MAX_HP(battler)
           && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK))
         {
@@ -14059,12 +14058,12 @@ static void Cmd_various(void)
         }
         else
         {
-            if (gBattleMons[battler].hp <= gBattleMons[battler].maxHP / 2)
-                gBattleMoveDamage = gBattleMons[battler].maxHP / 10;
-            else if (gBattleMons[battler].hp <= ((gBattleMons[battler].maxHP * 3) / 10))
-                gBattleMoveDamage = gBattleMons[battler].maxHP / 5;
-            else if (gBattleMons[battler].hp <= gBattleMons[battler].maxHP / 10)
+            if (gBattleMons[battler].hp <= gBattleMons[battler].maxHP / 10)
                 gBattleMoveDamage = gBattleMons[battler].maxHP * 3 / 10;
+            else if (gBattleMons[battler].hp <= (gBattleMons[battler].maxHP * 3 / 10))
+                gBattleMoveDamage = gBattleMons[battler].maxHP / 5;
+            else if (gBattleMons[battler].hp <= gBattleMons[battler].maxHP / 2)
+                gBattleMoveDamage = gBattleMons[battler].maxHP / 10;
 
             if (gBattleMoveDamage == 0)
                 gBattleMoveDamage = 1;
