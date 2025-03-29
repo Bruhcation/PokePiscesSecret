@@ -6207,7 +6207,7 @@ static void Cmd_playstatchangeanimation(void)
         {
             if (stats & 1)
             {
-                if (flags & STAT_CHANGE_CANT_PREVENT && !gDisableStructs[battler].purified)
+                if (flags & STAT_CHANGE_CANT_PREVENT)
                 {
                     if (gBattleMons[battler].statStages[currStat] > MIN_STAT_STAGE)
                     {
@@ -6220,7 +6220,6 @@ static void Cmd_playstatchangeanimation(void)
                         && (GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_EERIE_MASK && (gBattleMons[battler].species != SPECIES_SEEDOT || gBattleMons[battler].species != SPECIES_NUZLEAF || gBattleMons[battler].species != SPECIES_SHIFTRY) && (!(gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TAILWIND)))
                         && ability != ABILITY_CLEAR_BODY
                         && ability != ABILITY_TITANIC
-                        && (!gDisableStructs[battler].purified)
                         && ability != ABILITY_FULL_METAL_BODY
                         && !((gStatuses3[battler] & STATUS3_MAGNET_RISE) && (gStatuses4[battler] & STATUS4_SUPERCHARGED))
                         && !(ability == ABILITY_KEEN_EYE && currStat == STAT_ACC)
@@ -6255,7 +6254,7 @@ static void Cmd_playstatchangeanimation(void)
         else
             startingStatAnimId = STAT_ANIM_PLUS1;
 
-        while (stats != 0 && !gDisableStructs[battler].purified)
+        while (stats != 0)
         {
             if (stats & 1 && gBattleMons[battler].statStages[currStat] < MAX_STAT_STAGE)
             {

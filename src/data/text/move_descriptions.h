@@ -4811,9 +4811,9 @@ static const u8 sGrandSlamDescription[] = _(
     "turn, but takes less damage.");
 
 static const u8 sPurificationDescription[] = _(
-    "Changes foe into a Normal-type,\n"
-    "resets stats, and prevents stat\n"
-    "changes. Always goes first.");
+    "Changes foe into a Normal-type\n"
+    "and resets stats. Fails if foe\n"
+    "can't change type. Goes first.");
 
 static const u8 sSurpriseEggDescription[] = _(
     "The user opens an easter egg and\n"

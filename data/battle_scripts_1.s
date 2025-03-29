@@ -2854,9 +2854,6 @@ BattleScript_EffectPurification:
 	tryresetstatstages BS_TARGET
 	printstring STRINGID_TARGETSTATCHANGESGONE
 	waitmessage B_WAIT_TIME_LONG
-	setpurified BS_TARGET, BattleScript_MoveEnd
-	printstring STRINGID_TARGETWASPURIFIEDANDCANTCHANGESTATS
-	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectRechargeReduce::
