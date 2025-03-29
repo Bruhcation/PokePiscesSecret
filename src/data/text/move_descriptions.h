@@ -1519,9 +1519,9 @@ static const u8 sCrushClawDescription[] = _(
     "lower the target's Defense stat.");
 
 static const u8 sBlastBurnDescription[] = _(
-    "The foe is hit with a explosion.\n"
+    "The foe is hit with an explosion.\n"
     "The user can't move on the next\n"
-    "turn and burns attackers.");
+    "turn, but can burns attackers.");
 
 static const u8 sHydroCannonDescription[] = _(
     "The user can't move on the next\n"

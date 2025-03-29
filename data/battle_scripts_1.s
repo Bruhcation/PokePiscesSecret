@@ -12496,11 +12496,11 @@ BattleScript_EffectEarthquake:
 	goto BattleScript_EffectHit
 
 BattleScript_EffectFutureSight::
+	setstatchanger STAT_SPATK, 1, FALSE
 	attackcanceler
 	attackstring
 	ppreduce
 	jumpifmove MOVE_DECIMATION, BattleScript_Decimation
-BattleScript_EffectFutureSightOnly:
 	trysetfutureattack BattleScript_ButItFailed
 	attackanimation
 	waitanimation
@@ -12510,24 +12510,32 @@ BattleScript_EffectFutureSightOnly:
 BattleScript_Decimation::
 	jumpifbattletype BATTLE_TYPE_DOUBLE, BattleScript_DecimationDoubles
 BattleScript_DecimationContinue:
-	setmoveeffect MOVE_EFFECT_SP_ATK_PLUS_1 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
 	trysetfutureattack BattleScript_ButItFailed
+	setdoublesmovesucceed BS_ATTACKER
 	attackanimation
 	waitanimation
-	seteffectprimary
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_DecimationEnd
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_DecimationStatUpAttackAnim
+	pause B_WAIT_TIME_SHORT
+	goto BattleScript_StatUpPrintString
+BattleScript_DecimationStatUpAttackAnim::
+	setgraphicalstatchangevalues
+	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+BattleScript_DecimationStatUpPrintString::
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_DecimationStatUpEnd::
 	printstring STRINGID_PKMNISPREPARINGFORDECIMATION
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 BattleScript_DecimationDoubles:
-	jumpifword CMP_NO_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING | HITMARKER_NO_PPDEDUCT, BattleScript_DecimationNoMoveEffect
+	jumpifdoublesmovesucceed BS_ATTACKER, BattleScript_DecimationNoMoveEffect
 	goto BattleScript_DecimationContinue
 BattleScript_DecimationNoMoveEffect:
 	setmoveeffect 0
 	trysetfutureattack BattleScript_ButItFailed
 	attackanimation
 	waitanimation
-	printstring STRINGID_PKMNISPREPARINGFORDECIMATION
-	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectGust::
@@ -20582,7 +20590,17 @@ BattleScript_BloomingHpGainEnd::
 BattleScript_BloomingHealBlockEnd::
 	printstring STRINGID_PKMNSISBLOOMING
     waitmessage B_WAIT_TIME_LONG
-	statusanimation BS_ATTACKER
+	playanimation BS_ATTACKER, B_ANIM_BLOOMING
+	waitanimation
+	end2
+
+BattleScript_BloomingHealBlockEnd2::
+	playanimation BS_ATTACKER, B_ANIM_BLOOMING
+	waitanimation
+	clearstatus BS_ATTACKER
+	updatestatusicon BS_ATTACKER
+	printstring STRINGID_PKMNSISNOLONGERBLOOMING
+    waitmessage B_WAIT_TIME_LONG
 	end2
 
 @ SHUNYONG

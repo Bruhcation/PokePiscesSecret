@@ -3284,7 +3284,7 @@ u8 DoBattlerEndTurnEffects(void)
                     BattleScriptExecute(BattleScript_BloomingHpGain);
                     effect++;
                 }
-                else if ((gBattleMons[battler].status1 & STATUS1_BLOOMING) == STATUS1_BLOOMING_TURN(1) 
+                else if ((gBattleMons[battler].status1 & STATUS1_BLOOMING) == STATUS1_BLOOMING_TURN(1)
                 && IsBattlerAlive(battler) 
                 && (!(gStatuses3[battler] & STATUS3_HEAL_BLOCK)))
                 {
@@ -3295,10 +3295,16 @@ u8 DoBattlerEndTurnEffects(void)
                     BattleScriptExecute(BattleScript_BloomingHpGainEnd);
                     effect++;
                 }
-                else
+                else if (gStatuses3[battler] & STATUS3_HEAL_BLOCK && (gBattleMons[battler].status1 & STATUS1_BLOOMING) != STATUS1_BLOOMING_TURN(1))
                 {
                     gBattleMons[battler].status1 -= STATUS1_BLOOMING_TURN(1);
                     BattleScriptExecute(BattleScript_BloomingHealBlockEnd);
+                    effect++;
+                }
+                else if (gStatuses3[battler] & STATUS3_HEAL_BLOCK && (gBattleMons[battler].status1 & STATUS1_BLOOMING) == STATUS1_BLOOMING_TURN(1))
+                {
+                    gBattleMons[battler].status1 -= STATUS1_BLOOMING_TURN(1);
+                    BattleScriptExecute(BattleScript_BloomingHealBlockEnd2);
                     effect++;
                 }
             }
@@ -10097,6 +10103,7 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
             if (gBattleMoveDamage != 0 // Need to have done damage
                 && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT) 
                 && TARGET_TURN_DAMAGED
+                && RandomPercentage(RNG_HOLD_EFFECT_COARSE_SAND, 30)
                 && CanStartBlooming(gBattlerTarget)
                 && gBattleMons[gBattlerTarget].hp)
             {
@@ -14511,8 +14518,6 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
         mod = UQ_4_12(2.0);
     if (gBattleMoves[move].effect == EFFECT_FALSE_SWIPE)
         mod = UQ_4_12(1.0);
-    if (gCurrentMove == MOVE_CHROMA_BEAM)
-        mod *= 2;
     if (gCurrentMove == MOVE_MASS_DESTRUCTION && (defType == TYPE_NORMAL || defType == TYPE_FIGHTING))
         mod = UQ_4_12(2.0);
     if (gCurrentMove == MOVE_PURGE_RAY && (defType == TYPE_DARK || defType == TYPE_POISON))
@@ -14544,14 +14549,20 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
             RecordAbilityBattle(battlerDef, GetBattlerAbility(battlerDef));
     }
 
+    if (gCurrentMove == MOVE_CHROMA_BEAM && mod <= UQ_4_12(1.0))
+        mod = UQ_4_12(2.0);
+    else if (gCurrentMove == MOVE_CHROMA_BEAM && mod <= UQ_4_12(2.0))
+        mod = UQ_4_12(3.0);
+    else if (gCurrentMove == MOVE_CHROMA_BEAM && mod <= UQ_4_12(3.0))
+        mod = UQ_4_12(4.0);
+
     *modifier = uq4_12_multiply(*modifier, mod);
 
     if (*modifier == UQ_4_12(4.0))
     {
         *modifier = UQ_4_12(3.0);
     }
-
-    if (*modifier > UQ_4_12(4.0))
+    else if (*modifier > UQ_4_12(4.0))
     {
         *modifier = UQ_4_12(4.0);
     }
