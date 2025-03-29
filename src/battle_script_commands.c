@@ -1589,13 +1589,6 @@ static bool32 AccuracyCalcHelper(u16 move)
         JumpIfMoveFailed(7, move);
         return TRUE;
     }
-#if B_TOXIC_NEVER_MISS >= GEN_6
-    else if (gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_POISON))
-    {
-        JumpIfMoveFailed(7, move);
-        return TRUE;
-    }
-#endif
     // If the attacker has the ability No Guard and they aren't targeting a Pokemon involved in a Sky Drop with the move Sky Drop, move hits.
     else if (GetBattlerAbility(gBattlerAttacker) == ABILITY_NO_GUARD && (move != MOVE_SKY_DROP || gBattleStruct->skyDropTargets[gBattlerTarget] == 0xFF))
     {
@@ -1810,6 +1803,8 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         moveAcc = moveAcc * 2;
     if (gBattleMoves[move].effect == EFFECT_DARK_VOID && CountBattlerStatDecreases(gBattlerAttacker, TRUE) > 0)
         moveAcc += 10 * CountBattlerStatDecreases(gBattlerAttacker, TRUE);
+    if (gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_POISON))
+        moveAcc = moveAcc + 20;
     if (gBattleMons[battlerAtk].species == SPECIES_CHARIZARD && gCurrentMove == MOVE_FIRE_SPIN)
         moveAcc = 0;
     if (gBattleMoves[move].effect == EFFECT_ZAP_CANNON && gStatuses4[battlerAtk] & STATUS4_GEARED_UP && gStatuses4[battlerAtk] & STATUS4_SUPERCHARGED)
