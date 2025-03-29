@@ -5251,7 +5251,7 @@ static void Cmd_getexp(void)
                 gBattleMoveDamage = 0; // used for exp
             }
             else if ((gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && *expMonId >= 3)
-                  || GetMonData(&gPlayerParty[*expMonId], MON_DATA_LEVEL) == GetCurrentLevelCap())
+                  || GetMonData(&gPlayerParty[*expMonId], MON_DATA_LEVEL) >= GetCurrentLevelCap())
             {
                 gBattleScripting.getexpState = 5;
                 gBattleMoveDamage = 0; // used for exp
@@ -5359,7 +5359,7 @@ static void Cmd_getexp(void)
         if (gBattleControllerExecFlags == 0)
         {
             gBattleResources->bufferB[gBattleStruct->expGetterBattlerId][0] = 0;
-            if (GetMonData(&gPlayerParty[*expMonId], MON_DATA_HP) && GetMonData(&gPlayerParty[*expMonId], MON_DATA_LEVEL) != GetCurrentLevelCap())
+            if (GetMonData(&gPlayerParty[*expMonId], MON_DATA_HP) && GetMonData(&gPlayerParty[*expMonId], MON_DATA_LEVEL) < GetCurrentLevelCap())
             {
                 gBattleResources->beforeLvlUp->stats[STAT_HP]    = GetMonData(&gPlayerParty[*expMonId], MON_DATA_MAX_HP);
                 gBattleResources->beforeLvlUp->stats[STAT_ATK]   = GetMonData(&gPlayerParty[*expMonId], MON_DATA_ATK);
@@ -8457,9 +8457,10 @@ static void Cmd_switchineffects(void)
     }
     else
     {
+        u32 battlerAbility = GetBattlerAbility(battler);
         // There is a hack here to ensure the truant counter will be 0 when the battler's next turn starts.
         // The truant counter is not updated in the case where a mon switches in after a lost judgment in the battle arena.
-        if (GetBattlerAbility(battler) == ABILITY_TRUANT
+        if (battlerAbility == ABILITY_TRUANT
             && gCurrentActionFuncId != B_ACTION_USE_MOVE
             && !gDisableStructs[battler].truantSwitchInHack)
             gDisableStructs[battler].truantCounter = 1;

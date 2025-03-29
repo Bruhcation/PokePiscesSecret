@@ -6487,7 +6487,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
         case 3:
             // Rare Candy / EXP Candy
             if ((itemEffect[i] & ITEM3_LEVEL_UP)
-             && GetMonData(mon, MON_DATA_LEVEL, NULL) != GetCurrentLevelCap())
+             && GetMonData(mon, MON_DATA_LEVEL, NULL) < GetCurrentLevelCap())
             {
                 u8 param = ItemId_GetHoldEffectParam(item);
                 dataUnsigned = 0;
@@ -6856,7 +6856,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
         case 10:
             // Rare Candy / EXP Candy
             if ((itemEffect[i] & ITEM10_LEVEL_UP)
-             && GetMonData(mon, MON_DATA_LEVEL, NULL) != GetCurrentLevelCap())
+             && GetMonData(mon, MON_DATA_LEVEL, NULL) < GetCurrentLevelCap())
             {
                 u8 param = ItemId_GetHoldEffectParam(item);
                 dataUnsigned = 0;

@@ -9283,7 +9283,6 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                     gBattlerAttacker = battler;
                     TryChangeBattleWeather(battler, WEATHER_NONE, TRUE);
                     BattleScriptExecute(BattleScript_AnnounceTeruCharm);
-                    effect = ITEM_EFFECT_OTHER;
                 }
                 break;
             case HOLD_EFFECT_RESTORE_STATS:
