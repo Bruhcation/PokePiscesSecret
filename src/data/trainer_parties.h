@@ -1019,7 +1019,7 @@ static const struct TrainerMon sParty_PHitomi[] = {
 
 static const struct TrainerMon sParty_PLiza[] = {
     {
-    .lvl = 21,
+    .lvl = 20,
     .species = SPECIES_LUNATONE,
     .ability = ABILITY_SHADOW_SHIELD,
     .heldItem = ITEM_CURSED_AMULET,
@@ -1029,7 +1029,7 @@ static const struct TrainerMon sParty_PLiza[] = {
     .nature = NATURE_QUIET,
     },
     {
-    .lvl = 21,
+    .lvl = 20,
     .species = SPECIES_SOLROCK,
     .ability = ABILITY_SOLID_ROCK,
     .heldItem = ITEM_MARANGA_BERRY,
