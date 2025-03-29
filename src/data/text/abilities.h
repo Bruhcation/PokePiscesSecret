@@ -496,7 +496,7 @@ static const u8 sAftermathDescription[] = _(
     "Fire-type exploding move.");
 
 static const u8 sAnticipationDescription[] = _(
-    "When the Pokémon enters battle\n"
+    "When the Pokémon switches in\n"
     "it is more likely to evade the\n"
     "next move it gets targeted by.");
 
