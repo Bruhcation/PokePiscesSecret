@@ -1033,7 +1033,6 @@ static const struct TrainerMon sParty_PLiza[] = {
     .species = SPECIES_SOLROCK,
     .ability = ABILITY_SOLID_ROCK,
     .heldItem = ITEM_MARANGA_BERRY,
-    .friendship = 236,
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ev = TRAINER_PARTY_EVS(68, 8, 32, 0, 0, 20),
     .moves = {MOVE_HUNKER_DOWN, MOVE_ROCK_SMASH, MOVE_CUT, MOVE_MIRACLE_EYE},

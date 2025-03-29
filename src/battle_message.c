@@ -2551,6 +2551,7 @@ const u8 gText_Are[] = _("are");
 const u8 gText_Are2[] = _("are");
 const u8 gText_BadEgg[] = _("Bad EGG");
 const u8 gText_BattleWallyName[] = _("WALLY");
+const u8 gText_Liza[] = _("Liza");
 const u8 gText_TopazMonkName[] = _("Topaz Monk");
 const u8 gText_TopazAcolyteName[] = _("Topaz Acolyte");
 const u8 gText_Win[] = _("{HIGHLIGHT TRANSPARENT}Win");

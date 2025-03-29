@@ -11872,7 +11872,11 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         break;
     case EFFECT_CUT:
     case EFFECT_ROCK_SMASH:
-        if (GetBattlerSide(battlerAtk) == B_SIDE_OPPONENT || GetBattlerHoldEffect(battlerAtk, FALSE) == HOLD_EFFECT_FAVOR_SCARF)
+        if (!StringCompare(gTrainers[gTrainerBattleOpponent_A].trainerName, gText_Liza) && GetBattlerSide(battlerAtk) == B_SIDE_OPPONENT)
+        {
+            gBattleMons[battlerAtk].friendship = 120;
+        }
+        else if (GetBattlerSide(battlerAtk) == B_SIDE_OPPONENT || GetBattlerHoldEffect(battlerAtk, FALSE) == HOLD_EFFECT_FAVOR_SCARF)
         {
             gBattleMons[battlerAtk].friendship = 255;
         }
