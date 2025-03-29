@@ -1769,6 +1769,11 @@
 	.4byte \failInstr
 	.endm
 
+	.macro upperhandcheck failInstr:req
+	various BS_ATTACKER, VARIOUS_UPPER_HAND_CHECK
+	.4byte \failInstr
+	.endm
+
 	.macro seizechancecheck failInstr:req
 	various BS_ATTACKER, VARIOUS_SEIZE_CHANCE_CHECK
 	.4byte \failInstr

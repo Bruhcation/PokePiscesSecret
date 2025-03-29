@@ -10755,6 +10755,12 @@ static void Cmd_various(void)
     case VARIOUS_ALLURE:
     {
         VARIOUS_ARGS(const u8 *failInstr);
+
+        if (gCurrentMove == MOVE_TRUE_LOVES_KISS)
+        {
+            gBattlerTarget = GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gBattlerAttacker)));
+        }
+
         if (gBattleMons[gBattlerTarget].status2 & STATUS2_INFATUATION
         || (GetBattlerAbility(gBattlerAttacker) != ABILITY_FREE_LOVE
         && !AreBattlersOfOppositeGender(gBattlerAttacker, gBattlerTarget))
@@ -11364,13 +11370,24 @@ static void Cmd_various(void)
     case VARIOUS_SUCKER_PUNCH_CHECK:
     {
         VARIOUS_ARGS(const u8 *failInstr);
-        if (gCurrentMove == MOVE_UPPER_HAND && ((GetChosenMovePriority(gBattlerTarget) < 1) || (gChosenMoveByBattler[gBattlerTarget] == MOVE_NONE)))
-            gBattlescriptCurrInstr = cmd->failInstr;
-        else if (gProtectStructs[gBattlerTarget].obstructed && gCurrentMove != MOVE_UPPER_HAND)
+        if (gProtectStructs[gBattlerTarget].obstructed)
             gBattlescriptCurrInstr = cmd->failInstr;
         else if (GetBattlerTurnOrderNum(gBattlerAttacker) > GetBattlerTurnOrderNum(gBattlerTarget))
             gBattlescriptCurrInstr = cmd->failInstr;
-        else if (IS_MOVE_STATUS(gBattleMons[gBattlerTarget].moves[gBattleStruct->chosenMovePositions[gBattlerTarget]]) && gCurrentMove != MOVE_UPPER_HAND)
+        else if (IS_MOVE_STATUS(gBattleMons[gBattlerTarget].moves[gBattleStruct->chosenMovePositions[gBattlerTarget]]))
+            gBattlescriptCurrInstr = cmd->failInstr;
+        else
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        return;
+    }
+    case VARIOUS_UPPER_HAND_CHECK:
+    {
+        VARIOUS_ARGS(const u8 *failInstr);
+
+        if (GetBattlerTurnOrderNum(gBattlerAttacker) > GetBattlerTurnOrderNum(gBattlerTarget)
+         || gChosenMoveByBattler[gBattlerTarget] == MOVE_NONE
+         || IS_MOVE_STATUS(gChosenMoveByBattler[gBattlerTarget])
+         || GetChosenMovePriority(gBattlerTarget) < 1) // Fails if priority is less than 1 or greater than 3, if target already moved, or if using a status
             gBattlescriptCurrInstr = cmd->failInstr;
         else
             gBattlescriptCurrInstr = cmd->nextInstr;

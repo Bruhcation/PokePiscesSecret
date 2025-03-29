@@ -2704,7 +2704,7 @@ BattleScript_EffectWhirlwind::
 	forcerandomswitch BattleScript_ButItFailed
 
 BattleScript_EffectUpperHand:
-	suckerpunchcheck BattleScript_EffectHit
+	upperhandcheck BattleScript_EffectHit
 	goto BattleScript_EffectFlinchHit
 
 BattleScript_EffectFleurCannon:
@@ -9234,12 +9234,10 @@ BattleScript_EffectSimpleBeam:
 	tryendneutralizinggas BS_TARGET
 	goto BattleScript_MoveEnd
 
-BattleScript_EffectSuckerPunch:
+BattleScript_EffectSuckerPunch::
 	attackcanceler
 	suckerpunchcheck BattleScript_FailedFromAtkString
-	jumpifmove MOVE_UPPER_HAND, BattleScript_EffectFlinchHit
-	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
-	goto BattleScript_HitFromAtkString
+	goto BattleScript_HitFromAccCheck
 
 BattleScript_EffectLuckyChant:
 	attackcanceler

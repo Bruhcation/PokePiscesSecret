@@ -338,6 +338,7 @@
 #define VARIOUS_JUMP_IF_FOCUS_ENERGY                 246
 #define VARIOUS_TRY_HEAL_THIRD_HEALTH                247
 #define VARIOUS_TRY_HEAL_SIXTH_HEALTH                248
+#define VARIOUS_UPPER_HAND_CHECK                   249
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

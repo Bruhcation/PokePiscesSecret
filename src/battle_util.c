@@ -11950,9 +11950,12 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         break;
     case EFFECT_UPPER_HAND:
     {
-        if ((!((GetChosenMovePriority(gBattlerTarget) < 1))
-        && (!(gChosenMoveByBattler[gBattlerTarget] == MOVE_NONE))
-        && (!GetBattlerTurnOrderNum(gBattlerAttacker) > GetBattlerTurnOrderNum(gBattlerTarget))))
+        if (GetBattlerTurnOrderNum(gBattlerAttacker) > GetBattlerTurnOrderNum(gBattlerTarget)
+         || gChosenMoveByBattler[gBattlerTarget] == MOVE_NONE
+         || IS_MOVE_STATUS(gChosenMoveByBattler[gBattlerTarget])
+         || GetChosenMovePriority(gBattlerTarget) < 1) // Fails if priority is less than 1 or greater than 3, if target already moved, or if using a status
+            basePower = 30;
+        else
             basePower = 70;
         break;
     }

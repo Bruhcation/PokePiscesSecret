@@ -14073,10 +14073,10 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_UPPER_HAND] =
     {
         .effect = EFFECT_UPPER_HAND,
-        .power = 80,
+        .power = 30,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 10,
         .secondaryEffectChance = 100,
         .target = MOVE_TARGET_SELECTED,
         .priority = 4,
