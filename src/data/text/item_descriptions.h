@@ -3402,16 +3402,16 @@ static const u8 sTM30Desc[] = _(
     "also cuts their Attack.");;
 
 static const u8 sTM31Desc[] = _(
-    "The foe is knocked\n"
-    "away and switched. In\n"
-    "the wild, the battle\n"
-    "ends.");
-
-static const u8 sTM32Desc[] = _(
     "The user's cuteness\n"
     "lets it swipe the foe's\n"
     "item. If the foe is\n"
     "infatuated, lowers Atk.");
+
+static const u8 sTM32Desc[] = _(
+    "The foe is knocked\n"
+    "away and switched. In\n"
+    "the wild, the battle\n"
+    "ends.");
 
 static const u8 sTM33Desc[] = _(
     "Attacks with strange\n"
