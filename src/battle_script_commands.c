@@ -1752,23 +1752,23 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     gPotentialItemEffectBattler = battlerDef;
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
     evasionStage = gBattleMons[battlerDef].statStages[STAT_EVASION];
-    if (atkAbility == ABILITY_UNAWARE || atkAbility == ABILITY_KEEN_EYE || atkHoldEffect == HOLD_EFFECT_WIDE_LENS || atkAbility == ABILITY_IGNORANT_BLISS)
+    if ((atkAbility == ABILITY_UNAWARE || atkAbility == ABILITY_KEEN_EYE || atkHoldEffect == HOLD_EFFECT_WIDE_LENS || atkAbility == ABILITY_IGNORANT_BLISS) && evasionStage > DEFAULT_STAT_STAGE)
         evasionStage = DEFAULT_STAT_STAGE;
-    if (atkHoldEffect == HOLD_EFFECT_WINTAMEL_TEA && gBattleMons[battlerAtk].species == SPECIES_POMELONIAN)
+    if (atkHoldEffect == HOLD_EFFECT_WINTAMEL_TEA && gBattleMons[battlerAtk].species == SPECIES_POMELONIAN && evasionStage > DEFAULT_STAT_STAGE)
         evasionStage = DEFAULT_STAT_STAGE;
-    if (gBattleMoves[move].ignoresTargetDefenseEvasionStages)
+    if (gBattleMoves[move].ignoresTargetDefenseEvasionStages && evasionStage > DEFAULT_STAT_STAGE)
         evasionStage = DEFAULT_STAT_STAGE;
-    if (gCurrentMove == MOVE_RAZING_SUN && gDisableStructs[battlerAtk].daybreakCounter > 0)
+    if (gCurrentMove == MOVE_RAZING_SUN && gDisableStructs[battlerAtk].daybreakCounter > 0 && evasionStage > DEFAULT_STAT_STAGE)
         evasionStage = DEFAULT_STAT_STAGE;
-    if (evasionStage > DEFAULT_STAT_STAGE && atkAbility == ABILITY_DRACO_FORCE && gBattleStruct->dynamicMoveType == (TYPE_DRAGON | F_DYNAMIC_TYPE_2))
+    if (evasionStage > DEFAULT_STAT_STAGE && atkAbility == ABILITY_DRACO_FORCE && gBattleStruct->dynamicMoveType == (TYPE_DRAGON | F_DYNAMIC_TYPE_2) && evasionStage > DEFAULT_STAT_STAGE)
         evasionStage = DEFAULT_STAT_STAGE;
-    if (gCurrentMove == MOVE_BULLET_SEED && gBattleMons[gBattlerAttacker].status1 & STATUS1_BLOOMING)
+    if (gCurrentMove == MOVE_BULLET_SEED && gBattleMons[battlerAtk].status1 & STATUS1_BLOOMING && evasionStage > DEFAULT_STAT_STAGE)
         evasionStage = DEFAULT_STAT_STAGE;
-    if (evasionStage > DEFAULT_STAT_STAGE && gCurrentMove == MOVE_AURA_SPHERE)
+    if (evasionStage > DEFAULT_STAT_STAGE && gCurrentMove == MOVE_AURA_SPHERE && evasionStage > DEFAULT_STAT_STAGE)
         evasionStage = DEFAULT_STAT_STAGE;
-    if (defAbility == ABILITY_UNAWARE || atkAbility == ABILITY_IGNORANT_BLISS)
+    if ((defAbility == ABILITY_UNAWARE || atkAbility == ABILITY_IGNORANT_BLISS) && accStage < DEFAULT_STAT_STAGE)
         accStage = DEFAULT_STAT_STAGE;
-    if (defHoldEffect == HOLD_EFFECT_WINTAMEL_TEA && gBattleMons[battlerDef].species == SPECIES_POMELONIAN)
+    if (accStage < DEFAULT_STAT_STAGE && defHoldEffect == HOLD_EFFECT_WINTAMEL_TEA && gBattleMons[battlerDef].species == SPECIES_POMELONIAN)
         accStage = DEFAULT_STAT_STAGE;
     if (accStage < DEFAULT_STAT_STAGE && atkAbility == ABILITY_AQUA_HEART && gBattleStruct->dynamicMoveType == (TYPE_WATER | F_DYNAMIC_TYPE_2))
         accStage = DEFAULT_STAT_STAGE;
