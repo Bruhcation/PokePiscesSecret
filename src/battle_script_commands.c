@@ -1802,7 +1802,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     if ((gBattleMons[gBattlerTarget].status1 & STATUS1_SLEEP_ANY) && gCurrentMove == MOVE_NIGHTMARE)
         moveAcc = moveAcc * 2;
     if (gBattleMoves[move].effect == EFFECT_DARK_VOID && CountBattlerStatDecreases(gBattlerAttacker, TRUE) > 0)
-        moveAcc += 10 * CountBattlerStatDecreases(gBattlerAttacker, TRUE);
+        moveAcc += 5 * CountBattlerStatDecreases(gBattlerAttacker, TRUE);
     if (gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_POISON))
         moveAcc = moveAcc + 20;
     if (gBattleMons[battlerAtk].species == SPECIES_CHARIZARD && gCurrentMove == MOVE_FIRE_SPIN)
