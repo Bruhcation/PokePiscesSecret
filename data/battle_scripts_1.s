@@ -12533,6 +12533,8 @@ BattleScript_DecimationNoMoveEffect:
 	trysetfutureattack BattleScript_ButItFailed
 	attackanimation
 	waitanimation
+	printstring STRINGID_PKMNISPREPARINGFORDECIMATION
+	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectGust::
