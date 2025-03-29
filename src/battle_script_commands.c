@@ -1766,9 +1766,9 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         evasionStage = DEFAULT_STAT_STAGE;
     if (evasionStage > DEFAULT_STAT_STAGE && gCurrentMove == MOVE_AURA_SPHERE && evasionStage > DEFAULT_STAT_STAGE)
         evasionStage = DEFAULT_STAT_STAGE;
-    if ((defAbility == ABILITY_UNAWARE || atkAbility == ABILITY_IGNORANT_BLISS) && accStage < DEFAULT_STAT_STAGE)
+    if ((defAbility == ABILITY_UNAWARE || atkAbility == ABILITY_IGNORANT_BLISS) && accStage > DEFAULT_STAT_STAGE)
         accStage = DEFAULT_STAT_STAGE;
-    if (accStage < DEFAULT_STAT_STAGE && defHoldEffect == HOLD_EFFECT_WINTAMEL_TEA && gBattleMons[battlerDef].species == SPECIES_POMELONIAN)
+    if (accStage > DEFAULT_STAT_STAGE && defHoldEffect == HOLD_EFFECT_WINTAMEL_TEA && gBattleMons[battlerDef].species == SPECIES_POMELONIAN)
         accStage = DEFAULT_STAT_STAGE;
     if (accStage < DEFAULT_STAT_STAGE && atkAbility == ABILITY_AQUA_HEART && gBattleStruct->dynamicMoveType == (TYPE_WATER | F_DYNAMIC_TYPE_2))
         accStage = DEFAULT_STAT_STAGE;

@@ -817,6 +817,8 @@ BattleScript_EffectSpikeCannon::
 	moveendall
 	end
 BattleScript_EffectSpikeCannonMiss::
+	setbyte sB_ANIM_TURN, 1
+	attackstring
 	pause B_WAIT_TIME_SHORT
 	effectivenesssound
 	resultmessage
@@ -853,6 +855,8 @@ BattleScript_EffectFocusBlast::
 	moveendall
 	end
 BattleScript_EffectFocusBlastMiss::
+	setbyte sB_ANIM_TURN, 1
+	attackstring
 	pause B_WAIT_TIME_SHORT
 	effectivenesssound
 	resultmessage
