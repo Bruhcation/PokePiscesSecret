@@ -1795,22 +1795,22 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         moveAcc = 50;
     if (defAbility == ABILITY_ANTICIPATION && gDisableStructs[battlerDef].anticipated && moveAcc > 50)
         moveAcc = 50;
-    if ((gBattleMons[gBattlerAttacker].status1 & STATUS1_BLOOMING) && gCurrentMove == MOVE_GRASS_WHISTLE)
-        moveAcc = moveAcc + 10;
-    if ((gDisableStructs[gBattlerAttacker].focusEnergy) && gCurrentMove == MOVE_FOCUS_BLAST)
-        moveAcc = moveAcc + 10;
-    if ((gBattleMons[gBattlerTarget].status1 & STATUS1_SLEEP_ANY) && gCurrentMove == MOVE_NIGHTMARE)
-        moveAcc = moveAcc * 2;
-    if (gBattleMoves[move].effect == EFFECT_DARK_VOID && CountBattlerStatDecreases(gBattlerAttacker, TRUE) > 0)
-        moveAcc += 5 * CountBattlerStatDecreases(gBattlerAttacker, TRUE);
-    if (gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_POISON))
-        moveAcc = moveAcc + 20;
-    if (gBattleMons[battlerAtk].species == SPECIES_CHARIZARD && gCurrentMove == MOVE_FIRE_SPIN)
+    if ((gBattleMons[battlerAtk].status1 & STATUS1_BLOOMING) && move == MOVE_GRASS_WHISTLE)
+        moveAcc += 10;
+    if ((gDisableStructs[battlerAtk].focusEnergy) && move == MOVE_FOCUS_BLAST)
+        moveAcc += 15;
+    if ((gBattleMons[battlerDef].status1 & STATUS1_SLEEP_ANY) && move == MOVE_NIGHTMARE)
+        moveAcc *= 2;
+    if (gBattleMoves[move].effect == EFFECT_DARK_VOID && (CountBattlerStatDecreases(battlerAtk, TRUE) > 0 || CountBattlerStatDecreases(battlerDef, TRUE) > 0))
+        moveAcc += (5 * (CountBattlerStatDecreases(battlerAtk, TRUE) + CountBattlerStatDecreases(battlerDef, TRUE)));
+    if (gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON))
+        moveAcc += 20;
+    if (gBattleMons[battlerAtk].species == SPECIES_CHARIZARD && move == MOVE_FIRE_SPIN)
         moveAcc = 0;
     if (gBattleMoves[move].effect == EFFECT_ZAP_CANNON && gStatuses4[battlerAtk] & STATUS4_GEARED_UP && gStatuses4[battlerAtk] & STATUS4_SUPERCHARGED)
-        moveAcc = moveAcc + 35;
+        moveAcc += 35;
     else if (gBattleMoves[move].effect == EFFECT_ZAP_CANNON && gStatuses4[battlerAtk] & STATUS4_GEARED_UP)
-        moveAcc = moveAcc + 20;
+        moveAcc += 20;
 
     calc = gAccuracyStageRatios[buff].dividend * moveAcc;
     calc /= gAccuracyStageRatios[buff].divisor;
