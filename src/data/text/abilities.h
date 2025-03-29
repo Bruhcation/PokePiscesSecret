@@ -234,8 +234,8 @@ static const u8 sFlameBodyDescription[] = _(
     "burn the attacker.");
 
 static const u8 sRunAwayDescription[] = _(
-    "Enables a sure getaway from wild\n"
-    "Pokémon.");
+    "The Pokémon can always run away\n"
+    "or switch out.");
 
 static const u8 sKeenEyeDescription[] = _(
     "Prevents other Pokémon from\n"
@@ -1359,9 +1359,9 @@ static const u8 sExtremoDescription[] = _(
     "condition.");
 
 static const u8 sFallingDescription[] = _(
-    "The Pokémon lowers the Def, Sp.\n"
-    "Def, and Speed stats of opposing\n"
-    "Pokémon.");
+    "The Pokémon lowers the Attack,\n"
+    "Special Attack, and Speed stats\n"
+    "of opposing Pokémon.");
 
 static const u8 sGoldenMeanDescription[] = _(
     "The Pokémon changes between\n"
@@ -1728,14 +1728,14 @@ static const u8 sReformDescription[] = _(
     "to that type afterwards.");
 
 static const u8 sSunriseDescription[] = _(
-    "At 2/5 HP or less, turns the\n"
-    "sunlight harsh. Boosts the\n"
-    "Pokémon's Speed in it.");
+    "At half health, makes sunlight\n"
+    "harsh. At a quarter health and\n"
+    "in harsh sunlight, boosts Speed.");
 
 static const u8 sDelugeDescription[] = _(
-    "At 2/5 HP or less, makes it\n"
-    "rain. Traps opposing Pokémon and\n"
-    "damages them in rain.");
+    "At half health, makes it rain.\n"
+    "Traps opposing Pokémon and\n"
+    "harshly cuts their Speed in rain.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =

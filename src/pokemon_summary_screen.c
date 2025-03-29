@@ -2386,19 +2386,11 @@ static void Task_HandleReplaceMoveInput(u8 taskId)
             }
             else if (JOY_NEW(A_BUTTON))
             {
-                if (CanReplaceMove() == TRUE)
-                {
-                    StopPokemonAnimations();
-                    PlaySE(SE_SELECT);
-                    sMoveSlotToReplace = sMonSummaryScreen->firstMoveIndex;
-                    gSpecialVar_0x8005 = sMoveSlotToReplace;
-                    BeginCloseSummaryScreen(taskId);
-                }
-                else
-                {
-                    PlaySE(SE_FAILURE);
-                    ShowCantForgetHMsWindow(taskId);
-                }
+                StopPokemonAnimations();
+                PlaySE(SE_SELECT);
+                sMoveSlotToReplace = sMonSummaryScreen->firstMoveIndex;
+                gSpecialVar_0x8005 = sMoveSlotToReplace;
+                BeginCloseSummaryScreen(taskId);
             }
             else if (JOY_NEW(B_BUTTON))
             {
@@ -3872,8 +3864,13 @@ static void PrintMoveDetails(u16 move)
         {
             PrintTextOnWindow(windowId, gContestEffectDescriptionPointers[gContestMoves[move].effect], 6, 1, 0, 0);
         }
+        PutWindowTilemap(windowId);
     }
-    PutWindowTilemap(windowId);
+    else
+    {
+        ClearWindowTilemap(windowId);
+    }
+
     ScheduleBgCopyTilemapToVram(0);
 }
 

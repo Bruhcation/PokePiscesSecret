@@ -88,7 +88,7 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, u8 abilityNum, u32 unused2, u8
     SetMonData(&mon, MON_DATA_ABILITY_NUM, &abilityNum);
 
     // In case a mon with a form changing item is given. Eg: SPECIES_ARCEUS with ITEM_SPLASH_PLATE will transform into SPECIES_ARCEUS_WATER upon gifted.
-    targetSpecies = GetFormChangeTargetSpecies(&mon, FORM_CHANGE_ITEM_HOLD, 0);
+    targetSpecies = GetFormChangeTargetSpeciesItemHold(&mon, FORM_CHANGE_ITEM_HOLD, 0);
     if (targetSpecies != SPECIES_NONE)
     {
         SetMonData(&mon, MON_DATA_SPECIES, &targetSpecies);
@@ -301,7 +301,7 @@ void ScriptSetShunyongBattle(struct ScriptContext *ctx)
     // create shunyong
     ZeroEnemyPartyMons();
 
-    CreateMonWithNature(mon, SPECIES_SHUNYONG, 90, 31, NATURE_HARDY);
+    CreateMonWithNature(mon, SPECIES_SHUNYONG, 100, 31, NATURE_HARDY);
     
     // even evs
     val = 84;

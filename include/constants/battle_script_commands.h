@@ -333,6 +333,11 @@
 #define VARIOUS_SET_DOUBLES_MOVE_SUCCEED             241
 #define VARIOUS_JUMP_IF_DOUBLES_MOVE_SUCCEED         242
 #define VARIOUS_FLORESCENCE_CHECK                    243
+#define VARIOUS_SET_SWITCH_IN_ABILITY_SUCCEED        244
+#define VARIOUS_JUMP_IF_SWITCH_IN_ABILITY_SUCCEED    245
+#define VARIOUS_JUMP_IF_FOCUS_ENERGY                 246
+#define VARIOUS_TRY_HEAL_THIRD_HEALTH                247
+#define VARIOUS_TRY_HEAL_SIXTH_HEALTH                248
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
@@ -410,12 +415,11 @@
 #define MOVEEND_SYMBIOSIS                         32
 #define MOVEEND_SAME_MOVE_TURNS                   33
 #define MOVEEND_SLICING_MOVE_TURNS                34
-#define MOVEEND_DANCING_MOVE_TURNS                35
-#define MOVEEND_STORM_BREW                        36
-#define MOVEEND_NEXT_DANCE_TARGET                 37
-#define MOVEEND_DANCER                            38
-#define MOVEEND_CLEAR_BITS                        39
-#define MOVEEND_COUNT                             40
+#define MOVEEND_STORM_BREW                        35
+#define MOVEEND_NEXT_DANCE_TARGET                 36
+#define MOVEEND_DANCER                            37
+#define MOVEEND_CLEAR_BITS                        38
+#define MOVEEND_COUNT                             39
 
 // switch cases
 #define B_SWITCH_NORMAL     0

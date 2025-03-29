@@ -2418,6 +2418,11 @@
 	.4byte \failInstr
 	.endm
 
+	.macro jumpiffocusenergy battler:req, jumpInstr:req
+	various \battler, VARIOUS_JUMP_IF_FOCUS_ENERGY
+	.4byte \jumpInstr
+	.endm
+
 	.macro trysetimprison battler:req, failInstr:req, jumpInstr:req
 	various \battler, VARIOUS_TRY_SET_IMPRISON
 	.4byte \failInstr
@@ -2511,6 +2516,15 @@
 
 	.macro jumpifdoublesmovesucceed battler:req, jumpInstr:req
 	various \battler, VARIOUS_JUMP_IF_DOUBLES_MOVE_SUCCEED
+	.4byte \jumpInstr
+	.endm
+
+	.macro setswitchinabilitysucceed battler:req
+	various \battler, VARIOUS_SET_SWITCH_IN_ABILITY_SUCCEED
+	.endm
+
+	.macro jumpifswitchinabilitysucceed battler:req, jumpInstr:req
+	various \battler, VARIOUS_JUMP_IF_SWITCH_IN_ABILITY_SUCCEED
 	.4byte \jumpInstr
 	.endm
 
@@ -2821,6 +2835,16 @@
 
 	.macro tryhealallhealth battler:req, failInstr:req
 	various \battler, VARIOUS_TRY_HEAL_ALL_HEALTH
+	.4byte \failInstr
+	.endm
+
+	.macro tryhealthirdhealth battler:req, failInstr:req
+	various \battler, VARIOUS_TRY_HEAL_THIRD_HEALTH
+	.4byte \failInstr
+	.endm
+
+	.macro tryhealsixthhealth battler:req, failInstr:req
+	various \battler, VARIOUS_TRY_HEAL_SIXTH_HEALTH
 	.4byte \failInstr
 	.endm
 

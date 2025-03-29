@@ -70,6 +70,7 @@ struct DisableStruct
     u8 exhaustionCounter;
     u8 surpriseCounter;
     u8 daybreakCounter;
+    u8 gemstoneEvasionCounter;
     u8 stormBrewCounter;
     u8 allureCounter;
     u8 frenzyCounter;
@@ -151,6 +152,7 @@ struct DisableStruct
     u8 reformDark:1;
     u8 reformFairy:1;
     u8 reformRelic:1;
+    u8 focusEnergy:1;
 };
 
 struct ProtectStruct
@@ -196,6 +198,7 @@ struct ProtectStruct
     u16 quickDraw:1;
     u16 beakBlastCharge:1;
     u16 doublesMoveSucceed:1;
+    u16 switchinAbilitySucceed:1;
     u16 acidArmorCharge:1;
     u16 quash:1;
     u16 shellTrap:1;
@@ -231,7 +234,6 @@ struct SpecialStatus
     u8 ppNotAffectedByPressure:1;
     u8 faintedHasReplacement:1;
     u8 focusBanded:1;
-    u8 focusBandEndured:1;
     u8 focusSashed:1;
     // End of byte
     u8 sturdied:1;

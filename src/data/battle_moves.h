@@ -15743,7 +15743,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .type = TYPE_BUG,
         .accuracy = 100,
         .pp = 10,
-        .secondaryEffectChance = 0,
+        .secondaryEffectChance = 100,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
@@ -16731,7 +16731,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .split = SPLIT_STATUS,
         .zMoveEffect = Z_EFFECT_NONE,
         .switchingMove = TRUE,
-        .cantUseTwice = TRUE,
+        .cantUseTwicePsySwap = TRUE,
     },
 
     [MOVE_STALAG_BLAST] =
@@ -17243,7 +17243,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_FIREBRAND] =
     {
-        .effect = EFFECT_FIREBRAND,
+        .effect = EFFECT_HIT,
         .power = 100,
         .type = TYPE_FIRE,
         .accuracy = 100,

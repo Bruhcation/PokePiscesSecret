@@ -111,6 +111,7 @@
 #define METATILE_BikeShop_Generator_Off_Tile6      0x2F6
 #define METATILE_BikeShop_Generator_Off_Tile7      0x2F7
 #define METATILE_BikeShop_Wall_Edge_Top            0x281
+#define METATILE_BikeShop_sliding_doors            0x2FB
 
 // gTileset_BirchLab
 #define METATILE_BirchLab_BirchTable1  0x283
@@ -284,10 +285,11 @@
 #define METATILE_GenericBuilding_TrickHouse_Stairs_Down  0x219
 
 // gTileset_Golden
-#define METATILE_Golden_LuoShanOrbBottom  0x301
-#define METATILE_Golden_LuoShanOrbTop     0x2F9
-#define METATILE_Golden_ShaYonOrbBottom   0x306
-#define METATILE_Golden_ShaYonOrbTop      0x2FE
+#define METATILE_Golden_LuoShanOrbBottom        0x301
+#define METATILE_Golden_LuoShanOrbTop           0x2F9
+#define METATILE_Golden_ShaYonOrbBottom         0x306
+#define METATILE_Golden_ShaYonOrbTop            0x2FE
+#define METATILE_Golden_ever_grande_pokecenter  0x3FD
 
 // gTileset_InsideOfTruck
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D
@@ -861,8 +863,9 @@
 #define METATILE_Shop_mauville_elevator_red    0x36C
 
 // gTileset_Slateport
-#define METATILE_Slateport_Door             0x2DC
-#define METATILE_Slateport_Door_BattleTent  0x393
+#define METATILE_Slateport_Door                             0x2DC
+#define METATILE_Slateport_Door_BattleTent                  0x393
+#define METATILE_Slateport_strae_seapath_pokecenter_yellow  0x3F3
 
 // gTileset_Snow
 #define METATILE_Snow_ColdMineFloor        0x381
