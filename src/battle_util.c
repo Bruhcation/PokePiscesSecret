@@ -14011,8 +14011,8 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 
     case ABILITY_MAGMA_ARMOR:
         if ((!(gDisableStructs[battlerDef].magmaArmored)) && moveType == TYPE_WATER)
             return UQ_4_12(0.1);
-        else if (gDisableStructs[battlerDef].magmaArmored)
-            return UQ_4_12(2 / 3);
+        if (gDisableStructs[battlerDef].magmaArmored)
+            return UQ_4_12(0.67);
         break;
     case ABILITY_PURPLE_HAZE:
         if (gDisableStructs[battlerDef].purpleHazeDefense)

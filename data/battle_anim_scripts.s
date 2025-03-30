@@ -1616,8 +1616,8 @@ Move_ASSURANCE::
 
 Move_EMBARGO::
 	loadspritegfx ANIM_TAG_FAIRY_LOCK_CHAINS
-	setalpha 8, 8
 	monbg ANIM_ATK_PARTNER
+	setalpha 8, 8
 	fadetobg BG_DARK
 	waitbgfadein
 	delay 0
