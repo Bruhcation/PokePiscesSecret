@@ -62,22 +62,87 @@ SSTidalMidTeriors_EventScript_AlreadyGaveFriendRibbon::
 	release
 	end
 
+SSTidalMidTeriors_EventScript_TidalTer1::
+    msgbox SSTidalMidTeriors_Text_TidalTer1, MSGBOX_NPC
+    end
+
+SSTidalMidTeriors_EventScript_TidalTer2::
+    msgbox SSTidalMidTeriors_Text_TidalTer2, MSGBOX_NPC
+    end
+
+SSTidalMidTeriors_EventScript_TidalTer3::
+    msgbox SSTidalMidTeriors_Text_TidalTer3, MSGBOX_NPC
+    end
+
+SSTidalMidTeriors_EventScript_TidalTer4::
+    msgbox SSTidalMidTeriors_Text_TidalTer4, MSGBOX_NPC
+    end
+
+SSTidalMidTeriors_EventScript_TidalTer5::
+    msgbox SSTidalMidTeriors_Text_TidalTer5, MSGBOX_NPC
+    end
+
+SSTidalMidTeriors_EventScript_TidalTer6::
+    msgbox SSTidalMidTeriors_Text_TidalTer6, MSGBOX_NPC
+    end
+
+SSTidalMidTeriors_Text_TidalTer1:
+	.string "Yyyarrr! It be you again, lil'\n"
+	.string "Minote! How've ye been?\p"
+	.string "Ye made it to Lilycove yet,\n"
+	.string "me hearty? Some'o me old compadres\l"
+	.string "be workin' in Team Ozone in\l"
+	.string "that city.\p"
+	.string "They all be kind folk!\n"
+	.string "Tell 'em I said, YAAARRR!$"
+
+SSTidalMidTeriors_Text_TidalTer2:
+	.string "Be kind to Colfin!\n"
+	.string "I'm planning on putting up\l"
+	.string "fliers at my work about it.\l"
+	.string "They deserve lots of love!$"
+
+SSTidalMidTeriors_Text_TidalTer3:
+	.string "Just because we encourage trainers\n"
+	.string "to not evolve their Colfin, does\l"
+	.string "not mean their evolved form deserves\l"
+	.string "to be mistreated! All Pokemon\l"
+	.string "should earn our care and respect.$"
+
+SSTidalMidTeriors_Text_TidalTer4:
+	.string "I simply must talk grandfather into\n"
+	.string "allowing me to purchase this\l"
+	.string "rather fine vessel...$"
+
+SSTidalMidTeriors_Text_TidalTer5:
+	.string "Ol' Briney has such a kind soul.\n"
+	.string "He will take you anywhere you\l"
+	.string "want, provided that it is\l"
+	.string "by the water.$"
+
+SSTidalMidTeriors_Text_TidalTer6:
+	.string "Sweepity, sweepity, sweep...\n"
+	.string "I'll work until I sleep...$"
+
 SSTidalMidTeriors_Text_IllTradeIfYouWant:
-	.string "I'll trade you my {STR_VAR_2} for\n"
-	.string "a {STR_VAR_1} if you want.$"
+	.string "Ahoy, ye bilge rat!\p"
+	.string "I be lookin' for a {STR_VAR_1}.\n"
+	.string "If ye got yer mitts on one,\l"
+	.string "I'd trade ye my {STR_VAR_2}!$"
 
 SSTidalMidTeriors_Text_PleaseBeGoodToMyPokemon:
-	.string "Please be good to my POKéMON.$"
+	.string "Be good to the lil' rascal!$"
 
 SSTidalMidTeriors_Text_DoesntLookLikeMonToMe:
 	.string "Huh? That doesn't look anything like\n"
 	.string "a {STR_VAR_1} to me.$"
 
 SSTidalMidTeriors_Text_YouDontWantToThatsOkay:
-	.string "Oh, if you don't want to, that's okay.$"
+	.string "That's fine, landlubber.$"
 
 SSTidalMidTeriors_Text_ThanksForTrading:
-	.string "Thanks for the trade.$"
+	.string "Hope ye are holdin' up\n"
+	.string "real well, kid!$"
 
 SSTidalMidTeriors_Text_ColfinNeedGoodRoleModel:
 	.string "My absolute favorite Pokemon\n"

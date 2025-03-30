@@ -183,6 +183,36 @@ Route122_EventScript_ZotpyreSign::
 	msgbox Route122_Text_ZotpyreSign, MSGBOX_SIGN
 	end
 
+Route122_EventScript_Hiker::
+    msgbox Route122_Text_Hiker, MSGBOX_NPC
+    end
+
+Route122_EventScript_Maiden::
+    msgbox Route122_Text_Maiden, MSGBOX_NPC
+    end
+
+Route122_Text_Hiker:
+	.string "Hey there, sport! I just got\n"
+	.string "done earning my badge from\l"
+	.string "the Zotpyre Gym! It was quite\l"
+	.string "the challenge, but I perservered!\p"
+	.string "Let's see... where is my next stop?\n"
+	.string "Well, now that I can use Cut,\l"
+	.string "I think I will be heading north\l"
+	.string "of Lilycove City to Scutill Way!\l"
+	.string "Fastest way there is going south\l"
+	.string "from Zotpyre to reach the Cold Mines.\l"
+	.string "There's an exit that leads\l"
+	.string "straight out to Scuttill Way.$"
+
+Route122_Text_Maiden:
+	.string "Welcome to Zotpyre Village.\n"
+	.string "You are a rather unfamiliar face.\p"
+	.string "This humble dwelling atop\n"
+	.string "Mt. Pyre is for the spiritual.\l"
+	.string "I would advise not making too\l"
+	.string "much of a ruckus...$"
+
 Route122_Text_ZotpyreSign:
 	.string "ZOTPYRE VILLAGE\n"
 	.string "A site of repose for\l"

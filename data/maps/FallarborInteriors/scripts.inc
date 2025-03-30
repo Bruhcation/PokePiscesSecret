@@ -45,6 +45,82 @@ FallarborInteriors_EventScript_TradeCompleted::
 	release
 	end
 
+FallarborInteriors_EventScript_Fallarborite1::
+    msgbox FallarborInteriors_Text_Fallarborite1, MSGBOX_NPC
+    end
+
+FallarborInteriors_EventScript_Fallarborite2::
+    msgbox FallarborInteriors_Text_Fallarborite2, MSGBOX_NPC
+    end
+
+FallarborInteriors_EventScript_Fallarborite3::
+    msgbox FallarborInteriors_Text_Fallarborite3, MSGBOX_NPC
+    end
+
+FallarborInteriors_EventScript_Fallarborite4::
+    msgbox FallarborInteriors_Text_Fallarborite4, MSGBOX_NPC
+    end
+
+FallarborInteriors_EventScript_Fallarborite5::
+    msgbox FallarborInteriors_Text_Fallarborite5, MSGBOX_NPC
+    end
+
+FallarborInteriors_EventScript_Fallarborite6::
+    msgbox FallarborInteriors_Text_Fallarborite6, MSGBOX_NPC
+    end
+
+FallarborInteriors_EventScript_Fallarborite7::
+    msgbox FallarborInteriors_Text_Fallarborite7, MSGBOX_NPC
+    end
+
+FallarborInteriors_EventScript_Fallarborite8::
+    msgbox FallarborInteriors_Text_Fallarborite8, MSGBOX_NPC
+    end
+
+FallarborInteriors_EventScript_Fallarborite9::
+    msgbox FallarborInteriors_Text_Fallarborite9, MSGBOX_NPC
+    end
+
+FallarborInteriors_Text_Fallarborite1:
+	.string "Oh, hello! Welcome to my home.\n"
+	.string "I assume you've heard of me,\l"
+	.string "Professor Cozmo?\p"
+	.string "My friend Tabitha just stopped\n"
+	.string "by. It was good to see him,\l"
+	.string "as always.\p"
+	.string "I know he values a strong trainer,\n"
+	.string "so of course, battle him any\l"
+	.string "chance you get.$"
+
+FallarborInteriors_Text_Fallarborite2:
+	.string "My daddy used to use\n"
+	.string "this lil' man cave for secret\l"
+	.string "operations back when he worked\l"
+	.string "a lot more.\p"
+	.string "But now he lets me use it\n"
+	.string "as my own base! Haha!$"
+
+FallarborInteriors_Text_Fallarborite3:
+	.string "Temp Dialogue\n$"
+
+FallarborInteriors_Text_Fallarborite4:
+	.string "Temp Dialogue\n$"
+
+FallarborInteriors_Text_Fallarborite5:
+	.string "Temp Dialogue\n$"
+
+FallarborInteriors_Text_Fallarborite6:
+	.string "Temp Dialogue\n$"
+
+FallarborInteriors_Text_Fallarborite7:
+	.string "Temp Dialogue\n$"
+
+FallarborInteriors_Text_Fallarborite8:
+	.string "Temp Dialogue\n$"
+
+FallarborInteriors_Text_Fallarborite9:
+	.string "Temp Dialogue\n$"
+
 FallarborInteriors_Text_IllTradeIfYouWant:
 	.string "I'll trade you my {STR_VAR_2} for\n"
 	.string "a {STR_VAR_1} if you want.$"

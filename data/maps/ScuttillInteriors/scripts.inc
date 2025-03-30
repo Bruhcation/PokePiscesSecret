@@ -45,6 +45,56 @@ ScuttillInteriors_EventScript_AlreadyGaveCrypticPlate::
 	release
 	end
 
+ScuttillInteriors_EventScript_Scutillion1::
+    msgbox ScuttillInteriors_Text_Scutillion1, MSGBOX_NPC
+    end
+
+ScuttillInteriors_EventScript_Scutillion2::
+    msgbox ScuttillInteriors_Text_Scutillion2, MSGBOX_NPC
+    end
+
+ScuttillInteriors_EventScript_Scutillion3::
+    msgbox ScuttillInteriors_Text_Scutillion3, MSGBOX_NPC
+    end
+
+ScuttillInteriors_EventScript_Scutillion4::
+    msgbox ScuttillInteriors_Text_Scutillion4, MSGBOX_NPC
+    end
+
+ScuttillInteriors_Text_Scutillion1:
+	.string "Just a little over here... and\n"
+	.string "a little over there...\p"
+	.string "Gah! My charcoal drawing... it\n"
+	.string "just never turns out right!\l"
+	.string "I guess a colorful Pokemon like\l"
+	.string "Ebibi just doesn't look right\l"
+	.string "in jet black...$"
+
+ScuttillInteriors_Text_Scutillion2:
+	.string "I really like the girls that\n"
+	.string "run the Pretty Petals Flower Shop,\l"
+	.string "but their Berry selection is\l"
+	.string "somewhat lacking...\p"
+	.string "I hear there is a much better\n"
+	.string "place to buy produce in\l"
+	.string "Hatchloam Field. They may be\l"
+	.string "getting my business!$"
+
+ScuttillInteriors_Text_Scutillion3:
+	.string "Take good care of your Fluffsir,\n"
+	.string "young stranger, if you have one.\p"
+	.string "They respond well to affection.\n"
+	.string "It will become even stronger\l"
+	.string "for you if you show it love.$"
+
+ScuttillInteriors_Text_Scutillion4:
+	.string "The Butterwee within the thicket\n"
+	.string "always stop by to take one\l"
+	.string "of my flowers. I don't mind,\l"
+	.string "but I do think they want me\l"
+	.string "to come with them, and I don't\l"
+	.string "have the time for that.$"
+
 ScuttillInteriors_Text_CropCircles:
 	.string "H-Howdy...\n"
 	.string "Lissen, you been gettin' real\l"
