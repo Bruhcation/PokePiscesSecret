@@ -156,6 +156,40 @@ ZotpyreInteriors_EventScript_GaveYouMyCard::
 	release
 	end
 
+ZotpyreInteriors_EventScript_Zotpyrite1::
+    msgbox ZotpyreInteriors_Text_Zotpyrite1, MSGBOX_NPC
+    end
+
+ZotpyreInteriors_EventScript_Zotpyrite2::
+    msgbox ZotpyreInteriors_Text_Zotpyrite2, MSGBOX_NPC
+    end
+
+ZotpyreInteriors_EventScript_Zotpyrite3::
+    msgbox ZotpyreInteriors_Text_Zotpyrite3, MSGBOX_NPC
+    end
+
+ZotpyreInteriors_Text_Zotpyrite1:
+	.string "Phoebe has been so brave in\n"
+	.string "coming back to the village to\l"
+	.string "take over her grandmother's\l"
+	.string "duties after she had passed away.\p"
+	.string "I respect her more than any other\n"
+	.string "person I know. She's done so\l"
+	.string "much for our people.$"
+
+ZotpyreInteriors_Text_Zotpyrite2:
+	.string "That Spenser fellow is a\n"
+	.string "particularly odd chap. I think\l"
+	.string "he revels in it.\p"
+	.string "Though, there's no one else that\n"
+	.string "knows more about ancient\l"
+	.string "archaeology than him. So, I wouldn't\l"
+	.string "want anyone else assisting Phoebe.$"
+
+ZotpyreInteriors_Text_Zotpyrite3:
+	.string "I want to talk to the ghosts...\n"
+	.string "just like Miss Phoebe does...$"
+
 ZotpyreInteriors_Text_WhatINeed:
 	.string "Bah! I am a lover of all things Magic!\n"
 	.string "And I mean REAL magic!\l"

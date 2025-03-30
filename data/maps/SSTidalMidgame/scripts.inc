@@ -104,6 +104,73 @@ SSTidalMidgame_EventScript_WaitAWhile::
 	release
 	end
 
+SSTidalMidgame_EventScript_TidalPerson1::
+    msgbox SSTidalMidgame_Text_TidalPerson1, MSGBOX_NPC
+    end
+
+SSTidalMidgame_EventScript_TidalPerson2::
+    msgbox SSTidalMidgame_Text_TidalPerson2, MSGBOX_NPC
+    end
+
+SSTidalMidgame_EventScript_TidalPerson3::
+    msgbox SSTidalMidgame_Text_TidalPerson3, MSGBOX_NPC
+    end
+
+SSTidalMidgame_EventScript_TidalPerson4::
+    msgbox SSTidalMidgame_Text_TidalPerson4, MSGBOX_NPC
+    end
+
+SSTidalMidgame_EventScript_TidalPerson5::
+    msgbox SSTidalMidgame_Text_TidalPerson5, MSGBOX_NPC
+    end
+
+SSTidalMidgame_EventScript_TidalPerson6::
+    msgbox SSTidalMidgame_Text_TidalPerson6, MSGBOX_NPC
+    end
+
+SSTidalMidgame_EventScript_TidalPerson7::
+    msgbox SSTidalMidgame_Text_TidalPerson7, MSGBOX_NPC
+    end
+
+SSTidalMidgame_Text_TidalPerson1:
+	.string "Word of advice, whippersnapper.\n"
+	.string "Never sign up to do maintenance\l"
+	.string "on ship generators. These rust\l"
+	.string "buckets get too wet from the\l"
+	.string "ocean splashin'!$"
+
+SSTidalMidgame_Text_TidalPerson2:
+	.string "All checks out over here...\n"
+	.string "I think...$"
+
+SSTidalMidgame_Text_TidalPerson3:
+	.string "Don't mind me, just taking\n"
+	.string "the load off for a spell.$"
+
+SSTidalMidgame_Text_TidalPerson4:
+	.string "Waitin' for a chance to sneak\n"
+	.string "my bulk-fishin' net onto the\l"
+	.string "hull of the ship...\l"
+	.string "I'll strike it rich!$"
+
+SSTidalMidgame_Text_TidalPerson5:
+	.string "You can talk to Mr. Briney\n"
+	.string "up top if you are wanting\l"
+	.string "to disembark.$"
+
+SSTidalMidgame_Text_TidalPerson6:
+	.string "Heh-heh! The S.S. Tidal is the\n"
+	.string "perfect place to sell my wares.\l"
+	.string "Everyone here is trapped onboard,\l"
+	.string "there's no competition!$"
+
+SSTidalMidgame_Text_TidalPerson7:
+	.string "There are Pokemon like Raitaic that\n"
+	.string "can only be found on the high seas...\p"
+	.string "I need to get on top of earning the\n"
+	.string "Mauville gym badge so I can\l"
+	.string "start using Surf!$"
+
 SSTidalMidgame_Text_NameBriney:
 	.string "Cpt. Briney$"
 

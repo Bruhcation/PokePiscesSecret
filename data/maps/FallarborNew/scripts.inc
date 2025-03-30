@@ -389,6 +389,29 @@ FallarborNew_EventScript_CozmosHouseSign::
 	msgbox FallarborNew_Text_CozmosHouseSign, MSGBOX_SIGN
 	end
 
+FallarborNew_EventScript_Biker::
+	msgbox FallarborNew_Text_Biker, MSGBOX_NPC
+	end
+
+FallarborNew_EventScript_Lady::
+	msgbox FallarborNew_Text_Lady, MSGBOX_NPC
+	end
+
+FallarborNew_Text_Biker:
+	.string "I've been trying the Jaggro Pass\n"
+	.string "Challenge for about as long as\l"
+	.string "I've been biking.\p"
+	.string "Over the years, I have broken a\n"
+	.string "total of 156 bones. Maybe if I\l"
+	.string "break the last 50 now,\l"
+	.string "my nightmare will finally end...$"
+
+FallarborNew_Text_Lady:
+	.string "That one Tabitha person visits\n"
+	.string "Fallarbor Town from time to time.\p"
+	.string "I believe he and Prof. Cozmo\n"
+	.string "are good friends.$"
+
 FallarborNew_Text_FallarborSign:
 	.string "FALLARBOR TOWN\n"
 	.string "A land humble and refined.$"
