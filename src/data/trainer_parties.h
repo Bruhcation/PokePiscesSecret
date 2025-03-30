@@ -910,16 +910,16 @@ static const struct TrainerMon sParty_PMinkowski[] = {
 
 static const struct TrainerMon sParty_PRay1[] = {
     {
-    .lvl = 15,
+    .lvl = 13,
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .ev = TRAINER_PARTY_EVS(0, 52, 0, 52, 24, 0),
+    .ev = TRAINER_PARTY_EVS(0, 0, 52, 52, 0, 24),
     .species = SPECIES_SPINDA_FOREST,
     .ability = ABILITY_OWN_TEMPO,
     .moves = {MOVE_PROTECT, MOVE_COPYCAT, MOVE_TEETER_DANCE, MOVE_WISH},
     .nature = NATURE_HASTY,
     },
     {
-    .lvl = 15,
+    .lvl = 14,
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ev = TRAINER_PARTY_EVS(12, 52, 52, 0, 0, 12),
     .species = SPECIES_GOLDEROCK,
