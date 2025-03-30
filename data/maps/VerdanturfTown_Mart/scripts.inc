@@ -77,6 +77,55 @@ VerdanturfTown_Mart_EventScript_NoMoreQuest::
 	release
 	end
 
+VerdanturfTown_Mart_EventScript_Wonder::
+    msgbox VerdanturfTown_Mart_Text_Wonder, MSGBOX_NPC
+    end
+
+VerdanturfTown_Mart_EventScript_Magic::
+    msgbox VerdanturfTown_Mart_Text_Magic, MSGBOX_NPC
+    end
+
+VerdanturfTown_Mart_EventScript_Trick::
+    msgbox VerdanturfTown_Mart_Text_Trick, MSGBOX_NPC
+    end
+
+VerdanturfTown_Mart_EventScript_Inverse::
+    msgbox VerdanturfTown_Mart_Text_Inverse, MSGBOX_NPC
+    end
+
+VerdanturfTown_Mart_Text_Wonder:
+	.string "I like to set up a Room!\n"
+	.string "And my favorite is Wonder Room!\p"
+	.string "In Wonder Room, moves that get\n"
+	.string "same type attack bonus no longer\l"
+	.string "do, and instead, non same type\l"
+	.string "attacks get the bonus!$"
+
+VerdanturfTown_Mart_Text_Magic:
+	.string "I like to set up a Room!\n"
+	.string "And my favorite is Magic Room!\p"
+	.string "In Magic Room, the effects of\n"
+	.string "all items are supressed for\l"
+	.string "5 turns straight!$"
+
+VerdanturfTown_Mart_Text_Trick:
+	.string "I like to set up a Room!\n"
+	.string "And my favorite is Trick Room!\p"
+	.string "In Trick Room, the Speed stats of\n"
+	.string "Pokemon matter in reverse order.\l"
+	.string "So, a Pokemon with a slower Speed\l"
+	.string "will actually move before one\l"
+	.string "that has the higher Speed stat!$"
+
+VerdanturfTown_Mart_Text_Inverse:
+	.string "I like to set up a Room!\n"
+	.string "And my favorite is Inverse Room!\p"
+	.string "In Inverse Room, the entire type\n"
+	.string "chart gets flipped on its head!\l"
+	.string "Fire type Pokemon become weak\l"
+	.string "to Grass moves, and resistant\l"
+	.string "to Water moves, for example!$"
+
 VerdanturfTown_Mart_Text_NamePhillipe:
 	.string "Phillipe$"
 

@@ -77,6 +77,19 @@ LavaridgeTown_PokemonCenter_2F_EventScript_NoMoreQuest::
 	release
 	end
 
+LavaridgeTown_PokemonCenter_2F_EventScript_EvoStones::
+    msgbox LavaridgeTown_PokemonCenter_2F_Text_EvoStones, MSGBOX_NPC
+    end
+
+LavaridgeTown_PokemonCenter_2F_Text_EvoStones:
+	.string "Keep an eye out for items that\n"
+	.string "can evolve Pokemon while you\l"
+	.string "are out and about. They come in\l"
+	.string "many shapes and sizes, but the\l"
+	.string "description will typically tell\l"
+	.string "you that it can be used to\l"
+	.string "evolve a Pokemon.$"
+
 LavaridgeTown_PokemonCenter_2F_Text_NamePhillipe:
 	.string "Phillipe$"
 

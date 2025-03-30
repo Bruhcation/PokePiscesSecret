@@ -12278,7 +12278,7 @@
               {
                 "min_level": 1,
                 "max_level": 1,
-                "species": "SPECIES_RETROROACH"
+                "species": "SPECIES_ICKSQUEEK"
               }
             ]
           }
@@ -12347,7 +12347,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_RETROROACH"
+                "species": "SPECIES_TOXEXOT"
               }
             ]
           },
@@ -12501,7 +12501,7 @@
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_RETROROACH"
+                "species": "SPECIES_KITIKITI"
               }
             ]
           },

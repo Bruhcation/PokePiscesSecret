@@ -132,13 +132,15 @@ Route121_Text_TryNotToSlip:
 	.string "on the way down!$"
 
 Route121_Text_BarneyIntro:
-	.string "intro$"
+	.string "Round and round and round\n"
+	.string "the tree!$"
 
 Route121_Text_BarneyDefeated:
-	.string "defeat$"
+	.string "Wanna go sledding instead?$"
 
 Route121_Text_BarneyPostBattle:
-	.string "post$"
+	.string "I've made so many tracks\n"
+	.string "in the snow! It's so much fun!$"
 
 Route121_Text_CharonIntro:
 	.string "Charon likes the snow.\n"

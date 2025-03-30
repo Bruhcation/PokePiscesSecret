@@ -48,7 +48,7 @@ FortreeCity_PokemonCenter_2F_EventScript_BallQuestGuyTruncated::
 	end
 
 FortreeCity_PokemonCenter_2F_EventScript_Check2::
-	getcaughtmon SPECIES_BURBUN
+	getcaughtmon SPECIES_PETRIPA
 	goto_if_eq VAR_RESULT, TRUE, FortreeCity_PokemonCenter_2F_EventScript_Check3
 	speakername FortreeCity_PokemonCenter_2F_Text_NamePhillipe
 	msgbox FortreeCity_PokemonCenter_2F_Text_GoCatchIt, MSGBOX_AUTOCLOSE
@@ -56,7 +56,7 @@ FortreeCity_PokemonCenter_2F_EventScript_Check2::
 	end
 
 FortreeCity_PokemonCenter_2F_EventScript_Check3::
-	getcaughtmon SPECIES_INGBUN
+	getcaughtmon SPECIES_LEDIAN
 	goto_if_eq VAR_RESULT, TRUE, FortreeCity_PokemonCenter_2F_EventScript_GiveNewBall
 	speakername FortreeCity_PokemonCenter_2F_Text_NamePhillipe
 	msgbox FortreeCity_PokemonCenter_2F_Text_GoCatchIt, MSGBOX_AUTOCLOSE
@@ -77,6 +77,34 @@ FortreeCity_PokemonCenter_2F_EventScript_NoMoreQuest::
 	release
 	end
 
+FortreeCity_PokemonCenter_2F_EventScript_EvoMenu::
+    msgbox FortreeCity_PokemonCenter_2F_Text_EvoMenu, MSGBOX_NPC
+    end
+
+FortreeCity_PokemonCenter_2F_EventScript_Minimize::
+    msgbox FortreeCity_PokemonCenter_2F_Text_Minimize, MSGBOX_NPC
+    end
+
+FortreeCity_PokemonCenter_2F_Text_EvoMenu:
+	.string "Hey, have you been checking if your\n"
+	.string "Pokemon can evolve in your\l"
+	.string "party menu? It can be easy to miss,\l"
+	.string "sometimes.\p"
+	.string "You should even check this with\n"
+	.string "Pokemon you just caught! They could\l"
+	.string "maybe evolve right away.$"
+
+FortreeCity_PokemonCenter_2F_Text_Minimize:
+	.string "Minimize can be a fun move to use.\n"
+	.string "It really lets you become able\l"
+	.string "to dodge lots of attacks! But just\l"
+	.string "be aware, that making your Pokemon\l"
+	.string "become so small brings in a risk.\p"
+	.string "Moves that involve crushing, like\n"
+	.string "Stomp, Body Slam, or Steamroller,\l"
+	.string "will be perfectly accurate and\l"
+	.string "do more damage on a minimized foe.$"
+
 FortreeCity_PokemonCenter_2F_Text_NamePhillipe:
 	.string "Phillipe$"
 
@@ -90,13 +118,13 @@ FortreeCity_PokemonCenter_2F_Text_HaveYouCaughtThisMon:
 	.string "amie, Phillipe, again?\p"
 	.string "I would like to lay an eye on\n"
 	.string "3 particular Pokémon.\p"
-	.string "Haibun, Ingbun, and Burbun.\p"
+	.string "Haibun, Petripa, and Ledian.\p"
 	.string "Catch those trés and show me your\n"
 	.string "Pokédex, and I will make it\l"
 	.string "worth your troubles.$"
 
 FortreeCity_PokemonCenter_2F_Text_CaughtMonReminder:
-	.string "Haibun, Ingbun, and Burbun...\n"
+	.string "Haibun, Petripa, and Ledian...\n"
 	.string "I very much would like to see them!\p"
 	.string "Do you have them registered\l"
 	.string "in your Pokédex?$"

@@ -28,6 +28,79 @@ FortreeCity_PokemonCenter_1F_EventScript_Boy::
 	msgbox FortreeCity_PokemonCenter_1F_Text_DoYouKnowAboutPokenav, MSGBOX_NPC
 	end
 
+FortreeCity_PokemonCenter_1F_EventScript_Grassy::
+	msgbox FortreeCity_PokemonCenter_1F_Text_Grassy, MSGBOX_NPC
+	end
+
+FortreeCity_PokemonCenter_1F_EventScript_Electric::
+	msgbox FortreeCity_PokemonCenter_1F_Text_Electric, MSGBOX_NPC
+	end
+
+FortreeCity_PokemonCenter_1F_EventScript_Psychic::
+	msgbox FortreeCity_PokemonCenter_1F_Text_Psychic, MSGBOX_NPC
+	end
+
+FortreeCity_PokemonCenter_1F_EventScript_Misty::
+	msgbox FortreeCity_PokemonCenter_1F_Text_Misty, MSGBOX_NPC
+	end
+
+FortreeCity_PokemonCenter_1F_EventScript_Ground::
+	msgbox FortreeCity_PokemonCenter_1F_Text_Ground, MSGBOX_NPC
+	end
+
+FortreeCity_PokemonCenter_1F_EventScript_Flying::
+	msgbox FortreeCity_PokemonCenter_1F_Text_Flying, MSGBOX_NPC
+	end
+
+FortreeCity_PokemonCenter_1F_Text_Grassy:
+	.string "Hey, we're a part of the\n"
+	.string "Terrain Fan Club! I like the\l"
+	.string "Grassy Terrain the most.\p"
+	.string "It boosts the power of Grass moves\n"
+	.string "and restores a bit of HP for\l"
+	.string "all grounded Pokemon every turn!$"
+
+FortreeCity_PokemonCenter_1F_Text_Electric:
+	.string "Hey, we're a part of the\n"
+	.string "Terrain Fan Club! I like the\l"
+	.string "Electric Terrain the most.\p"
+	.string "It boosts the power of Electric moves\n"
+	.string "and prevents all grounded\l"
+	.string "Pokemon from falling asleep!$"
+
+FortreeCity_PokemonCenter_1F_Text_Psychic:
+	.string "Hey, we're a part of the\n"
+	.string "Terrain Fan Club! I like the\l"
+	.string "Psychic Terrain the most.\p"
+	.string "It boosts the power of Psychic moves\n"
+	.string "and prevents all grounded\l"
+	.string "Pokemon from using priority moves!$"
+
+FortreeCity_PokemonCenter_1F_Text_Misty:
+	.string "Hey, we're a part of the\n"
+	.string "Terrain Fan Club! I like the\l"
+	.string "Misty Terrain the most.\p"
+	.string "It boosts the power of Fairy moves\n"
+	.string "and increases the secondary effect\l"
+	.string "chances of moves for all grounded\l"
+	.string "Pokemon! ...Except for flinch!$"
+
+FortreeCity_PokemonCenter_1F_Text_Ground:
+	.string "The Ground type is a phenomenal\n"
+	.string "attacking type. I like using those\l"
+	.string "Pokemon the best.\l"
+	.string "As an added bonus, Ground type\l"
+	.string "Pokemon receive slightly less\l"
+	.string "damage when a Terrain is present.$"
+
+FortreeCity_PokemonCenter_1F_Text_Flying:
+	.string "Flying type Pokemon are really\n"
+	.string "crafty! No way for them to be\l"
+	.string "bamboozled by entry hazards,\l"
+	.string "they just fly right over them!\l"
+	.string "...Except Stealth Rocks... yeesh...\l"
+	.string "I HATE Stealth Rocks...$"
+
 FortreeCity_PokemonCenter_1F_Text_GoToSafariZone:
 	.string "Listen, kid, are you working\n"
 	.string "on a POKéDEX?\p"

@@ -83,6 +83,64 @@ MossdeepCity_PokemonCenter_2F_EventScript_NoMoreQuest::
 	release
 	end
 
+MossdeepCity_PokemonCenter_2F_EventScript_WaterType::
+    msgbox MossdeepCity_PokemonCenter_2F_Text_WaterType, MSGBOX_NPC
+    end
+
+MossdeepCity_PokemonCenter_2F_EventScript_FightingType::
+    msgbox MossdeepCity_PokemonCenter_2F_Text_FightingType, MSGBOX_NPC
+    end
+
+MossdeepCity_PokemonCenter_2F_EventScript_Infatuation::
+    msgbox MossdeepCity_PokemonCenter_2F_Text_Infatuation, MSGBOX_NPC
+    end
+
+MossdeepCity_PokemonCenter_2F_Text_WaterType:
+	.string "I like Water type Pokemon!\n"
+	.string "What about you?\l"
+	.string "They really do good in battle!\p"
+	.string "Only thing about it that is\n"
+	.string "kinda annoying is that its attacks\l"
+	.string "are resisted by Grass and Ice types.\l"
+	.string "That kinda blows.\p"
+	.string "But you can get so many of them!\n"
+	.string "I have so many favorites!\l"
+	.string "If you don't have a really nice\l"
+	.string "fishing rod, there's a nice man\l"
+	.string "close to this building that\l"
+	.string "is giving them out!$"
+
+MossdeepCity_PokemonCenter_2F_Text_FightingType:
+	.string "At ease. My stance is always\n"
+	.string "at the ready, but I will not\l"
+	.string "attack you out of the blue.\p"
+	.string "Do you enjoy Fighting type Pokemon?\n"
+	.string "They are the only ones that\l"
+	.string "can keep up with my training regimen.\p"
+	.string "Their moves hit hard when super\n"
+	.string "effective, doing slightly more\l"
+	.string "damage than other types would\l"
+	.string "on a super effective hit.\l"
+	.string "That small boost can be the ticket\l"
+	.string "you need to pierce through\l"
+	.string "a stonewalling foe.$"
+
+MossdeepCity_PokemonCenter_2F_Text_Infatuation:
+	.string "Oh, to be a Pokemon in love...\n"
+	.string "they are so very clumsy when\l"
+	.string "they get Infatuated!\p"
+	.string "Moves like Attract can cause\n"
+	.string "the Infatuation status on\l"
+	.string "opposite-gender Pokemon.\l"
+	.string "When a Pokemon is in love, it will\l"
+	.string "have a 25 percent chance to choose\l"
+	.string "not to attack because of its love.\p"
+	.string "In addition, Infatuated Pokemon\n"
+	.string "take slightly more damage, and\l"
+	.string "deal slightly less damage.\l"
+	.string "They just can't bare to hurt the\l"
+	.string "ones that they adore!$"
+
 MossdeepCity_PokemonCenter_2F_Text_NamePhillipe:
 	.string "Phillipe$"
 

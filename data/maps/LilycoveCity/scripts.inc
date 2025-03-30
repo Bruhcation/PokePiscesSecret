@@ -102,6 +102,98 @@ LilycoveCity_EventScript_ColdMinesSouthSign::
 	msgbox LilycoveCity_Text_ColdMinesSouthSign, MSGBOX_SIGN
 	end
 
+LilycoveCity_EventScript_Lilycovian1::
+	msgbox LilycoveCity_Text_Lilycovian1, MSGBOX_NPC
+	end
+
+LilycoveCity_EventScript_Lilycovian2::
+	msgbox LilycoveCity_Text_Lilycovian2, MSGBOX_NPC
+	end
+
+LilycoveCity_EventScript_Lilycovian3::
+	msgbox LilycoveCity_Text_Lilycovian3, MSGBOX_NPC
+	end
+
+LilycoveCity_EventScript_Lilycovian4::
+	msgbox LilycoveCity_Text_Lilycovian4, MSGBOX_NPC
+	end
+
+LilycoveCity_EventScript_Lilycovian5::
+	msgbox LilycoveCity_Text_Lilycovian5, MSGBOX_NPC
+	end
+
+LilycoveCity_EventScript_Lilycovian6::
+	msgbox LilycoveCity_Text_Lilycovian6, MSGBOX_NPC
+	end
+
+LilycoveCity_EventScript_Lilycovian7::
+	msgbox LilycoveCity_Text_Lilycovian7, MSGBOX_NPC
+	end
+
+LilycoveCity_EventScript_Lilycovian8::
+	msgbox LilycoveCity_Text_Lilycovian8, MSGBOX_NPC
+	end
+
+LilycoveCity_Text_Lilycovian1:
+	.string "Yeah, I'm an Ozone Member!\n"
+	.string "And I am proud of it!\p"
+	.string "My teammates and I all use\n"
+	.string "weather based teams! So you'd\l"
+	.string "better prepare for some sun,\l"
+	.string "or hail, or the like whenever\l"
+	.string "one of us is itching to battle.$"
+
+LilycoveCity_Text_Lilycovian2:
+	.string "Grown-ups STINK! Never again will\n"
+	.string "my mommy tell me to put on sunscreen!\p"
+	.string "(This child's face and arms are so\n"
+	.string "incredibly, incomprehensibly red.)$"
+
+LilycoveCity_Text_Lilycovian3:
+	.string "Lilycove City is definitely not\n"
+	.string "starved for choice when it comes\l"
+	.string "to landmark buildings, mmm?\p"
+	.string "The Museum, the Battle Studio,\n"
+	.string "the Ozone HQ... so much to\l"
+	.string "see in one day!$"
+
+LilycoveCity_Text_Lilycovian4:
+	.string "I just evolved my Kodough\n"
+	.string "into a Slickslice! It's quite\l"
+	.string "the adorable little guy.\p"
+	.string "I hear some trainers evolve\n"
+	.string "Slickslice further into some\l"
+	.string "kind of burnt toast Pokemon.\l"
+	.string "But it looks like the poor guy\l"
+	.string "gets charred! I would feel bad!$"
+
+LilycoveCity_Text_Lilycovian5:
+	.string "Cleaning up the Ozone offices\n"
+	.string "is rather interesting. I feel\l"
+	.string "like I've learned more about the\l"
+	.string "weather peeking through their trash\l"
+	.string "than I had in 16 years of school.$"
+
+LilycoveCity_Text_Lilycovian6:
+	.string "That artist, Phillipe, is\n"
+	.string "quite eccentric. But you know\l"
+	.string "what they say, eccentric people\l"
+	.string "make for great artists!$"
+
+LilycoveCity_Text_Lilycovian7:
+	.string "I just got down from the slopes\n"
+	.string "at Arctaiga Road! The snowfall\l"
+	.string "has been great this year!$"
+
+LilycoveCity_Text_Lilycovian8:
+	.string "Ayyyup. Nothin' much I've left\n"
+	.string "to do at my post today.\l"
+	.string "Time to start windin' down.\p"
+	.string "Maybe I'll drop by Briney's cabin.\n"
+	.string "What a stand-up guy. He'll\l"
+	.string "offer out rides on his boat\l"
+	.string "like they were Halloween candy.$"
+
 LilycoveCity_Text_LilycoveCitySign:
 	.string "LILYCOVE CITY\n"
 	.string "A lively hub by the ocean!$"

@@ -77,6 +77,34 @@ SootopolisCity_Mart_EventScript_NoMoreQuest::
 	release
 	end
 
+SootopolisCity_Mart_EventScript_CheckOldPlaces::
+    msgbox SootopolisCity_Mart_Text_CheckOldPlaces, MSGBOX_NPC
+    end
+
+SootopolisCity_Mart_EventScript_PurplinaLore::
+    msgbox SootopolisCity_Mart_Text_PurplinaLore, MSGBOX_NPC
+    end
+
+SootopolisCity_Mart_Text_CheckOldPlaces:
+	.string "Since I have access to the Fly\n"
+	.string "field move now, I have been meaning\l"
+	.string "to revisit some of the older\l"
+	.string "towns in my journey that I have not\l"
+	.string "been back to in some time.\l"
+	.string "I may find things I did not on\l"
+	.string "my first go-around.$"
+
+SootopolisCity_Mart_Text_PurplinaLore:
+	.string "That Purplina girl just really\n"
+	.string "likes her alone time.\l"
+	.string "I try to pester her to give\l"
+	.string "me some gossip, but she never budges.\p"
+	.string "Only tidbit I ever wrung outta her\n"
+	.string "was that the little charm on her\l"
+	.string "phone was given to her by the head\l"
+	.string "manager of Hoenn's Pokemon Centers.\l"
+	.string "Strange connection, huh?$"
+
 SootopolisCity_Mart_Text_NamePhillipe:
 	.string "Phillipe$"
 

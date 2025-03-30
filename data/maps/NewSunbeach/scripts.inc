@@ -72,6 +72,58 @@ NewSunbeach_EventScript_AlreadyGaveLeadersCrest::
 	release
 	end
 
+NewSunbeach_EventScript_MiscTuber1::
+    msgbox NewSunbeach_Text_MiscTuber1, MSGBOX_NPC
+    end
+
+NewSunbeach_EventScript_MiscTuber2::
+    msgbox NewSunbeach_Text_MiscTuber2, MSGBOX_NPC
+    end
+
+NewSunbeach_EventScript_MiscTuber3::
+    msgbox NewSunbeach_Text_MiscTuber3, MSGBOX_NPC
+    end
+
+NewSunbeach_EventScript_MiscTuber4::
+    msgbox NewSunbeach_Text_MiscTuber4, MSGBOX_NPC
+    end
+
+NewSunbeach_EventScript_ScaredAdult::
+    msgbox NewSunbeach_Text_ScaredAdult, MSGBOX_NPC
+    end
+
+NewSunbeach_Text_MiscTuber1:
+	.string "Hey, you're a kid, too!\n"
+	.string "Isn't this great!?\p"
+	.string "Wait... you're not a kid...\n"
+	.string "you're a TEENAGER!\l"
+	.string "Blech! The only thing worse\l"
+	.string "than a grown-up!$"
+
+NewSunbeach_Text_MiscTuber2:
+	.string "Between you and me... I turn\n"
+	.string "thirteen in a month.\l"
+	.string "And when that happens, everyone's\l"
+	.string "gonna turn on me!$"
+
+NewSunbeach_Text_MiscTuber3:
+	.string "Our conquest will not stop here!\n"
+	.string "Sunbeach Strait today,\l"
+	.string "all of Hoenn tomorrow!$"
+
+NewSunbeach_Text_MiscTuber4:
+	.string "Four years ago, an adult\n"
+	.string "told me I had big ears.\p"
+	.string "Needless to say, I will not\n"
+	.string "let a single one live today.\l"
+	.string "I will have vengeance.$"
+
+NewSunbeach_Text_ScaredAdult:
+	.string "Oh, man, when my wife hears\n"
+	.string "about why I didn't come home\l"
+	.string "on time... she'll never treat\l"
+	.string "me seriously again!$"
+
 NewSunbeach_Text_BeautyOfBlades:
 	.string "You have come all the way\n"
 	.string "to the Sunset Palm, stranger?\p"

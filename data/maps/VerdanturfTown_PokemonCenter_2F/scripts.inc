@@ -77,6 +77,41 @@ VerdanturfTown_PokemonCenter_2F_EventScript_NoMoreQuest::
 	release
 	end
 
+VerdanturfTown_PokemonCenter_2F_EventScript_Blooming::
+    msgbox VerdanturfTown_PokemonCenter_2F_Text_Blooming, MSGBOX_NPC
+    end
+
+VerdanturfTown_PokemonCenter_2F_EventScript_TotemPokemon::
+    msgbox VerdanturfTown_PokemonCenter_2F_Text_TotemPokemon, MSGBOX_NPC
+    end
+
+VerdanturfTown_PokemonCenter_2F_Text_Blooming:
+	.string "I love using Grass types! And\n"
+	.string "I love making them Bloom!\p"
+	.string "When Pokemon Bloom, they do so for\n"
+	.string "3 turns, and they heal a lil' every\l"
+	.string "one of those turns. And! They'll\l"
+	.string "get access to all sorts of bonus\l"
+	.string "effects for all Grass type moves!\p"
+	.string "Horn Leech will also lower defense!\n"
+	.string "Seed Bomb will also inflict\l"
+	.string "Leech Seed's effect!\l"
+	.string "Leaf Blade will always land\l"
+	.string "a critical hit!\p"
+	.string "Try it out with many things!\n$"
+
+VerdanturfTown_PokemonCenter_2F_Text_TotemPokemon:
+	.string "There are some particularly\n"
+	.string "strong Wild Pokemon out there\l"
+	.string "that truly power up to fight\l"
+	.string "you as an individual. People have\l"
+	.string "taken to calling them Totem Pokemon.\p"
+	.string "Totem Pokemon gain some stat boosts\n"
+	.string "at the start of a battle,\l"
+	.string "and they can't be caught or ran from.\l"
+	.string "They really try and put up\l"
+	.string "a good fight!$"
+
 VerdanturfTown_PokemonCenter_2F_Text_NamePhillipe:
 	.string "Phillipe$"
 

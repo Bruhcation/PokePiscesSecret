@@ -185,6 +185,15 @@ PrecipikeInteriors_EventScript_GaveSaltyTear::
 	release
 	end
 
+PrecipikeInteriors_EventScript_EggHusband::
+    msgbox PrecipikeInteriors_Text_EggHusband, MSGBOX_NPC
+    end
+
+PrecipikeInteriors_Text_EggHusband:
+	.string "How do you like your eggs in\n"
+	.string "the morning? I just like a\l"
+	.string "simple, clean omelette.$"
+
 PrecipikeInteriors_Text_NameSadFisher:
 	.string "Sad Fisher$"
 

@@ -116,7 +116,7 @@ SootopolisCity_PokemonCenter_1F_Text_SEAndSTAB:
 	.string "Moves work differently than ya??\l"
 	.string "may think? I did!\p"
 	.string "Super Effective Moves do like,\n"
-	.string "twice the damage they normally\n"
+	.string "twice the damage they normally\l"
 	.string "would when they hit an\l"
 	.string "opponent's weakness.\l"
 	.string "So, you'd think when hitting\l"

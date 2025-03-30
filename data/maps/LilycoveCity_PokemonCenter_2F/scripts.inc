@@ -104,6 +104,57 @@ LilycoveCity_PokemonCenter_2F_EventScript_WarpToShrine::
 	release
 	end
 
+LilycoveCity_PokemonCenter_2F_EventScript_CheckPP::
+    msgbox LilycoveCity_PokemonCenter_2F_Text_CheckPP, MSGBOX_NPC
+    end
+
+LilycoveCity_PokemonCenter_2F_EventScript_PurplinaBalls::
+    msgbox LilycoveCity_PokemonCenter_2F_Text_PurplinaBalls, MSGBOX_NPC
+    end
+
+LilycoveCity_PokemonCenter_2F_EventScript_Panic::
+    msgbox LilycoveCity_PokemonCenter_2F_Text_Panic, MSGBOX_NPC
+    end
+
+LilycoveCity_PokemonCenter_2F_Text_CheckPP:
+	.string "Have you been keeping a close eye\n"
+	.string "of the PP of the moves on\l"
+	.string "your Pokemon?\p"
+	.string "When you go on long treks, it can be\n"
+	.string "easy to lose track of how\l"
+	.string "much PP you are using.\l"
+	.string "Especially if your Pokemon have\l"
+	.string "gotten afflicted with the Panic\l"
+	.string "status, or have been targetted\l"
+	.string "by moves like Spite and Grudge.\p"
+	.string "Stock up on PP restoring items\n"
+	.string "like Ethers. Trust me, and\l"
+	.string "you will thank me someday.$"
+
+LilycoveCity_PokemonCenter_2F_Text_PurplinaBalls:
+	.string "I'm one of Purplina's few friends.\n"
+	.string "She keeps a tight circle.\p"
+	.string "I do know that she's grown fond\n"
+	.string "of seeing you in the centers,\l"
+	.string "even though she won't admit it\l"
+	.string "to your face.\p"
+	.string "Every time you complete a quest\n"
+	.string "for the artist, or get a new\l"
+	.string "gym badge, she stocks a new\l"
+	.string "type of ball. Isn't that nice?$"
+
+LilycoveCity_PokemonCenter_2F_Text_Panic:
+	.string "Don't panic about Panic!\n"
+	.string "The status, I mean.\p"
+	.string "When your Pokemon are Panicking,\n"
+	.string "not only do they have their\l"
+	.string "PP usage upped by 1, but they\l"
+	.string "also deal slightly less damage\l"
+	.string "than they normally would.\p"
+	.string "Get yourself a Ghost or Dark\n"
+	.string "type Pokemon... both of them\l"
+	.string "are immune to the status.$"
+
 LilycoveCity_PokemonCenter_2F_Text_NamePhillipe:
 	.string "Phillipe$"
 

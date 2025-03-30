@@ -64,6 +64,78 @@ LilycoveInteriors_EventScript_TradeCompleted::
 	release
 	end
 
+LilycoveInteriors_EventScript_LilyIntNPC1::
+    msgbox LilycoveInteriors_Text_LilyIntNPC1, MSGBOX_NPC
+    end
+
+LilycoveInteriors_EventScript_LilyIntNPC2::
+    msgbox LilycoveInteriors_Text_LilyIntNPC2, MSGBOX_NPC
+    end
+
+LilycoveInteriors_EventScript_LilyIntNPC3::
+    msgbox LilycoveInteriors_Text_LilyIntNPC3, MSGBOX_NPC
+    end
+
+LilycoveInteriors_EventScript_LilyIntNPC4::
+    msgbox LilycoveInteriors_Text_LilyIntNPC4, MSGBOX_NPC
+    end
+
+LilycoveInteriors_EventScript_LilyIntNPC5::
+    msgbox LilycoveInteriors_Text_LilyIntNPC5, MSGBOX_NPC
+    end
+
+LilycoveInteriors_EventScript_LilyIntNPC6::
+    msgbox LilycoveInteriors_Text_LilyIntNPC6, MSGBOX_NPC
+    end
+
+LilycoveInteriors_Text_LilyIntNPC1:
+	.string "I'm gonna try and get my legs\n"
+	.string "fully in shape to start hiking\l"
+	.string "the mountains around Arctaiga\l"
+	.string "Road! Yeah, I know you can just\l"
+	.string "travel through the Cold Mines\l"
+	.string "to get up there, but it feels\l"
+	.string "so much more impressive to hike it!$"
+
+LilycoveInteriors_Text_LilyIntNPC2:
+	.string "The three sisters who operate\n"
+	.string "the Pretty Petals Flower Shop\l"
+	.string "are my granddaughters.\l"
+	.string "I'm so very proud of how they\l"
+	.string "conduct themselves! Good on them\l"
+	.string "for starting their own business!$"
+
+LilycoveInteriors_Text_LilyIntNPC3:
+	.string "Grandmama, do you think I could\n"
+	.string "join the Pretty Petals girls?\l"
+	.string "I know I'm just their cousin,\l"
+	.string "but still... I-I could replace\l"
+	.string "Teala at the counter!$"
+
+LilycoveInteriors_Text_LilyIntNPC4:
+	.string "The people of Lilycove City\n"
+	.string "are in this vintage tech craze\l"
+	.string "recently. I don't mind at all!\l"
+	.string "Finally, my big, bulky radio\l"
+	.string "is hip and trendy again!$"
+
+LilycoveInteriors_Text_LilyIntNPC5:
+	.string "Hey. Wondering what I've been\n"
+	.string "playing? Well, it's a DS game called\l"
+	.string "From The Abyss. You create a\l"
+	.string "character and throw them into this\l"
+	.string "abyssal dimension with tons\l"
+	.string "of monsters. The combat is really\l"
+	.string "deeply customizable and pretty\l"
+	.string "fun to get the hang of.$"
+
+LilycoveInteriors_Text_LilyIntNPC6:
+	.string "Maybe I should aspire to join\n"
+	.string "Team Ozone? Their fashion sense\l"
+	.string "is decent, plus I'd be helping\l"
+	.string "the environment or whatever.\l"
+	.string "Sign me up, maybe?$"
+
 LilycoveInteriors_Text_NameBriney:
 	.string "Cpt. Briney$"
 

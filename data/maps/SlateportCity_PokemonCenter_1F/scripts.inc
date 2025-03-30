@@ -24,6 +24,16 @@ SlateportCity_PokemonCenter_1F_EventScript_Woman::
 	msgbox SlateportCity_PokemonCenter_1F_Text_TradedMonWithFriend, MSGBOX_NPC
 	end
 
+SlateportCity_PokemonCenter_1F_EventScript_Surf::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Surf, MSGBOX_NPC
+	end
+
+SlateportCity_PokemonCenter_1F_Text_Surf:
+	.string "If only I had the ability\n"
+	.string "to use the Surf field move...\l"
+	.string "getting around water would\l"
+	.string "become such a breeze!$"
+
 SlateportCity_PokemonCenter_1F_Text_RaiseDifferentTypesOfPokemon:
 	.string "Want a tip for battling?\p"
 	.string "I'd say it's raising different kinds\n"

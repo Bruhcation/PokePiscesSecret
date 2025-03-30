@@ -70,7 +70,7 @@ Route122_EventScript_RayBattleStart::
 
 Route122_EventScript_RayLeaves::
 	setmetatile 25, 19, METATILE_Snow_PunchedMan1, TRUE
-	setmetatile 26, 19, METATILE_Snow_PunchedMan2, TRUE
+	setmetatile 25, 20, METATILE_Snow_PunchedMan2, TRUE
 	setmetatile 26, 20, METATILE_Snow_PunchedMan3, FALSE
 	special DrawWholeMapView
 	delay 4
