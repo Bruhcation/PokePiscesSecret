@@ -362,6 +362,7 @@ static const struct TrainerMon sParty_PRemy[] = {
     .ev = TRAINER_PARTY_EVS(8, 8, 8, 8, 8, 8),
     .species = SPECIES_LUMELMO,
     .ability = ABILITY_DAZZLING,
+    .moves = {MOVE_EMBER, MOVE_THUNDER_SHOCK, MOVE_LEER, MOVE_THUNDER_WAVE},
     }
 };
 

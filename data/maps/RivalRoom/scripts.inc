@@ -14,6 +14,7 @@ RivalRoom_EventScript_BrineyOpening::
 	applymovement OBJ_EVENT_ID_PLAYER, RivalRoom_Movement_PlayerFaceBriney
 	setvar VAR_BIRCH_LAB_STATE, 2
 	setvar VAR_LITTLEROOT_INTRO_STATE, 1
+	setrespawn HEAL_LOCATION_PACIFIDLOG_TOWN
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	setflag FLAG_HIDE_BIRCH_AFTER_STARTER
