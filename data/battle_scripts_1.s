@@ -15177,7 +15177,7 @@ BattleScript_MonTookFutureAttack::
 	accuracycheck BattleScript_FutureAttackMiss, MOVE_FUTURE_SIGHT
 	goto BattleScript_FutureAttackAnimate
 BattleScript_CheckDoomDesireMiss::
-	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_DOOM_DESIRE, BattleScript_CheckDecimationMiss
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_DECIMATION, BattleScript_CheckDecimationMiss
 	accuracycheck BattleScript_FutureAttackMiss, MOVE_DOOM_DESIRE
 	goto BattleScript_FutureAttackAnimate
 BattleScript_CheckDecimationMiss::
@@ -15187,12 +15187,11 @@ BattleScript_FutureAttackAnimate::
 	damagecalc
 	adjustdamage
 	jumpifmovehadnoeffect BattleScript_DoFutureAttackResult
-	jumpifmove MOVE_FUTURE_SIGHT, BattleScript_FutureHitAnimFutureSight
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_FUTURE_SIGHT, BattleScript_FutureHitAnimFutureSight
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_DOOM_DESIRE, BattleScript_FutureHitAnimDoomDesire
 	playanimation BS_ATTACKER, B_ANIM_DECIMATION_HIT
 	goto BattleScript_DoFutureAttackHit
 BattleScript_FutureHitAnimDoomDesire::
-	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_DOOM_DESIRE, BattleScript_FutureHitAnimFutureSight
 	playanimation BS_ATTACKER, B_ANIM_DOOM_DESIRE_HIT
 	goto BattleScript_DoFutureAttackHit
 BattleScript_FutureHitAnimFutureSight::

@@ -1064,6 +1064,7 @@ gBattleAnims_Moves::
     .4byte Move_FIREBRAND
 	.4byte Move_LIGHTNING
 	.4byte Move_BABY_BLUES
+	.4byte Move_SIGHTSEER
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -1616,7 +1617,6 @@ Move_ASSURANCE::
 
 Move_EMBARGO::
 	loadspritegfx ANIM_TAG_FAIRY_LOCK_CHAINS
-	monbg ANIM_ATK_PARTNER
 	setalpha 8, 8
 	fadetobg BG_DARK
 	waitbgfadein
@@ -1631,7 +1631,6 @@ Move_EMBARGO::
 	createvisualtask AnimTask_VoltTackleBolt, 0x5, 0x6
 	createvisualtask AnimTask_VoltTackleBolt, 0x5, 0x35
 	waitforvisualfinish
-	clearmonbg ANIM_ATK_PARTNER
 	delay 1
 	restorebg
 	waitbgfadein
@@ -32204,6 +32203,7 @@ Move_PSYCHIC:
 	call UnsetPsychicBg
 	end
 
+Move_SIGHTSEER:
 Move_FUTURE_SIGHT:
 	goto FutureSight
 FutureSightContinue:

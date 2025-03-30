@@ -3450,7 +3450,7 @@ bool32 HandleWishPerishSongOnTurnEnd(void)
                 if (!IsBattlerAlive(battler))
                     continue;
 
-                if (gWishFutureKnock.futureSightMove[battler] == MOVE_FUTURE_SIGHT)
+                if (gWishFutureKnock.futureSightMove[battler] == MOVE_FUTURE_SIGHT || gWishFutureKnock.futureSightMove[battler] == MOVE_SIGHTSEER)
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FUTURE_SIGHT;
                 else if (gWishFutureKnock.futureSightMove[battler] == MOVE_DOOM_DESIRE)
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;
@@ -12538,7 +12538,7 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
         break;
     case ABILITY_ANALYTIC:
-        if (GetBattlerTurnOrderNum(battlerAtk) == gBattlersCount - 1 && move != MOVE_FUTURE_SIGHT && move != MOVE_DOOM_DESIRE)
+        if (GetBattlerTurnOrderNum(battlerAtk) == gBattlersCount - 1 && move != MOVE_FUTURE_SIGHT && move != MOVE_SIGHTSEER && move != MOVE_DOOM_DESIRE && move != MOVE_DOOM_DESIRE)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_TOUGH_CLAWS:

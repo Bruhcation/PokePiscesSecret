@@ -4312,19 +4312,25 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_FUTURE_SIGHT] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 140,
-            .accuracy = 100,
-            .pp = 10,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .power = 100,
-            .accuracy = 100,
-            .pp = 10,
-        #else
-            .power = 80,
-            .accuracy = 90,
-            .pp = 15,
-        #endif
+        .power = 140,
+        .accuracy = 100,
+        .pp = 10,
+        .effect = EFFECT_FUTURE_SIGHT,
+        .type = TYPE_PSYCHIC,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+    },
+
+    [MOVE_SIGHTSEER] =
+    {
+        .power = 70,
+        .accuracy = 100,
+        .pp = 15,
         .effect = EFFECT_FUTURE_SIGHT,
         .type = TYPE_PSYCHIC,
         .secondaryEffectChance = 0,

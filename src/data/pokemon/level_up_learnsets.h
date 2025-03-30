@@ -19299,7 +19299,7 @@ static const struct LevelUpMove sYagangranLevelUpLearnset[] = {
 
 static const struct LevelUpMove sPidiumLevelUpLearnset[] = {
     LEVEL_UP_MOVE(1, MOVE_GROWL),
-    LEVEL_UP_MOVE(1, MOVE_FUTURE_SIGHT),
+    LEVEL_UP_MOVE(1, MOVE_SIGHTSEER),
     LEVEL_UP_MOVE(5, MOVE_GUST),
     LEVEL_UP_MOVE(9, MOVE_PSYWAVE),
     LEVEL_UP_MOVE(13, MOVE_CONFUSION),
@@ -19317,11 +19317,13 @@ static const struct LevelUpMove sPidiumLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sMedgeonLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(0, MOVE_FUTURE_SIGHT),
     LEVEL_UP_MOVE(0, MOVE_DOOM_DESIRE),
+    LEVEL_UP_MOVE(1, MOVE_FUTURE_SIGHT),
     LEVEL_UP_MOVE(1, MOVE_DOOM_DESIRE),
     LEVEL_UP_MOVE(1, MOVE_GROWL),
-    LEVEL_UP_MOVE(1, MOVE_FUTURE_SIGHT),
-    LEVEL_UP_MOVE(1, MOVE_GUST),
+    LEVEL_UP_MOVE(1, MOVE_SIGHTSEER),
+    LEVEL_UP_MOVE(5, MOVE_GUST),
     LEVEL_UP_MOVE(9, MOVE_PSYWAVE),
     LEVEL_UP_MOVE(13, MOVE_CONFUSION),
     LEVEL_UP_MOVE(13, MOVE_MIND_READER),
