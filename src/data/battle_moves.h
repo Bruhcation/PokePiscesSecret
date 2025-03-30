@@ -6312,7 +6312,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
-        .argument = STATUS1_BLOOMING,
     },
 
     [MOVE_TAILWIND] =
@@ -7711,7 +7710,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
         .bitingMove = TRUE,
-        .argument = STATUS1_BLOOMING,
     },
 
     [MOVE_CHARGE_BEAM] =
@@ -8677,7 +8675,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .split = SPLIT_SPECIAL,
-        .argument = STATUS1_BLOOMING,
         .zMoveEffect = Z_EFFECT_NONE,
     },
 
@@ -8779,7 +8776,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .effect = EFFECT_BURN_HIT,
         .power = 100,
         .type = TYPE_FIRE,
-        .accuracy = 65,
+        .accuracy = 70,
         .pp = 5,
         .secondaryEffectChance = 100,
         .target = MOVE_TARGET_BOTH,
@@ -14828,7 +14825,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         #if B_UPDATED_MOVE_DATA >= GEN_5
             .priority = 2,
         #else
-            .priority = 1,
+            .priority = 2,
         #endif
         .effect = EFFECT_IGNA_STRIKE,
         .power = 80,

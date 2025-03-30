@@ -3767,15 +3767,22 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
             break;
         case CANCELLER_RECHARGE: // recharge
             if (gBattleMons[gBattlerAttacker].status2 & STATUS2_RECHARGE 
-            || gStatuses4[gBattlerAttacker] & STATUS4_RECHARGE_REDUCE 
-            || gStatuses4[gBattlerAttacker] & STATUS4_RECHARGE_BURN)
+            || gStatuses4[gBattlerAttacker] & STATUS4_RECHARGE_REDUCE)
             {
                 gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_RECHARGE;
                 gStatuses4[gBattlerAttacker] &= ~STATUS4_RECHARGE_REDUCE;
-                gStatuses4[gBattlerAttacker] &= ~STATUS4_RECHARGE_BURN;
                 gDisableStructs[gBattlerAttacker].rechargeTimer = 0;
                 CancelMultiTurnMoves(gBattlerAttacker);
                 gBattlescriptCurrInstr = BattleScript_MoveUsedMustRecharge;
+                gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
+                effect = 1;
+            }
+            else if (gStatuses4[gBattlerAttacker] & STATUS4_RECHARGE_BURN)
+            {
+                gStatuses4[gBattlerAttacker] &= ~STATUS4_RECHARGE_BURN;
+                gDisableStructs[gBattlerAttacker].rechargeTimer = 0;
+                CancelMultiTurnMoves(gBattlerAttacker);
+                gBattlescriptCurrInstr = BattleScript_MoveUsedMustRechargeBurn;
                 gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
                 effect = 1;
             }
@@ -11788,10 +11795,7 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
     if ((gFieldStatuses & STATUS_FIELD_GRAVITY) && (move == MOVE_PSYCHIC))
         basePower = 100;
 
-    if ((move == MOVE_CANNONADE) && (gBattleMons[gBattlerAttacker].hp <= (gBattleMons[gBattlerAttacker].maxHP / 4)))
-        basePower = 150;
-
-    if (DoBattlersShareType(gBattlerAttacker, gBattlerTarget) && (move == MOVE_SYNCHRONOISE))
+    if (DoBattlersShareType(battlerAtk, battlerDef) && (move == MOVE_SYNCHRONOISE))
         basePower *= 2;
 
     if (move == MOVE_COLD_SNAP && weather & B_WEATHER_HAIL)
@@ -11807,6 +11811,10 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         break;
     case EFFECT_FLING:
         basePower = GetFlingPowerFromItemId(gBattleMons[battlerAtk].item);
+        break;
+    case EFFECT_CANNONADE:
+        if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 4))
+        basePower = 150;
         break;
     case EFFECT_ERUPTION:
         basePower = gBattleMons[battlerAtk].hp * basePower / gBattleMons[battlerAtk].maxHP;
@@ -11950,10 +11958,10 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         break;
     case EFFECT_UPPER_HAND:
     {
-        if (GetBattlerTurnOrderNum(gBattlerAttacker) > GetBattlerTurnOrderNum(gBattlerTarget)
-         || gChosenMoveByBattler[gBattlerTarget] == MOVE_NONE
-         || IS_MOVE_STATUS(gChosenMoveByBattler[gBattlerTarget])
-         || GetChosenMovePriority(gBattlerTarget) < 1) // Fails if priority is less than 1 or greater than 3, if target already moved, or if using a status
+        if (GetBattlerTurnOrderNum(battlerAtk) > GetBattlerTurnOrderNum(battlerDef)
+         || gChosenMoveByBattler[battlerDef] == MOVE_NONE
+         || IS_MOVE_STATUS(gChosenMoveByBattler[battlerDef])
+         || GetChosenMovePriority(battlerDef) < 1) // Fails if priority is less than 1 or greater than 3, if target already moved, or if using a status
             basePower = 30;
         else
             basePower = 70;
@@ -13308,24 +13316,24 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
     }
 
     // Self-destruct / Explosion cut defense by 1/4
-    if (gCurrentMove == MOVE_EXPLOSION || gCurrentMove == MOVE_SELF_DESTRUCT || gCurrentMove == MOVE_BLOW_UP
-        || (gCurrentMove == MOVE_DOUBLE_SHOCK && (gStatuses4[gBattlerAttacker] & STATUS4_SUPERCHARGED) && (gStatuses4[gBattlerAttacker] & STATUS4_GEARED_UP)))
+    if (move == MOVE_EXPLOSION || move == MOVE_SELF_DESTRUCT || move == MOVE_BLOW_UP
+        || (move == MOVE_DOUBLE_SHOCK && (gStatuses4[battlerAtk] & STATUS4_SUPERCHARGED) && (gStatuses4[battlerAtk] & STATUS4_GEARED_UP)))
     {
-        defStat *= 0.75;
+        defStat = defStat * 3 / 4;
     }
 
-    if ((gCurrentMove == MOVE_CANNONADE) && (gBattleMons[gBattlerAttacker].hp <= (gBattleMons[gBattlerAttacker].maxHP / 4)))
+    if ((move == MOVE_CANNONADE) && (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 4)))
     {
         defStat = spDef;
         defStage = gBattleMons[battlerDef].statStages[STAT_SPDEF];
-        defStat *= 0.75;
+        defStat = defStat * 3 / 4;
     }
 
-    if (gCurrentMove == MOVE_FINAL_SHRIEK || gCurrentMove == MOVE_JUMP_N_POP)
+    if (move == MOVE_FINAL_SHRIEK || move == MOVE_JUMP_N_POP)
     {
         defStat = spDef;
         defStage = gBattleMons[battlerDef].statStages[STAT_SPDEF];
-        defStat *= 0.75;
+        defStat = defStat * 3 / 4;
     }
 
     // freeze status cuts defense in half
@@ -13341,7 +13349,7 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
         defStat *= 3;
     }
 
-    if (gBattleMoves[gCurrentMove].effect == EFFECT_FUTURE_SIGHT && gCurrentMove != MOVE_DECIMATION)
+    if (gBattleMoves[move].effect == EFFECT_FUTURE_SIGHT && move != MOVE_DECIMATION)
     {
         defStat = spDef;
         defStat /= 2;
@@ -13359,13 +13367,13 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
     if (defStage > DEFAULT_STAT_STAGE && atkAbility == ABILITY_DRACO_FORCE && gBattleStruct->dynamicMoveType == (TYPE_DRAGON | F_DYNAMIC_TYPE_2))
         defStage = DEFAULT_STAT_STAGE;
     // certain moves also ignore stat changes
-    if (gCurrentMove == MOVE_RAZING_SUN && gDisableStructs[battlerAtk].daybreakCounter > 0 && defStage > DEFAULT_STAT_STAGE)
+    if (move == MOVE_RAZING_SUN && gDisableStructs[battlerAtk].daybreakCounter > 0 && defStage > DEFAULT_STAT_STAGE)
         defStage = DEFAULT_STAT_STAGE;
     if (gBattleMoves[move].ignoresTargetDefenseEvasionStages && defStage > DEFAULT_STAT_STAGE)
         defStage = DEFAULT_STAT_STAGE;
-    if (gCurrentMove == MOVE_BULLET_SEED && defStage > DEFAULT_STAT_STAGE && gBattleMons[gBattlerAttacker].status1 & STATUS1_BLOOMING)
+    if (move == MOVE_BULLET_SEED && defStage > DEFAULT_STAT_STAGE && gBattleMons[battlerAtk].status1 & STATUS1_BLOOMING)
         defStage = DEFAULT_STAT_STAGE;
-    if (defStage > DEFAULT_STAT_STAGE && gCurrentMove == MOVE_AURA_SPHERE)
+    if (defStage > DEFAULT_STAT_STAGE && move == MOVE_AURA_SPHERE)
         defStage = DEFAULT_STAT_STAGE;
 
     defStat *= gStatStageRatios[defStage][0];
@@ -13876,7 +13884,7 @@ static inline uq4_12_t GetCollisionCourseElectroDriftModifier(u32 move, uq4_12_t
         return UQ_4_12(1.3333);
     if ((gBattleMoves[move].effect == EFFECT_GIANTS_SPEAR) && typeEffectivenessModifier >= UQ_4_12(2.0))
         return UQ_4_12(1.3333);
-    if ((gCurrentMove == MOVE_RAILGUN) && typeEffectivenessModifier >= UQ_4_12(2.0))
+    if ((move == MOVE_RAILGUN) && typeEffectivenessModifier >= UQ_4_12(2.0))
         return UQ_4_12(1.3333);
     return UQ_4_12(1.0);
 }
@@ -13889,7 +13897,7 @@ static inline uq4_12_t GetPoisonTailModifier(u32 move, bool32 isCrit)
 }
 static inline uq4_12_t GetBenthicWhipModifier(u32 move, uq4_12_t typeEffectivenessModifier)
 {
-    if (gCurrentMove == MOVE_BENTHIC_WHIP && (typeEffectivenessModifier < UQ_4_12(1.0)))
+    if (move == MOVE_BENTHIC_WHIP && (typeEffectivenessModifier < UQ_4_12(1.0)))
         return UQ_4_12(2.5);
     return UQ_4_12(1.0);
 }
@@ -14503,15 +14511,15 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
         mod = UQ_4_12(1.0);
     if (gBattleMoves[move].effect == EFFECT_PLASMA_CUTTER && defType == TYPE_GROUND)
         mod = UQ_4_12(1.0);
-    if (gCurrentMove == MOVE_BREAK_LANCE && mod > UQ_4_12(0.0) && mod <= UQ_4_12(0.5))
+    if (move == MOVE_BREAK_LANCE && mod > UQ_4_12(0.0) && mod <= UQ_4_12(0.5))
         mod = UQ_4_12(1.0);
     if (gBattleMoves[move].effect == EFFECT_BEATBOX && defType == TYPE_GHOST)
         mod = UQ_4_12(1.0);
     if (gBattleMoves[move].effect == EFFECT_SOLAR_FLARE && defType == TYPE_DARK)
         mod = UQ_4_12(2.0);
-    if (gCurrentMove == MOVE_HEAT_SINK && defType == TYPE_FIRE)
+    if (move == MOVE_HEAT_SINK && defType == TYPE_FIRE)
         mod = UQ_4_12(2.0);
-    if (gCurrentMove == MOVE_EVAPORATE && defType == TYPE_WATER)
+    if (move == MOVE_EVAPORATE && defType == TYPE_WATER)
         mod = UQ_4_12(2.0);
     if (gBattleMoves[move].effect == EFFECT_EXORCISM && defType == TYPE_GHOST)
         mod = UQ_4_12(2.0);
@@ -14529,22 +14537,24 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
         mod = UQ_4_12(2.0);
     if (gBattleMoves[move].effect == EFFECT_FALSE_SWIPE)
         mod = UQ_4_12(1.0);
-    if (gCurrentMove == MOVE_MASS_DESTRUCTION && (defType == TYPE_NORMAL || defType == TYPE_FIGHTING))
+    if (move == MOVE_MASS_DESTRUCTION && (defType == TYPE_NORMAL || defType == TYPE_FIGHTING))
         mod = UQ_4_12(2.0);
-    if (gCurrentMove == MOVE_PURGE_RAY && (defType == TYPE_DARK || defType == TYPE_POISON))
+    if (move == MOVE_PURGE_RAY && (defType == TYPE_DARK || defType == TYPE_POISON))
         mod = UQ_4_12(2.0);
-    if (gCurrentMove == MOVE_DIFFUSE_WAVE && (defType == TYPE_FIRE || defType == TYPE_ELECTRIC))
+    if (move == MOVE_DIFFUSE_WAVE && (defType == TYPE_FIRE || defType == TYPE_ELECTRIC))
         mod = UQ_4_12(2.0);
     if (gBattleMoves[move].effect == EFFECT_SKY_SPLITTER && defType == TYPE_FLYING)
         mod = UQ_4_12(2.0);
-    if (gCurrentMove == MOVE_VAPORIZE && (defType == TYPE_ICE || defType == TYPE_WATER))
+    if (move == MOVE_VAPORIZE && (defType == TYPE_ICE || defType == TYPE_WATER))
         mod = UQ_4_12(2.0);
     if (moveType == TYPE_GROUND && defType == TYPE_FLYING && IsBattlerGrounded(battlerDef) && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);
     if (moveType == TYPE_POISON && (defType == TYPE_POISON || defType == TYPE_STEEL) && GetBattlerAbility(battlerAtk) == ABILITY_CORROSION)
         mod = UQ_4_12(2.0);
-    if (gCurrentMove == MOVE_SCORP_FANG && (defType == TYPE_POISON || defType == TYPE_STEEL))
+    if (move == MOVE_SCORP_FANG && (defType == TYPE_POISON || defType == TYPE_STEEL))
         mod = UQ_4_12(1.0);
+    if (move == MOVE_CHROMA_BEAM)
+        mod = UQ_4_12(2.0);
 
     // B_WEATHER_STRONG_WINDS weakens Super Effective moves against Flying-type Pok?mon
     if (gBattleWeather & B_WEATHER_STRONG_WINDS && WEATHER_HAS_EFFECT)
@@ -14559,13 +14569,6 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
         if (recordAbilities)
             RecordAbilityBattle(battlerDef, GetBattlerAbility(battlerDef));
     }
-
-    if (gCurrentMove == MOVE_CHROMA_BEAM && mod <= UQ_4_12(1.0))
-        mod = UQ_4_12(2.0);
-    else if (gCurrentMove == MOVE_CHROMA_BEAM && mod <= UQ_4_12(2.0))
-        mod = UQ_4_12(3.0);
-    else if (gCurrentMove == MOVE_CHROMA_BEAM && mod <= UQ_4_12(3.0))
-        mod = UQ_4_12(4.0);
 
     *modifier = uq4_12_multiply(*modifier, mod);
 

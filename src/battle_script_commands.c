@@ -1507,7 +1507,7 @@ static void Cmd_attackcanceler(void)
         gProtectStructs[gBattlerAttacker].touchedProtectLike = TRUE;
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
-    else if (gStatuses4[gBattlerTarget] & STATUS4_RECHARGE_BURN && IsMoveMakingContact(gCurrentMove, gBattlerAttacker))
+    else if (gStatuses4[gBattlerTarget] & STATUS4_RECHARGE_BURN && IsMoveMakingContact(gCurrentMove, gBattlerAttacker) && gDisableStructs[gBattlerTarget].rechargeTimer == 1)
     {
         gProtectStructs[gBattlerAttacker].touchedProtectLike = TRUE;
         gBattlescriptCurrInstr = cmd->nextInstr;
@@ -1641,31 +1641,31 @@ static bool32 AccuracyCalcHelper(u16 move)
             JumpIfMoveFailed(7, move);
             return TRUE;
         }
-        else if ((IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_HAIL) && gCurrentMove == MOVE_BLEAKWIND_STORM))
+        else if ((IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_HAIL) && move == MOVE_BLEAKWIND_STORM))
         {
             // razor storm ignore acc checks in sand unless target is holding utility umbrella
             JumpIfMoveFailed(7, move);
             return TRUE;
         }
-        else if ((IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SUN) && gCurrentMove == MOVE_SPRINGTIDE_STORM))
+        else if ((IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SUN) && move == MOVE_SPRINGTIDE_STORM))
         {
             // razor storm ignore acc checks in sand unless target is holding utility umbrella
             JumpIfMoveFailed(7, move);
             return TRUE;
         }
-        else if ((IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SANDSTORM) && gCurrentMove == MOVE_SANDSEAR_STORM))
+        else if ((IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SANDSTORM) && move == MOVE_SANDSEAR_STORM))
         {
             // razor storm ignore acc checks in sand unless target is holding utility umbrella
             JumpIfMoveFailed(7, move);
             return TRUE;
         }
-        else if ((IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_RAIN) && gCurrentMove == MOVE_WILDBOLT_STORM))
+        else if ((IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_RAIN) && move == MOVE_WILDBOLT_STORM))
         {
             // razor storm ignore acc checks in sand unless target is holding utility umbrella
             JumpIfMoveFailed(7, move);
             return TRUE;
         }
-        else if ((IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SANDSTORM) && gCurrentMove == MOVE_RAZOR_BEAM))
+        else if ((IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SANDSTORM) && move == MOVE_RAZOR_BEAM))
         {
             // razor storm ignore acc checks in sand unless target is holding utility umbrella
             JumpIfMoveFailed(7, move);
@@ -1719,7 +1719,7 @@ static bool32 AccuracyCalcHelper(u16 move)
         return TRUE;
     }
 
-    if (gCurrentMove == MOVE_ODD_STEP && (gBattleMons[gBattlerTarget].status1 & STATUS1_PANIC || gBattleMons[gBattlerTarget].status2 & STATUS2_CONFUSION))
+    if (move == MOVE_ODD_STEP && (gBattleMons[gBattlerTarget].status1 & STATUS1_PANIC || gBattleMons[gBattlerTarget].status2 & STATUS2_CONFUSION))
     {
         JumpIfMoveFailed(7, move);
         return TRUE;
@@ -1758,13 +1758,13 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         evasionStage = DEFAULT_STAT_STAGE;
     if (gBattleMoves[move].ignoresTargetDefenseEvasionStages && evasionStage > DEFAULT_STAT_STAGE)
         evasionStage = DEFAULT_STAT_STAGE;
-    if (gCurrentMove == MOVE_RAZING_SUN && gDisableStructs[battlerAtk].daybreakCounter > 0 && evasionStage > DEFAULT_STAT_STAGE)
+    if (move == MOVE_RAZING_SUN && gDisableStructs[battlerAtk].daybreakCounter > 0 && evasionStage > DEFAULT_STAT_STAGE)
         evasionStage = DEFAULT_STAT_STAGE;
     if (evasionStage > DEFAULT_STAT_STAGE && atkAbility == ABILITY_DRACO_FORCE && gBattleStruct->dynamicMoveType == (TYPE_DRAGON | F_DYNAMIC_TYPE_2) && evasionStage > DEFAULT_STAT_STAGE)
         evasionStage = DEFAULT_STAT_STAGE;
-    if (gCurrentMove == MOVE_BULLET_SEED && gBattleMons[battlerAtk].status1 & STATUS1_BLOOMING && evasionStage > DEFAULT_STAT_STAGE)
+    if (move == MOVE_BULLET_SEED && gBattleMons[battlerAtk].status1 & STATUS1_BLOOMING && evasionStage > DEFAULT_STAT_STAGE)
         evasionStage = DEFAULT_STAT_STAGE;
-    if (evasionStage > DEFAULT_STAT_STAGE && gCurrentMove == MOVE_AURA_SPHERE && evasionStage > DEFAULT_STAT_STAGE)
+    if (evasionStage > DEFAULT_STAT_STAGE && move == MOVE_AURA_SPHERE && evasionStage > DEFAULT_STAT_STAGE)
         evasionStage = DEFAULT_STAT_STAGE;
     if ((defAbility == ABILITY_UNAWARE || atkAbility == ABILITY_IGNORANT_BLISS) && accStage > DEFAULT_STAT_STAGE)
         accStage = DEFAULT_STAT_STAGE;
@@ -1772,7 +1772,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         accStage = DEFAULT_STAT_STAGE;
     if (accStage < DEFAULT_STAT_STAGE && atkAbility == ABILITY_AQUA_HEART && gBattleStruct->dynamicMoveType == (TYPE_WATER | F_DYNAMIC_TYPE_2))
         accStage = DEFAULT_STAT_STAGE;
-    if (accStage < DEFAULT_STAT_STAGE && gCurrentMove == MOVE_AURA_SPHERE)
+    if (accStage < DEFAULT_STAT_STAGE && move == MOVE_AURA_SPHERE)
         accStage = DEFAULT_STAT_STAGE;
 
     if (gBattleMons[battlerDef].status2 & STATUS2_FORESIGHT || gStatuses3[battlerDef] & STATUS3_MIRACLE_EYED)
@@ -17767,7 +17767,7 @@ static void Cmd_curestatuswithmove(void)
 
     if (gBattleMoves[gCurrentMove].effect == EFFECT_AMNESIA)
         shouldHeal = gBattleMons[battler].status1 & STATUS1_PANIC;
-    else if (gBattleMoves[gCurrentMove].effect == EFFECT_FLEUR_CANNON || gBattleMoves[gCurrentMove].effect == EFFECT_THIRD_TYPE || gBattleMoves[gCurrentMove].effect == EFFECT_WOOD_HAMMER)
+    else if (gBattleMoves[gCurrentMove].effect == EFFECT_INCINERATE || gCurrentMove == MOVE_PLUCK || gCurrentMove == MOVE_BUG_BITE || gBattleMoves[gCurrentMove].effect == EFFECT_FLEUR_CANNON || gBattleMoves[gCurrentMove].effect == EFFECT_THIRD_TYPE || gBattleMoves[gCurrentMove].effect == EFFECT_WOOD_HAMMER)
         shouldHeal = gBattleMons[battler].status1 & STATUS1_BLOOMING;
     else if (gBattleMoves[gCurrentMove].effect == EFFECT_ZEN_HEADBUTT)
         shouldHeal2 = gBattleMons[battler].status2 & STATUS2_TORMENT || gBattleMons[battler].status2 & STATUS2_CONFUSION || gDisableStructs[battler].tauntTimer != 0;

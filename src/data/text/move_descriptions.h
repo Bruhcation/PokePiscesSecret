@@ -2294,9 +2294,9 @@ static const u8 sMagmaStormDescription[] = _(
     "damage for 4 or 5 turns.");
 
 static const u8 sDarkVoidDescription[] = _(
-    "Opposing Pokémon are put to\n"
-    "sleep. Boosts accuracy based on\n"
-    "the user's stat drops.");
+    "Foes are put to sleep. Its\n"
+    "accuracy is boosted based on the\n"
+    "user's and foe's stat drops.");
 
 static const u8 sSeedFlareDescription[] = _(
     "May harshly lower the foe's\n"
@@ -2802,8 +2802,8 @@ static const u8 sPhantomForceDescription[] = _(
     "Becomes better with Phantom.");
 
 static const u8 sNobleRoarDescription[] = _(
-    "A move that hits first, makes\n"
-    "foes flinch, and drops their Spd.\n"
+    "A move that hits first, flinches\n"
+    "everyone, and drops their Speed.\n"
     "Works only on the first turn.");
 
 static const u8 sIonDelugeDescription[] = _(
@@ -3606,9 +3606,9 @@ static const u8 sSkitterSmackDescription[] = _(
     "the foe's Sp. Atk stat.");
 
 static const u8 sBurningJealousyDescription[] = _(
-    "If a foe has a stat boost makes\n"
-    "both foes burned and incapable\n"
-    "of using moves in succession.");
+    "Foes with 2 or more stat boosts\n"
+    "become burned and incapable of\n"
+    "using moves in succession.");
 
 static const u8 sLashOutDescription[] = _(
     "Boosted if the user has a stat\n"
