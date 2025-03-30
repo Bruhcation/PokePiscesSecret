@@ -2311,7 +2311,7 @@ static const u8 sOminousWindDescription[] = _(
 static const u8 sShadowForceDescription[] = _(
     "The user disappears and then\n"
     "attacks. Ignores protection.\n"
-    "Becomes better with Phantom.");
+    "Boosted with Phantom.");
 
 static const u8 sHoneClawsDescription[] = _(
     "The user sharpens its claws to\n"

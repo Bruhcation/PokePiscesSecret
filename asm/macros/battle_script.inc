@@ -1750,10 +1750,6 @@
 	various \battler, VARIOUS_TRY_ACTIVATE_STAR_ASSAULT
 	.endm
 
-	.macro tryactivateshadowforce battler:req
-	various \battler, VARIOUS_TRY_ACTIVATE_SHADOW_FORCE
-	.endm
-
 	.macro playmoveanimation battler:req, move:req
 	various \battler, VARIOUS_PLAY_MOVE_ANIMATION
 	.2byte \move

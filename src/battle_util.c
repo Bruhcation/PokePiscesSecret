@@ -4835,7 +4835,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         case ABILITY_STARS_GRACE:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
-                gDisableStructs[battler].slowStartTimer = 3;
+                gDisableStructs[battler].slowStartTimer = 4;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_STARSGRACE;
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                 BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
@@ -12135,7 +12135,7 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         break;
     case EFFECT_SHADOW_FORCE:
         if (gStatuses4[battlerAtk] & STATUS4_PHANTOM)
-            basePower = 150;
+            basePower = 160;
         break;
     case EFFECT_HEAVY_CANNON:
         if (gBattleMons[battlerAtk].statStages[STAT_DEF] > DEFAULT_STAT_STAGE || gBattleMons[battlerAtk].statStages[STAT_SPDEF] > DEFAULT_STAT_STAGE)
@@ -13860,21 +13860,24 @@ static inline uq4_12_t GetAirborneModifier(u32 move, u32 battlerDef)
 static inline uq4_12_t GetScreensModifier(u32 move, u32 battlerAtk, u32 battlerDef, bool32 isCrit, u32 abilityAtk)
 {
     u32 sideStatus = gSideStatuses[GetBattlerSide(battlerDef)];
-    u32 sideStatusAtk = gSideStatuses[GetBattlerSide(battlerAtk)];
     bool32 lightScreen = (sideStatus & SIDE_STATUS_LIGHTSCREEN) && IS_MOVE_SPECIAL(move);
     bool32 reflect = (sideStatus & SIDE_STATUS_REFLECT) && IS_MOVE_PHYSICAL(move);
     bool32 auroraVeil = sideStatus & SIDE_STATUS_AURORA_VEIL;
     bool32 googooScreenDef = sideStatus & SIDE_STATUS_GOOGOO_SCREEN;
-    bool32 googooScreenAtk = sideStatusAtk & SIDE_STATUS_GOOGOO_SCREEN;
 
-    if (googooScreenAtk)
-        return UQ_4_12(1.3);
     if (isCrit || abilityAtk == ABILITY_INFILTRATOR || IS_BATTLER_OF_TYPE(battlerAtk, TYPE_BUG) || gProtectStructs[battlerAtk].confusionSelfDmg)
         return UQ_4_12(1.0);
-    if (googooScreenDef)
-        return (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) ? UQ_4_12(0.7) : UQ_4_12(0.7);
     if (reflect || lightScreen || auroraVeil)
         return (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) ? UQ_4_12(0.667) : UQ_4_12(0.5);
+    else if (googooScreenDef)
+        return UQ_4_12(0.7);
+    return UQ_4_12(1.0);
+}
+
+static inline uq4_12_t GetGooGooScreenModifier(u32 battlerAtk)
+{
+    if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_GOOGOO_SCREEN)
+        return UQ_4_12(1.3);
     return UQ_4_12(1.0);
 }
 
@@ -14179,6 +14182,7 @@ static inline uq4_12_t GetOtherModifiers(u32 move, u32 moveType, u32 battlerAtk,
     DAMAGE_MULTIPLY_MODIFIER(GetDaybreakAttackerModifier(battlerAtk));
     DAMAGE_MULTIPLY_MODIFIER(GetAirborneModifier(move, battlerDef));
     DAMAGE_MULTIPLY_MODIFIER(GetScreensModifier(move, battlerAtk, battlerDef, isCrit, abilityAtk));
+    DAMAGE_MULTIPLY_MODIFIER(GetGooGooScreenModifier(battlerAtk));
     DAMAGE_MULTIPLY_MODIFIER(GetCollisionCourseElectroDriftModifier(move, typeEffectivenessModifier));
     DAMAGE_MULTIPLY_MODIFIER(GetPoisonTailModifier(move, isCrit));
     DAMAGE_MULTIPLY_MODIFIER(GetBenthicWhipModifier(move, typeEffectivenessModifier));

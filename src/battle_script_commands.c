@@ -1582,6 +1582,20 @@ static bool8 JumpIfMoveAffectedByProtect(u16 move)
     return affected;
 }
 
+static bool32 HasAttackerFaintedTarget(void)
+{
+    if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+        && gBattleMoves[gCurrentMove].power != 0
+        && (gLastHitBy[gBattlerTarget] == 0xFF || gLastHitBy[gBattlerTarget] == gBattlerAttacker)
+        && gBattleStruct->moveTarget[gBattlerAttacker] == gBattlerTarget
+        && gBattlerTarget != gBattlerAttacker
+        && gCurrentTurnActionNumber == GetBattlerTurnOrderNum(gBattlerAttacker)
+        && (gChosenMove == gChosenMoveByBattler[gBattlerAttacker] || gChosenMove == gBattleMons[gBattlerAttacker].moves[gChosenMovePos]))
+        return TRUE;
+    else
+        return FALSE;
+}
+
 static bool32 AccuracyCalcHelper(u16 move)
 {
     if (gStatuses3[gBattlerTarget] & STATUS3_ALWAYS_HITS && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
@@ -5404,7 +5418,7 @@ static void Cmd_getexp(void)
                             levelUpBits &= ~(gBitTable[i]);
                             gLeveledUpInBattle = levelUpBits;
 
-                            species = GetEvolutionTargetSpecies(&gPlayerParty[i], EVO_MODE_NORMAL, levelUpBits, NULL);
+                            species = GetEvolutionTargetSpecies(&gPlayerParty[i], EVO_MODE_NORMAL, ITEM_NONE, NULL);
                             if (species != SPECIES_NONE)
                             {
                                 gBattlescriptCurrInstr = BattleScript_LevelUpWithEvoSugg;
@@ -7584,18 +7598,42 @@ static void Cmd_moveend(void)
             gBattleStruct->distortedTypeMatchups = 0;
             gBattleStruct->redCardActivates = FALSE;
             gBattleStruct->fickleBeamBoosted = FALSE;
-            if ((!(IS_MOVE_STATUS(gCurrentMove))) && moveType == TYPE_ELECTRIC && (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)))
+            if ((!(IS_MOVE_STATUS(gCurrentMove)))
+            && moveType == TYPE_ELECTRIC
+            && TARGET_TURN_DAMAGED
+            && ((!(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE))
+            || (!(gHitMarker & HITMARKER_CHARGING))
+            || (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))))
+            {
                 gStatuses3[gBattlerAttacker] &= ~(STATUS3_CHARGED_UP);
-            if ((!(IS_MOVE_STATUS(gCurrentMove))) && moveType == TYPE_WATER && (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)))
+            }
+            if ((!(IS_MOVE_STATUS(gCurrentMove)))
+            && moveType == TYPE_WATER
+            && TARGET_TURN_DAMAGED
+            && ((!(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE))
+            || (!(gHitMarker & HITMARKER_CHARGING))
+            || (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))))
+            {
                 gStatuses4[gBattlerAttacker] &= ~(STATUS4_PUMPED_UP);
-            if (IS_MOVE_PHYSICAL(gCurrentMove) && (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)))
+            }
+            if (IS_MOVE_PHYSICAL(gCurrentMove) 
+            && TARGET_TURN_DAMAGED 
+            && ((!(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE))
+            || (!(gHitMarker & HITMARKER_CHARGING))
+            || (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))))
+            {
                 gDisableStructs[gBattlerAttacker].purpleHazeOffense = FALSE;
-            if ((!(IS_MOVE_STATUS(gCurrentMove))) && (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)))
+            }
+            if ((!(IS_MOVE_STATUS(gCurrentMove))) 
+            && TARGET_TURN_DAMAGED        
+            && ((!(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE))
+            || (!(gHitMarker & HITMARKER_CHARGING))
+            || (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))))
+            {
                 gDisableStructs[gBattlerTarget].purpleHazeDefense = FALSE;
-            if ((!(IS_MOVE_STATUS(gCurrentMove))) && (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)))
-                gStatuses4[gBattlerAttacker] &= ~(STATUS4_PHANTOM);
-            if ((!(IS_MOVE_STATUS(gCurrentMove))) && (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)))
                 gStatuses4[gBattlerTarget] &= ~(STATUS4_CRAFTY_SHIELD);
+                gStatuses4[gBattlerAttacker] &= ~(STATUS4_PHANTOM);
+            }
             memset(gQueuedStatBoosts, 0, sizeof(gQueuedStatBoosts));
             gBattleScripting.moveendState++;
             break;
@@ -9621,19 +9659,6 @@ static void Cmd_useitemonopponent(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
-static bool32 HasAttackerFaintedTarget(void)
-{
-    if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
-        && gBattleMoves[gCurrentMove].power != 0
-        && (gLastHitBy[gBattlerTarget] == 0xFF || gLastHitBy[gBattlerTarget] == gBattlerAttacker)
-        && gBattleStruct->moveTarget[gBattlerAttacker] == gBattlerTarget
-        && gBattlerTarget != gBattlerAttacker
-        && gCurrentTurnActionNumber == GetBattlerTurnOrderNum(gBattlerAttacker)
-        && (gChosenMove == gChosenMoveByBattler[gBattlerAttacker] || gChosenMove == gBattleMons[gBattlerAttacker].moves[gChosenMovePos]))
-        return TRUE;
-    else
-        return FALSE;
-}
 
 bool32 CanPoisonType(u8 battlerAttacker, u8 battlerTarget)
 {
@@ -11323,21 +11348,6 @@ static void Cmd_various(void)
             PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_ATK);
             BattleScriptPush(cmd->nextInstr);
             gBattlescriptCurrInstr = BattleScript_FellStingerRaisesStat;
-            return;
-        }
-        break;
-    }
-    case VARIOUS_TRY_ACTIVATE_SHADOW_FORCE:
-    {
-        VARIOUS_ARGS();
-        if (gBattleMoves[gCurrentMove].effect == EFFECT_SHADOW_FORCE
-            && HasAttackerFaintedTarget()
-            && !NoAliveMonsForEitherParty()
-            && !(gStatuses4[gBattlerAttacker] & STATUS4_PHANTOM))
-        {
-            gStatuses4[gBattlerAttacker] |= STATUS4_PHANTOM;
-            BattleScriptPush(cmd->nextInstr);
-            gBattlescriptCurrInstr = BattleScript_ShadowForceSelfPhantom;
             return;
         }
         break;
@@ -18918,6 +18928,7 @@ static void Cmd_removelightscreenreflect(void)
     if (!failed
      && (gSideTimers[side].reflectTimer
       || gSideTimers[side].lightscreenTimer
+      || gSideTimers[side].googooScreenTimer
       || gSideTimers[side].auroraVeilTimer))
     {
         ClearScreens(side);
