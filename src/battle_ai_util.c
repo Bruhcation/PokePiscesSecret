@@ -766,7 +766,7 @@ bool32 IsBattlerTrapped(u32 battler, bool32 checkSwitch)
         return TRUE;
     else if (holdEffect == HOLD_EFFECT_GLUE_TUBE)
         return TRUE;
-    else if (gSideTimers[GetBattlerSide(battler)].spotlightTimer > 1)
+    else if (gSideTimers[battler].spotlightTimer > 1)
         return TRUE;
     else if (gStatuses3[battler] & (STATUS3_ROOTED | STATUS3_SKY_DROPPED))
         return TRUE;
@@ -3062,7 +3062,7 @@ bool32 IsBattlerIncapacitated(u32 battler, u32 ability)
     if (gBattleMons[battler].status1 & STATUS1_SLEEP_ANY)
         return TRUE;
 
-    if (gBattleMons[battler].status2 & STATUS2_RECHARGE || gStatuses4[battler] & STATUS4_RECHARGE_REDUCE || gStatuses4[battler] & STATUS4_RECHARGE_BURN || gStatuses4[battler] & STATUS4_RECHARGE_STATS || (ability == ABILITY_TRUANT && gDisableStructs[battler].truantCounter != 0))
+    if (gBattleMons[battler].status2 & STATUS2_RECHARGE || gStatuses4[battler] & STATUS4_RECHARGE_REDUCE || gStatuses4[battler] & STATUS4_RECHARGE_BURN || gStatuses4[battler] & STATUS4_RECHARGE_STATS || gStatuses4[battler] & STATUS4_RECHARGE_BLOOM_HEAL || (ability == ABILITY_TRUANT && gDisableStructs[battler].truantCounter != 0))
         return TRUE;
 
     return FALSE;

@@ -1180,7 +1180,7 @@ gBattleAnims_General::
 	.4byte Move_SAFEGUARD                   @ B_ANIM_SAFEGUARD
 	.4byte Move_LUCKY_CHANT                 @ B_ANIM_LUCKY_CHANT
 	.4byte Move_GROWL                       @ B_ANIM_GUARD_DOG
-	.4byte Move_SWEET_SCENT                 @ B_ANIM_SWEET_VEIL
+	.4byte Move_SWEET_SCENT2                @ B_ANIM_SWEET_VEIL
 	.4byte Move_TAILWIND                    @ B_ANIM_TAILWIND
 	.4byte Status_Whirlpool                 @ B_ANIM_WHIRLPOOL
 
@@ -7206,6 +7206,8 @@ Move_HEAT_CRASH::
 Move_LEAF_TORNADO::
 	loadspritegfx ANIM_TAG_GUST @Gust
 	loadspritegfx ANIM_TAG_LEAF @Leaves
+	choosetwoturnanim LeafTornadoNormal, LeafTornadoNormal
+LeafTornadoNormal:
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
 	playsewithpan SE_M_GUST, SOUND_PAN_TARGET
@@ -35742,6 +35744,20 @@ MorningSunStar:
 	createsprite gGreenStarSpriteTemplate, ANIM_ATTACKER, 2, 30, 640
 	delay 5
 	return
+
+Move_SWEET_SCENT2:
+	loadspritegfx ANIM_TAG_PINK_PETAL
+	playsewithpan SE_M_SWEET_SCENT, SOUND_PAN_ATTACKER
+	createsprite gSweetScentPetalSpriteTemplate, ANIM_ATTACKER, 2, 100, 0, 100
+	delay 25
+	setpan 0
+	call SweetScentEffect
+	createsprite gSweetScentPetalSpriteTemplate, ANIM_ATTACKER, 2, 55, 0
+	setpan SOUND_PAN_TARGET
+	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATK_SIDE, 1, 5, 5, 13, RGB(31, 21, 21)
+	call SweetScentEffect
+	waitforvisualfinish
+	end
 
 Move_SWEET_SCENT:
 	loadspritegfx ANIM_TAG_PINK_PETAL

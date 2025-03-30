@@ -4289,7 +4289,8 @@ static void HandleTurnActionSelectionState(void)
                         || gBattleMons[battler].status2 & STATUS2_RECHARGE 
                         || gStatuses4[battler] & STATUS4_RECHARGE_REDUCE
                         || gStatuses4[battler] & STATUS4_RECHARGE_BURN
-                        || gStatuses4[battler] & STATUS4_RECHARGE_STATS)
+                        || gStatuses4[battler] & STATUS4_RECHARGE_STATS
+                        || gStatuses4[battler] & STATUS4_RECHARGE_BLOOM_HEAL)
                     {
                         gChosenActionByBattler[battler] = B_ACTION_USE_MOVE;
                         gBattleCommunication[battler] = STATE_WAIT_ACTION_CONFIRMED_STANDBY;
@@ -4439,7 +4440,8 @@ static void HandleTurnActionSelectionState(void)
                         || gBattleMons[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)))].status2 & STATUS2_RECHARGE
                         || gStatuses4[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)))] & STATUS4_RECHARGE_REDUCE
                         || gStatuses4[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)))] & STATUS4_RECHARGE_STATS
-                        || gStatuses4[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)))] & STATUS4_RECHARGE_BURN)
+                        || gStatuses4[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)))] & STATUS4_RECHARGE_BURN
+                        || gStatuses4[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)))] & STATUS4_RECHARGE_BLOOM_HEAL)
                     {
                         BtlController_EmitEndBounceEffect(battler, BUFFER_A);
                         MarkBattlerForControllerExec(battler);
@@ -5306,6 +5308,7 @@ static void TurnValuesCleanUp(bool8 var0)
                     gStatuses4[i] &= ~STATUS4_RECHARGE_REDUCE;
                     gStatuses4[i] &= ~STATUS4_RECHARGE_BURN;
                     gStatuses4[i] &= ~STATUS4_RECHARGE_STATS;
+                    gStatuses4[i] &= ~STATUS4_RECHARGE_BLOOM_HEAL;
                 }
             }
         }

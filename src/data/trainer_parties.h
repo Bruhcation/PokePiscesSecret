@@ -1009,12 +1009,12 @@ static const struct TrainerMon sParty_PTess[] = {
 
 static const struct TrainerMon sParty_PHitomi[] = {
     {
-    .lvl = 18,
+    .lvl = 17,
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .ev = TRAINER_PARTY_EVS(20, 20, 20, 20, 20, 20),
+    .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
     .species = SPECIES_LAWPARD,
-    .ability = ABILITY_PSYCHIC_SURGE,
-    .moves = {MOVE_SKILL_SWAP, MOVE_CONFUSION, MOVE_ICE_FANG, MOVE_NONE},
+    .ability = ABILITY_LIMBER,
+    .moves = {MOVE_COLD_SNAP, MOVE_CONFUSION, MOVE_POUNCE, MOVE_NONE},
     }
 };
 

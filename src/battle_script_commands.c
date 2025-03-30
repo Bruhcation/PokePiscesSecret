@@ -896,28 +896,29 @@ const struct StatFractions gAccuracyStageRatios[] =
 
 static const u32 sStatusFlagsForMoveEffects[NUM_MOVE_EFFECTS] =
 {
-    [MOVE_EFFECT_SLEEP]           = STATUS1_SLEEP,
-    [MOVE_EFFECT_POISON]          = STATUS1_POISON,
-    [MOVE_EFFECT_BURN]            = STATUS1_BURN,
-    [MOVE_EFFECT_FREEZE]          = STATUS1_FREEZE,
-    [MOVE_EFFECT_PARALYSIS]       = STATUS1_PARALYSIS,
-    [MOVE_EFFECT_TOXIC]           = STATUS1_TOXIC_POISON,
-    [MOVE_EFFECT_FROSTBITE]       = STATUS1_FROSTBITE,
-    [MOVE_EFFECT_PANIC]           = STATUS1_PANIC,
-    [MOVE_EFFECT_EXPOSED]         = STATUS1_EXPOSED,
-    [MOVE_EFFECT_BLOOMING]        = STATUS1_BLOOMING_TURN(3),
-    [MOVE_EFFECT_CONFUSION]       = STATUS2_CONFUSION,
-    [MOVE_EFFECT_FLINCH]          = STATUS2_FLINCHED,
-    [MOVE_EFFECT_UPROAR]          = STATUS2_UPROAR,
-    [MOVE_EFFECT_CHARGING]        = STATUS2_MULTIPLETURNS,
-    [MOVE_EFFECT_WRAP]            = STATUS2_WRAPPED,
-    [MOVE_EFFECT_RECHARGE]        = STATUS2_RECHARGE,
-    [MOVE_EFFECT_PREVENT_ESCAPE]  = STATUS2_ESCAPE_PREVENTION,
-    [MOVE_EFFECT_NIGHTMARE]       = STATUS2_NIGHTMARE,
-    [MOVE_EFFECT_THRASH]          = STATUS2_LOCK_CONFUSE,
-    [MOVE_EFFECT_RECHARGE_REDUCE] = STATUS4_RECHARGE_REDUCE,
-    [MOVE_EFFECT_RECHARGE_BURN]   = STATUS4_RECHARGE_BURN,
-    [MOVE_EFFECT_RECHARGE_STATS]  = STATUS4_RECHARGE_STATS,
+    [MOVE_EFFECT_SLEEP]               = STATUS1_SLEEP,
+    [MOVE_EFFECT_POISON]              = STATUS1_POISON,
+    [MOVE_EFFECT_BURN]                = STATUS1_BURN,
+    [MOVE_EFFECT_FREEZE]              = STATUS1_FREEZE,
+    [MOVE_EFFECT_PARALYSIS]           = STATUS1_PARALYSIS,
+    [MOVE_EFFECT_TOXIC]               = STATUS1_TOXIC_POISON,
+    [MOVE_EFFECT_FROSTBITE]           = STATUS1_FROSTBITE,
+    [MOVE_EFFECT_PANIC]               = STATUS1_PANIC,
+    [MOVE_EFFECT_EXPOSED]             = STATUS1_EXPOSED,
+    [MOVE_EFFECT_BLOOMING]            = STATUS1_BLOOMING_TURN(3),
+    [MOVE_EFFECT_CONFUSION]           = STATUS2_CONFUSION,
+    [MOVE_EFFECT_FLINCH]              = STATUS2_FLINCHED,
+    [MOVE_EFFECT_UPROAR]              = STATUS2_UPROAR,
+    [MOVE_EFFECT_CHARGING]            = STATUS2_MULTIPLETURNS,
+    [MOVE_EFFECT_WRAP]                = STATUS2_WRAPPED,
+    [MOVE_EFFECT_RECHARGE]            = STATUS2_RECHARGE,
+    [MOVE_EFFECT_PREVENT_ESCAPE]      = STATUS2_ESCAPE_PREVENTION,
+    [MOVE_EFFECT_NIGHTMARE]           = STATUS2_NIGHTMARE,
+    [MOVE_EFFECT_THRASH]              = STATUS2_LOCK_CONFUSE,
+    [MOVE_EFFECT_RECHARGE_REDUCE]     = STATUS4_RECHARGE_REDUCE,
+    [MOVE_EFFECT_RECHARGE_BURN]       = STATUS4_RECHARGE_BURN,
+    [MOVE_EFFECT_RECHARGE_STATS]      = STATUS4_RECHARGE_STATS,
+    [MOVE_EFFECT_RECHARGE_BLOOM_HEAL] = STATUS4_RECHARGE_BLOOM_HEAL,
 };
 
 static const u8 *const sMoveEffectBS_Ptrs[] =
@@ -3951,6 +3952,12 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 gLockedMoves[gEffectBattler] = gCurrentMove;
                 gBattlescriptCurrInstr++;
                 break;
+            case MOVE_EFFECT_RECHARGE_BLOOM_HEAL:
+                gStatuses4[gEffectBattler] |= STATUS4_RECHARGE_BLOOM_HEAL;
+                gDisableStructs[gEffectBattler].rechargeTimer = 2;
+                gLockedMoves[gEffectBattler] = gCurrentMove;
+                gBattlescriptCurrInstr++;
+                break;
             case MOVE_EFFECT_RAGE:
                 gBattleMons[gBattlerAttacker].status2 |= STATUS2_RAGE;
                 gBattlescriptCurrInstr++;
@@ -4462,19 +4469,20 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 }
                 break;
             case MOVE_EFFECT_SYRUP_BOMB:
-                if (!(gStatuses4[gEffectBattler] & STATUS4_SYRUP_BOMB))
+                if (!(gStatuses4[gEffectBattler] & STATUS4_SYRUP_BOMB) && !(gStatuses4[gEffectBattler] & STATUS4_SYRUP_BOMB_FOREVER))
                 {
                     struct Pokemon *party = GetBattlerParty(gBattlerAttacker);
-
-                    gStatuses4[gEffectBattler] |= STATUS4_SYRUP_BOMB;
-                    gDisableStructs[gEffectBattler].syrupBombTimer = 3;
-                    gBattleStruct->stickySyrupdBy[gEffectBattler] = gBattlerAttacker;
-                    BattleScriptPush(gBattlescriptCurrInstr + 1);
-                    if (gBattleMons[gBattlerAttacker].status1 & STATUS1_BLOOMING && gBattleMons[gBattlerTarget].status2 != STATUS2_ESCAPE_PREVENTION)
+                    if (gBattleMons[gBattlerAttacker].status1 & STATUS1_BLOOMING)
                     {
-                        gBattleMons[gBattlerTarget].status2 |= STATUS2_ESCAPE_PREVENTION;
-                        gBattlescriptCurrInstr = BattleScript_SyrupBombActivatesBlooming;
+                        gStatuses4[gEffectBattler] |= STATUS4_SYRUP_BOMB_FOREVER;
                     }
+                    else
+                    {
+                        gStatuses4[gEffectBattler] |= STATUS4_SYRUP_BOMB;
+                        gDisableStructs[gEffectBattler].syrupBombTimer = 3;
+                        gBattleStruct->stickySyrupdBy[gEffectBattler] = gBattlerAttacker;
+                    }
+                    BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_SyrupBombActivates;
                 }
                 break;
@@ -4708,21 +4716,6 @@ void SetMoveEffect(bool32 primary, u32 certain)
 
                     gBattleMons[gEffectBattler].status2 |= STATUS2_ESCAPE_PREVENTION;
                     gDisableStructs[gEffectBattler].battlerPreventingEscape = gBattlerAttacker;
-                }
-                break;
-            case MOVE_EFFECT_GRAV_APPLE:
-                {
-                    u8 randomFlinchChance = RandomPercentage(RNG_GRAV_APPLE_FLINCH, CalcSecondaryEffectChance(gBattlerAttacker, 20));
-
-                    if (randomFlinchChance && (battlerAbility != ABILITY_INNER_FOCUS && !gDisableStructs[gEffectBattler].focusEnergy) 
-                        && battlerAbility != ABILITY_PROPELLER_TAIL && GetBattlerTurnOrderNum(gEffectBattler) > gCurrentTurnActionNumber)
-                    {
-                        gBattleMons[gEffectBattler].status2 |= sStatusFlagsForMoveEffects[MOVE_EFFECT_FLINCH];
-                    }
-                    else
-                    {
-                        gBattlescriptCurrInstr++;
-                    }
                 }
                 break;
             case MOVE_EFFECT_SNOWFADE:
@@ -6540,7 +6533,7 @@ static void Cmd_moveend(void)
                     && !TestTeruCharm(gBattlerAttacker))
                 {
                     gProtectStructs[gBattlerAttacker].touchedProtectLike = FALSE;
-                    if (gBattleMons[gBattlerAttacker].status1 & STATUS1_BLOOMING)
+                    if (gBattleMons[gBattlerTarget].status1 & STATUS1_BLOOMING)
                         gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 6;
                     else
                         gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 8;
@@ -8960,11 +8953,11 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         }
 
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * gTrainerMoneyTable[i].value;
+            moneyReward = 3 * lastMonLevel * gBattleStruct->moneyMultiplier * gTrainerMoneyTable[i].value;
         else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * gTrainerMoneyTable[i].value;
+            moneyReward = 3 * lastMonLevel * gBattleStruct->moneyMultiplier * 2 * gTrainerMoneyTable[i].value;
         else
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * gTrainerMoneyTable[i].value;
+            moneyReward = 3 * lastMonLevel * gBattleStruct->moneyMultiplier * gTrainerMoneyTable[i].value;
     }
 
     return moneyReward;
@@ -11516,6 +11509,8 @@ static void Cmd_various(void)
     case VARIOUS_JUMP_IF_HP_THRESHOLD:
     {
         VARIOUS_ARGS(const u8 *jumpInstr);
+        u32 battler = GetBattlerForBattleScript(cmd->battler);
+        
         if (gCurrentMove == MOVE_CANNONADE)
         {
             if (gBattleMons[battler].hp <= (gBattleMons[battler].maxHP / 4))

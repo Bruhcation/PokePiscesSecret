@@ -25665,6 +25665,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .expYield = 128,
         .evYield_SpAttack = 2,
         .itemCommon = ITEM_TAMATO_BERRY,
+        .itemRare = ITEM_BERRY_MIC,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,

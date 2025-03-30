@@ -1679,9 +1679,9 @@ static const u8 sDragonClawDescription[] = _(
     "move's power is boosted.");
 
 static const u8 sFrenzyPlantDescription[] = _(
-    "Requires a recharge turn. If the\n"
-    "user is blooming, can use every\n"
-    "other turn instead of recharging.");
+    "Requires a turn to recharge. If\n"
+    "the user is blooming, heals on\n"
+    "the recharge turn.");
 
 static const u8 sBulkUpDescription[] = _(
     "The user tenses its muscles to\n"
@@ -3105,9 +3105,9 @@ static const u8 sLeafageDescription[] = _(
     "critical hits and goes first.");
 
 static const u8 sSpotlightDescription[] = _(
-    "The user shines a spotlight on\n"
-    "itself to make foes aim at it for\n"
-    "3 turns. The user cannot escape.");
+    "sShines a spotlight on itself to\n"
+    "make foes aim at it for 3 turns.\n"
+    "The user and ally are trapped.");
 
 static const u8 sToxicThreadDescription[] = _(
     "The user shoots poisonous\n"
@@ -4961,9 +4961,9 @@ static const u8 sSweetWhispersDescription[] = _(
     "to attack their allies.");
 
 static const u8 sSyrupBombDescription[] = _(
-    "Drops the foe's Spd and eva for\n"
-    "3 turns. If the user is\n"
-    "blooming, traps the foe forever.");
+    "Drops Spd and eva for 3 turns.\n"
+    "If the user is blooming, lasts\n"
+    "forever and sharply drops them.");
 
 static const u8 sDearlyDepartDescription[] = _(
     "The foe is forcibly switched.\n"

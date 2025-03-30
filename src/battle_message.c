@@ -255,7 +255,7 @@ static const u8 sText_PkmnOvertookAttack[] = _("{B_DEF_NAME_WITH_PREFIX} overtoo
 static const u8 sText_PkmnChoseXAsDestiny[] = _("{B_ATK_NAME_WITH_PREFIX} chose\n{B_CURRENT_MOVE} as its destiny!");
 static const u8 sText_PkmnAttack[] = _("{B_BUFF1}'s attack!");
 static const u8 sText_PkmnCenterAttention[] = _("{B_ATK_NAME_WITH_PREFIX} became the\ncenter of attention!");
-static const u8 sText_PkmnCenterAttentionSpotlight[] = _("{B_ATK_NAME_WITH_PREFIX} became the\ncenter of attention, but cannot escape!");
+static const u8 sText_PkmnCenterAttentionSpotlight[] = _("{B_ATK_NAME_WITH_PREFIX} became the\ncenter of attention, but\l{B_ATK_TEAM2} team cannot escape!");
 static const u8 sText_PkmnChargingPower[] = _("{B_ATK_NAME_WITH_PREFIX} began\ncharging power!");
 static const u8 sText_NaturePowerTurnedInto[] = _("NATURE POWER turned into\n{B_CURRENT_MOVE}!");
 static const u8 sText_PkmnStatusNormal[] = _("{B_ATK_NAME_WITH_PREFIX}'s status\nreturned to normal!");
@@ -644,6 +644,7 @@ static const u8 sText_Electromagnetism[] = _("electromagnetism");
 static const u8 sText_Daybreak[] = _("daybreak");
 static const u8 sText_BufferEnds[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_BUFF1}\nwore off!");
 static const u8 sText_ThroatChopEnds[] = _("{B_ATK_NAME_WITH_PREFIX} can\nuse sound-based moves again!");
+static const u8 sText_SpotlightEnds[] = _("{B_ATK_NAME_WITH_PREFIX} is no longer\nthe center of attention!");
 static const u8 sText_MagicCoatEnds[] = _("{B_ATK_NAME_WITH_PREFIX} can no\nlonger bounce back status moves!");
 static const u8 sText_TelekinesisEnds[] = _("{B_ATK_NAME_WITH_PREFIX} was freed\nfrom the telekinesis!");
 static const u8 sText_TailwindEnds[] = _("{B_ATK_TEAM1} team's tailwind\npetered out!");
@@ -1914,6 +1915,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_SPELONSPIKESSCATTERED - BATTLESTRINGS_TABLE_START] = sText_StickyBarbSpikesScattered,
     [STRINGID_USINGITEMSTATOFTARGETPKMNROSE - BATTLESTRINGS_TABLE_START] = sText_UsingItemTheStatOfTargetPkmnRose,
     [STRINGID_TARGETISNOLONGERBLOOMING - BATTLESTRINGS_TABLE_START] = sText_TargetIsNoLongerBlooming,
+    [STRINGID_SPOTLIGHTENDS - BATTLESTRINGS_TABLE_START] = sText_SpotlightEnds,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

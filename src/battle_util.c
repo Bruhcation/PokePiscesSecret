@@ -233,6 +233,7 @@ void HandleAction_UseMove(void)
         || gBattleMons[gBattlerAttacker].status2 & STATUS2_RECHARGE 
         || gStatuses4[gBattlerAttacker] & STATUS4_RECHARGE_REDUCE
         || gStatuses4[gBattlerAttacker] & STATUS4_RECHARGE_STATS
+        || gStatuses4[gBattlerAttacker] & STATUS4_RECHARGE_BLOOM_HEAL
         || gStatuses4[gBattlerAttacker] & STATUS4_RECHARGE_BURN)
     {
         gCurrentMove = gChosenMove = gLockedMoves[gBattlerAttacker];
@@ -1590,22 +1591,6 @@ u32 TrySetCantSelectMoveBattleScript(u32 battler)
         }
     }
 
-    if (gBattleMoves[move].cantUseTwiceBlooming && move == gLastResultingMoves[battler] && gBattleMons[battler].status1 & STATUS1_BLOOMING)
-    {
-        gCurrentMove = move;
-        PREPARE_MOVE_BUFFER(gBattleTextBuff1, gCurrentMove);
-        if (gBattleTypeFlags & BATTLE_TYPE_PALACE)
-        {
-            gPalaceSelectionBattleScripts[battler] = BattleScript_SelectingNotAllowedCurrentMoveInPalace;
-            gProtectStructs[battler].palaceUnableToUseMove = TRUE;
-        }
-        else
-        {
-            gSelectionBattleScripts[battler] = BattleScript_SelectingNotAllowedCurrentMove;
-            limitations++;
-        }
-    }
-
     gPotentialItemEffectBattler = battler;
     if (HOLD_EFFECT_CHOICE(holdEffect) && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != move)
     {
@@ -1761,8 +1746,6 @@ u8 IsMoveUnusable(u32 battler, u16 move, u8 pp, u16 check)
         return TRUE;
     else if (check & MOVE_LIMITATION_CANT_USE_TWICE && ((gBattleMoves[move].cantUseTwice && move == gLastResultingMoves[battler]) || (gBattleMoves[move].cantUseTwicePsySwap && move == gLastMoves[battler])))
         return TRUE;
-    else if (check & MOVE_LIMITATION_BLOOMING && gBattleMoves[move].cantUseTwiceBlooming && move == gLastResultingMoves[battler] && gBattleMons[battler].status1 & STATUS1_BLOOMING)
-        return TRUE;
     return 0;
 }
 
@@ -1852,6 +1835,7 @@ enum
     ENDTURN_REFLECT,
     ENDTURN_LIGHT_SCREEN,
     ENDTURN_AURORA_VEIL,
+    ENDTURN_SPOTLIGHT,
     ENDTURN_GOOGOO_SCREEN,
     ENDTURN_MIST,
     ENDTURN_LUCKY_CHANT,
@@ -2010,6 +1994,30 @@ u8 DoFieldEndTurnEffects(void)
                         effect++;
                     }
                 }
+                gBattleStruct->turnSideTracker++;
+                if (effect != 0)
+                    break;
+            }
+            if (!effect)
+            {
+                gBattleStruct->turnCountersTracker++;
+                gBattleStruct->turnSideTracker = 0;
+            }
+            break;
+        case ENDTURN_SPOTLIGHT:
+            while (gBattleStruct->turnSideTracker < 2)
+            {
+                side = gBattleStruct->turnSideTracker;
+                gBattlerAttacker = gSideTimers[side].spotlightTarget;
+                
+                if (--gSideTimers[side].spotlightTimer == 0)
+                {
+                    BattleScriptExecute(BattleScript_SideStatusWoreOff);
+                    gBattleCommunication[MULTISTRING_CHOOSER] = side;
+                    PREPARE_MOVE_BUFFER(gBattleTextBuff1, MOVE_SPOTLIGHT);
+                    effect++;
+                }
+
                 gBattleStruct->turnSideTracker++;
                 if (effect != 0)
                     break;
@@ -2577,6 +2585,7 @@ enum
     ENDTURN_EMERGENCY_EXIT,
     ENDTURN_INFERNAL_REIGN,
     ENDTURN_SYRUP_BOMB,
+    ENDTURN_SYRUP_BOMB_FOREVER,
     ENDTURN_DAYBREAK,
     ENDTURN_MAGIC_COAT,
     ENDTURN_ITEMS3,
@@ -2918,6 +2927,16 @@ u8 DoBattlerEndTurnEffects(void)
                 gBattlerAttacker = gDisableStructs[battler].battlerPreventingEscape;    // needed to track who lowered stats
                 gBattlerTarget = battler;
                 BattleScriptExecute(BattleScript_OctolockEndTurn);
+                effect++;
+            }
+            gBattleStruct->turnEffectsTracker++;
+            break;
+        case ENDTURN_SYRUP_BOMB_FOREVER:
+            if (gStatuses4[battler] & STATUS4_SYRUP_BOMB_FOREVER)
+            {
+                gBattlerTarget = battler;
+                PREPARE_MOVE_BUFFER(gBattleTextBuff1, MOVE_SYRUP_BOMB);
+                BattleScriptExecute(BattleScript_SyrupBombForeverEndTurn);
                 effect++;
             }
             gBattleStruct->turnEffectsTracker++;
@@ -3795,6 +3814,15 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
                 gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
                 effect = 1;
             }
+            else if (gStatuses4[gBattlerAttacker] & STATUS4_RECHARGE_BLOOM_HEAL)
+            {
+                gStatuses4[gBattlerAttacker] &= ~STATUS4_RECHARGE_BLOOM_HEAL;
+                gDisableStructs[gBattlerAttacker].rechargeTimer = 0;
+                CancelMultiTurnMoves(gBattlerAttacker);
+                gBattlescriptCurrInstr = BattleScript_MoveUsedMustRechargeBloomHeal;
+                gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
+                effect = 1;
+            }
             gBattleStruct->atkCancellerTracker++;
             break;
         case CANCELLER_FLINCH: // flinch
@@ -3876,11 +3904,7 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
                 if (gBattleMons[gBattlerAttacker].status2 & STATUS2_CONFUSION)
                 {
                     // confusion dmg
-#if B_CONFUSION_SELF_DMG_CHANCE >= GEN_7
-                    if (RandomWeighted(RNG_CONFUSION, 2, 1))
-#else
-                    if (RandomWeighted(RNG_CONFUSION, 1, 1))
-#endif
+                    if (RandomPercentage(RNG_CONFUSION, 33))
                     {
                         gBattleCommunication[MULTISTRING_CHOOSER] = TRUE;
                         gBattlerTarget = gBattlerAttacker;
@@ -8082,8 +8106,8 @@ static inline bool32 CanBreakThroughAbility(u32 battlerAtk, u32 battlerDef, u32 
     return ((IsMoldBreakerTypeAbility(battlerAtk, ability)
          || gBattleMoves[gCurrentMove].ignoresTargetAbility
          || ((gCurrentMove == MOVE_SPORE || gCurrentMove == MOVE_SEED_FLARE)
-         && gBattleMons[gBattlerAttacker].status1 & STATUS1_BLOOMING)
-         || (gCurrentMove == MOVE_RAZING_SUN && gDisableStructs[gBattlerAttacker].daybreakCounter >= 2))
+         && gBattleMons[battlerAtk].status1 & STATUS1_BLOOMING)
+         || (gCurrentMove == MOVE_RAZING_SUN && gDisableStructs[battlerAtk].daybreakCounter >= 2))
          && battlerDef != battlerAtk
          && !IsGastroAcidBannedAbility(gBattleMons[battlerDef].ability)
          && gBattlerByTurnOrder[gCurrentTurnActionNumber] == battlerAtk
@@ -8216,7 +8240,7 @@ bool32 CanBattlerEscape(u32 battler) // no ability check
         return FALSE;
     else if (gStatuses3[battler] & STATUS3_ROOTED)
         return FALSE;
-    else if (gSideTimers[GetBattlerSide(battler)].spotlightTimer > 1)
+    else if (gSideTimers[GetBattlerSide(battler)].spotlightTimer > 0)
         return FALSE;
     else if (gStatuses4[battler] & STATUS4_FAIRY_LOCK)
         return FALSE;

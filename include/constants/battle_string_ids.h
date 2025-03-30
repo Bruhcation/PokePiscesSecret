@@ -892,8 +892,9 @@
 #define STRINGID_SPELONSPIKESSCATTERED                890
 #define STRINGID_USINGITEMSTATOFTARGETPKMNROSE        891
 #define STRINGID_TARGETISNOLONGERBLOOMING             892
+#define STRINGID_SPOTLIGHTENDS                        893
 
-#define BATTLESTRINGS_COUNT                           893
+#define BATTLESTRINGS_COUNT                           894
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
