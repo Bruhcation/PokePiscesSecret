@@ -434,6 +434,33 @@ LilycoveMuseumNew_EventScript_UpstairsGuard::
 	msgbox LilycoveMuseumNew_Text_UpstairsGuard, MSGBOX_NPC
 	end
 
+LilycoveMuseumNew_EventScript_Museumgoer1::
+	msgbox LilycoveMuseumNew_Text_Museumgoer1, MSGBOX_NPC
+	end
+
+LilycoveMuseumNew_EventScript_Museumgoer2::
+	msgbox LilycoveMuseumNew_Text_Museumgoer2, MSGBOX_NPC
+	end
+
+LilycoveMuseumNew_EventScript_Museumgoer3::
+	msgbox LilycoveMuseumNew_Text_Museumgoer3, MSGBOX_NPC
+	end
+
+LilycoveMuseumNew_Text_Museumgoer1:
+	.string "Ah, yes, quite. This establishment\n"
+	.string "does undeniably have impeccable\l"
+	.string "ambiance, wot wot?$"
+
+LilycoveMuseumNew_Text_Museumgoer2:
+	.string "This painting...\p"
+	.string "It's weird, isn't it? But I just...\n"
+	.string "can't quite put my finger\l"
+	.string "on why that is.$"
+
+LilycoveMuseumNew_Text_Museumgoer3:
+	.string "A brief visit to the museum\n"
+	.string "always seems to calm me down.$"
+
 LilycoveMuseumNew_Text_UpstairsGuard:
 	.string "The second floor is off limits!\n"
 	.string "We're currently workshopping a\l"

@@ -15,3 +15,13 @@ NewMauvilleCenter1_EventScript_Nurse::
 	waitbuttonpress
 	release
 	end
+
+NewMauvilleCenter1_EventScript_UltimateRelearner::
+    msgbox NewMauvilleCenter1_Text_UltimateRelearner, MSGBOX_SIGN
+    end
+
+NewMauvilleCenter1_Text_UltimateRelearner:
+	.string "(This sign is advertising a “special”\n"
+	.string "move tutor, “unlike any other”.\l"
+	.string "Whoever this is, is apparently\l"
+	.string "in the basement.)$"

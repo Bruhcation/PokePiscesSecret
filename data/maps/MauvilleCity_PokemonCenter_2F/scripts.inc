@@ -77,6 +77,34 @@ MauvilleCity_PokemonCenter_2F_EventScript_NoMoreQuest::
 	release
 	end
 
+MauvilleCity_PokemonCenter_2F_EventScript_Steel::
+    msgbox MauvilleCity_PokemonCenter_2F_Text_Steel, MSGBOX_NPC
+    end
+
+MauvilleCity_PokemonCenter_2F_EventScript_MachBike::
+    msgbox MauvilleCity_PokemonCenter_2F_Text_MachBike, MSGBOX_NPC
+    end
+
+MauvilleCity_PokemonCenter_2F_Text_Steel:
+	.string "Aww, man... it ain't easy\n"
+	.string "being a Steel type diehard\l"
+	.string "these days.\p"
+	.string "I coulda SWORN that my metal\n"
+	.string "masters could wall through\l"
+	.string "Grass, Psychic, and Ice moves\l"
+	.string "with ease. But I keep seein'\l"
+	.string "them hit me for normal\l"
+	.string "damage these days.\p"
+	.string "What has the world come to,\n"
+	.string "man???$"
+
+MauvilleCity_PokemonCenter_2F_Text_MachBike:
+	.string "Whoa, you got yourself a Mach Bike?\n"
+	.string "Lucky! That thing goes REAL fast.\l"
+	.string "It's about fast enough to go\l"
+	.string "up muddy slopes, which the\l"
+	.string "Acro Bike can't claim to do.$"
+
 MauvilleCity_PokemonCenter_2F_Text_NamePhillipe:
 	.string "Phillipe$"
 

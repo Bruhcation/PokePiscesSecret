@@ -785,6 +785,28 @@ MossdeepCity_EventScript_Mossdeeper7::
     msgbox MossdeepCity_Text_Mossdeeper7, MSGBOX_NPC
     end
 
+MossdeepCity_EventScript_DarkVoid::
+    msgbox MossdeepCity_Text_DarkVoid, MSGBOX_NPC
+    end
+
+MossdeepCity_Text_DarkVoid:
+	.string "Am I to assume you are going\n"
+	.string "to the gym? Very good. For I\l"
+	.string "have knowledge to impart.\p"
+	.string "Liza is a formidable leader.\n"
+	.string "One of her Pokemon know the move\l"
+	.string "Dark Void, which puts Pokemon\l"
+	.string "to sleep. It has a pitiable 45\l"
+	.string "percent accuracy, but, if the\l"
+	.string "user or the target have a stat\l"
+	.string "drop, the accuracy increases\l"
+	.string "incrementally for each stat drop.\p"
+	.string "So, be careful when trying to\n"
+	.string "fell that Pokemon... the more\l"
+	.string "you debuff it, the higher chance\l"
+	.string "that your Pokemon will be\l"
+	.string "put to sleep...$"
+
 MossdeepCity_Text_Mossdeeper1:
 	.string "Seems like everyone I know wants\n"
 	.string "to apply to be an astronaut!\l"
