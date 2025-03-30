@@ -1475,8 +1475,8 @@ static const u8 sMistBallDescription[] = _(
 
 static const u8 sFeatherDanceDescription[] = _(
     "Envelops the foe with down to\n"
-    "harshly drop Atk. If the user is\n"
-    "hit beforehand, also drops Acc.");
+    "harshly drop Atk. If the user\n"
+    "was hit, also drops accuracy.");
 
 static const u8 sTeeterDanceDescription[] = _(
     "The user performs a wobbly dance\n"
