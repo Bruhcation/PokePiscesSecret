@@ -4750,13 +4750,16 @@ static void Cmd_seteffectwithchance(void)
     
     FlagClear(FLAG_LAST_MOVE_SECONDARY_EFFECT_ACTIVATED);
 
-    if(gProtectStructs[gBattlerAttacker].extraMoveUsed){
-        if(VarGet(VAR_TEMP_MOVEEFFECT_CHANCE) != 0){
+    if (gProtectStructs[gBattlerAttacker].extraMoveUsed)
+    {
+        if (VarGet(VAR_TEMP_MOVEEFFECT_CHANCE) != 0)
+        {
             percentChance = VarGet(VAR_TEMP_MOVEEFFECT_CHANCE);
             VarSet(VAR_TEMP_MOVEEFFECT_CHANCE, 0);
         }
 
-        if(VarGet(VAR_TEMP_MOVEEFFECT) != 0){
+        if (VarGet(VAR_TEMP_MOVEEFFECT) != 0)
+        {
             moveEffect = VarGet(VAR_TEMP_MOVEEFFECT);
             gBattleScripting.moveEffect = moveEffect;
             VarSet(VAR_TEMP_MOVEEFFECT, 0);
@@ -4764,10 +4767,10 @@ static void Cmd_seteffectwithchance(void)
     }
 
     if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
-     && gBattleScripting.moveEffect)
+    && gBattleScripting.moveEffect)
     {
         if (gBattleScripting.moveEffect & MOVE_EFFECT_CERTAIN
-         || percentChance >= 100)
+        || percentChance >= 100)
         {
             gBattleScripting.moveEffect &= ~MOVE_EFFECT_CERTAIN;
             SetMoveEffect(FALSE, MOVE_EFFECT_CERTAIN);
@@ -4797,16 +4800,61 @@ static void Cmd_seteffectprimary(void)
 {
     CMD_ARGS();
 
-    if (GetBattlerHoldEffect(gBattlerTarget, TRUE) == HOLD_EFFECT_METAL_COAT
-    && !(gBattleScripting.moveEffect & MOVE_EFFECT_CERTAIN)
-    && (Random() % 2 == 0)
-    && !(IS_MOVE_STATUS(gCurrentMove)))
+    u32 percentChance = CalcSecondaryEffectChance(gBattlerAttacker, 100);
+    u8 moveEffect = gBattleMoves[gCurrentMove].effect;
+    
+    if (IS_MOVE_STATUS(gCurrentMove))
     {
-        gBattlescriptCurrInstr = cmd->nextInstr;
+        SetMoveEffect(FALSE, 0);
     }
     else
     {
-        SetMoveEffect(TRUE, 0);
+        FlagClear(FLAG_LAST_MOVE_SECONDARY_EFFECT_ACTIVATED);
+
+        if (gProtectStructs[gBattlerAttacker].extraMoveUsed)
+        {
+            if (VarGet(VAR_TEMP_MOVEEFFECT_CHANCE) != 0)
+            {
+                percentChance = VarGet(VAR_TEMP_MOVEEFFECT_CHANCE);
+                VarSet(VAR_TEMP_MOVEEFFECT_CHANCE, 0);
+            }
+
+            if (VarGet(VAR_TEMP_MOVEEFFECT) != 0)
+            {
+                moveEffect = VarGet(VAR_TEMP_MOVEEFFECT);
+                gBattleScripting.moveEffect = moveEffect;
+                VarSet(VAR_TEMP_MOVEEFFECT, 0);
+            }
+        }
+
+        if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+        && gBattleScripting.moveEffect)
+        {
+            if (gBattleScripting.moveEffect & MOVE_EFFECT_CERTAIN
+            || percentChance >= 100)
+            {
+                gBattleScripting.moveEffect &= ~MOVE_EFFECT_CERTAIN;
+                SetMoveEffect(FALSE, MOVE_EFFECT_CERTAIN);
+                FlagSet(FLAG_LAST_MOVE_SECONDARY_EFFECT_ACTIVATED);
+            }
+            else if (RandomPercentage(RNG_SECONDARY_EFFECT, percentChance))
+            {
+                SetMoveEffect(FALSE, 0);
+                FlagSet(FLAG_LAST_MOVE_SECONDARY_EFFECT_ACTIVATED);
+            }
+            else
+            {
+                gBattleScripting.moveEffect = 0;
+                gBattlescriptCurrInstr = cmd->nextInstr;
+            }
+        }
+        else
+        {
+            gBattleScripting.moveEffect = 0;
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+
+        gBattleScripting.multihitMoveEffect = 0;
     }
 }
 
@@ -4814,16 +4862,61 @@ static void Cmd_seteffectsecondary(void)
 {
     CMD_ARGS();
 
-    if (GetBattlerHoldEffect(gBattlerTarget, TRUE) == HOLD_EFFECT_METAL_COAT
-    && !(gBattleScripting.moveEffect & MOVE_EFFECT_CERTAIN)
-    && (Random() % 2 == 0)
-    && !(IS_MOVE_STATUS(gCurrentMove)))
+    u32 percentChance = CalcSecondaryEffectChance(gBattlerAttacker, 100);
+    u8 moveEffect = gBattleMoves[gCurrentMove].effect;
+    
+    if (IS_MOVE_STATUS(gCurrentMove))
     {
-        gBattlescriptCurrInstr = cmd->nextInstr;
+        SetMoveEffect(FALSE, 0);
     }
     else
     {
-        SetMoveEffect(TRUE, 0);
+        FlagClear(FLAG_LAST_MOVE_SECONDARY_EFFECT_ACTIVATED);
+
+        if (gProtectStructs[gBattlerAttacker].extraMoveUsed)
+        {
+            if (VarGet(VAR_TEMP_MOVEEFFECT_CHANCE) != 0)
+            {
+                percentChance = VarGet(VAR_TEMP_MOVEEFFECT_CHANCE);
+                VarSet(VAR_TEMP_MOVEEFFECT_CHANCE, 0);
+            }
+
+            if (VarGet(VAR_TEMP_MOVEEFFECT) != 0)
+            {
+                moveEffect = VarGet(VAR_TEMP_MOVEEFFECT);
+                gBattleScripting.moveEffect = moveEffect;
+                VarSet(VAR_TEMP_MOVEEFFECT, 0);
+            }
+        }
+
+        if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+        && gBattleScripting.moveEffect)
+        {
+            if (gBattleScripting.moveEffect & MOVE_EFFECT_CERTAIN
+            || percentChance >= 100)
+            {
+                gBattleScripting.moveEffect &= ~MOVE_EFFECT_CERTAIN;
+                SetMoveEffect(FALSE, MOVE_EFFECT_CERTAIN);
+                FlagSet(FLAG_LAST_MOVE_SECONDARY_EFFECT_ACTIVATED);
+            }
+            else if (RandomPercentage(RNG_SECONDARY_EFFECT, percentChance))
+            {
+                SetMoveEffect(FALSE, 0);
+                FlagSet(FLAG_LAST_MOVE_SECONDARY_EFFECT_ACTIVATED);
+            }
+            else
+            {
+                gBattleScripting.moveEffect = 0;
+                gBattlescriptCurrInstr = cmd->nextInstr;
+            }
+        }
+        else
+        {
+            gBattleScripting.moveEffect = 0;
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+
+        gBattleScripting.multihitMoveEffect = 0;
     }
 }
 

@@ -7370,9 +7370,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     break;
                 }
 
-                gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
-                gBattleMons[gBattlerTarget].ability = gBattleStruct->overwrittenAbilities[gBattlerTarget] = gBattleMons[gBattlerAttacker].ability;
-                BattleScriptPushCursor();
+                gLastUsedAbility = gBattleMons[gBattlerTarget].ability = gBattleStruct->overwrittenAbilities[gBattlerTarget] = ABILITY_LOVESICK;                BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_LovesickMummyEffectActivates;
                 effect++;
                 break;

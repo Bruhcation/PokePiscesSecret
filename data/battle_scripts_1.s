@@ -18173,13 +18173,17 @@ BattleScript_AbilityPopUpOverwriteThenNormal:
 	return
 
 BattleScript_LovesickMummyEffectActivates::
-.if B_ABILITY_POP_UP == TRUE
-	call BattleScript_AbilityPopUpTarget
+	call BattleScript_AbilityPopUp
+	destroyabilitypopup
 	setbyte sFIXED_ABILITY_POPUP, TRUE
-	copybyte gBattlerAbility, gBattlerAttacker
+	copybyte gBattlerAbility, gBattlerTarget
 	copyhword sABILITY_OVERWRITE, gLastUsedAbility
-	call BattleScript_AbilityPopUpOverwriteThenNormal
-.endif
+	setbyte sFIXED_ABILITY_POPUP, TRUE
+	showabilitypopup BS_ABILITY_BATTLER
+	pause 60
+	recordability BS_ABILITY_BATTLER
+	destroyabilitypopup
+	pause 40
 	recordability BS_TARGET
 	recordability BS_ATTACKER
 	printstring STRINGID_PKMNACQUIREDABILITY
