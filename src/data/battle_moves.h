@@ -13425,7 +13425,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_FLOWER_TRICK] =
     {
         .effect = EFFECT_BLOOMING_HIT,
-        .power = 70,
+        .power = 60,
         .type = TYPE_GRASS,
         .accuracy = 0,
         .pp = 10,
