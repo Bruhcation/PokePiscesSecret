@@ -654,7 +654,7 @@ static void OpponentHandleChoosePokemon(u32 battler)
 
             if (!(gBattleTypeFlags & BATTLE_TYPE_DOUBLE) || (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS))
             {
-                battler2 = battler1 = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+                battler2 = battler1 = GetBattlerAtPosition(battler);
             }
             else
             {
