@@ -989,16 +989,16 @@ BattleScript_EffectTrickorTreat::
 	jumpifbattleend BattleScript_MoveEnd
 	jumpifmovehadnoeffect BattleScript_MoveEnd
 	jumpifholdeffect BS_ATTACKER, HOLD_EFFECT_NONE, BattleScript_TrickKnockOff
-	setmoveeffect MOVE_EFFECT_STEAL_ITEM
-	seteffectprimary
 	jumpiffainted BS_TARGET, TRUE, BattleScript_MoveEnd
+	setmoveeffect MOVE_EFFECT_KNOCK_OFF
+	seteffectprimary
 	setmoveeffect MOVE_EFFECT_RANDOM_STAT_DROP
 	seteffectsecondary
 	goto BattleScript_MoveEnd
 BattleScript_TrickKnockOff::
-	jumpiffainted BS_TARGET, TRUE, BattleScript_MoveEnd
-	setmoveeffect MOVE_EFFECT_KNOCK_OFF
+	setmoveeffect MOVE_EFFECT_STEAL_ITEM
 	seteffectprimary
+	jumpiffainted BS_TARGET, TRUE, BattleScript_MoveEnd
 	setmoveeffect MOVE_EFFECT_RANDOM_STAT_DROP
 	seteffectsecondary
 	goto BattleScript_MoveEnd
