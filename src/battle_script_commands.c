@@ -4080,6 +4080,13 @@ void SetMoveEffect(bool32 primary, u32 certain)
                     gBattlescriptCurrInstr = BattleScript_AtkDefDown;
                 }
                 break;
+            case MOVE_EFFECT_ATK_UP_ATK_DOWN:
+                if (!NoAliveMonsForEitherParty())
+                {
+                    BattleScriptPush(gBattlescriptCurrInstr + 1);
+                    gBattlescriptCurrInstr = BattleScript_AtkUpAtkDown;
+                }
+                break;
             case MOVE_EFFECT_SUPER_TROP_KICK:
                 if (!NoAliveMonsForEitherParty())
                 {
@@ -4651,17 +4658,15 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 break;
             case MOVE_EFFECT_OCTAZOOKA:
                 {
-                    u8 randomLowerAccuracyChance = RandomPercentage(RNG_TRIPLE_ARROWS_DEFENSE_DOWN, CalcSecondaryEffectChance(gBattlerAttacker, 80));
-
-                    if (randomLowerAccuracyChance)
+                    if ((Random() % 5) == 0)
                     {
                         BattleScriptPush(gBattlescriptCurrInstr + 1);
-                        gBattlescriptCurrInstr = BattleScript_AccDownAgain;
+                        gBattlescriptCurrInstr = BattleScript_AccDown2;
                     }
                     else
                     {
                         BattleScriptPush(gBattlescriptCurrInstr + 1);
-                        gBattlescriptCurrInstr = BattleScript_AccDown2;
+                        gBattlescriptCurrInstr = BattleScript_AccDownAgain;
                     }
                 }
                 break;
@@ -16345,7 +16350,7 @@ static void Cmd_dmgtolevel(void)
 
     if (gCurrentMove == MOVE_SONIC_BOOM)
     {
-        gBattleMoveDamage = gBattleMons[gBattlerAttacker].level * 0.75;
+        gBattleMoveDamage = gBattleMons[gBattlerAttacker].level * 3 / 4;
     }
     else if (gCurrentMove == MOVE_DRAGON_RAGE)
     {

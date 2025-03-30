@@ -11791,15 +11791,6 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
     u32 basePower = gBattleMoves[move].power;
     u32 weight, hpFraction, speed;
 
-    if ((gFieldStatuses & STATUS_FIELD_GRAVITY) && (move == MOVE_PSYCHIC))
-        basePower = 100;
-
-    if (DoBattlersShareType(battlerAtk, battlerDef) && (move == MOVE_SYNCHRONOISE))
-        basePower *= 2;
-
-    if (move == MOVE_COLD_SNAP && weather & B_WEATHER_HAIL)
-        basePower *= 2;
-
     if (gBattleStruct->zmove.active)
         return GetZMovePower(gBattleStruct->zmove.baseMoves[battlerAtk]);
 
@@ -11814,6 +11805,10 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
     case EFFECT_CANNONADE:
         if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 4))
         basePower = 150;
+        break;
+    case EFFECT_PSYCHIC:
+        if (gFieldStatuses & STATUS_FIELD_GRAVITY)
+        basePower = 100;
         break;
     case EFFECT_ERUPTION:
         basePower = gBattleMons[battlerAtk].hp * basePower / gBattleMons[battlerAtk].maxHP;
@@ -12337,6 +12332,14 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
         if (gBattleMons[battlerAtk].status1 & (STATUS1_BURN | STATUS1_PSN_ANY | STATUS1_PARALYSIS | STATUS1_FROSTBITE | STATUS1_PANIC | STATUS1_EXPOSED))
             modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         break;
+    case EFFECT_SYNCHRONOISE:
+        if (DoBattlersShareType(battlerAtk, battlerDef))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+        break;
+    case EFFECT_COLD_SNAP:
+        if (IsBattlerWeatherAffected(battlerAtk, B_WEATHER_HAIL))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+        break;    
     case EFFECT_ZEN_HEADBUTT:
         if (gBattleMons[battlerAtk].status2 & STATUS2_TORMENT || gBattleMons[battlerAtk].status2 & STATUS2_CONFUSION || gDisableStructs[battlerAtk].tauntTimer != 0)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -15971,6 +15974,8 @@ u32 CalcSecondaryEffectChance(u32 battler, u8 secondaryEffectChance)
     if (gCurrentMove == MOVE_ASTRAL_BARRAGE && gBattleStruct->faintedMonCount[GetBattlerSide(battler)] != 0)
         secondaryEffectChance = 20 + (10 * gBattleStruct->faintedMonCount[GetBattlerSide(battler)]);
     else if (gCurrentMove == MOVE_METEOR_MASH && gFieldStatuses & STATUS_FIELD_GRAVITY)
+        secondaryEffectChance = 100;
+    else if (gCurrentMove == MOVE_ENERGY_BALL && gBattleMons[battler].status1 & STATUS1_BLOOMING)
         secondaryEffectChance = 100;
     else if ((CanUseLastResort(battler) && gCurrentMove == MOVE_ANCIENT_POWER) || (gBattleMons[gBattlerTarget].status1 & STATUS1_PANIC && gCurrentMove == MOVE_OMINOUS_WIND))
         secondaryEffectChance *= 3;

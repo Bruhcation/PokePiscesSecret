@@ -556,7 +556,7 @@
 #define EFFECT_DRUM_BEATING                 550 //AI Flags added, Blooming conditional should be tested
 #define EFFECT_WOOD_HAMMER                  551 //AI Flags added, Blooming conditional should be tested
 #define EFFECT_APPLE_ACID                   552 //AI Flags added, Blooming conditional should be tested
-#define EFFECT_ENERGY_BALL                  553 //Does not need special AI code
+#define EFFECT_PSYCHIC                      553 //Does not need special AI code
 #define EFFECT_PETAL_DANCE                  554 //According to EFFECT_RAMPAGE, this doesnt need any special AI code
 #define EFFECT_SNOWFADE                     555 //AI Flags added, combined stuff from EFFECT_HIT_ESCAPE with a B_WEATHER_HAIL check, may cause a bug
 #define EFFECT_FRENZY_PLANT                 556 //AI Flags complete
@@ -681,7 +681,8 @@
 #define EFFECT_BABY_BLUES                   675
 #define EFFECT_LETHAL_CHAIN                 676
 #define EFFECT_ZEN_HEADBUTT                 677
+#define EFFECT_COLD_SNAP                    678
 
-#define NUM_BATTLE_MOVE_EFFECTS             678
+#define NUM_BATTLE_MOVE_EFFECTS             679
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H

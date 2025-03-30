@@ -1653,7 +1653,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_PSYCHIC] =
     {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
+        .effect = EFFECT_PSYCHIC,
         .power = 90,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
@@ -4046,11 +4046,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_METAL_CLAW] =
     {
         .effect = EFFECT_METAL_CLAW,
-        .power = 50,
+        .power = 60,
         .type = TYPE_STEEL,
-        .accuracy = 95,
-        .pp = 35,
-        .secondaryEffectChance = 10,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
@@ -4970,7 +4970,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
-        .pp = 10,
+        .pp = 5,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 1,
@@ -7073,7 +7073,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         #else
             .power = 80,
         #endif
-        .effect = EFFECT_ENERGY_BALL,
+        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 10,
@@ -8264,7 +8264,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
             .power = 70,
             .pp = 15,
         #endif
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_SYNCHRONOISE,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
         .secondaryEffectChance = 0,
@@ -15187,7 +15187,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_COLD_SNAP] =
     {
-        .effect = EFFECT_FAKE_OUT,
+        .effect = EFFECT_COLD_SNAP,
         .power = 40,
         .type = TYPE_ICE,
         .accuracy = 100,
@@ -16924,7 +16924,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
+        .target = MOVE_TARGET_SELECTED,
         .priority = 1,
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,

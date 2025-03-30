@@ -325,7 +325,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectDefog                   @ EFFECT_DEFOG
 	.4byte BattleScript_EffectHitEnemyHealAlly        @ EFFECT_HIT_ENEMY_HEAL_ALLY
 	.4byte BattleScript_EffectSmackDown               @ EFFECT_SMACK_DOWN
-	.4byte BattleScript_EffectSynchronoise            @ EFFECT_SYNCHRONOISE
+	.4byte BattleScript_EffectHit                     @ EFFECT_SYNCHRONOISE
 	.4byte BattleScript_EffectPsychoShift             @ EFFECT_PSYCHO_SHIFT
 	.4byte BattleScript_EffectPowerTrick              @ EFFECT_POWER_TRICK
 	.4byte BattleScript_EffectFlameBurst              @ EFFECT_FLAME_BURST
@@ -556,7 +556,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectSnapblossom             @ EFFECT_SNAPBLOSSOM
 	.4byte BattleScript_EffectGrassCannon             @ EFFECT_GRASS_CANNON
 	.4byte BattleScript_EffectSpecialDefenseUpHit     @ EFFECT_SPECIAL_DEFENSE_UP_HIT
-	.4byte BattleScript_EffectDefSpDefeUpHit          @ EFFECT_DEF_SP_DEF_UP_HIT
+	.4byte BattleScript_EffectDefSpDefUpHit           @ EFFECT_DEF_SP_DEF_UP_HIT
 	.4byte BattleScript_EffectHit                     @ EFFECT_SAVAGE_WING
 	.4byte BattleScript_EffectBurnHit                 @ EFFECT_PLASMA_CUTTER
 	.4byte BattleScript_EffectBoundary                @ EFFECT_BOUNDARY
@@ -579,7 +579,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectDrumBeating             @ EFFECT_DRUM_BEATING
 	.4byte BattleScript_EffectWoodHammer              @ EFFECT_WOOD_HAMMER
 	.4byte BattleScript_EffectAppleAcid               @ EFFECT_APPLE_ACID
-	.4byte BattleScript_EffectEnergyBall              @ EFFECT_ENERGY_BALL
+	.4byte BattleScript_EffectSpecialDefenseDownHit   @ EFFECT_PSYCHIC
 	.4byte BattleScript_EffectPetalDance              @ EFFECT_PETAL_DANCE
 	.4byte BattleScript_EffectSnowfade                @ EFFECT_SNOWFADE
 	.4byte BattleScript_EffectFrenzyPlant             @ EFFECT_FRENZY_PLANT
@@ -704,6 +704,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectBabyBlues               @ EFFECT_BABY_BLUES
 	.4byte BattleScript_EffectLethalChain             @ EFFECT_LETHAL_CHAIN
 	.4byte BattleScript_EffectZenHeadbutt             @ EFFECT_ZEN_HEADBUTT
+	.4byte BattleScript_EffectFakeOut                 @ EFFECT_COLD_SNAP
 
 BattleScript_EffectZenHeadbutt::
 	jumpifholdeffect BS_ATTACKER, HOLD_EFFECT_MOON_MIRROR, BattleScript_TrueMoonBeam
@@ -3166,13 +3167,6 @@ BattleScript_EffectPetalDance2:
 	seteffectsecondary
 	goto BattleScript_MoveEnd
 
-BattleScript_EffectEnergyBall:
-	jumpifstatus BS_ATTACKER, STATUS1_BLOOMING, BattleScript_EnergyBallMaxSpDefDropChance
-	goto BattleScript_EffectSpecialDefenseDownHit
-BattleScript_EnergyBallMaxSpDefDropChance:
-	setmoveeffect MOVE_EFFECT_SP_DEF_MINUS_1 | MOVE_EFFECT_CERTAIN
-	goto BattleScript_EffectHit
-
 BattleScript_EffectAppleAcid:
 	jumpifstatus BS_ATTACKER, STATUS1_BLOOMING, BattleScript_AppleAcidBothDefenses
 	goto BattleScript_EffectSpecialDefenseDownHit
@@ -3263,6 +3257,8 @@ BattleScript_EffectTropKick::
 	goto BattleScript_EffectAttackDownHit
 BattleScript_TropKickCheckInfatuation::
 	jumpifstatus2 BS_TARGET, STATUS2_INFATUATION, BattleScript_TropKickAtkDefDownUserAtkUp
+	setmoveeffect MOVE_EFFECT_ATK_UP_ATK_DOWN
+	goto BattleScript_EffectHit
 BattleScript_TropKickAtkDefDown::
 	setmoveeffect MOVE_EFFECT_ATK_DEF_DOWN
 	goto BattleScript_EffectHit
@@ -3547,7 +3543,7 @@ BoundaryAgainstBossShunyong::
 	adjustdamage
 	goto BattleScript_HitFromAtkAnimation
 
-BattleScript_EffectDefSpDefeUpHit::
+BattleScript_EffectDefSpDefUpHit::
 	setmoveeffect MOVE_EFFECT_DEF_SPDEF_UP | MOVE_EFFECT_AFFECTS_USER
 	goto BattleScript_EffectHit
 
@@ -3560,7 +3556,7 @@ BattleScript_EffectGrassCannon:
 	jumpifterrainaffected BS_ATTACKER, STATUS_FIELD_GRASSY_TERRAIN, BattleScript_EffectSpecialDefenseUpHit
 	goto BattleScript_EffectHit
 BattleScript_GrassCannonCheckTerrain::
-	jumpifterrainaffected BS_ATTACKER, STATUS_FIELD_GRASSY_TERRAIN, BattleScript_EffectDefSpDefeUpHit
+	jumpifterrainaffected BS_ATTACKER, STATUS_FIELD_GRASSY_TERRAIN, BattleScript_EffectDefSpDefUpHit
 	goto BattleScript_EffectDefenseUpHit
 
 BattleScript_EffectSpiritAway::
@@ -6796,9 +6792,11 @@ BattleScript_EffectFreezyFrost:
 
 BattleScript_EffectSappySeed:
 	jumpifstatus3 BS_TARGET, STATUS3_LEECHSEED, BattleScript_EffectHit
-	call BattleScript_EffectHit_Ret
-	jumpifhalfword CMP_COMMON_BITS, gMoveResultFlags, MOVE_RESULT_NO_EFFECT, BattleScript_MoveEnd
+    call BattleScript_EffectHit_Ret
 	tryfaintmon BS_TARGET
+	jumpifbattleend BattleScript_MoveEnd
+	jumpiffainted BS_TARGET, TRUE, BattleScript_MoveEnd
+	jumpifmovehadnoeffect BattleScript_MoveEnd
 	jumpifhasnohp BS_TARGET, BattleScript_MoveEnd
 	setseeded
 	printfromtable gLeechSeedStringIds
@@ -11529,7 +11527,6 @@ BattleScript_EffectLockOnSpAttackUp:
 	attackstring
 	ppreduce
 	jumpifsubstituteblocks BattleScript_ButItFailed
-
 	setalwayshitflag
 	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_LockOnStatUpEnd
 	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_LockOnAnim
@@ -15412,6 +15409,24 @@ BattleScript_AtkDefDownTryDef:
 	printfromtable gStatDownStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_AtkDefDownRet:
+	return
+
+BattleScript_AtkUpAtkDown::
+	playstatchangeanimation BS_TARGET, BIT_ATK, STAT_CHANGE_CANT_PREVENT | STAT_CHANGE_NEGATIVE
+	setstatchanger STAT_ATK, 1, TRUE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_AtkUpAtkDownTryRaiseUserAtk
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_AtkUpAtkDownTryRaiseUserAtk
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_AtkUpAtkDownTryRaiseUserAtk:
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_ATK, STAT_CHANGE_CANT_PREVENT
+	setstatchanger STAT_ATK, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN | STAT_CHANGE_ALLOW_PTR, BattleScript_AtkUpAtkDownRet
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_AtkUpAtkDownRet
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_AtkUpAtkDownRet:
 	return
 
 BattleScript_SuperTropKick::

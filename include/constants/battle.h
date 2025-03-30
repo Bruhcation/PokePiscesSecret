@@ -461,8 +461,9 @@
 #define MOVE_EFFECT_BANSHRIEK           119
 #define MOVE_EFFECT_LETHAL_CHAIN        120
 #define MOVE_EFFECT_RECHARGE_STATS      121
+#define MOVE_EFFECT_ATK_UP_ATK_DOWN     122
 
-#define NUM_MOVE_EFFECTS                122
+#define NUM_MOVE_EFFECTS                123
 
 #define MOVE_EFFECT_AFFECTS_USER        0x4000
 #define MOVE_EFFECT_CERTAIN             0x8000
