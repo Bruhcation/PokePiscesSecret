@@ -12110,10 +12110,8 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
             basePower = 160;
         break;
     case EFFECT_HEAVY_CANNON:
-        if (gBattleMons[battlerAtk].statStages[STAT_DEF] > DEFAULT_STAT_STAGE || gBattleMons[battlerAtk].statStages[STAT_SPDEF] > DEFAULT_STAT_STAGE)
-            basePower += 30 * ((gBattleMons[battlerAtk].statStages[STAT_DEF] - DEFAULT_STAT_STAGE) + (gBattleMons[battlerAtk].statStages[STAT_SPDEF] - DEFAULT_STAT_STAGE));
-            if (basePower < 100)
-                basePower = 100;
+        if (CountBattlerDefenseIncreases(battlerAtk) > 0 || CountBattlerSpecialDefenseIncreases(battlerAtk) > 0)
+            basePower = 100 + (30 * (CountBattlerDefenseIncreases(battlerAtk) + CountBattlerSpecialDefenseIncreases(battlerAtk)));
         break;
     case EFFECT_ELECTRO_BALL:
         speed = GetBattlerTotalSpeedStat(battlerAtk) / GetBattlerTotalSpeedStat(battlerDef);
@@ -14247,7 +14245,7 @@ static inline s32 DoMoveDamageCalcVars(u32 move, u32 battlerAtk, u32 battlerDef,
                 defCompare = 80;
             if (IsSpeciesOneOf(gBattleMons[battlerDef].species, gMegaBosses) && (gBattleTypeFlags & BATTLE_TYPE_SHUNYONG) && defCompare > 50)
                 defCompare = 50;
-            dmg = dmg + defCompare;
+            dmg += defCompare;
         }
         else
         {
@@ -14255,7 +14253,7 @@ static inline s32 DoMoveDamageCalcVars(u32 move, u32 battlerAtk, u32 battlerDef,
                 atkCompare = 80;
             if (IsSpeciesOneOf(gBattleMons[battlerDef].species, gMegaBosses) && (gBattleTypeFlags & BATTLE_TYPE_SHUNYONG) && atkCompare > 50)
                 atkCompare = 50;
-            dmg = dmg + defCompare;
+            dmg += defCompare;
         }
     }
 
@@ -14271,7 +14269,7 @@ static inline s32 DoMoveDamageCalcVars(u32 move, u32 battlerAtk, u32 battlerDef,
         uniqueDamage = gBattleMons[battlerDef].maxHP * 15 / 100;
         if (IsSpeciesOneOf(gBattleMons[battlerDef].species, gMegaBosses) && (gBattleTypeFlags & BATTLE_TYPE_SHUNYONG) && uniqueDamage > 50)
             uniqueDamage = 50;
-        dmg = dmg + uniqueDamage;
+        dmg += uniqueDamage;
     }
     else if (move == MOVE_LICK)
     {
@@ -14281,14 +14279,14 @@ static inline s32 DoMoveDamageCalcVars(u32 move, u32 battlerAtk, u32 battlerDef,
             uniqueDamage = gBattleMons[battlerDef].maxHP;
         if (IsSpeciesOneOf(gBattleMons[battlerDef].species, gMegaBosses) && (gBattleTypeFlags & BATTLE_TYPE_SHUNYONG) && uniqueDamage > 50)
             uniqueDamage = 50;
-        dmg = dmg + uniqueDamage;
+        dmg += uniqueDamage;
     }
     else if (move == MOVE_MALIGNANT_CHAIN)
     {
         uniqueDamage = gBattleMons[battlerDef].maxHP * 3 / 10;
         if (IsSpeciesOneOf(gBattleMons[battlerDef].species, gMegaBosses) && (gBattleTypeFlags & BATTLE_TYPE_SHUNYONG) && uniqueDamage > 50)
             uniqueDamage = 50;
-        dmg = dmg + uniqueDamage;
+        dmg += uniqueDamage;
     }
     else if (move == MOVE_NEEDLE_ARM
     || (move == MOVE_SHADOW_CLAW && gIsCriticalHit)
@@ -14299,14 +14297,14 @@ static inline s32 DoMoveDamageCalcVars(u32 move, u32 battlerAtk, u32 battlerDef,
         uniqueDamage = gBattleMons[battlerDef].maxHP / 5;
         if (IsSpeciesOneOf(gBattleMons[battlerDef].species, gMegaBosses) && (gBattleTypeFlags & BATTLE_TYPE_SHUNYONG) && uniqueDamage > 50)
             uniqueDamage = 50;
-        dmg = dmg + uniqueDamage;
+        dmg += uniqueDamage;
     }
     else if (move == MOVE_POISON_DART && gBattleMons[battlerDef].status1 & STATUS1_POISON)
     {
         uniqueDamage = gBattleMons[battlerDef].maxHP / 4;
         if (IsSpeciesOneOf(gBattleMons[battlerDef].species, gMegaBosses) && (gBattleTypeFlags & BATTLE_TYPE_SHUNYONG) && uniqueDamage > 50)
             uniqueDamage = 50;
-        dmg = dmg + uniqueDamage;
+        dmg += uniqueDamage;
     }
 
     if (dmg == 0)
@@ -14535,7 +14533,7 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
         mod = UQ_4_12(1.0);
     if (moveType == TYPE_POISON && (defType == TYPE_POISON || defType == TYPE_STEEL) && GetBattlerAbility(battlerAtk) == ABILITY_CORROSION)
         mod = UQ_4_12(2.0);
-    if (move == MOVE_SCORP_FANG && (defType == TYPE_POISON || defType == TYPE_STEEL))
+    if (gBattleMoves[move].effect == EFFECT_SCORP_FANG && (defType == TYPE_POISON || defType == TYPE_STEEL))
         mod = UQ_4_12(1.0);
     if (move == MOVE_CHROMA_BEAM)
         mod = UQ_4_12(2.0);
@@ -15952,6 +15950,10 @@ u32 CalcSecondaryEffectChance(u32 battler, u8 secondaryEffectChance)
     if (gCurrentMove == MOVE_ASTRAL_BARRAGE && gBattleStruct->faintedMonCount[GetBattlerSide(battler)] != 0)
         secondaryEffectChance = 20 + (10 * gBattleStruct->faintedMonCount[GetBattlerSide(battler)]);
     else if (gCurrentMove == MOVE_METEOR_MASH && gFieldStatuses & STATUS_FIELD_GRAVITY)
+        secondaryEffectChance = 100;
+    else if (gCurrentMove == MOVE_GUNK_FUNK && gBattleMons[gBattlerTarget].status1 & STATUS1_PSN_ANY)
+        secondaryEffectChance = 100;
+    else if (gCurrentMove == MOVE_RADIOACID && (gBattleMons[gBattlerTarget].status1 & STATUS1_PSN_ANY || gBattleMons[gBattlerTarget].status1 & STATUS1_BURN))
         secondaryEffectChance = 100;
     else if (gCurrentMove == MOVE_ENERGY_BALL && gBattleMons[battler].status1 & STATUS1_BLOOMING)
         secondaryEffectChance = 100;

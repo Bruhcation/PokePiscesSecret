@@ -8987,7 +8987,7 @@ static void Cmd_getmoneyreward(void)
         RemoveMoney(&gSaveBlock1Ptr->money, money);
     }
 
-    PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 5, money);
+    PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 6, money);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
@@ -12549,7 +12549,7 @@ static void Cmd_various(void)
         VARIOUS_ARGS(const u8 *failInstr);
         if (gCurrentMove == MOVE_SHIELDS_UP)
         {
-            gBattleMoveDamage = gBattleMons[battler].maxHP * 35 / 10;
+            gBattleMoveDamage = gBattleMons[battler].maxHP * 35 / 100;
         }
         else
         {
