@@ -5610,8 +5610,8 @@ static void Task_TryLearnNewMoves(u8 taskId)
             switch (learnMove)
             {
             case 0: // No moves to learn
-                //if (sInitialLevel >= sFinalLevel)
-                //    PartyMenuTryEvolution(taskId);
+                if (sInitialLevel >= sFinalLevel)
+                    PartyMenuTryEvolution(taskId);
                 break;
             case MON_HAS_MAX_MOVES:
                 DisplayMonNeedsToReplaceMove(taskId);
@@ -5639,8 +5639,8 @@ static void Task_TryLearningNextMove(u8 taskId)
         switch (result)
         {
         case 0: // No moves to learn
-            //if (sInitialLevel >= sFinalLevel)
-            //    PartyMenuTryEvolution(taskId);
+            if (sInitialLevel >= sFinalLevel)
+                PartyMenuTryEvolution(taskId);
             break;
         case MON_HAS_MAX_MOVES:
             DisplayMonNeedsToReplaceMove(taskId);
@@ -5672,11 +5672,9 @@ static void CB2_ReturnToPartyMenuUsingShellyBrew(void)
 static void PartyMenuTryEvolution(u8 taskId)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
-#ifdef POKEMON_EXPANSION 
-    u16 targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL);
-#else
-    u16 targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE);
-#endif
+    // u16 targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL);
+    // Leaving here in case we change it at other time
+    u16 targetSpecies = SPECIES_NONE;
 
     if (targetSpecies != SPECIES_NONE)
     {
