@@ -299,7 +299,6 @@ struct BattleMove
     u32 instructBanned:1;
     u32 lazyMove:1;
     u32 cantUseTwice:1;
-    u32 cantUseTwiceBlooming:1;
     u32 cantUseTwicePsySwap:1;
 };
 #define SPINDA_SPOT_WIDTH 16

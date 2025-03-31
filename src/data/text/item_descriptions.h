@@ -3349,7 +3349,7 @@ static const u8 sTM21Desc[] = _(
 
 static const u8 sTM22Desc[] = _(
     "The user continually\n"
-    "rolls into the foe over\n"
+    "rolls into the foe for\n"
     "5 turns. It becomes\n"
     "stronger each time.");
 
@@ -3402,16 +3402,16 @@ static const u8 sTM30Desc[] = _(
     "also cuts their Attack.");;
 
 static const u8 sTM31Desc[] = _(
-    "The foe is knocked\n"
-    "away and switched. In\n"
-    "the wild, the battle\n"
-    "ends.");
-
-static const u8 sTM32Desc[] = _(
     "The user's cuteness\n"
     "lets it swipe the foe's\n"
     "item. If the foe is\n"
     "infatuated, lowers Atk.");
+
+static const u8 sTM32Desc[] = _(
+    "The foe is knocked\n"
+    "away and switched. In\n"
+    "the wild, the battle\n"
+    "ends.");
 
 static const u8 sTM33Desc[] = _(
     "Attacks with strange\n"
@@ -4491,7 +4491,7 @@ static const u8 sVibrantScaleDesc[] = _(
     "Speed stats.");
 
 static const u8 sTriumphStarDesc[] = _(
-    "Boosts Ledian's Attack\n"
+    "Boosts Ledian's Atk\n"
     "when screens are up.\n"
     "Punching moves are\n"
     "boosted further.");
@@ -4574,8 +4574,8 @@ static const u8 sMoonMirrorDesc[] = _(
     "attackers.");
 
 static const u8 sFriendRibbonDesc[] = _(
-    "A ribbon of friendship\n"
-    "that boosts a Colfin's\n"
+    "A ribbon of kindness\n"
+    "that boosts Colfin's\n"
     "Defense stat and its\n"
     "ally's move power.");
 

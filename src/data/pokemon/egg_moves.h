@@ -2002,6 +2002,36 @@ const u16 gEggMoves[] = {
         MOVE_WIDE_GUARD,
         MOVE_BATON_PASS),
 
+    egg_moves(SPINDA_CAVE,
+        MOVE_SLACK_OFF,
+        MOVE_QUICK_GUARD,
+        MOVE_WIDE_GUARD,
+        MOVE_BATON_PASS),
+
+    egg_moves(SPINDA_DESERT,
+        MOVE_SLACK_OFF,
+        MOVE_QUICK_GUARD,
+        MOVE_WIDE_GUARD,
+        MOVE_BATON_PASS),
+
+    egg_moves(SPINDA_FOREST,
+        MOVE_SLACK_OFF,
+        MOVE_QUICK_GUARD,
+        MOVE_WIDE_GUARD,
+        MOVE_BATON_PASS),
+
+    egg_moves(SPINDA_MOUNTAIN,
+        MOVE_SLACK_OFF,
+        MOVE_QUICK_GUARD,
+        MOVE_WIDE_GUARD,
+        MOVE_BATON_PASS),
+
+    egg_moves(SPINDA_PLAINS,
+        MOVE_SLACK_OFF,
+        MOVE_QUICK_GUARD,
+        MOVE_WIDE_GUARD,
+        MOVE_BATON_PASS),
+
     egg_moves(TRAPINCH,
         MOVE_FOCUS_ENERGY,
         MOVE_QUICK_ATTACK,
@@ -4428,7 +4458,8 @@ const u16 gEggMoves[] = {
         MOVE_LUCKY_CHANT,
         MOVE_FEATHER_DANCE,
         MOVE_ALLURING_VOICE,
-        MOVE_PURIFICATION),
+        MOVE_PURIFICATION,
+        MOVE_PSYCHO_SHIFT),
 
     egg_moves(PSEUDRA,
         MOVE_DOUBLE_EDGE,
@@ -4560,12 +4591,12 @@ const u16 gEggMoves[] = {
         MOVE_JUMP_KICK,
         MOVE_MIMIC,
         MOVE_FAKE_OUT,
-        MOVE_TEMPER_FLARE,
         MOVE_HAMMER_ARM,
         MOVE_SHADOW_PUNCH,
         MOVE_OUTRAGE,
         MOVE_SUPERCELL_SLAM,
-        MOVE_WAKE_UP_SLAP),
+        MOVE_WAKE_UP_SLAP,
+        MOVE_TEMPER_FLARE),
 
     egg_moves(CRAWLAXY,
         MOVE_GRAVITY,
@@ -4984,7 +5015,7 @@ const u16 gEggMoves[] = {
         MOVE_BATON_PASS),
 
     egg_moves(FERROR,
-        MOVE_SEIZE_CHANCE,
+        MOVE_NO_RETREAT,
         MOVE_KINGS_SHIELD,
         MOVE_BULK_UP,
         MOVE_BRUTAL_SWING,
@@ -5450,7 +5481,6 @@ const u16 gEggMoves[] = {
     egg_moves(BLABBU,
         MOVE_HOLD_HANDS,
         MOVE_DRAINING_KISS,
-        MOVE_SLUDGE,
         MOVE_SLUDGE_WAVE),
 
     egg_moves(TURRYTURRY,

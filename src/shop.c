@@ -1312,9 +1312,9 @@ static void BuyMenuInitWindows(void)
         if (ItemId_GetPocket(item) == POCKET_TM_HM)
         {
             const u8 *move = gMoveNames[ItemIdToBattleMoveId(item)];
-            FormatTextByWidth(gStringVar2, 100, FONT_SMALL_NARROW, ItemId_GetDescription(sMartInfo.itemList[0]), 0);
+            FormatTextByWidth(gStringVar2, 105, FONT_SMALL_NARROW, ItemId_GetDescription(item), 0);
             desc = gStringVar2;
-            BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 70), 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+            BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 80), 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
         }
 
         if (ItemId_GetImportance(item) && (CheckBagHasItem(item, 1) || CheckPCHasItem(item, 1)))
@@ -1451,9 +1451,9 @@ static void UpdateItemData(void)
             if (ItemId_GetPocket(item) == POCKET_TM_HM && item != ITEM_NONE)
             {
                 const u8 *move = gMoveNames[ItemIdToBattleMoveId(item)];
-                FormatTextByWidth(gStringVar2, 100, FONT_SMALL_NARROW, ItemId_GetDescription(sMartInfo.itemList[0]), 0);
+                FormatTextByWidth(gStringVar2, 105, FONT_SMALL_NARROW, ItemId_GetDescription(item), 0);
                 desc = gStringVar2;
-                BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 70), 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+                BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 80), 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
             }
 
             if (ItemId_GetImportance(item) && (CheckBagHasItem(item, 1) || CheckPCHasItem(item, 1)))
@@ -1725,12 +1725,12 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
             if (tItemCount > 19)
             {
                 FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
-                BuyMenuPrint(WIN_ITEM_DESCRIPTION, gText_ThrowInPremierBall, 0, 4, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+                BuyMenuPrint(WIN_ITEM_DESCRIPTION, gText_ThrowInSomePremierBalls, 0, 4, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
             }
             else
             {
                 FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
-                BuyMenuPrint(WIN_ITEM_DESCRIPTION, gText_ThrowInSomePremierBalls, 0, 4, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+                BuyMenuPrint(WIN_ITEM_DESCRIPTION, gText_ThrowInPremierBall, 0, 4, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
             }
         }
         gTasks[taskId].func = Task_ReturnToItemListWaitMsg;

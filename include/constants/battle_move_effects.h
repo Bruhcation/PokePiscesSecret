@@ -556,7 +556,7 @@
 #define EFFECT_DRUM_BEATING                 550 //AI Flags added, Blooming conditional should be tested
 #define EFFECT_WOOD_HAMMER                  551 //AI Flags added, Blooming conditional should be tested
 #define EFFECT_APPLE_ACID                   552 //AI Flags added, Blooming conditional should be tested
-#define EFFECT_ENERGY_BALL                  553 //Does not need special AI code
+#define EFFECT_PSYCHIC                      553 //Does not need special AI code
 #define EFFECT_PETAL_DANCE                  554 //According to EFFECT_RAMPAGE, this doesnt need any special AI code
 #define EFFECT_SNOWFADE                     555 //AI Flags added, combined stuff from EFFECT_HIT_ESCAPE with a B_WEATHER_HAIL check, may cause a bug
 #define EFFECT_FRENZY_PLANT                 556 //AI Flags complete
@@ -667,20 +667,20 @@
 #define EFFECT_SPRING_BREEZE                661
 #define EFFECT_AERIAL_ACE                   662
 #define EFFECT_DOUBLE_TEAM                  663
-#define EFFECT_SPOTLIGHT                    664
-#define EFFECT_COMET_PUNCH                  665
-#define EFFECT_PSYCHIC_FANGS                666
-#define EFFECT_TRICK_OR_TREAT               667
-#define EFFECT_WORK_UP                      668
-#define EFFECT_METAL_CLAW                   669
-#define EFFECT_IRON_TAIL                    670
-#define EFFECT_STEEL_BEAM                   671
-#define EFFECT_FOCUS_BLAST                  672
-#define EFFECT_SPIKE_CANNON                 673
-#define EFFECT_DIG                          674
-#define EFFECT_BABY_BLUES                   675
-#define EFFECT_LETHAL_CHAIN                 676
-#define EFFECT_ZEN_HEADBUTT                 677
+#define EFFECT_COMET_PUNCH                  664
+#define EFFECT_PSYCHIC_FANGS                665
+#define EFFECT_TRICK_OR_TREAT               666
+#define EFFECT_WORK_UP                      667
+#define EFFECT_METAL_CLAW                   668
+#define EFFECT_IRON_TAIL                    669
+#define EFFECT_STEEL_BEAM                   670
+#define EFFECT_FOCUS_BLAST                  671
+#define EFFECT_SPIKE_CANNON                 672
+#define EFFECT_DIG                          673
+#define EFFECT_BABY_BLUES                   674
+#define EFFECT_LETHAL_CHAIN                 675
+#define EFFECT_ZEN_HEADBUTT                 676
+#define EFFECT_COLD_SNAP                    677
 
 #define NUM_BATTLE_MOVE_EFFECTS             678
 

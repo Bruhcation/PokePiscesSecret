@@ -6396,6 +6396,8 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
             score += 2;
         else if (ShouldBloomSelf(battlerAtk, aiData->abilities[battlerAtk]))
             score += 2;
+        else
+            score -= 10;
         break;
     case EFFECT_TAKE_HEART:
         if (gBattleMons[battlerAtk].status1 & STATUS1_ANY

@@ -1064,6 +1064,7 @@ gBattleAnims_Moves::
     .4byte Move_FIREBRAND
 	.4byte Move_LIGHTNING
 	.4byte Move_BABY_BLUES
+	.4byte Move_SIGHTSEER
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -1180,7 +1181,7 @@ gBattleAnims_General::
 	.4byte Move_SAFEGUARD                   @ B_ANIM_SAFEGUARD
 	.4byte Move_LUCKY_CHANT                 @ B_ANIM_LUCKY_CHANT
 	.4byte Move_GROWL                       @ B_ANIM_GUARD_DOG
-	.4byte Move_SWEET_SCENT                 @ B_ANIM_SWEET_VEIL
+	.4byte Move_SWEET_SCENT2                @ B_ANIM_SWEET_VEIL
 	.4byte Move_TAILWIND                    @ B_ANIM_TAILWIND
 	.4byte Status_Whirlpool                 @ B_ANIM_WHIRLPOOL
 
@@ -1617,7 +1618,6 @@ Move_ASSURANCE::
 Move_EMBARGO::
 	loadspritegfx ANIM_TAG_FAIRY_LOCK_CHAINS
 	setalpha 8, 8
-	monbg ANIM_ATK_PARTNER
 	fadetobg BG_DARK
 	waitbgfadein
 	delay 0
@@ -1631,7 +1631,6 @@ Move_EMBARGO::
 	createvisualtask AnimTask_VoltTackleBolt, 0x5, 0x6
 	createvisualtask AnimTask_VoltTackleBolt, 0x5, 0x35
 	waitforvisualfinish
-	clearmonbg ANIM_ATK_PARTNER
 	delay 1
 	restorebg
 	waitbgfadein
@@ -2776,6 +2775,8 @@ Move_VACUUM_WAVE::
 	end
 
 Move_FOCUS_BLAST::
+	choosetwoturnanim FocusBlastNormal, Move_FOCUS_ENERGY
+FocusBlastNormal::
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
 	loadspritegfx ANIM_TAG_METEOR
 	loadspritegfx ANIM_TAG_FLAT_ROCK
@@ -7204,6 +7205,8 @@ Move_HEAT_CRASH::
 Move_LEAF_TORNADO::
 	loadspritegfx ANIM_TAG_GUST @Gust
 	loadspritegfx ANIM_TAG_LEAF @Leaves
+	choosetwoturnanim LeafTornadoNormal, LeafTornadoNormal
+LeafTornadoNormal:
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
 	playsewithpan SE_M_GUST, SOUND_PAN_TARGET
@@ -26822,7 +26825,9 @@ Move_STALAG_BLAST::
 	loadspritegfx ANIM_TAG_ROCKS
 	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 8, 9, RGB(26, 8, 8), 8, RGB_BLACK, 8
 	createvisualtask AnimTask_ShakeMon2, 5, ANIM_ATTACKER, 8, 0, 40, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_ATK_PARTNER, 8, 0, 40, 1
 	createvisualtask AnimTask_ShakeMon2, 5, ANIM_TARGET, 8, 0, 40, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_DEF_PARTNER, 8, 0, 40, 1
 	call StalagBlasting
 	call StalagBlasting
 	waitforvisualfinish
@@ -28748,6 +28753,8 @@ PursuitOnSwitchout:
 	goto PursuitContinue
 
 Move_SPIKE_CANNON:
+	choosetwoturnanim SpikeCannonNormal, Move_SPIKES
+SpikeCannonNormal::
 	loadspritegfx ANIM_TAG_PIN
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_TARGET
@@ -32198,6 +32205,7 @@ Move_PSYCHIC:
 	call UnsetPsychicBg
 	end
 
+Move_SIGHTSEER:
 Move_FUTURE_SIGHT:
 	goto FutureSight
 FutureSightContinue:
@@ -35738,6 +35746,20 @@ MorningSunStar:
 	createsprite gGreenStarSpriteTemplate, ANIM_ATTACKER, 2, 30, 640
 	delay 5
 	return
+
+Move_SWEET_SCENT2:
+	loadspritegfx ANIM_TAG_PINK_PETAL
+	playsewithpan SE_M_SWEET_SCENT, SOUND_PAN_ATTACKER
+	createsprite gSweetScentPetalSpriteTemplate, ANIM_ATTACKER, 2, 100, 0, 100
+	delay 25
+	setpan 0
+	call SweetScentEffect
+	createsprite gSweetScentPetalSpriteTemplate, ANIM_ATTACKER, 2, 55, 0
+	setpan SOUND_PAN_TARGET
+	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATK_SIDE, 1, 5, 5, 13, RGB(31, 21, 21)
+	call SweetScentEffect
+	waitforvisualfinish
+	end
 
 Move_SWEET_SCENT:
 	loadspritegfx ANIM_TAG_PINK_PETAL

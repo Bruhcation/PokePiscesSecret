@@ -1750,10 +1750,6 @@
 	various \battler, VARIOUS_TRY_ACTIVATE_STAR_ASSAULT
 	.endm
 
-	.macro tryactivateshadowforce battler:req
-	various \battler, VARIOUS_TRY_ACTIVATE_SHADOW_FORCE
-	.endm
-
 	.macro playmoveanimation battler:req, move:req
 	various \battler, VARIOUS_PLAY_MOVE_ANIMATION
 	.2byte \move
@@ -1766,6 +1762,11 @@
 
 	.macro suckerpunchcheck failInstr:req
 	various BS_ATTACKER, VARIOUS_SUCKER_PUNCH_CHECK
+	.4byte \failInstr
+	.endm
+
+	.macro upperhandcheck failInstr:req
+	various BS_ATTACKER, VARIOUS_UPPER_HAND_CHECK
 	.4byte \failInstr
 	.endm
 
@@ -1868,11 +1869,6 @@
 
 	.macro trydoubleteam battler:req, failInstr:req
 	various \battler, VARIOUS_TRY_DOUBLE_TEAM
-	.4byte \failInstr
-	.endm
-
-	.macro setspotlight failInstr:req
-	various BS_ATTACKER, VARIOUS_SET_SPOTLIGHT
 	.4byte \failInstr
 	.endm
 

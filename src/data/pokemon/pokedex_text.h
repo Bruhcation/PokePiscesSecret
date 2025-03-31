@@ -349,16 +349,18 @@ const u8 gPrimeapePokedexText[] = _(
     "Primeape heavily injured regardless of who wins.");
 
 const u8 gGrowlithePokedexText[] = _(
-    "Growlid is a stalwart canine companion\n"
-    "that will defend its trainer at the cost\n"
-    "of its own life. Striking its rocky fur\n"
-    "causes it to ignite into flames.");
+    "Growlid are stalwart canine companions that will\n"
+    "defend their trainers at the cost of their own\n"
+    "lives. Striking their rocky fur causes it to\n"
+    "ignite. They make use of this by purposely having\n"
+    "hits graze their fur, causing blasts of fire.");
 
 const u8 gArcaninePokedexText[] = _(
-    "Its raging fury spreads flames throughout\n"
-    "the field, leaving nothing but ash and\n"
-    "ember. Yet, those who witness such an\n"
-    "event say it's a sight of perilous beauty.");
+    "Their raging fury spreads flames throughout the\n"
+    "vast fields, leaving nothing but ash and ember\n"
+    "winds. A sky colored by the wrath and darkness,\n"
+    "a beast of fire and brimstone-those who witness\n"
+    "the event say it's a sight of perilous beauty.");
 
 const u8 gPoliwagPokedexText[] = _(
     "It is possible to see this Pokémon's spiral\n"
@@ -1711,10 +1713,11 @@ const u8 gBreloomPokedexText[] = _(
     "fields and forests.");
 
 const u8 gSpindaPokedexText[] = _(
-    "Their constant swaying and unpredictable\n"
-    "walking makes it annoying for predators\n"
-    "to catch them. It is so effective that\n"
-    "there has been a recent population boom.");
+    "Their constant swaying and unpredictable walking\n"
+    "make it annoying for predators to catch them. A\n"
+    "recent population boom has occurred in Hoenn due\n"
+    "to their effectiveness. Living in other biomes\n"
+    "has made them adapt to new conditions.");
 
 const u8 gWingullPokedexText[] = _(
     "It makes its nest on a sheer cliff at the\n"
@@ -3570,16 +3573,18 @@ const u8 gGolurkPokedexText[] = _(
     "internal energy go out of control.");
 
 const u8 gPawniardPokedexText[] = _(
-    "Pawniard enjoy keeping their sharp\n"
-    "blades clean and pristine. They follow\n"
-    "Bisharp hoping to learn their skills and\n"
-    "techniques.");
+    "Pawniard enjoy keeping their sharp blades clean\n"
+    "and pristine. They follow an older and more\n"
+    "experienced Bisharp, hoping to learn from their\n"
+    "superiors. Different clans of Pawniard hone\n"
+    "different techniques of the blade.");
 
 const u8 gBisharpPokedexText[] = _(
-    "They take pride in the sharpness of\n"
-    "their blades, as well as the scratches in\n"
-    "their armor. A fight between two veteran\n"
-    "Bisharp is said to be a sight to behold.");
+    "They take pride in the sharpness of their blades,\n"
+    "as well as the scratches in their armor. A fight\n"
+    "between two veteran Bisharp is said to be a sight\n"
+    "to behold. The loser falls on their knees, then\n"
+    "has their horn cut off, exiled from the clan.");
 
 const u8 gBouffalantPokedexText[] = _(
     "Their fluffy fur absorbs damage, even\n"
@@ -5885,7 +5890,7 @@ const u8 gCattowyrmPokedexText[] = _(
     "start rampaging, eating even their hive members.");
 
 const u8 gBramboozlePokedexText[] = _(
-    "This Pokémon is one of the leading causes of\n"
+    "These Pokémon are one of the leading causes of\n"
     "getting lost in the woods. Travelers who get\n"
     "scraped by their thorns hallucinate, gradually\n"
     "losing themselves in the forest. This is due to\n"
@@ -5941,58 +5946,67 @@ const u8 gSchachttaPokedexText[] = _(
     "Evil flows slowly, seeping through the cracks.");
 
 const u8 gSylvreignPokedexText[] = _(
-    "The martial prowess of this draconic\n"
-    "equine is unmatched. They're flexible\n"
-    "and quickly adapt to battle, and are the\n"
-    "perfect companion in combat.");
+    "The martial prowess of this draconic equine is\n"
+    "unmatched. They're quick-witted and highly adept\n"
+    "at battle. This made them perfect companions in\n"
+    "combat-many legendary warriors of the past\n"
+    "charged through battlefields riding Sylvreign.");
 
 const u8 gCattuclidPokedexText[] = _(
-    "Cattuclid's metallic horns and tail\n"
-    "appear to be endless, as no scientist\n"
-    "has ever discovered an end to them when\n"
-    "viewed on a microscope.");
+    "Under a microscope, a Cattuclid's metallic\n"
+    "horns and tail appear to have no end. Even when\n"
+    "viewed with an electron microscope, it spirals\n"
+    "forever beyond atoms. Trying to observe the\n"
+    "phenomenon further is now banned.");
 
 const u8 gFractoflyPokedexText[] = _(
-    "Fractofly's wings have the same endless\n"
-    "properties as Cattuclid's horns. Being\n"
-    "near them can cause intense déjà vu and\n"
-    "paranoia of recursive patterns.");
+    "A Fractofly's wings have the same endless\n"
+    "properties as a Cattuclid's horns. Being near\n"
+    "them can cause déjà vu and paranoia of recursive\n"
+    "patterns. Trying to observe the spiral with a\n"
+    "microscope induces a collapse of one's sanity.");
 
 const u8 gGravelitoPokedexText[] = _(
-    "Most individuals find its bumbling\n"
-    "appearance amusing. It performs a\n"
-    "lovely, melancholic melody when the sun\n"
-    "rises.");
+    "Most individuals find their bumbling appearance\n"
+    "amusing. They color the desert with their vibrant\n"
+    "colors, performing a lovely, melancholic melody\n"
+    "when the sun rises. One has been recorded to\n"
+    "suddenly grow out of nowhere in someone's sink.");
 
 const u8 gMegalitoPokedexText[] = _(
-    "Groups of this rock-skinned Pokémon\n"
-    "gather around the arid summer. Whenever\n"
-    "the clouds obscure the sun, they sing a\n"
-    "song that clears the sky.");
+    "Groups of these rock-skinned Pokémon gather\n"
+    "around in the summer. When clouds obscure the\n"
+    "sun, they sing a song that clears the sky. To be\n"
+    "more accurate, they create powerful sound waves\n"
+    "that dissipate vapor in clouds, clearing them.");
 
 const u8 gCombunPokedexText[] = _(
-    "A popular children's story tells of a\n"
-    "lone rabbit on the moon. Centuries of\n"
-    "playing alone drove it mad and so it jumped\n"
-    "to Earth to play with everyone else.");
+    "A popular children's story tells of a lonely\n"
+    "rabbit on the moon. Centuries of playing alone\n"
+    "drove it mad, and so it jumped to Earth to play\n"
+    "with everyone else. This old tale corroborates\n"
+    "the rumor of Combun being aliens from the moon.");
 
 const u8 gHaibunPokedexText[] = _(
-    "Combun that live in a snowy area are\n"
-    "most likely to take this form. They\n"
-    "mostly move around by using their tail\n"
-    "to sweep away snow.");
+    "Combun that live in snowy areas take on this\n"
+    "form. Their fur feels soft and cold to the touch.\n"
+    "The tail fur is especially dense and soft,\n"
+    "making them desirable to use in clothing and\n"
+    "apparel. They travel by hopping on their tail.");
 
 const u8 gBurbunPokedexText[] = _(
-    "Combun that live in the desert are most\n"
-    "likely to take this form. They can reach\n"
-    "top speeds underground and rarely show\n"
-    "their bottom half.");
+    "Combun that live in deserts take this form. They\n"
+    "travel mainly underground and are very adept at\n"
+    "it. Construction workers use their incredible\n"
+    "digging speed to dig large holes quickly in less\n"
+    "than a minute. They are very, very long.");
 
 const u8 gIngbunPokedexText[] = _(
-    "Combun that live in the city are most\n"
-    "likely to take this form. They rarely\n"
-    "eat and have a gruff metallic exterior\n"
-    "to defend them from the cruel city.");
+    "Combun that live in cities take this form. They\n"
+    "rarely eat and have gruff, metallic fur. Their\n"
+    "fur, while as thin as normal hair, is 3 times as\n"
+    "durable as normal steel. They can raise said\n"
+    "hair into clumps of spikes for protection.");
 
 const u8 gChaffawPokedexText[] = _(
     "Chaffaw swarm to battle their arch-enemy,\n"
@@ -6736,10 +6750,11 @@ const u8 gShunyongPokedexText[] = _(
     "and fall of all.");
 
 const u8 gKingambitPokedexText[] = _(
-    "Kingambit command squads of Bisharp and\n"
-    "Pawniard to raid villages and habitats to\n"
-    "get food. They, however, lack strategic\n"
-    "versatility when commanding their army.");
+    "Kingambit command squads of Bisharp and Pawniard\n"
+    "to raid villages and habitats in search of food.\n"
+    "They, however, lack strategic versatility when\n"
+    "commanding their army and often rely on brute\n"
+    "force. They never bow down to an enemy.");
 
 const u8 gShellylouhPokedexText[] = _(
     "Shellylouh, with spells imbue.\n"
@@ -6748,16 +6763,18 @@ const u8 gShellylouhPokedexText[] = _(
     "Her lovely shelly brew.");
 
 const u8 gInfairnoPokedexText[] = _(
-    "Infairno are always in a rush to get\n"
-    "somewhere. However, their stubby legs\n"
-    "and underdeveloped wings make them\n"
-    "exceptionally slow.");
+    "Infairno are always in a rush to get somewhere.\n"
+    "But, their stubby legs and underdeveloped wings\n"
+    "make them exceptionally slow. They're especially\n"
+    "humorous when seeing them run around in battle,\n"
+    "flapping their wings. Haha, look at them go...");
 
 const u8 gPurgativalPokedexText[] = _(
-    "These predators emit a glow and make a\n"
-    "ticking sound when hunting. But when\n"
-    "they glow brightest and their ticking\n"
-    "stops, they swiftly dispatch their prey.");
+    "These predators emit a glow and make a ticking\n"
+    "sound when hunting, standing uncannily still and\n"
+    "motionless. But when they glow brightest and the\n"
+    "ticking stops, they disappear in the blink of an\n"
+    "eye, swiftly dispatching their prey.");
 
 const u8 gDeteriotlPokedexText[] = _(
     "Deteriotl's unstable body has decayed\n"
