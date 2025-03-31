@@ -2584,9 +2584,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_FLASH] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_4
-            .accuracy = 85,
+            .accuracy = 70,
         #else
-            .accuracy = 85,
+            .accuracy = 70,
         #endif
         .effect = EFFECT_FLASH,
         .power = 0,
