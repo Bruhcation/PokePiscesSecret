@@ -15337,7 +15337,7 @@ BattleScript_StarsGraceStarts::
 	end3
 
 BattleScript_SilenceContinues::
-	playanimation BS_BATTLER_0, B_ANIM_SILENCE
+	playanimation BS_ATTACKER, B_ANIM_SILENCE
 	printstring STRINGID_SILENCECONTINUES
 	waitmessage B_WAIT_TIME_LONG
 	end2
@@ -15382,7 +15382,7 @@ BattleScript_SilenceActivatesNonArcane::
 	jumpifnotbattletype BATTLE_TYPE_TRAINER, BattleScript_SilenceContinueWithoutIncrementingGameStat
 	incrementgamestat GAME_STAT_SILENCE_ACTIVATED
 BattleScript_SilenceContinueWithoutIncrementingGameStat::
-	playanimation BS_BATTLER_0, B_ANIM_SILENCE
+	playanimation BS_ATTACKER, B_ANIM_SILENCE
 	jumpifspecies BS_ATTACKER, SPECIES_INFAIRNO, BattleScript_SilenceActivatesArcane
 	jumpifspecies BS_ATTACKER, SPECIES_PURGATIVAL, BattleScript_SilenceActivatesArcane
 	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_ATK, MAX_STAT_STAGE, BattleScript_SilenceActivatesNonArcaneAtk
@@ -17438,7 +17438,7 @@ BattleScript_DroughtActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNSXINTENSIFIEDSUN
 	waitstate
-	playanimation BS_BATTLER_0, B_ANIM_SUN_CONTINUES
+	playanimation BS_ATTACKER, B_ANIM_SUN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
 
@@ -17447,7 +17447,7 @@ BattleScript_MudWaterSportActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_ELECTRICITYANDFIREWEAKENED
 	waitstate
-	playanimation BS_BATTLER_0, B_ANIM_MUD_WATER_SPORT
+	playanimation BS_ATTACKER, B_ANIM_MUD_WATER_SPORT
 	waitmessage B_WAIT_TIME_LONG
 	end3
 
@@ -17456,7 +17456,7 @@ BattleScript_MudSportActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_ELECTRICITYWEAKENED
 	waitstate
-	playanimation BS_BATTLER_0, B_ANIM_MUD_SPORT
+	playanimation BS_ATTACKER, B_ANIM_MUD_SPORT
 	waitmessage B_WAIT_TIME_LONG
 	end3
 
