@@ -3487,7 +3487,6 @@ void FaintClearSetData(u32 battler)
     gProtectStructs[battler].aftermathBlowUp = FALSE;
 
     gDisableStructs[battler].isFirstTurn = 2;
-    gSideTimers[battler].spotlightTimer = 0;
 
     gLastMoves[battler] = MOVE_NONE;
     gLastLandedMoves[battler] = MOVE_NONE;

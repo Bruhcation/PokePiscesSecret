@@ -1872,11 +1872,6 @@
 	.4byte \failInstr
 	.endm
 
-	.macro setspotlight failInstr:req
-	various BS_ATTACKER, VARIOUS_SET_SPOTLIGHT
-	.4byte \failInstr
-	.endm
-
 	.macro jumpifcantusesynchronoise jumpInstr:req
 	various BS_ATTACKER, VARIOUS_TRY_SYNCHRONOISE
 	.4byte \jumpInstr

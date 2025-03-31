@@ -690,7 +690,6 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectSpringBreeze            @ EFFECT_SPRING_BREEZE
 	.4byte BattleScript_EffectHit                     @ EFFECT_AERIAL_ACE
 	.4byte BattleScript_EffectDoubleTeam              @ EFFECT_DOUBLE_TEAM
-	.4byte BattleScript_EffectSpotlight               @ EFFECT_SPOTLIGHT
 	.4byte BattleScript_EffectHit                     @ EFFECT_COMET_PUNCH
 	.4byte BattleScript_EffectBrickBreak              @ EFFECT_PSYCHIC_FANGS
 	.4byte BattleScript_EffectTrickorTreat            @ EFFECT_TRICK_OR_TREAT
@@ -1077,20 +1076,6 @@ BattleScript_EffectHeartStealFromDamage:
 	printfromtable gAllureStringIds
 	waitmessage B_WAIT_TIME_LONG
 	call BattleScript_TryDestinyKnotInfatuateAttacker
-	goto BattleScript_MoveEnd
-
-BattleScript_EffectSpotlight::
-	attackcanceler
-	attackstring
-	ppreduce
-	.if B_UPDATED_MOVE_DATA >= GEN_6
-	jumpifnotbattletype BATTLE_TYPE_DOUBLE, BattleScript_ButItFailed
-	.endif
-	setspotlight BattleScript_ButItFailed
-	attackanimation
-	waitanimation
-	printstring STRINGID_PKMNCENTERATTENTIONSPOTLIGHT
-	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectDoubleTeam::
@@ -2898,13 +2883,16 @@ BattleScript_EffectConstrict2:
 	waitmessage B_WAIT_TIME_LONG
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
-	seteffectwithchance
+	seteffectprimary
 	tryfaintmon BS_TARGET
 	jumpifbattleend BattleScript_MoveEnd
 	jumpiffainted BS_TARGET, TRUE, BattleScript_MoveEnd
 	jumpifmovehadnoeffect BattleScript_MoveEnd
-	setmoveeffect MOVE_EFFECT_CONSTRICT
+	setmoveeffect MOVE_EFFECT_FLINCH
+	seteffectwithchance
+	setmoveeffect MOVE_EFFECT_PREVENT_ESCAPE
 	seteffectsecondary
+	printstring STRINGID_TARGETCANTESCAPENOW
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -5053,7 +5041,7 @@ BattleScript_VenomDrainHealBlock::
 	setmoveeffect MOVE_EFFECT_ATK_PLUS_1 | MOVE_EFFECT_AFFECTS_USER
 	seteffectprimary
 	jumpiffainted BS_TARGET, TRUE, BattleScript_MoveEnd
-	jumpifsubstituteblocks BattleScript_EffectHit
+	jumpifsubstituteblocks BattleScript_MoveEnd
 	setmoveeffect MOVE_EFFECT_REMOVE_STATUS
 	seteffectsecondary
 	goto BattleScript_MoveEnd
@@ -18747,6 +18735,7 @@ BattleScript_GooeyActivates::
 	call BattleScript_AbilityPopUp
 	swapattackerwithtarget  @ for defiant, mirror armor
 	seteffectsecondary
+	swapattackerwithtarget
 	return
 
 BattleScript_GooeyActivatesSpeedandDisable::

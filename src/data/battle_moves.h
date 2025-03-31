@@ -2299,7 +2299,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .type = TYPE_NORMAL,
         .accuracy = 90,
         .pp = 15,
-        .secondaryEffectChance = 100,
+        .secondaryEffectChance = 40,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
@@ -10693,7 +10693,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         #else
             .priority = 3,
         #endif
-        .effect = EFFECT_SPOTLIGHT,
+        .effect = EFFECT_FOLLOW_ME,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,

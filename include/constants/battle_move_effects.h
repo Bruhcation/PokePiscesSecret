@@ -667,22 +667,21 @@
 #define EFFECT_SPRING_BREEZE                661
 #define EFFECT_AERIAL_ACE                   662
 #define EFFECT_DOUBLE_TEAM                  663
-#define EFFECT_SPOTLIGHT                    664
-#define EFFECT_COMET_PUNCH                  665
-#define EFFECT_PSYCHIC_FANGS                666
-#define EFFECT_TRICK_OR_TREAT               667
-#define EFFECT_WORK_UP                      668
-#define EFFECT_METAL_CLAW                   669
-#define EFFECT_IRON_TAIL                    670
-#define EFFECT_STEEL_BEAM                   671
-#define EFFECT_FOCUS_BLAST                  672
-#define EFFECT_SPIKE_CANNON                 673
-#define EFFECT_DIG                          674
-#define EFFECT_BABY_BLUES                   675
-#define EFFECT_LETHAL_CHAIN                 676
-#define EFFECT_ZEN_HEADBUTT                 677
-#define EFFECT_COLD_SNAP                    678
+#define EFFECT_COMET_PUNCH                  664
+#define EFFECT_PSYCHIC_FANGS                665
+#define EFFECT_TRICK_OR_TREAT               666
+#define EFFECT_WORK_UP                      667
+#define EFFECT_METAL_CLAW                   668
+#define EFFECT_IRON_TAIL                    669
+#define EFFECT_STEEL_BEAM                   670
+#define EFFECT_FOCUS_BLAST                  671
+#define EFFECT_SPIKE_CANNON                 672
+#define EFFECT_DIG                          673
+#define EFFECT_BABY_BLUES                   674
+#define EFFECT_LETHAL_CHAIN                 675
+#define EFFECT_ZEN_HEADBUTT                 676
+#define EFFECT_COLD_SNAP                    677
 
-#define NUM_BATTLE_MOVE_EFFECTS             679
+#define NUM_BATTLE_MOVE_EFFECTS             678
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H

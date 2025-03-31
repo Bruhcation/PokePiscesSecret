@@ -3105,9 +3105,9 @@ static const u8 sLeafageDescription[] = _(
     "critical hits and goes first.");
 
 static const u8 sSpotlightDescription[] = _(
-    "sShines a spotlight on itself to\n"
-    "make foes aim at it for 3 turns.\n"
-    "The user and ally are trapped.");
+    "The user shines a spotlight on\n"
+    "itself, making all foes take aim\n"
+    "only at the user.");
 
 static const u8 sToxicThreadDescription[] = _(
     "The user shoots poisonous\n"

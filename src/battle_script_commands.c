@@ -1319,7 +1319,8 @@ static void Cmd_attackcanceler(void)
         return;
     if (AbilityBattleEffects(ABILITYEFFECT_MOVES_BLOCK, gBattlerTarget, 0, 0, 0))
         return;
-    if (!gBattleMons[gBattlerAttacker].pp[gCurrMovePos] && gCurrentMove != MOVE_STRUGGLE
+    if (!gBattleMons[gBattlerAttacker].pp[gCurrMovePos] 
+     && gCurrentMove != MOVE_STRUGGLE
      && !(gHitMarker & (HITMARKER_ALLOW_NO_PP | HITMARKER_NO_ATTACKSTRING | HITMARKER_NO_PPDEDUCT))
      && !(gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS)
      && !gProtectStructs[gBattlerAttacker].extraMoveUsed)
@@ -4704,18 +4705,6 @@ void SetMoveEffect(bool32 primary, u32 certain)
                         gBattleScripting.moveEffect = RandomElement(RNG_TRI_ATTACK, sDualChopEffects);
                         SetMoveEffect(FALSE, 0);
                     }
-                }
-                break;
-            case MOVE_EFFECT_CONSTRICT:
-                {
-                    u8 randomFlinchChance = RandomPercentage(RNG_TRIPLE_ARROWS_FLINCH, CalcSecondaryEffectChance(gBattlerAttacker, 40));
-
-                    if (randomFlinchChance && (battlerAbility != ABILITY_INNER_FOCUS && !gDisableStructs[gEffectBattler].focusEnergy) 
-                        && battlerAbility != ABILITY_PROPELLER_TAIL && GetBattlerTurnOrderNum(gEffectBattler) > gCurrentTurnActionNumber)
-                        gBattleMons[gEffectBattler].status2 |= sStatusFlagsForMoveEffects[MOVE_EFFECT_FLINCH];
-
-                    gBattleMons[gEffectBattler].status2 |= STATUS2_ESCAPE_PREVENTION;
-                    gDisableStructs[gEffectBattler].battlerPreventingEscape = gBattlerAttacker;
                 }
                 break;
             case MOVE_EFFECT_SNOWFADE:
@@ -11878,21 +11867,6 @@ static void Cmd_various(void)
         }
         return;
     }
-    case VARIOUS_SET_SPOTLIGHT:
-    {
-        VARIOUS_ARGS(const u8 *failInstr);
-        if (gSideTimers[GetBattlerSide(gBattlerAttacker)].spotlightTimer > 1)
-        {
-            gBattlescriptCurrInstr = cmd->failInstr;
-        }
-        else
-        {
-            gSideTimers[GetBattlerSide(gBattlerAttacker)].spotlightTimer = 3;
-            gSideTimers[GetBattlerSide(gBattlerAttacker)].spotlightTarget = gBattlerAttacker;
-            gBattlescriptCurrInstr = cmd->nextInstr;
-        }
-        return;
-    }
     case VARIOUS_TRY_INSTRUCT:
     {
         VARIOUS_ARGS(const u8 *failInstr);
@@ -12730,9 +12704,6 @@ static void Cmd_various(void)
         // End any Follow Me/Rage Powder effects caused by the target
         if (gSideTimers[GetBattlerSide(gBattlerTarget)].followmeTimer != 0 && gSideTimers[GetBattlerSide(gBattlerTarget)].followmeTarget == gBattlerTarget)
             gSideTimers[GetBattlerSide(gBattlerTarget)].followmeTimer = 0;
-
-        if (gSideTimers[GetBattlerSide(gBattlerTarget)].spotlightTimer != 0 && gSideTimers[GetBattlerSide(gBattlerTarget)].spotlightTarget == gBattlerTarget)
-            gSideTimers[GetBattlerSide(gBattlerTarget)].spotlightTimer = 0;
 
         break;
     }
@@ -16412,11 +16383,7 @@ static void Cmd_counterdamagecalculator(void)
         if (IsSpeciesOneOf(gBattleMons[gBattlerAttacker].species, gMegaBosses) && (gBattleTypeFlags & BATTLE_TYPE_SHUNYONG) && gBattleMoveDamage > 50)
             gBattleMoveDamage = 50;
 
-        if (IsAffectedBySpotlight(gBattlerAttacker, sideTarget, gCurrentMove)) 
-        {
-            gBattlerTarget = gSideTimers[sideTarget].spotlightTarget;
-        }
-        else if (IsAffectedByFollowMe(gBattlerAttacker, sideTarget, gCurrentMove)) 
+        if (IsAffectedByFollowMe(gBattlerAttacker, sideTarget, gCurrentMove)) 
         {
             gBattlerTarget = gSideTimers[sideTarget].followmeTarget;
         }
@@ -16448,11 +16415,7 @@ static void Cmd_mirrorcoatdamagecalculator(void)
         if (IsSpeciesOneOf(gBattleMons[gBattlerAttacker].species, gMegaBosses) && (gBattleTypeFlags & BATTLE_TYPE_SHUNYONG) && gBattleMoveDamage > 50)
             gBattleMoveDamage = 50;
 
-        if (IsAffectedBySpotlight(gBattlerAttacker, sideTarget, gCurrentMove)) 
-        {
-            gBattlerTarget = gSideTimers[sideTarget].spotlightTarget;
-        }
-        else if (IsAffectedByFollowMe(gBattlerAttacker, sideTarget, gCurrentMove)) 
+        if (IsAffectedByFollowMe(gBattlerAttacker, sideTarget, gCurrentMove)) 
         {
             gBattlerTarget = gSideTimers[sideTarget].followmeTarget;
         }
@@ -17659,9 +17622,9 @@ static void Cmd_trysetfutureattack(void)
         gWishFutureKnock.futureSightBattlerIndex[gBattlerTarget] = gBattlerAttacker;
         gWishFutureKnock.futureSightPartyIndex[gBattlerTarget] = gBattlerPartyIndexes[gBattlerAttacker];
         if (GetBattlerAbility(gBattlerAttacker) == ABILITY_FOREWARN)
-            gWishFutureKnock.futureSightCounter[gBattlerTarget] = 2;
-        else
             gWishFutureKnock.futureSightCounter[gBattlerTarget] = 3;
+        else
+            gWishFutureKnock.futureSightCounter[gBattlerTarget] = 4;
 
         if (gCurrentMove == MOVE_DOOM_DESIRE)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;

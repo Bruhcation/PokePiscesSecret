@@ -325,19 +325,18 @@
 #define VARIOUS_RANDOM_STAT_DROP                     233
 #define VARIOUS_ALLURE                               234
 #define VARIOUS_TRY_DOUBLE_TEAM                      235
-#define VARIOUS_SET_SPOTLIGHT                        236
-#define VARIOUS_TRY_SET_IMPRISON                     237
-#define VARIOUS_INVERT_POSITIVE_STAT_STAGES          238
-#define VARIOUS_SET_BABY_BLUES                       239
-#define VARIOUS_SET_DOUBLES_MOVE_SUCCEED             240
-#define VARIOUS_JUMP_IF_DOUBLES_MOVE_SUCCEED         241
-#define VARIOUS_FLORESCENCE_CHECK                    242
-#define VARIOUS_SET_SWITCH_IN_ABILITY_SUCCEED        243
-#define VARIOUS_JUMP_IF_SWITCH_IN_ABILITY_SUCCEED    244
-#define VARIOUS_JUMP_IF_FOCUS_ENERGY                 245
-#define VARIOUS_TRY_HEAL_THIRD_HEALTH                246
-#define VARIOUS_TRY_HEAL_SIXTH_HEALTH                247
-#define VARIOUS_UPPER_HAND_CHECK                     248
+#define VARIOUS_TRY_SET_IMPRISON                     236
+#define VARIOUS_INVERT_POSITIVE_STAT_STAGES          237
+#define VARIOUS_SET_BABY_BLUES                       238
+#define VARIOUS_SET_DOUBLES_MOVE_SUCCEED             239
+#define VARIOUS_JUMP_IF_DOUBLES_MOVE_SUCCEED         240
+#define VARIOUS_FLORESCENCE_CHECK                    241
+#define VARIOUS_SET_SWITCH_IN_ABILITY_SUCCEED        242
+#define VARIOUS_JUMP_IF_SWITCH_IN_ABILITY_SUCCEED    243
+#define VARIOUS_JUMP_IF_FOCUS_ENERGY                 244
+#define VARIOUS_TRY_HEAL_THIRD_HEALTH                245
+#define VARIOUS_TRY_HEAL_SIXTH_HEALTH                246
+#define VARIOUS_UPPER_HAND_CHECK                     247
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
