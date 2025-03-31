@@ -348,6 +348,129 @@ MauvilleNew_EventScript_MaintenanceSign::
 	msgbox MauvilleNew_Text_MaintenanceSign, MSGBOX_SIGN
 	end
 
+MauvilleNew_EventScript_MindBreak::
+	lock
+	faceplayer
+	checkitem ITEM_TM_MIND_BREAK
+	goto_if_eq VAR_RESULT, TRUE, MauvilleNew_EventScript_GaveMindBreak
+	msgbox MauvilleNew_Text_MindBreak, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_MIND_BREAK
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+MauvilleNew_EventScript_GaveMindBreak::
+	msgbox MauvilleNew_Text_GaveMindBreak, MSGBOX_AUTOCLOSE
+	release
+	end
+
+MauvilleNew_EventScript_Mauvillite1::
+	msgbox MauvilleNew_Text_Mauvillite1, MSGBOX_NPC
+	end
+
+MauvilleNew_EventScript_Mauvillite2::
+	msgbox MauvilleNew_Text_Mauvillite2, MSGBOX_NPC
+	end
+
+MauvilleNew_EventScript_Mauvillite3::
+	msgbox MauvilleNew_Text_Mauvillite3, MSGBOX_NPC
+	end
+
+MauvilleNew_EventScript_Mauvillite4::
+	msgbox MauvilleNew_Text_Mauvillite4, MSGBOX_NPC
+	end
+
+MauvilleNew_EventScript_Mauvillite5::
+	msgbox MauvilleNew_Text_Mauvillite5, MSGBOX_NPC
+	end
+
+MauvilleNew_EventScript_Mauvillite6::
+	msgbox MauvilleNew_Text_Mauvillite6, MSGBOX_NPC
+	end
+
+MauvilleNew_EventScript_Mauvillite7::
+	msgbox MauvilleNew_Text_Mauvillite7, MSGBOX_NPC
+	end
+
+MauvilleNew_EventScript_Mauvillite8::
+	msgbox MauvilleNew_Text_Mauvillite8, MSGBOX_NPC
+	end
+
+MauvilleNew_Text_Mauvillite1:
+	.string "It is quite humbling to witness\n"
+	.string "how small the Desert seems on\l"
+	.string "the outside. When you are in it,\l"
+	.string "it sure feels like it is endless.$"
+
+MauvilleNew_Text_Mauvillite2:
+	.string "That small battlefield to my\n"
+	.string "left gets used pretty often by\l"
+	.string "people who live in the city.\p"
+	.string "It's a pretty climactic location\n"
+	.string "to do battle. Or at least, it\l"
+	.string "feels that way.$"
+
+MauvilleNew_Text_Mauvillite3:
+	.string "I always come and eat my lunch\n"
+	.string "on the rooftop when there's\l"
+	.string "a match going on!$"
+
+MauvilleNew_Text_Mauvillite4:
+	.string "Those Meralcore on the rooftops\n"
+	.string "gather around as if drawn to\l"
+	.string "the boatloads of electricity this\l"
+	.string "structure generates. They don't\l"
+	.string "really bother anybody.$"
+
+MauvilleNew_Text_Mauvillite5:
+	.string "My Pokemon love their Ability\n"
+	.string "Snacks! It's such a convenient way\l"
+	.string "to change up their Abilities on\l"
+	.string "the go, without having to catch\l"
+	.string "a new one. And they're tasty,\l"
+	.string "to boot!$"
+
+MauvilleNew_Text_Mauvillite6:
+	.string "I want to take Cycling Road\n"
+	.string "to Sea Mauville, but I can't\l"
+	.string "take my Acro Bike on the Road\l"
+	.string "because it is apparently too slow.\p"
+	.string "I'll have to figure out how to\n"
+	.string "get myself a Mach Bike.$"
+
+MauvilleNew_Text_Mauvillite7:
+	.string "This structure that is New Mauville\n"
+	.string "was a monumental effort from\l"
+	.string "so many people. I worked on it myself.\p"
+	.string "But of course, the figurehead,\n"
+	.string "Wattson, gets ALL the credit.\l"
+	.string "Can't help but feel bad about\l"
+	.string "that, not gonna lie.$"
+
+MauvilleNew_Text_Mauvillite8:
+	.string "Sea Mauville is south from here.\n"
+	.string "It used to be called Slateport City\l"
+	.string "before Greater Mauville Holdings\l"
+	.string "bought them out. It's a little\l"
+	.string "confusing...$"
+
+MauvilleNew_Text_MindBreak:
+	.string "I am drowning in beaurocratic\n"
+	.string "nonsense right now with my work.\l"
+	.string "I've about had it up to here!\p"
+	.string "Sigh... corporate bigwigs always\n"
+	.string "seem to know how to break your\l"
+	.string "mind. My only solace is doing the\l"
+	.string "same to my foes in battle...\l"
+	.string "with this TM. Here, have one.$"
+
+MauvilleNew_Text_GaveMindBreak:
+	.string "Maybe I should get my Pokemon\n"
+	.string "to toy with my bosses as my\l"
+	.string "own brand of revenge...$"
+
 MauvilleNew_Text_NewMauvilleNorthSign:
 	.string "NEW MAUVILLE - NORTH ENTRANCE$"
 

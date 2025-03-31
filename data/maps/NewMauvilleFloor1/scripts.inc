@@ -424,6 +424,54 @@ NewMauvilleFloor1_EventScript_RydelGuard::
 	msgbox NewMauvilleFloor1_Text_RydelGuard, MSGBOX_NPC
 	end
 
+NewMauvilleFloor1_EventScript_NMPC1::
+	msgbox NewMauvilleFloor1_Text_NMPC1, MSGBOX_NPC
+	end
+
+NewMauvilleFloor1_EventScript_NMPC2::
+	msgbox NewMauvilleFloor1_Text_NMPC2, MSGBOX_NPC
+	end
+
+NewMauvilleFloor1_EventScript_NMPC3::
+	msgbox NewMauvilleFloor1_Text_NMPC3, MSGBOX_NPC
+	end
+
+NewMauvilleFloor1_EventScript_NMPC4::
+	msgbox NewMauvilleFloor1_Text_NMPC4, MSGBOX_NPC
+	end
+
+NewMauvilleFloor1_EventScript_NMPC5::
+	msgbox NewMauvilleFloor1_Text_NMPC5, MSGBOX_NPC
+	end
+
+NewMauvilleFloor1_Text_NMPC1:
+	.string "If you get confused as to which\n"
+	.string "elevators lead where, there are\l"
+	.string "signs next to all of 'em.$"
+
+NewMauvilleFloor1_Text_NMPC2:
+	.string "Ah, New Mauville, the pinnacle\n"
+	.string "of human architectural achievement!\l"
+	.string "Mauville City as it used to be\l"
+	.string "is no more. It is now an\l"
+	.string "acropolis of the future!$"
+
+NewMauvilleFloor1_Text_NMPC3:
+	.string "There are so many move tutors\n"
+	.string "in New Mauville... they have a\l"
+	.string "specific hankering for Gold Teeth.\l"
+	.string "What, do they like... put them in\l"
+	.string "their mouths? Ew?$"
+
+NewMauvilleFloor1_Text_NMPC4:
+	.string "Rydel is such a hermit. When is he\n"
+	.string "going to return from his travels\l"
+	.string "so I can get a bike from him?$"
+
+NewMauvilleFloor1_Text_NMPC5:
+	.string "I don't have the money to buy\n"
+	.string "the badge! What am I going to do!?$"
+
 NewMauvilleFloor1_Text_2F3FElevatorSign:
 	.string "The elevator labelled 2F\n"
 	.string "leads to the apartments.\p"

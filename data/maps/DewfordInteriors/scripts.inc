@@ -96,6 +96,38 @@ DewfordInteriors_EventScript_SpitfaxCaught::
 	release
 	end
 
+DewfordInteriors_EventScript_SludgeBomb::
+	lock
+	faceplayer
+	checkitem ITEM_TM_SLUDGE_BOMB
+	goto_if_eq VAR_RESULT, TRUE, DewfordInteriors_EventScript_GaveSludgeBomb
+	msgbox DewfordInteriors_Text_SludgeBomb, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_SLUDGE_BOMB
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+DewfordInteriors_EventScript_GaveSludgeBomb::
+	msgbox DewfordInteriors_Text_GaveSludgeBomb, MSGBOX_AUTOCLOSE
+	release
+	end
+
+DewfordInteriors_Text_SludgeBomb:
+	.string "Look, I've never actually SEEN\n"
+	.string "a Spitfax, but I'm PRETTY sure\l"
+	.string "that if I did catch one, it\l"
+	.string "would learn Sludge Bomb!\p"
+	.string "I don't know, it just seems fitting.\n"
+	.string "Have one of my Sludge Bomb TMs\l"
+	.string "in case you manage to find one.$"
+
+DewfordInteriors_Text_GaveSludgeBomb:
+	.string "Spitfax... where could that\n"
+	.string "rascal be hiding...?\l"
+	.string "It simply MUST be real!$"
+
 DewfordInteriors_Text_WereCryptidEnthusiasts:
 	.string "(This man is snickering annoyingly.)\p"
 	.string "So, you're wanting to join\n"

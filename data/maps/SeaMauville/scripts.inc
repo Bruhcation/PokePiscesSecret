@@ -630,6 +630,64 @@ SeaMauville_EventScript_BeachSign::
 	msgbox SeaMauville_Text_BeachSign, MSGBOX_SIGN
 	end
 
+SeaMauville_EventScript_Rest::
+	lock
+	faceplayer
+	checkitem ITEM_TM_REST
+	goto_if_eq VAR_RESULT, TRUE, SeaMauville_EventScript_GaveRest
+	msgbox SeaMauville_Text_Rest, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_REST
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+SeaMauville_EventScript_GaveRest::
+	msgbox SeaMauville_Text_GaveRest, MSGBOX_AUTOCLOSE
+	release
+	end
+
+SeaMauville_EventScript_SleepTalk::
+	lock
+	faceplayer
+	checkitem ITEM_TM_SLEEP_TALK
+	goto_if_eq VAR_RESULT, TRUE, SeaMauville_EventScript_GaveSleepTalk
+	msgbox SeaMauville_Text_SleepTalk, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_SLEEP_TALK
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+SeaMauville_EventScript_GaveSleepTalk::
+	msgbox SeaMauville_Text_GaveSleepTalk, MSGBOX_AUTOCLOSE
+	release
+	end
+
+SeaMauville_Text_Rest:
+	.string "z  z  z  z  z\p"
+	.string "(The sleeping man reaches out\n"
+	.string "his arm. He is holding a TM.)$"
+
+SeaMauville_Text_GaveRest:
+	.string "z  z  z  z  z$"
+
+SeaMauville_Text_SleepTalk:
+	.string "Talking to people while they're\n"
+	.string "asleep, like my friend here,\l"
+	.string "is a science. The human brain can\l"
+	.string "never truly fully de-activate,\l"
+	.string "and the same goes for Pokemon.\p"
+	.string "To use that kind of knowledge in\n"
+	.string "battle, just make use of this TM!$"
+
+SeaMauville_Text_GaveSleepTalk:
+	.string "Now, if you really want to wake\n"
+	.string "something up, you have to get your\l"
+	.string "hands on a Poke Flute.$"
+
 SeaMauville_Text_SlateportSign:
 	.string "SEA MAUVILLE\n"
 	.string "Formerly Slateport City\p"

@@ -106,6 +106,68 @@ SlateportInteriors_EventScript_GaveYouMyCard::
 	release
 	end
 
+SlateportInteriors_EventScript_ChillyAir::
+	lock
+	faceplayer
+	checkitem ITEM_TM_CHILLY_AIR
+	goto_if_eq VAR_RESULT, TRUE, SlateportInteriors_EventScript_GaveChillyAir
+	msgbox SlateportInteriors_Text_ChillyAir, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_CHILLY_AIR
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+SlateportInteriors_EventScript_GaveChillyAir::
+	msgbox SlateportInteriors_Text_GaveChillyAir, MSGBOX_AUTOCLOSE
+	release
+	end
+
+SlateportInteriors_EventScript_CoolMist::
+	lock
+	faceplayer
+	checkitem ITEM_TM_COOL_MIST
+	goto_if_eq VAR_RESULT, TRUE, SlateportInteriors_EventScript_GaveCoolMist
+	msgbox SlateportInteriors_Text_CoolMist, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_COOL_MIST
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+SlateportInteriors_EventScript_GaveCoolMist::
+	msgbox SlateportInteriors_Text_GaveCoolMist, MSGBOX_AUTOCLOSE
+	release
+	end
+
+SlateportInteriors_Text_ChillyAir:
+	.string "Brrrr!!! It's so cold in here!\n"
+	.string "Is the coldness... um, coming from\l"
+	.string "this TM I have? C-Could you take\l"
+	.string "it away?$"
+
+SlateportInteriors_Text_GaveChillyAir:
+	.string "Now that I'm thinking harder...\n"
+	.string "I-I think papa set the air\l"
+	.string "conditioner to 40 degrees...!$"
+
+SlateportInteriors_Text_CoolMist:
+	.string "That cool, ocean breeze...\n"
+	.string "my Pokemon seem to love it.\l"
+	.string "So much so, that they use this\l"
+	.string "move in battle pretty often.\l"
+	.string "Why don't your little guys\l"
+	.string "try it out as well?$"
+
+SlateportInteriors_Text_GaveCoolMist:
+	.string "Hmmmm... if Brumist Cliffs were\n"
+	.string "by the ocean, would they have\l"
+	.string "been called Coomist Cliffs instead?\p"
+	.string "...No, that really doesn't\n"
+	.string "sound right.$"
+
 SlateportInteriors_Text_WhatINeed:
 	.string "The other guys in the fan club\n"
 	.string "are really into Pokemon Card\l"

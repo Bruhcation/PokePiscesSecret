@@ -190,6 +190,38 @@ DewfordNew_EventScript_MadeYourChoice::
 	release
 	end
 
+DewfordNew_EventScript_EnergyBall::
+	lock
+	faceplayer
+	checkitem ITEM_TM_ENERGY_BALL
+	goto_if_eq VAR_RESULT, TRUE, DewfordNew_EventScript_GaveEnergyBall
+	msgbox DewfordNew_Text_EnergyBall, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_ENERGY_BALL
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+DewfordNew_EventScript_GaveEnergyBall::
+	msgbox DewfordNew_Text_GaveEnergyBall, MSGBOX_AUTOCLOSE
+	release
+	end
+
+DewfordNew_Text_EnergyBall:
+	.string "Just soakin' up the energy\n"
+	.string "from these trees, man...\l"
+	.string "It's hella relaxing...\p"
+	.string "Grass type Pokemon, man...\n"
+	.string "they really can soak up the\l"
+	.string "energy of nature...\l"
+	.string "if you use this TM, they can\l"
+	.string "fire that stored energy...$"
+
+DewfordNew_Text_GaveEnergyBall:
+	.string "I need to write a hella emotional\n"
+	.string "song about nature, man...$"
+
 DewfordNew_Text_PickAChoiceItem:
 	.string "Sometimes in life, you must make\n"
 	.string "hard choices! You cannot just\l"
@@ -217,17 +249,18 @@ DewfordNew_Text_GaveBigPearl:
 	.string "for always helping Shellylouh!$"
 
 DewfordNew_Text_ShellRiddle:
-	.string "You must beat Shelly in the\n"
-	.string "Dewford Gym to unlock this shop.\l"
-	.string "This is debug text.$"
+	.string "One of our kind, shall you find\n"
+	.string "With a challenge made for you\l"
+	.string "Knock them out, win the bout\l"
+	.string "And claim our Shelly Brew$"
 
 DewfordNew_Text_UnlockedShop:
 	.string "You've unlocked the Shelly Brew shop!\n"
 	.string "Take one as a sample.$"
 
 DewfordNew_Text_WillYouBuyShellyBrew:
-	.string "Would you like to buy\n"
-	.string "another Shelly Brew?$"
+	.string "Buy, would you like to?\n"
+	.string "Another Shelly Brew?$"
 
 DewfordNew_Text_NotEnoughMoney:
 	.string "You don't have enough money...$"

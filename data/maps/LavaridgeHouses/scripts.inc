@@ -71,6 +71,67 @@ LavaridgeHouses_EventScript_EatResistMax::
 	msgbox LavaridgeHouses_Text_EatResistMax, MSGBOX_DEFAULT
 	return
 
+LavaridgeHouses_EventScript_TrickRoom::
+	lock
+	faceplayer
+	checkitem ITEM_TM_TRICK_ROOM
+	goto_if_eq VAR_RESULT, TRUE, LavaridgeHouses_EventScript_GaveTrickRoom
+	msgbox LavaridgeHouses_Text_TrickRoom, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_TRICK_ROOM
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+LavaridgeHouses_EventScript_GaveTrickRoom::
+	msgbox LavaridgeHouses_Text_GaveTrickRoom, MSGBOX_AUTOCLOSE
+	release
+	end
+
+LavaridgeHouses_EventScript_Mustybane::
+	msgbox LavaridgeHouses_Text_Mustybane, MSGBOX_NPC
+	end
+
+LavaridgeHouses_EventScript_BlackBelt1::
+	msgbox LavaridgeHouses_Text_BlackBelt1, MSGBOX_NPC
+	end
+
+LavaridgeHouses_EventScript_BlackBelt2::
+	msgbox LavaridgeHouses_Text_BlackBelt2, MSGBOX_NPC
+	end
+
+LavaridgeHouses_Text_BlackBelt1:
+	.string "The Lavaridge Gym does not\n"
+	.string "particularly have a puzzle.\l"
+	.string "No, instead, they will interrogate\l"
+	.string "you as soon as you come in.\p"
+	.string "You have to be prepared for them\n"
+	.string "to drill you about anything.\l"
+	.string "Wrong answers get punished...$"
+
+LavaridgeHouses_Text_BlackBelt2:
+	.string "Show some backbone when you\n"
+	.string "challenge the gym! Don't give\l"
+	.string "cowardly answers. They want to\l"
+	.string "see that you're a tough cookie!$"
+
+LavaridgeHouses_Text_TrickRoom:
+	.string "I'm pretty slow. Not like, mind wise,\n"
+	.string "don't start snickering.\l"
+	.string "I meant feet wise. I like to\l"
+	.string "take my time, and my Pokemon do too.\p"
+	.string "The perfect move for them is\n"
+	.string "Trick Room! ...And you know what,\l"
+	.string "since you didn't laugh at me,\l"
+	.string "I'll let you have the TM.$"
+
+LavaridgeHouses_Text_GaveTrickRoom:
+	.string "Going at a nice leisurely pace\n"
+	.string "lets you appreciate the\l"
+	.string "beauty of life! Or at least, that's\l"
+	.string "my excuse.$"
+
 LavaridgeHouses_Text_EatResist0:
 	.string "(You take a bite of the berry...)\p"
 	.string "(It tastes like week-old compost\n"
@@ -141,7 +202,7 @@ LavaridgeHouses_Text_DurinGrandmaPost:
 	.string "I'll continue to spoil them!$"
 
 LavaridgeHouses_Text_Mustybane:
-	.string "MUSTYBANE...\p"
+	.string "Mustybane...\p"
 	.string "I've heard somewhere that it's some \n"
 	.string "kind of variant of a dog Pokémon.\p"
 	.string "There's no way that can be right,\n"

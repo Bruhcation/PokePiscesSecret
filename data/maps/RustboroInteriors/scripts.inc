@@ -33,6 +33,35 @@ RustboroInteriors_EventScript_GaveYouMyCard::
 	release
 	end
 
+RustboroInteriors_EventScript_DoubleWing::
+	lock
+	faceplayer
+	checkitem ITEM_TM_DUAL_WINGBEAT
+	goto_if_eq VAR_RESULT, TRUE, RustboroInteriors_EventScript_GaveDoubleWing
+	msgbox RustboroInteriors_Text_DoubleWing, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_DUAL_WINGBEAT
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+RustboroInteriors_EventScript_GaveDoubleWing::
+	msgbox RustboroInteriors_Text_GaveDoubleWing, MSGBOX_AUTOCLOSE
+	release
+	end
+
+RustboroInteriors_Text_DoubleWing:
+	.string "Smacking an enemy with one wing?\n"
+	.string "Boring.\p"
+	.string "Smacking an enemy with TWO wings?\n"
+	.string "...Now we're talking.$"
+
+RustboroInteriors_Text_GaveDoubleWing:
+	.string "I'm glad this move is called Double\n"
+	.string "Wing. Really rolls off the tongue.\p"
+	.string "Dual Wingbeat would sound way worse.$"
+
 RustboroInteriors_Text_WhatINeed:
 	.string "Heyo! Do you have a Pokemon\n"
 	.string "that you particularly have a\l"

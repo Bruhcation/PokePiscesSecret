@@ -149,6 +149,35 @@ OldaleInteriors_EventScript_TradeCompleted2::
 	release
 	end
 
+OldaleInteriors_EventScript_NorthWind::
+	lock
+	faceplayer
+	checkitem ITEM_TM_BLEAKWIND_STORM
+	goto_if_eq VAR_RESULT, TRUE, OldaleInteriors_EventScript_GaveNorthWind
+	msgbox OldaleInteriors_Text_NorthWind, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_BLEAKWIND_STORM
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+OldaleInteriors_EventScript_GaveNorthWind::
+	msgbox OldaleInteriors_Text_GaveNorthWind, MSGBOX_AUTOCLOSE
+	release
+	end
+
+OldaleInteriors_Text_NorthWind:
+	.string "The winds of change are stirring,\n"
+	.string "trainer... and they are telling\l"
+	.string "me to bestow upon you... this.$"
+
+OldaleInteriors_Text_GaveNorthWind:
+	.string "The North Wind is the most powerful\n"
+	.string "of all four cardinal directions...\l"
+	.string "presumably because the cold can\l"
+	.string "be oh so very bitter...$"
+
 OldaleInteriors_Text_IllTradeIfYouWant:
 	.string "I'll trade you my {STR_VAR_2} for\n"
 	.string "a {STR_VAR_1} if you want.$"

@@ -59,13 +59,10 @@ FossilShore_Text_GaveBigPearl:
 	.string "for always helping Shellylouh!$"
 
 FossilShore_Text_ShellRiddle:
-	.string "I want a Pearl String.\n"
-	.string "You can get pearls by stealing them\l"
-	.string "from wild Spoink or Bivague.\l"
-	.string "3 can then be given to a man\l"
-	.string "in the Ashlands to craft them\l"
-	.string "into a Pearl String.\l"
-	.string "This is debug text.$"
+	.string "Fetch a string, made of white\n"
+	.string "Crafted with pearls, shining bright\l"
+	.string "In lands where ash shall fall\l"
+	.string "A craftsman shall take the call$"
 
 FossilShore_Text_HereIsReward:
 	.string "(This Pokemon seems pleased\n"

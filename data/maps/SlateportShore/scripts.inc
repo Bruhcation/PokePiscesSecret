@@ -70,6 +70,40 @@ SlateportShore_EventScript_SeashoreHouseSign::
 	msgbox SlateportShore_Text_SeashoreHouseSign, MSGBOX_SIGN
 	end
 
+SlateportShore_EventScript_Toxic::
+	lock
+	faceplayer
+	checkitem ITEM_TM_TOXIC
+	goto_if_eq VAR_RESULT, TRUE, SlateportShore_EventScript_GaveToxic
+	msgbox SlateportShore_Text_Toxic, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_TOXIC
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+SlateportShore_EventScript_GaveToxic::
+	msgbox SlateportShore_Text_GaveToxic, MSGBOX_AUTOCLOSE
+	release
+	end
+
+SlateportShore_Text_Toxic:
+	.string "Dude, everybody on main keeps\n"
+	.string "tellin' me I'm toxic! I don't\l"
+	.string "know what that means!\p"
+	.string "Maybe, like, they're sayin' I use\n"
+	.string "the Pokemon move too much?\l"
+	.string "But it's so good! Don't be stupid!\p"
+	.string "Y'know what, screw it! I am toxic,\n"
+	.string "and I am PROUD! Take this, so\l"
+	.string "you can be toxic too!$"
+
+SlateportShore_Text_GaveToxic:
+	.string "People also keep telling me\n"
+	.string "that I'm cancelled. How's that\l"
+	.string "make any kind of sense!?$"
+
 SlateportShore_Text_SeashoreHouseSign:
 	.string "The Seashore House\n"
 	.string "Currently running a promotion!\l"

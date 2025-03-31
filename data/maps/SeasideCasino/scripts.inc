@@ -419,6 +419,36 @@ SeasideCasino_EventScript_NoCoinCase::
 	releaseall
 	end
 
+SeasideCasino_EventScript_PartingShot::
+	lock
+	faceplayer
+	checkitem ITEM_TM_PARTING_SHOT
+	goto_if_eq VAR_RESULT, TRUE, SeasideCasino_EventScript_GavePartingShot
+	msgbox SeasideCasino_Text_PartingShot, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_PARTING_SHOT
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+SeasideCasino_EventScript_GavePartingShot::
+	msgbox SeasideCasino_Text_GavePartingShot, MSGBOX_AUTOCLOSE
+	release
+	end
+
+SeasideCasino_Text_PartingShot:
+	.string "Ack... I think I'm all slots'd out\n"
+	.string "for the day.\p"
+	.string "Don't become a gambler, kid. And for\n"
+	.string "my parting words, have this\l"
+	.string "TM for Parting Shot.$"
+
+SeasideCasino_Text_GavePartingShot:
+	.string "Just when you think you're golden\n"
+	.string "with these slots, they pull the\l"
+	.string "rug out from under you...$"
+
 SeasideCasino_Text_NameSteven:
 	.string "Steven$"
 
