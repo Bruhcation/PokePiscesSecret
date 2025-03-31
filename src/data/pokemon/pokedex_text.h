@@ -3570,16 +3570,18 @@ const u8 gGolurkPokedexText[] = _(
     "internal energy go out of control.");
 
 const u8 gPawniardPokedexText[] = _(
-    "Pawniard enjoy keeping their sharp\n"
-    "blades clean and pristine. They follow\n"
-    "Bisharp hoping to learn their skills and\n"
-    "techniques.");
+    "Pawniard enjoy keeping their sharp blades clean\n"
+    "and pristine. They follow an older and more\n"
+    "experienced Bisharp, hoping to learn from their\n"
+    "superiors. Different clans of Pawniard hone\n"
+    "different techniques of the blade.");
 
 const u8 gBisharpPokedexText[] = _(
-    "They take pride in the sharpness of\n"
-    "their blades, as well as the scratches in\n"
-    "their armor. A fight between two veteran\n"
-    "Bisharp is said to be a sight to behold.");
+    "They take pride in the sharpness of their blades,\n"
+    "as well as the scratches in their armor. A fight\n"
+    "between two veteran Bisharp is said to be a sight\n"
+    "to behold. The loser falls on their knees, then\n"
+    "has their horn cut off, exiled from the clan.");
 
 const u8 gBouffalantPokedexText[] = _(
     "Their fluffy fur absorbs damage, even\n"
@@ -5941,58 +5943,67 @@ const u8 gSchachttaPokedexText[] = _(
     "Evil flows slowly, seeping through the cracks.");
 
 const u8 gSylvreignPokedexText[] = _(
-    "The martial prowess of this draconic\n"
-    "equine is unmatched. They're flexible\n"
-    "and quickly adapt to battle, and are the\n"
-    "perfect companion in combat.");
+    "The martial prowess of this draconic equine is\n"
+    "unmatched. They're quick-witted and highly adept\n"
+    "at battle. This made them perfect companions in\n"
+    "combat-many legendary warriors of the past\n"
+    "charged through battlefields riding Sylvreign.");
 
 const u8 gCattuclidPokedexText[] = _(
-    "Cattuclid's metallic horns and tail\n"
-    "appear to be endless, as no scientist\n"
-    "has ever discovered an end to them when\n"
-    "viewed on a microscope.");
+    "Under a microscope, a Cattuclid's metallic\n"
+    "horns and tail appear to have no end. Even when\n"
+    "viewed with an electron microscope, it spirals\n"
+    "forever beyond atoms. Trying to observe the\n"
+    "phenomenon further is now banned.");
 
 const u8 gFractoflyPokedexText[] = _(
-    "Fractofly's wings have the same endless\n"
-    "properties as Cattuclid's horns. Being\n"
-    "near them can cause intense déjà vu and\n"
-    "paranoia of recursive patterns.");
+    "A Fractofly's wings have the same endless\n"
+    "properties as a Cattuclid's horns. Being near\n"
+    "them can cause déjà vu and paranoia of recursive\n"
+    "patterns. Trying to observe the spiral with a\n"
+    "microscope induces a collapse of one's sanity.");
 
 const u8 gGravelitoPokedexText[] = _(
-    "Most individuals find its bumbling\n"
-    "appearance amusing. It performs a\n"
-    "lovely, melancholic melody when the sun\n"
-    "rises.");
+    "Most individuals find their bumbling appearance\n"
+    "amusing. They color the desert with their vibrant\n"
+    "colors, performing a lovely, melancholic melody\n"
+    "when the sun rises. One has been recorded to\n"
+    "suddenly grow out of nowhere in someone's sink.");
 
 const u8 gMegalitoPokedexText[] = _(
-    "Groups of this rock-skinned Pokémon\n"
-    "gather around the arid summer. Whenever\n"
-    "the clouds obscure the sun, they sing a\n"
-    "song that clears the sky.");
+    "Groups of these rock-skinned Pokémon gather\n"
+    "around in the summer. When clouds obscure the\n"
+    "sun, they sing a song that clears the sky. To be\n"
+    "more accurate, they create powerful sound waves\n"
+    "that dissipate vapor in clouds, clearing them.");
 
 const u8 gCombunPokedexText[] = _(
-    "A popular children's story tells of a\n"
-    "lone rabbit on the moon. Centuries of\n"
-    "playing alone drove it mad and so it jumped\n"
-    "to Earth to play with everyone else.");
+    "A popular children's story tells of a lonely\n"
+    "rabbit on the moon. Centuries of playing alone\n"
+    "drove it mad, and so it jumped to Earth to play\n"
+    "with everyone else. This old tale corroborates\n"
+    "the rumor of Combun being aliens from the moon.");
 
 const u8 gHaibunPokedexText[] = _(
-    "Combun that live in a snowy area are\n"
-    "most likely to take this form. They\n"
-    "mostly move around by using their tail\n"
-    "to sweep away snow.");
+    "Combun that live in snowy areas take on this\n"
+    "form. Their fur feels soft and cold to the touch.\n"
+    "The tail fur is especially dense and soft,\n"
+    "making them desirable to use in clothing and\n"
+    "apparel. They travel by hopping on their tail.");
 
 const u8 gBurbunPokedexText[] = _(
-    "Combun that live in the desert are most\n"
-    "likely to take this form. They can reach\n"
-    "top speeds underground and rarely show\n"
-    "their bottom half.");
+    "Combun that live in deserts take this form. They\n"
+    "travel mainly underground and are very adept at\n"
+    "it. Construction workers use their incredible\n"
+    "digging speed to dig large holes quickly in less\n"
+    "than a minute. They are very, very long.");
 
 const u8 gIngbunPokedexText[] = _(
-    "Combun that live in the city are most\n"
-    "likely to take this form. They rarely\n"
-    "eat and have a gruff metallic exterior\n"
-    "to defend them from the cruel city.");
+    "Combun that live in cities take this form. They\n"
+    "rarely eat and have gruff, metallic fur. Their\n"
+    "fur, while as thin as normal hair, is 3 times as\n"
+    "durable as normal steel. They can raise said\n"
+    "hair into clumps of spikes for protection.");
 
 const u8 gChaffawPokedexText[] = _(
     "Chaffaw swarm to battle their arch-enemy,\n"
@@ -6736,10 +6747,11 @@ const u8 gShunyongPokedexText[] = _(
     "and fall of all.");
 
 const u8 gKingambitPokedexText[] = _(
-    "Kingambit command squads of Bisharp and\n"
-    "Pawniard to raid villages and habitats to\n"
-    "get food. They, however, lack strategic\n"
-    "versatility when commanding their army.");
+    "Kingambit command squads of Bisharp and Pawniard\n"
+    "to raid villages and habitats in search of food.\n"
+    "They, however, lack strategic versatility when\n"
+    "commanding their army and often rely on brute\n"
+    "force. They never bow down to an enemy.");
 
 const u8 gShellylouhPokedexText[] = _(
     "Shellylouh, with spells imbue.\n"
