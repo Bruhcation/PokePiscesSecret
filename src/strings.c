@@ -206,6 +206,7 @@ const u8 gText_ThreeDashes[] = _("---");
 const u8 gText_MaleSymbol[] = _("♂");
 const u8 gText_FemaleSymbol[] = _("♀");
 const u8 gText_LevelSymbol[] = _("{LV}");
+const u8 gText_LevelSymbolCanEvolve[] = _("{COLOR}{09}{UP_ARROW}{COLOR}{03}{LV}");
 const u8 gText_NumberClear01[] = _("{NO}{CLEAR 0x01}");
 const u8 gText_PlusSymbol[] = _("+"); // Unused
 const u8 gText_RightArrow[] = _("{RIGHT_ARROW}"); // Unused
