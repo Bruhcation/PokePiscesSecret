@@ -5610,8 +5610,8 @@ static void Task_TryLearnNewMoves(u8 taskId)
             switch (learnMove)
             {
             case 0: // No moves to learn
-                if (sInitialLevel >= sFinalLevel)
-                    PartyMenuTryEvolution(taskId);
+                //if (sInitialLevel >= sFinalLevel)
+                //    PartyMenuTryEvolution(taskId);
                 break;
             case MON_HAS_MAX_MOVES:
                 DisplayMonNeedsToReplaceMove(taskId);
@@ -5639,8 +5639,8 @@ static void Task_TryLearningNextMove(u8 taskId)
         switch (result)
         {
         case 0: // No moves to learn
-            if (sInitialLevel >= sFinalLevel)
-                PartyMenuTryEvolution(taskId);
+            //if (sInitialLevel >= sFinalLevel)
+            //    PartyMenuTryEvolution(taskId);
             break;
         case MON_HAS_MAX_MOVES:
             DisplayMonNeedsToReplaceMove(taskId);
