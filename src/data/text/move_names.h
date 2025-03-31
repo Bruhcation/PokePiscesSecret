@@ -1038,6 +1038,7 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_FIREBRAND] = _("Firebrand"),
     [MOVE_LIGHTNING] = _("Lightning"),
     [MOVE_BABY_BLUES] = _("Baby Blues"),
+    [MOVE_SIGHTSEER] = _("Sightseer"),
 };
 #else
 // 12 letters
@@ -2079,6 +2080,7 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_FIREBRAND] = _("Firebrand"),
     [MOVE_LIGHTNING] = _("Lightning"),
     [MOVE_BABY_BLUES] = _("Baby Blues"),
+    [MOVE_SIGHTSEER] = _("Sightseer"),
 };
 #endif
 

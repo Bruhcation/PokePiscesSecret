@@ -766,8 +766,6 @@ bool32 IsBattlerTrapped(u32 battler, bool32 checkSwitch)
         return TRUE;
     else if (holdEffect == HOLD_EFFECT_GLUE_TUBE)
         return TRUE;
-    else if (gSideTimers[GetBattlerSide(battler)].spotlightTimer > 1)
-        return TRUE;
     else if (gStatuses3[battler] & (STATUS3_ROOTED | STATUS3_SKY_DROPPED))
         return TRUE;
     else if (gStatuses4[battler] & STATUS4_FAIRY_LOCK)
@@ -1556,11 +1554,11 @@ u32 AI_GetBattlerMoveTargetType(u32 battlerId, u32 move)
         return MOVE_TARGET_BOTH;
     else if (gBattleMoves[move].effect == EFFECT_JUNGLE_RAGE && gDisableStructs[battlerId].frenzyCounter > 2)
         return MOVE_TARGET_BOTH;
-    else if (gCurrentMove == MOVE_LEAF_STORM && (gBattleMons[battlerId].status1 & STATUS1_BLOOMING))
+    else if (move == MOVE_LEAF_STORM && (gBattleMons[battlerId].status1 & STATUS1_BLOOMING))
         return MOVE_TARGET_BOTH;
-    else if (gCurrentMove == MOVE_DOUBLE_SHOCK && gStatuses4[battlerId] & STATUS4_SUPERCHARGED && gStatuses4[battlerId] & STATUS4_GEARED_UP)
+    else if (move == MOVE_DOUBLE_SHOCK && gStatuses4[battlerId] & STATUS4_SUPERCHARGED && gStatuses4[battlerId] & STATUS4_GEARED_UP)
         return MOVE_TARGET_FOES_AND_ALLY;
-    else if ((gBattleMoves[gCurrentMove].effect == EFFECT_CANNONADE) && (gBattleMons[battlerId].hp <= (gBattleMons[battlerId].maxHP / 4)))
+    else if ((gBattleMoves[move].effect == EFFECT_CANNONADE) && (gBattleMons[battlerId].hp <= (gBattleMons[battlerId].maxHP / 4)))
         return MOVE_TARGET_FOES_AND_ALLY;
     else
         return gBattleMoves[move].target;
@@ -1721,11 +1719,6 @@ bool32 IsMoveEncouragedToHit(u32 battlerAtk, u32 battlerDef, u32 move)
 
     if (AI_DATA->abilities[battlerDef] == ABILITY_NO_GUARD || AI_DATA->abilities[battlerAtk] == ABILITY_NO_GUARD)
         return TRUE;
-
-#if B_TOXIC_NEVER_MISS >= GEN_6
-    if (gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON))
-        return TRUE;
-#endif
 
     // discouraged from hitting
     weather = AI_GetWeather(AI_DATA);
@@ -3067,7 +3060,7 @@ bool32 IsBattlerIncapacitated(u32 battler, u32 ability)
     if (gBattleMons[battler].status1 & STATUS1_SLEEP_ANY)
         return TRUE;
 
-    if (gBattleMons[battler].status2 & STATUS2_RECHARGE || gStatuses4[battler] & STATUS4_RECHARGE_REDUCE || gStatuses4[battler] & STATUS4_RECHARGE_BURN || gStatuses4[battler] & STATUS4_RECHARGE_STATS || (ability == ABILITY_TRUANT && gDisableStructs[battler].truantCounter != 0))
+    if (gBattleMons[battler].status2 & STATUS2_RECHARGE || gStatuses4[battler] & STATUS4_RECHARGE_REDUCE || gStatuses4[battler] & STATUS4_RECHARGE_BURN || gStatuses4[battler] & STATUS4_RECHARGE_STATS || gStatuses4[battler] & STATUS4_RECHARGE_BLOOM_HEAL || (ability == ABILITY_TRUANT && gDisableStructs[battler].truantCounter != 0))
         return TRUE;
 
     return FALSE;
@@ -3133,7 +3126,6 @@ bool32 ShouldBloomSelf(u32 battler, u32 ability)
       || HasMoveEffect(battler, EFFECT_DRUM_BEATING)
       || HasMoveEffect(battler, EFFECT_WOOD_HAMMER)
       || HasMoveEffect(battler, EFFECT_APPLE_ACID)
-      || HasMoveEffect(battler, EFFECT_ENERGY_BALL)
       || HasMoveEffect(battler, EFFECT_PETAL_DANCE)
       || HasMoveEffect(battler, EFFECT_FRENZY_PLANT)
       || HasMoveEffect(battler, EFFECT_AROMATHERAPY)

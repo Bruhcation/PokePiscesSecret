@@ -1375,7 +1375,7 @@ const struct TrainerMon gBattleTentMons_MinorLeague[NUM_TENT_MINOR_MONS] =
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
         .lvl = 30,
-        .moves = {MOVE_FUTURE_SIGHT, MOVE_PSYBEAM, MOVE_WING_ATTACK, MOVE_DETECT},
+        .moves = {MOVE_SIGHTSEER, MOVE_PSYBEAM, MOVE_WING_ATTACK, MOVE_DETECT},
         .nature = NATURE_QUIRKY,
     },
     [TENT_MINOR_MON_EERIKO] = {

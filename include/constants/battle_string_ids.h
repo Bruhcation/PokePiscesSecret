@@ -745,7 +745,7 @@
 #define STRINGID_PKMNISALREADYPANICKING               743
 #define STRINGID_INVERSEROOMENDS                      744
 #define STRINGID_THETYPECHARTINVERTED                 745
-#define STRINGID_PKMNSISNOLONGERBLOOMING              746
+#define STRINGID_PKMNISNOLONGERBLOOMING               746
 #define STRINGID_ATHINGHAPPENED                       747
 #define STRINGID_ATHINGHAPPENEDFR                     748
 #define STRINGID_PKMNSAPPEDBYTICKED                   749
@@ -891,8 +891,11 @@
 #define STRINGID_TERUCHARMACTIVATES                   889
 #define STRINGID_SPELONSPIKESSCATTERED                890
 #define STRINGID_USINGITEMSTATOFTARGETPKMNROSE        891
+#define STRINGID_TARGETISNOLONGERBLOOMING             892
+#define STRINGID_SPOTLIGHTENDS                        893
+#define STRINGID_HAZECLEARCOMPLETE                    894
 
-#define BATTLESTRINGS_COUNT                           892
+#define BATTLESTRINGS_COUNT                           895
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

@@ -5885,7 +5885,7 @@ const u8 gCattowyrmPokedexText[] = _(
     "start rampaging, eating even their hive members.");
 
 const u8 gBramboozlePokedexText[] = _(
-    "This Pokémon is one of the leading causes of\n"
+    "These Pokémon are one of the leading causes of\n"
     "getting lost in the woods. Travelers who get\n"
     "scraped by their thorns hallucinate, gradually\n"
     "losing themselves in the forest. This is due to\n"

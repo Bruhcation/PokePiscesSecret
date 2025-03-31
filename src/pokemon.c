@@ -4201,7 +4201,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 
     if (gSpeciesInfo[species].abilities[1])
     {
-        value = personality & 1;
+        value = personality % 3;
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
     }
 
@@ -6194,12 +6194,12 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
 {
     int i;
 
-    if (abilityNum < NUM_ABILITY_SLOTS)
+    if (abilityNum <= NUM_ABILITY_SLOTS)
         gLastUsedAbility = gSpeciesInfo[species].abilities[abilityNum];
     else
         gLastUsedAbility = ABILITY_NONE;
 
-    if (abilityNum >= NUM_NORMAL_ABILITY_SLOTS) // if abilityNum is empty hidden ability, look for other hidden abilities
+    if (abilityNum > NUM_NORMAL_ABILITY_SLOTS) // if abilityNum is empty hidden ability, look for other hidden abilities
     {
         for (i = NUM_NORMAL_ABILITY_SLOTS; i < NUM_ABILITY_SLOTS && gLastUsedAbility == ABILITY_NONE; i++)
         {
@@ -6487,7 +6487,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
         case 3:
             // Rare Candy / EXP Candy
             if ((itemEffect[i] & ITEM3_LEVEL_UP)
-             && GetMonData(mon, MON_DATA_LEVEL, NULL) != GetCurrentLevelCap())
+             && GetMonData(mon, MON_DATA_LEVEL, NULL) < GetCurrentLevelCap())
             {
                 u8 param = ItemId_GetHoldEffectParam(item);
                 dataUnsigned = 0;
@@ -6856,7 +6856,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
         case 10:
             // Rare Candy / EXP Candy
             if ((itemEffect[i] & ITEM10_LEVEL_UP)
-             && GetMonData(mon, MON_DATA_LEVEL, NULL) != GetCurrentLevelCap())
+             && GetMonData(mon, MON_DATA_LEVEL, NULL) < GetCurrentLevelCap())
             {
                 u8 param = ItemId_GetHoldEffectParam(item);
                 dataUnsigned = 0;

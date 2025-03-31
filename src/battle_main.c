@@ -3487,7 +3487,6 @@ void FaintClearSetData(u32 battler)
     gProtectStructs[battler].aftermathBlowUp = FALSE;
 
     gDisableStructs[battler].isFirstTurn = 2;
-    gSideTimers[battler].spotlightTimer = 0;
 
     gLastMoves[battler] = MOVE_NONE;
     gLastLandedMoves[battler] = MOVE_NONE;
@@ -4289,7 +4288,8 @@ static void HandleTurnActionSelectionState(void)
                         || gBattleMons[battler].status2 & STATUS2_RECHARGE 
                         || gStatuses4[battler] & STATUS4_RECHARGE_REDUCE
                         || gStatuses4[battler] & STATUS4_RECHARGE_BURN
-                        || gStatuses4[battler] & STATUS4_RECHARGE_STATS)
+                        || gStatuses4[battler] & STATUS4_RECHARGE_STATS
+                        || gStatuses4[battler] & STATUS4_RECHARGE_BLOOM_HEAL)
                     {
                         gChosenActionByBattler[battler] = B_ACTION_USE_MOVE;
                         gBattleCommunication[battler] = STATE_WAIT_ACTION_CONFIRMED_STANDBY;
@@ -4439,7 +4439,8 @@ static void HandleTurnActionSelectionState(void)
                         || gBattleMons[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)))].status2 & STATUS2_RECHARGE
                         || gStatuses4[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)))] & STATUS4_RECHARGE_REDUCE
                         || gStatuses4[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)))] & STATUS4_RECHARGE_STATS
-                        || gStatuses4[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)))] & STATUS4_RECHARGE_BURN)
+                        || gStatuses4[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)))] & STATUS4_RECHARGE_BURN
+                        || gStatuses4[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)))] & STATUS4_RECHARGE_BLOOM_HEAL)
                     {
                         BtlController_EmitEndBounceEffect(battler, BUFFER_A);
                         MarkBattlerForControllerExec(battler);
@@ -4968,15 +4969,15 @@ s8 GetMovePriority(u32 battler, u16 move)
         gProtectStructs[battler].pranksterElevated = 1;
         priority++;
     }
-    else if (gCurrentMove == MOVE_ASTONISH && gBattleMons[gBattlerTarget].status1 & STATUS1_PANIC)
+    else if (move == MOVE_ASTONISH && gBattleMons[gBattlerTarget].status1 & STATUS1_PANIC)
     {
         priority++;
     }
-    else if (gCurrentMove == MOVE_BONE_RUSH && gBattleMons[gBattlerTarget].status1 & STATUS1_ANY_NEGATIVE)
+    else if (move == MOVE_BONE_RUSH && gBattleMons[gBattlerTarget].status1 & STATUS1_ANY_NEGATIVE)
     {
         priority++;
     }
-    else if (gCurrentMove == MOVE_ODD_STEP && (gBattleMons[gBattlerTarget].status1 & STATUS1_PANIC || gBattleMons[gBattlerTarget].status2 & STATUS2_CONFUSION))
+    else if (move == MOVE_ODD_STEP && (gBattleMons[gBattlerTarget].status1 & STATUS1_PANIC || gBattleMons[gBattlerTarget].status2 & STATUS2_CONFUSION))
     {
         priority++;
     }
@@ -5004,23 +5005,21 @@ s8 GetMovePriority(u32 battler, u16 move)
     {
         priority++;
     }
-    else if ((gCurrentMove == MOVE_MAGICAL_LEAF || gCurrentMove == MOVE_LEAFAGE || gCurrentMove == MOVE_WORRY_SEED || gCurrentMove == MOVE_COTTON_GUARD) && gBattleMons[battler].status1 & STATUS1_BLOOMING)
+    else if ((move == MOVE_MAGICAL_LEAF || move == MOVE_LEAFAGE || move == MOVE_WORRY_SEED || move == MOVE_COTTON_GUARD) && gBattleMons[battler].status1 & STATUS1_BLOOMING)
     {
         priority++;
     }
-    else if ((gCurrentMove == MOVE_HAYWIRE) && (gStatuses4[battler] & STATUS4_SUPERCHARGED))
+    else if ((move == MOVE_HAYWIRE) && (gStatuses4[battler] & STATUS4_SUPERCHARGED))
     {
         priority++;
     }
-    else if ((gCurrentMove == MOVE_CONSTRICT) && gBattleMons[battler].status2 & STATUS2_MULTIPLETURNS)
+    else if ((move == MOVE_CONSTRICT) && gBattleMons[battler].status2 & STATUS2_MULTIPLETURNS)
     {
         priority = 4;
     }
-    else if (gBattleMoves[move].effect == EFFECT_CLEAR_SMOG && CountBattlerStatIncreases(gBattlerTarget, TRUE) > 0) 
-    {
-        priority++;
-    }
-    else if (gBattleMoves[move].effect == EFFECT_CLEAR_SMOG && CountBattlerStatDecreases(gBattlerTarget, TRUE) > 0) 
+    else if (gBattleMoves[move].effect == EFFECT_CLEAR_SMOG 
+    && (CountBattlerStatIncreases(gBattlerTarget, TRUE) > 0
+    || CountBattlerStatDecreases(gBattlerTarget, TRUE) > 0)) 
     {
         priority++;
     }
@@ -5308,6 +5307,7 @@ static void TurnValuesCleanUp(bool8 var0)
                     gStatuses4[i] &= ~STATUS4_RECHARGE_REDUCE;
                     gStatuses4[i] &= ~STATUS4_RECHARGE_BURN;
                     gStatuses4[i] &= ~STATUS4_RECHARGE_STATS;
+                    gStatuses4[i] &= ~STATUS4_RECHARGE_BLOOM_HEAL;
                 }
             }
         }
@@ -6030,7 +6030,7 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
         if (holdEffect == gBattleMoves[move].argument)
             gBattleStruct->dynamicMoveType = ItemId_GetSecondaryId(gBattleMons[battlerAtk].item) | F_DYNAMIC_TYPE_2;
     }
-    else if (gBattleMoves[move].effect == EFFECT_REVELATION_DANCE || gBattleMoves[move].effect == EFFECT_SPIT_UP || gBattleMoves[move].effect == EFFECT_RAGE || gCurrentMove == MOVE_RAGING_BULL)
+    else if (gBattleMoves[move].effect == EFFECT_REVELATION_DANCE || gBattleMoves[move].effect == EFFECT_SPIT_UP || gBattleMoves[move].effect == EFFECT_RAGE || move == MOVE_RAGING_BULL)
     {
         if (gBattleMons[battlerAtk].type1 != TYPE_MYSTERY)
             gBattleStruct->dynamicMoveType = gBattleMons[battlerAtk].type1 | F_DYNAMIC_TYPE_2;
@@ -6039,7 +6039,7 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
         else if (gBattleMons[battlerAtk].type3 != TYPE_MYSTERY)
             gBattleStruct->dynamicMoveType = gBattleMons[battlerAtk].type3 | F_DYNAMIC_TYPE_2;
     }
-    else if (gCurrentMove == MOVE_RAGING_BULL && gBattleMons[battlerAtk].type2 != TYPE_MYSTERY)
+    else if (move == MOVE_RAGING_BULL && gBattleMons[battlerAtk].type2 != TYPE_MYSTERY)
     {
         gBattleStruct->dynamicMoveType = gBattleMons[battlerAtk].type2 | F_DYNAMIC_TYPE_2;
     }

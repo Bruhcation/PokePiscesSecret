@@ -496,14 +496,14 @@ static const u8 sAftermathDescription[] = _(
     "Fire-type exploding move.");
 
 static const u8 sAnticipationDescription[] = _(
-    "When the Pokémon enters battle\n"
+    "When the Pokémon switches in\n"
     "it is more likely to evade the\n"
     "next move it gets targeted by.");
 
 static const u8 sForewarnDescription[] = _(
-    "Boosts Future Sight and\n"
-    "Doom Desire while also making\n"
-    "them strike a turn earlier.");
+    "Future Sight and Doom Desire are\n"
+    "boosted, strike a turn earlier,\n"
+    "and boost Atk and Sp. Atk.");
 
 static const u8 sUnawareDescription[] = _(
     "Ignores the opposing Pokémon's\n"
