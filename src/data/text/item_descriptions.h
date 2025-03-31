@@ -1189,9 +1189,10 @@ static const u8 sFireStoneDesc[] = _(
     "evolve.");
 
 static const u8 sWaterStoneDesc[] = _(
-    "Could evolve a Pokémon.\n"
-    "Or, you could choose\n"
-    "to sell this item.");
+    "Could evolve a\n"
+    "Pokémon. Or, you\n"
+    "could choose to sell\n"
+    "this item.");
 
 static const u8 sThunderStoneDesc[] = _(
     "An elemental stone\n"
@@ -2858,7 +2859,7 @@ static const u8 sLeppaBerryDesc[] = _(
 static const u8 sOranBerryDesc[] = _(
     "If a Pokémon holds\n"
     "this Berry, it can\n"
-    "heal 10 HP to iself.");
+    "heal 10 HP to itself.");
 
 static const u8 sPersimBerryDesc[] = _(
     "If a Pokémon holds\n"

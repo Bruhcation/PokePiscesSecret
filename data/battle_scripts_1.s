@@ -816,15 +816,12 @@ BattleScript_EffectSpikeCannon::
 	moveendall
 	end
 BattleScript_EffectSpikeCannonMiss::
-	setbyte sB_ANIM_TURN, 1
 	attackstring
 	pause B_WAIT_TIME_SHORT
 	effectivenesssound
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
 	bichalfword gMoveResultFlags, MOVE_RESULT_MISSED
-	attackanimation
-	waitanimation
 	trysetspikes BS_TARGET, BattleScript_SpikeCannonSkipEffect
 	printstring STRINGID_SPIKESSCATTERED
 	waitmessage B_WAIT_TIME_LONG
@@ -856,7 +853,6 @@ BattleScript_EffectFocusBlast::
 	moveendall
 	end
 BattleScript_EffectFocusBlastMiss::
-	setbyte sB_ANIM_TURN, 1
 	attackstring
 	pause B_WAIT_TIME_SHORT
 	effectivenesssound
@@ -876,8 +872,6 @@ BattleScript_FocusBlastStatUp::
 	pause B_WAIT_TIME_SHORT
 	goto BattleScript_FocusBlastStatUpPrintString
 BattleScript_FocusBlastStatUpAttackAnim::
-	attackanimation
-	waitanimation
 	setgraphicalstatchangevalues
 	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 BattleScript_FocusBlastStatUpPrintString::

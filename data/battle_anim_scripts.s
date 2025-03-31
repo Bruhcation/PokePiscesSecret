@@ -2775,8 +2775,6 @@ Move_VACUUM_WAVE::
 	end
 
 Move_FOCUS_BLAST::
-	choosetwoturnanim FocusBlastNormal, Move_FOCUS_ENERGY
-FocusBlastNormal::
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
 	loadspritegfx ANIM_TAG_METEOR
 	loadspritegfx ANIM_TAG_FLAT_ROCK
@@ -28753,8 +28751,6 @@ PursuitOnSwitchout:
 	goto PursuitContinue
 
 Move_SPIKE_CANNON:
-	choosetwoturnanim SpikeCannonNormal, Move_SPIKES
-SpikeCannonNormal::
 	loadspritegfx ANIM_TAG_PIN
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_TARGET
