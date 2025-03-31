@@ -5676,9 +5676,7 @@ static void CB2_ReturnToPartyMenuUsingShellyBrew(void)
 static void PartyMenuTryEvolution(u8 taskId)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
-    // u16 targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL);
-    // Leaving here in case we change it at other time
-    u16 targetSpecies = SPECIES_NONE;
+    u16 targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, NULL);
 
     if (targetSpecies != SPECIES_NONE)
     {
