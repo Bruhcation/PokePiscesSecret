@@ -349,16 +349,18 @@ const u8 gPrimeapePokedexText[] = _(
     "Primeape heavily injured regardless of who wins.");
 
 const u8 gGrowlithePokedexText[] = _(
-    "Growlid is a stalwart canine companion\n"
-    "that will defend its trainer at the cost\n"
-    "of its own life. Striking its rocky fur\n"
-    "causes it to ignite into flames.");
+    "Growlid are stalwart canine companions that will\n"
+    "defend their trainers at the cost of their own\n"
+    "lives. Striking their rocky fur causes it to\n"
+    "ignite. They make use of this by purposely having\n"
+    "hits graze their fur, causing blasts of fire.");
 
 const u8 gArcaninePokedexText[] = _(
-    "Its raging fury spreads flames throughout\n"
-    "the field, leaving nothing but ash and\n"
-    "ember. Yet, those who witness such an\n"
-    "event say it's a sight of perilous beauty.");
+    "Their raging fury spreads flames throughout the\n"
+    "vast fields, leaving nothing but ash and ember\n"
+    "winds. A sky colored by the wrath and darkness,\n"
+    "a beast of fire and brimstone-those who witness\n"
+    "the event say it's a sight of perilous beauty.");
 
 const u8 gPoliwagPokedexText[] = _(
     "It is possible to see this Pokémon's spiral\n"
@@ -1711,10 +1713,11 @@ const u8 gBreloomPokedexText[] = _(
     "fields and forests.");
 
 const u8 gSpindaPokedexText[] = _(
-    "Their constant swaying and unpredictable\n"
-    "walking makes it annoying for predators\n"
-    "to catch them. It is so effective that\n"
-    "there has been a recent population boom.");
+    "Their constant swaying and unpredictable walking\n"
+    "make it annoying for predators to catch them. A\n"
+    "recent population boom has occurred in Hoenn due\n"
+    "to their effectiveness. Living in other biomes\n"
+    "has made them adapt to new conditions.");
 
 const u8 gWingullPokedexText[] = _(
     "It makes its nest on a sheer cliff at the\n"
@@ -6760,16 +6763,18 @@ const u8 gShellylouhPokedexText[] = _(
     "Her lovely shelly brew.");
 
 const u8 gInfairnoPokedexText[] = _(
-    "Infairno are always in a rush to get\n"
-    "somewhere. However, their stubby legs\n"
-    "and underdeveloped wings make them\n"
-    "exceptionally slow.");
+    "Infairno are always in a rush to get somewhere.\n"
+    "But, their stubby legs and underdeveloped wings\n"
+    "make them exceptionally slow. They're especially\n"
+    "humorous when seeing them run around in battle,\n"
+    "flapping their wings. Haha, look at them go...");
 
 const u8 gPurgativalPokedexText[] = _(
-    "These predators emit a glow and make a\n"
-    "ticking sound when hunting. But when\n"
-    "they glow brightest and their ticking\n"
-    "stops, they swiftly dispatch their prey.");
+    "These predators emit a glow and make a ticking\n"
+    "sound when hunting, standing uncannily still and\n"
+    "motionless. But when they glow brightest and the\n"
+    "ticking stops, they disappear in the blink of an\n"
+    "eye, swiftly dispatching their prey.");
 
 const u8 gDeteriotlPokedexText[] = _(
     "Deteriotl's unstable body has decayed\n"
