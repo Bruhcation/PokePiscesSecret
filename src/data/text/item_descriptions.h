@@ -4547,7 +4547,7 @@ static const u8 sAThingDesc[] = _(
 
 static const u8 sSaltyTearDesc[] = _(
     "A crystallized tear\n"
-    "that halves a Sadsod's\n"
+    "that halves Sadsod's\n"
     "stats and makes it\n"
     "less friendly.");
 
@@ -4762,10 +4762,10 @@ static const u8 sPokerCardDesc[] = _(
     "love of real magic.");
 
 static const u8 sCrypticPlateDesc[] = _(
-    "An otherworldly tablet\n"
-    "for a Uhefoe. Sets up\n"
-    "Gravity and Safeguard.\n"
-    "Boosts Sp. Atk.");
+    "A tablet for Uhefoe.\n"
+    "Sets up Gravity and\n"
+    "Safeguard. Boosts\n"
+    "its Sp. Atk stat.");
 
 static const u8 sChupacabraDesc[] = _(
     "A doll drained of life\n"

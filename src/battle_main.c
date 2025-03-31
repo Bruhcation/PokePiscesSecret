@@ -5049,6 +5049,7 @@ s8 GetMovePriority(u32 battler, u16 move)
         case EFFECT_BLACK_BUFFET:
         case EFFECT_VENOM_DRAIN:
         case EFFECT_LONE_SHARK:
+        case EFFECT_DRAINING_KISS:
             priority += 3;
             break;
         }

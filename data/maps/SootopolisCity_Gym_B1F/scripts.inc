@@ -286,7 +286,7 @@ SootopolisCity_Gym_B1F_Text_Roland:
 	.string "Hey there again, challenger!\n"
 	.string "Remember to always talk to\l"
 	.string "people in gyms, they can give\l"
-	.string "you valauble information for\l"
+	.string "you valuable information for\l"
 	.string "what to do!$"
 
 SootopolisCity_Gym_B1F_Text_NameJuan:
