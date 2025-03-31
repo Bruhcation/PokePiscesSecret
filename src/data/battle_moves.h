@@ -2584,9 +2584,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_FLASH] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_4
-            .accuracy = 85,
+            .accuracy = 70,
         #else
-            .accuracy = 85,
+            .accuracy = 70,
         #endif
         .effect = EFFECT_FLASH,
         .power = 0,
@@ -15280,6 +15280,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .priority = 0,
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
+        .mirrorMoveBanned = B_UPDATED_MOVE_FLAGS >= GEN_4,
+        .meFirstBanned = TRUE,
+        .mimicBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .instructBanned = TRUE,
     },
 
     [MOVE_ODD_STEP] =
@@ -16764,6 +16770,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
+        .mirrorMoveBanned = B_UPDATED_MOVE_FLAGS >= GEN_4,
+        .meFirstBanned = TRUE,
+        .mimicBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .instructBanned = TRUE,
     },
 
     [MOVE_HUNKER_DOWN] =

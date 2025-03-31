@@ -2002,6 +2002,36 @@ const u16 gEggMoves[] = {
         MOVE_WIDE_GUARD,
         MOVE_BATON_PASS),
 
+    egg_moves(SPINDA_CAVE,
+        MOVE_SLACK_OFF,
+        MOVE_QUICK_GUARD,
+        MOVE_WIDE_GUARD,
+        MOVE_BATON_PASS),
+
+    egg_moves(SPINDA_DESERT,
+        MOVE_SLACK_OFF,
+        MOVE_QUICK_GUARD,
+        MOVE_WIDE_GUARD,
+        MOVE_BATON_PASS),
+
+    egg_moves(SPINDA_FOREST,
+        MOVE_SLACK_OFF,
+        MOVE_QUICK_GUARD,
+        MOVE_WIDE_GUARD,
+        MOVE_BATON_PASS),
+
+    egg_moves(SPINDA_MOUNTAIN,
+        MOVE_SLACK_OFF,
+        MOVE_QUICK_GUARD,
+        MOVE_WIDE_GUARD,
+        MOVE_BATON_PASS),
+
+    egg_moves(SPINDA_PLAINS,
+        MOVE_SLACK_OFF,
+        MOVE_QUICK_GUARD,
+        MOVE_WIDE_GUARD,
+        MOVE_BATON_PASS),
+
     egg_moves(TRAPINCH,
         MOVE_FOCUS_ENERGY,
         MOVE_QUICK_ATTACK,

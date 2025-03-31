@@ -1725,12 +1725,12 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
             if (tItemCount > 19)
             {
                 FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
-                BuyMenuPrint(WIN_ITEM_DESCRIPTION, gText_ThrowInPremierBall, 0, 4, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+                BuyMenuPrint(WIN_ITEM_DESCRIPTION, gText_ThrowInSomePremierBalls, 0, 4, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
             }
             else
             {
                 FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
-                BuyMenuPrint(WIN_ITEM_DESCRIPTION, gText_ThrowInSomePremierBalls, 0, 4, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+                BuyMenuPrint(WIN_ITEM_DESCRIPTION, gText_ThrowInPremierBall, 0, 4, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
             }
         }
         gTasks[taskId].func = Task_ReturnToItemListWaitMsg;

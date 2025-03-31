@@ -12549,7 +12549,7 @@ static void Cmd_various(void)
         VARIOUS_ARGS(const u8 *failInstr);
         if (gCurrentMove == MOVE_SHIELDS_UP)
         {
-            gBattleMoveDamage = gBattleMons[battler].maxHP * 35 / 10;
+            gBattleMoveDamage = gBattleMons[battler].maxHP * 35 / 100;
         }
         else
         {

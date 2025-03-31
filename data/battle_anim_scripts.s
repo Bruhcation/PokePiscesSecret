@@ -26825,7 +26825,9 @@ Move_STALAG_BLAST::
 	loadspritegfx ANIM_TAG_ROCKS
 	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 8, 9, RGB(26, 8, 8), 8, RGB_BLACK, 8
 	createvisualtask AnimTask_ShakeMon2, 5, ANIM_ATTACKER, 8, 0, 40, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_ATK_PARTNER, 8, 0, 40, 1
 	createvisualtask AnimTask_ShakeMon2, 5, ANIM_TARGET, 8, 0, 40, 1
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_DEF_PARTNER, 8, 0, 40, 1
 	call StalagBlasting
 	call StalagBlasting
 	waitforvisualfinish

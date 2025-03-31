@@ -1108,7 +1108,7 @@ static const struct TrainerMon sParty_PSSteven5[] = {
     .ev = TRAINER_PARTY_EVS(32, 32, 32, 32, 32, 32),
     .species = SPECIES_TRANSERA,
     .ability = ABILITY_STICKY_HOLD,
-    .moves = {MOVE_WORRY_SEED, MOVE_MEGA_DRAIN, MOVE_GLIMMER, MOVE_SHOCK_WAVE},
+    .moves = {MOVE_WORRY_SEED, MOVE_MEGA_DRAIN, MOVE_SPOOK, MOVE_SHOCK_WAVE},
     }
 };
 
@@ -1293,7 +1293,7 @@ static const struct TrainerMon sParty_PNelly[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ev = TRAINER_PARTY_EVS(32, 32, 32, 32, 32, 32),
     .species = SPECIES_SPINDA,
-    .moves = {MOVE_COPYCAT, MOVE_HYPNOSIS, MOVE_PSYBEAM, MOVE_SUCKER_PUNCH},
+    .moves = {MOVE_COPYCAT, MOVE_SWIFT, MOVE_PSYBEAM, MOVE_SUCKER_PUNCH},
     }
 };
 
@@ -1452,7 +1452,7 @@ static const struct TrainerMon sParty_PEbb[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ev = TRAINER_PARTY_EVS(32, 32, 32, 32, 32, 32),
     .species = SPECIES_TUNAP,
-    .moves = {MOVE_WATER_PULSE, MOVE_ECHOED_VOICE, MOVE_WATER_SPORT, MOVE_DISARMING_VOICE},
+    .moves = {MOVE_ECHOED_VOICE, MOVE_MISERY_WAIL, MOVE_WATER_PULSE, MOVE_YAWN},
     }
 };
 
@@ -1868,6 +1868,7 @@ static const struct TrainerMon sParty_PColby[] = {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
     .species = SPECIES_NANGGAL,
+    .moves = {MOVE_WING_ATTACK, MOVE_PUNISHMENT, MOVE_CAPTIVATE, MOVE_CHARM},
     }
 };
 
