@@ -918,6 +918,7 @@ static const u8 sText_PkmnMaxedStats[] = _("{B_ATK_NAME_WITH_PREFIX} had their s
 static const u8 sText_FickleBeamDoubled[] = _("{B_ATK_NAME_WITH_PREFIX} is going all\nout for this attack!");
 static const u8 sText_SilenceContinues[] = _("The tolls continue...");
 static const u8 sText_TidyingUpComplete[] = _("Tidying up complete!");
+static const u8 sText_HazeClearComplete[] = _("The clearing haze\nis finished!");
 static const u8 sText_PkmnTookAim2[] = _("Every Pokémon took aim at\neach other!");
 static const u8 sText_PkmnDoubledStats[] = _("{B_ATK_NAME_WITH_PREFIX} had their\nstats sharply raised!");
 static const u8 sText_PkmnWelcomeTheAudience[] = _("{B_ATK_NAME_WITH_PREFIX} is ready to welcome\nthe audience!");
@@ -1916,6 +1917,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_USINGITEMSTATOFTARGETPKMNROSE - BATTLESTRINGS_TABLE_START] = sText_UsingItemTheStatOfTargetPkmnRose,
     [STRINGID_TARGETISNOLONGERBLOOMING - BATTLESTRINGS_TABLE_START] = sText_TargetIsNoLongerBlooming,
     [STRINGID_SPOTLIGHTENDS - BATTLESTRINGS_TABLE_START] = sText_SpotlightEnds,
+    [STRINGID_HAZECLEARCOMPLETE - BATTLESTRINGS_TABLE_START] = sText_HazeClearComplete,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

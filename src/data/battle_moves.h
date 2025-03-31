@@ -4312,7 +4312,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_FUTURE_SIGHT] =
     {
-        .power = 140,
+        .power = 150,
         .accuracy = 100,
         .pp = 10,
         .effect = EFFECT_FUTURE_SIGHT,
@@ -7659,13 +7659,13 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_6
             .power = 65,
-            .secondaryEffectChance = 100,
+            .secondaryEffectChance = 20,
         #elif B_UPDATED_MOVE_DATA == GEN_5
             .power = 60,
-            .secondaryEffectChance = 10,
+            .secondaryEffectChance = 20,
         #else
             .power = 60,
-            .secondaryEffectChance = 31,
+            .secondaryEffectChance = 20,
         #endif
         .effect = EFFECT_CONFUSE_HIT,
         .type = TYPE_FLYING,

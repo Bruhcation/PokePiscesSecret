@@ -3454,6 +3454,8 @@ bool32 HandleWishPerishSongOnTurnEnd(void)
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FUTURE_SIGHT;
                 else if (gWishFutureKnock.futureSightMove[battler] == MOVE_DOOM_DESIRE)
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;
+                else if (gWishFutureKnock.futureSightMove[battler] == MOVE_DECIMATION)
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DECIMATION;
 
                 PREPARE_MOVE_BUFFER(gBattleTextBuff1, gWishFutureKnock.futureSightMove[battler]);
 
@@ -12009,8 +12011,8 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
             basePower *= 2;
         break;
     case EFFECT_FUTURE_SIGHT:
-        if (GetBattlerAbility(battlerAtk) == ABILITY_FOREWARN && gCurrentMove != MOVE_DECIMATION)
-            basePower = uq4_12_multiply(basePower, UQ_4_12(1.3));
+        if (GetBattlerAbility(battlerAtk) == ABILITY_FOREWARN && move != MOVE_DECIMATION && move != MOVE_SIGHTSEER)
+            basePower = uq4_12_multiply(basePower, UQ_4_12(1.5));
         break;
     case EFFECT_NATURAL_GIFT:
         basePower = gNaturalGiftTable[ITEM_TO_BERRY(gBattleMons[battlerAtk].item)].power;
@@ -12085,9 +12087,9 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
             if (sWeightToDamageTableBlooming[i] > weight)
                 break;
         }
-        if (gCurrentMove == MOVE_GRASS_KNOT && sWeightToDamageTable[i] != 0xFFFF && gBattleMons[battlerAtk].status1 & STATUS1_BLOOMING)
+        if (move == MOVE_GRASS_KNOT && sWeightToDamageTable[i] != 0xFFFF && gBattleMons[battlerAtk].status1 & STATUS1_BLOOMING)
             basePower = sWeightToDamageTableBlooming[i + 1];
-        else if (gCurrentMove == MOVE_GRASS_KNOT && gBattleMons[battlerAtk].status1 & STATUS1_BLOOMING)
+        else if (move == MOVE_GRASS_KNOT && gBattleMons[battlerAtk].status1 & STATUS1_BLOOMING)
             basePower = 140;
         else if (sWeightToDamageTable[i] != 0xFFFF)
             basePower = sWeightToDamageTable[i + 1];
@@ -12538,7 +12540,7 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
         break;
     case ABILITY_ANALYTIC:
-        if (GetBattlerTurnOrderNum(battlerAtk) == gBattlersCount - 1 && move != MOVE_FUTURE_SIGHT && move != MOVE_SIGHTSEER && move != MOVE_DOOM_DESIRE && move != MOVE_DOOM_DESIRE)
+        if (GetBattlerTurnOrderNum(battlerAtk) == gBattlersCount - 1 && move != MOVE_FUTURE_SIGHT && move != MOVE_SIGHTSEER && move != MOVE_DECIMATION && move != MOVE_DOOM_DESIRE)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_TOUGH_CLAWS:
@@ -12683,7 +12685,7 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
             modifier = uq4_12_multiply(modifier, GetOwnTempoModifier(battlerAtk));
         break;
     case ABILITY_PURPLE_HAZE:
-        if (gDisableStructs[battlerAtk].purpleHazeOffense && IS_MOVE_PHYSICAL(gCurrentMove))
+        if (gDisableStructs[battlerAtk].purpleHazeOffense && IS_MOVE_PHYSICAL(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         break;
     case ABILITY_DREAD_VEIL:
@@ -12713,10 +12715,10 @@ u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 battlerDef, u3
     if (IsAbilityOnOpposingSide(battlerAtk, ABILITY_FALLING) && atkAbility != ABILITY_FALLING)
         modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
 
-    if (IsAbilityOnField(ABILITY_VESSEL_OF_RUIN) && atkAbility != ABILITY_VESSEL_OF_RUIN && IS_MOVE_SPECIAL(gCurrentMove))
+    if (IsAbilityOnField(ABILITY_VESSEL_OF_RUIN) && atkAbility != ABILITY_VESSEL_OF_RUIN && IS_MOVE_SPECIAL(move))
         modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
 
-    if (IsAbilityOnField(ABILITY_TABLETS_OF_RUIN) && atkAbility != ABILITY_TABLETS_OF_RUIN && IS_MOVE_PHYSICAL(gCurrentMove))
+    if (IsAbilityOnField(ABILITY_TABLETS_OF_RUIN) && atkAbility != ABILITY_TABLETS_OF_RUIN && IS_MOVE_PHYSICAL(move))
         modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
 
     if (IsAbilityOnSide(battlerAtk, ABILITY_VICTORY_STAR))
@@ -13052,7 +13054,7 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
         atkStage = DEFAULT_STAT_STAGE;
     if (atkStage < DEFAULT_STAT_STAGE && atkAbility == ABILITY_AQUA_HEART && gBattleStruct->dynamicMoveType == (TYPE_WATER | F_DYNAMIC_TYPE_2))
         atkStage = DEFAULT_STAT_STAGE;
-    if (atkStage < DEFAULT_STAT_STAGE && gCurrentMove == MOVE_AURA_SPHERE)
+    if (atkStage < DEFAULT_STAT_STAGE && move == MOVE_AURA_SPHERE)
         atkStage = DEFAULT_STAT_STAGE;
 
     atkStat *= gStatStageRatios[atkStage][0];
@@ -13375,7 +13377,7 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
         defStat *= 3;
     }
 
-    if (gBattleMoves[move].effect == EFFECT_FUTURE_SIGHT && move != MOVE_DECIMATION)
+    if (move == MOVE_DOOM_DESIRE)
     {
         defStat = spDef;
         defStat /= 2;
@@ -16005,6 +16007,8 @@ u32 CalcSecondaryEffectChance(u32 battler, u8 secondaryEffectChance)
         secondaryEffectChance *= 3;
     else if (gBattleMoves[gCurrentMove].effect == EFFECT_ATTACK_ORDER && gBattleStruct->sameMoveTurns[battler] != 0)
         secondaryEffectChance = 30 + (10 * gBattleStruct->sameMoveTurns[battler]);
+    else if (gCurrentMove == MOVE_CHATTER && gBattleStruct->sameMoveTurns[battler] != 0)
+        secondaryEffectChance = 20 + (10 * gBattleStruct->sameMoveTurns[battler]);
     else if (CountBattlerSpeedDecreases(gBattlerTarget) > 0 && gCurrentMove == MOVE_FREEZING_GLARE)
         secondaryEffectChance *= CountBattlerSpeedDecreases(gBattlerTarget) + 1;
     else if (gSideStatuses[GetBattlerSide(gBattlerTarget)] & SIDE_STATUS_TAILWIND && gCurrentMove == MOVE_WICKED_WINDS)

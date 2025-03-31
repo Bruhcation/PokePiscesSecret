@@ -10620,12 +10620,16 @@ BattleScript_EffectHaze::
 	waitstate
 	attackanimation
 	waitanimation
+	saveattacker
+	savetarget
 	tryhaze FALSE, BattleScript_EffectHazeDoMoveAnimation
+	restoreattacker
+	restoretarget
 	goto BattleScript_HazeStatNormalize
 
 BattleScript_EffectHazeDoMoveAnimation::
 	tryhaze TRUE, NULL
-	printstring STRINGID_TIDYINGUPCOMPLETE
+	printstring STRINGID_HAZECLEARCOMPLETE
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_HazeStatNormalize
 
@@ -12458,18 +12462,25 @@ BattleScript_EffectEarthquake:
 	goto BattleScript_EffectHit
 
 BattleScript_EffectFutureSight::
-	setstatchanger STAT_SPATK, 1, FALSE
+	jumpifmove MOVE_DECIMATION, BattleScript_Decimation
+	jumpifmove MOVE_FUTURE_SIGHT, BattleScript_FutureSightDoomDesireCheck
+	jumpifmove MOVE_DOOM_DESIRE, BattleScript_FutureSightDoomDesireCheck
+BattleScript_RegularFutureSightDoomDesire:
 	attackcanceler
 	attackstring
 	ppreduce
-	jumpifmove MOVE_DECIMATION, BattleScript_Decimation
 	trysetfutureattack BattleScript_ButItFailed
+BattleScript_DoRestOfRegularFutureSightDoomDesire:
 	attackanimation
 	waitanimation
 	printfromtable gFutureMoveUsedStringIds
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 BattleScript_Decimation::
+	setstatchanger STAT_SPATK, 1, FALSE
+	attackcanceler
+	attackstring
+	ppreduce
 	jumpifbattletype BATTLE_TYPE_DOUBLE, BattleScript_DecimationDoubles
 BattleScript_DecimationContinue:
 	trysetfutureattack BattleScript_ButItFailed
@@ -12499,6 +12510,36 @@ BattleScript_DecimationNoMoveEffect:
 	attackanimation
 	waitanimation
 	printstring STRINGID_PKMNISPREPARINGFORDECIMATION
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+BattleScript_FutureSightDoomDesireCheck:
+	jumpifability BS_ATTACKER, ABILITY_FOREWARN, BattleScript_SuperFutureSightDoomDesire
+	goto BattleScript_RegularFutureSightDoomDesire
+BattleScript_SuperFutureSightDoomDesire:
+	attackcanceler
+	attackstring
+	ppreduce
+	trysetfutureattack BattleScript_ButItFailed
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_ATK, MAX_STAT_STAGE, BattleScript_SuperFutureSightDoomDesireDoMoveAnim
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPATK, MAX_STAT_STAGE, BattleScript_DoRestOfRegularFutureSightDoomDesire
+BattleScript_SuperFutureSightDoomDesireDoMoveAnim::
+	attackanimation
+	waitanimation
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_ATK | BIT_SPATK, 0
+	setstatchanger STAT_ATK, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_SuperFutureSightDoomDesireTrySpAtk
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_SuperFutureSightDoomDesireTrySpAtk
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_SuperFutureSightDoomDesireTrySpAtk::
+	setstatchanger STAT_SPATK, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_SuperFutureSightDoomDesireEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_SuperFutureSightDoomDesireEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_SuperFutureSightDoomDesireEnd::
+	printfromtable gFutureMoveUsedStringIds
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 

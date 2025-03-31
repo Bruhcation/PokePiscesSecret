@@ -1231,9 +1231,9 @@ static const u8 sShadowBallDescription[] = _(
     "lower the foe's Sp. Def stat.");
 
 static const u8 sFutureSightDescription[] = _(
-    "2 turns after this move is used,\n"
-    "the foe is attacked psychically.\n"
-    "Ignores half the foe's Sp. Def.");
+    "3 turns after this move is used,\n"
+    "a hunk of psychic energy attacks\n"
+    "the target.");
 
 static const u8 sRockSmashDescription[] = _(
     "Lowers the foe's Def. If the foe\n"
@@ -1754,7 +1754,7 @@ static const u8 sWaterPulseDescription[] = _(
     "may also confuse the target.");
 
 static const u8 sDoomDesireDescription[] = _(
-    "2 turns after this move is used,\n"
+    "3 turns after this move is used,\n"
     "the foe is attacked by light.\n"
     "Ignores half the foe's Sp. Def.");
 
@@ -2219,9 +2219,9 @@ static const u8 sGrassKnotDescription[] = _(
     "Boosted if the user is blooming.");
 
 static const u8 sChatterDescription[] = _(
-    "The user attacks the foe with\n"
-    "sound waves of deafening\n"
-    "chatter. This confuses the foe.");
+    "The user lets out a deafening\n"
+    "chatter that may confuse. Boosts\n"
+    "chances if used repeatedly.");
 
 static const u8 sJudgmentDescription[] = _(
     "The user releases shots of\n"
@@ -6020,4 +6020,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_FIREBRAND - 1] = sTackleDescription,
     [MOVE_LIGHTNING - 1] = sTackleDescription,
     [MOVE_BABY_BLUES - 1] = sBabyBluesDescription,
+    [MOVE_SIGHTSEER - 1] = sFutureSightDescription,
 };
