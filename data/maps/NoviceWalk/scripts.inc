@@ -70,6 +70,37 @@ NoviceWalk_EventScript_NWSign::
     msgbox NoviceWalk_Text_NWSign, MSGBOX_SIGN
     end
 
+NoviceWalk_EventScript_GunkShot::
+	lock
+	faceplayer
+	checkitem ITEM_TM_GUNK_SHOT
+	goto_if_eq VAR_RESULT, TRUE, NoviceWalk_EventScript_GaveGunkShot
+	msgbox NoviceWalk_Text_GunkShot, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_GUNK_SHOT
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+NoviceWalk_EventScript_GaveGunkShot::
+	msgbox NoviceWalk_Text_GaveGunkShot, MSGBOX_AUTOCLOSE
+	release
+	end
+
+NoviceWalk_Text_GunkShot:
+	.string "Oh yeah! I'm about-a to use\n"
+	.string "my Super Power! All-a I have\l"
+	.string "to do is eat this Gunk Flower,\l"
+	.string "and-a I can-a shoot Gunk from-a\l"
+	.string "my hands!\p"
+	.string "Have a Gunk Flower for your-a\n"
+	.string "Pokemon, wahoo!$"
+
+NoviceWalk_Text_GaveGunkShot:
+	.string "Thank you so much for-to\n"
+	.string "taking my TM!$"
+
 NoviceWalk_Text_NWSign:
 	.string "NOVICE'S WALK\n"
 	.string "A place for new trainers to\l"

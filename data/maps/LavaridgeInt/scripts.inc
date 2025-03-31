@@ -268,6 +268,69 @@ LavaridgeInt_EventScript_EatResistMax::
 	msgbox LavaridgeInt_Text_EatResistMax, MSGBOX_DEFAULT
 	return
 
+LavaridgeInt_EventScript_Lavarizzler1::
+	msgbox LavaridgeInt_Text_Lavarizzler1, MSGBOX_NPC
+	end
+
+LavaridgeInt_EventScript_Lavarizzler2::
+	msgbox LavaridgeInt_Text_Lavarizzler2, MSGBOX_NPC
+	end
+
+LavaridgeInt_EventScript_Lavarizzler3::
+	msgbox LavaridgeInt_Text_Lavarizzler3, MSGBOX_NPC
+	end
+
+LavaridgeInt_EventScript_Lavarizzler4::
+	msgbox LavaridgeInt_Text_Lavarizzler4, MSGBOX_NPC
+	end
+
+LavaridgeInt_EventScript_Lavarizzler5::
+	msgbox LavaridgeInt_Text_Lavarizzler5, MSGBOX_NPC
+	end
+
+LavaridgeInt_Text_Lavarizzler1:
+	.string "The people of Lavaridge inhale a\n"
+	.string "lot of smoke, and we're proud of it.\p"
+	.string "Wave around that lung cancer\n"
+	.string "diagnosis with pride!$"
+
+LavaridgeInt_Text_Lavarizzler2:
+	.string "My harvest for the day is\n"
+	.string "about complete. Durin Berries\l"
+	.string "grow really fast on these trees,\l"
+	.string "so Lavaridge has become the capital\l"
+	.string "of Hoenn in regards to the\l"
+	.string "Durin trade.$"
+
+LavaridgeInt_Text_Lavarizzler3:
+	.string "Flannery is pretty hot!\n"
+	.string "Hot HEADED, I mean. She's a\l"
+	.string "real pain in the butt.\p"
+	.string "Don't EVER offer to turn on\n"
+	.string "your air conditioner, she'll\l"
+	.string "slap you sideways. She loves\l"
+	.string "the heat.$"
+
+LavaridgeInt_Text_Lavarizzler4:
+	.string "You on your way to the gym?\n"
+	.string "Hmph. You'll get slaughtered\l"
+	.string "in there.\p"
+	.string "Little tip. Do NOT bring up money\n"
+	.string "to the Moore family. They\l"
+	.string "deal in... favors. Money is never\l"
+	.string "somethin' that should come up\l"
+	.string "in a conversation with them.$"
+
+LavaridgeInt_Text_Lavarizzler5:
+	.string "Gosh, I REALLY want to get into\n"
+	.string "the Desert to catch some of\l"
+	.string "the Pokemon there. But to get\l"
+	.string "through the cave that leads there,\l"
+	.string "I need to push a boulder out\l"
+	.string "of the way. Lame!\p"
+	.string "Guess I'll need the Lavaridge\n"
+	.string "gym badge to use Strength on it.$"
+
 LavaridgeInt_Text_EatResist0:
 	.string "(You take a bite of the berry...)\p"
 	.string "(It tastes like week-old compost\n"

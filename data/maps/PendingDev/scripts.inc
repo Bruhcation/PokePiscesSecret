@@ -46,6 +46,62 @@ PendingDev_EventScript_Pendragon::
     msgbox PendingDev_Text_PendragonPostBattle, MSGBOX_AUTOCLOSE
     end
 
+PendingDev_EventScript_FireBlast::
+	lock
+	faceplayer
+	checkitem ITEM_TM_FIRE_BLAST
+	goto_if_eq VAR_RESULT, TRUE, PendingDev_EventScript_GaveFireBlast
+	msgbox PendingDev_Text_FireBlast, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_FIRE_BLAST
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+PendingDev_EventScript_GaveFireBlast::
+	msgbox PendingDev_Text_GaveFireBlast, MSGBOX_AUTOCLOSE
+	release
+	end
+
+PendingDev_EventScript_IronTail::
+	lock
+	faceplayer
+	checkitem ITEM_TM_IRON_TAIL
+	goto_if_eq VAR_RESULT, TRUE, PendingDev_EventScript_GaveIronTail
+	msgbox PendingDev_Text_IronTail, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM_IRON_TAIL
+	closemessage
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	release
+	end
+
+PendingDev_EventScript_GaveIronTail::
+	msgbox PendingDev_Text_GaveIronTail, MSGBOX_AUTOCLOSE
+	release
+	end
+
+PendingDev_Text_FireBlast:
+	.string "Hyuk-hyuk! I'm gonna be usin'\n"
+	.string "this plot'a land here to sell\l"
+	.string "my many wares once the buildin'\l"
+	.string "gets put up!\p"
+	.string "I plan on only sellin' Fire move\n"
+	.string "TMs! Want a free sample?$"
+
+PendingDev_Text_GaveFireBlast:
+	.string "There's more where that\n"
+	.string "came from! Come on back when\l"
+	.string "the Fire Sale shop opens up!$"
+
+PendingDev_Text_IronTail:
+	.string "Look, I don't have much to say.\n"
+	.string "Just take the TM, and leave.$"
+
+PendingDev_Text_GaveIronTail:
+	.string "Bye-bye now!$"
+
 PendingDev_Text_GunfriedIntro:
 	.string "Oooooh? You're shneaking around\n"
 	.string "the shrubbery too?\l"

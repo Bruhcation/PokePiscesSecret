@@ -137,6 +137,16 @@ FossilShoreHouses_EventScript_GaveSaltyTear::
 	release
 	end
 
+FossilShoreHouses_EventScript_DrakeWife::
+	msgbox FossilShoreHouses_Text_DrakeWife, MSGBOX_NPC
+	end
+
+FossilShoreHouses_Text_DrakeWife:
+	.string "I am very glad that my husband\n"
+	.string "decided to settle down and stop\l"
+	.string "taking those long voyages...\l"
+	.string "a wife gets lonely at home.$"
+
 FossilShoreHouses_Text_NameSadFisher:
 	.string "Sad Fisher$"
 

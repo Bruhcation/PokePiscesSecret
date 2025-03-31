@@ -180,6 +180,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PendingDev_EventScript_ItemPAbilityGuard",
       "flag": "FLAG_P_ITEM_PENDING_DEV_ABILITY_GUARD"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HAWKER",
+      "x": 16,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PendingDev_EventScript_FireBlast",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HARDHATTER",
+      "x": 25,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PendingDev_EventScript_IronTail",
+      "flag": "0"
     }
   ],
   "warp_events": [
