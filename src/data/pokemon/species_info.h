@@ -1337,12 +1337,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_RATICATE] =
     {
-        .baseHP        = 100,
-        .baseAttack    = 100,
-        .baseDefense   = 100,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 100,
-        .baseSpDefense = 100,
+        .baseHP        = 55,
+        .baseAttack    = 81,
+        .baseDefense   = 60,
+        .baseSpeed     = 97,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 70,
         .types = { TYPE_MYSTERY, TYPE_MYSTERY },
         .catchRate = 127,
         .expYield = 145,
@@ -1354,7 +1354,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
-        .abilities = {ABILITY_MOLD_BREAKER, ABILITY_TERAVOLT, ABILITY_TURBOBLAZE},
+        .abilities = {ABILITY_NO_GUARD},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
     },
