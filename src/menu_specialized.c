@@ -767,10 +767,7 @@ void MoveRelearnerPrintMoveDescriptionToMsgWindow(u32 chosenMove)
     }
 
     move = &gBattleMoves[chosenMove];
-    if (move->effect != EFFECT_PLACEHOLDER)
-        str = gMoveDescriptionPointers[chosenMove - 1];
-    else
-        str = gNotDoneYetDescription;
+    str = gMoveDescriptionPointers[chosenMove - 1];
 
     FormatTextByWidth(gStringVar4, 224, FONT_SMALL_NO_BG, str, 0);
     AddTextPrinterParameterized(RELEARNERWIN_MSG, FONT_SMALL_NO_BG, gStringVar4, 0, 0, TEXT_SKIP_DRAW, NULL);

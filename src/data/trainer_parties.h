@@ -3292,7 +3292,7 @@ static const struct TrainerMon sParty_PKris[] = {
     .heldItem = ITEM_ROSELI_BERRY,
     .ev = TRAINER_PARTY_EVS(40, 40, 40, 40, 40, 40),
     .lvl = 31,
-    .moves = {MOVE_SPIRIT_AWAY, MOVE_DRAINING_KISS, MOVE_BURNING_JEALOUSY, MOVE_ATTRACT},
+    .moves = {MOVE_BITTER_MALICE, MOVE_DRAINING_KISS, MOVE_BURNING_JEALOUSY, MOVE_ATTRACT},
     }
 };
 
