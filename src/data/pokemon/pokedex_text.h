@@ -5795,8 +5795,8 @@ const u8 gMannikoPokedexText[] = _(
     "Slowly, Manniko absorbs the life force of the\n"
     "unfortunate girl who loves it, gradually losing\n"
     "its rigid wooden features. The victim eventually\n"
-    "becomes lethargic and anti-social, lashing out at\n"
-    "those who attempt to separate her and the doll.");
+    "becomes lethargic and anti-social, lashing out\n"
+    "at those who try to separate her and the doll.");
 
 const u8 gKowakoPokedexText[] = _(
     "The girl is left as a husk, a wooden doll with no\n"

@@ -2262,6 +2262,7 @@ static void Cmd_damagecalc(void)
 
     // Counter for EVO_HIT_BY_SLASH_MOVE.
     partySlot = gBattlerPartyIndexes[gBattlerTarget];
+
     if (gBattleMoves[gCurrentMove].slicingMove
         && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER
         && !(gBattleTypeFlags & BATTLE_TYPE_MULTI
@@ -2274,7 +2275,7 @@ static void Cmd_damagecalc(void)
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
     // Counter for EVO_HIT_BY_PIERCE_MOVE.
-    if (gBattleMoves[gCurrentMove].piercingMove 
+    else if (gBattleMoves[gCurrentMove].piercingMove 
         && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER
         && !(gBattleTypeFlags & BATTLE_TYPE_MULTI 
         && GetBattlerPosition(gBattlerTarget) == B_POSITION_PLAYER_LEFT)
@@ -2285,9 +2286,8 @@ static void Cmd_damagecalc(void)
             gHitByBluntMove[partySlot] = 0;
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
-
     // Counter for EVO_HIT_BY_BLUNT_MOVE.
-    if ((gBattleMoves[gCurrentMove].punchingMove
+    else if ((gBattleMoves[gCurrentMove].punchingMove
         || gBattleMoves[gCurrentMove].kickingMove
         || gBattleMoves[gCurrentMove].ballisticMove)
         && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER
@@ -15418,13 +15418,11 @@ static void Cmd_forcerandomswitch(void)
 {
     CMD_ARGS(const u8 *failInstr);
 
-    u32 i;
     s32 battler1PartyId = 0;
     s32 battler2PartyId = 0;
-
+    u32 i;
     s32 firstMonId;
     s32 lastMonId = 0; // + 1
-    s32 monsCount;
     struct Pokemon *party = NULL;
     u8 validMons[PARTY_SIZE];
     s32 validMonsCount = 0;
@@ -15480,7 +15478,6 @@ static void Cmd_forcerandomswitch(void)
         {
             firstMonId = 0;
             lastMonId = 6;
-            monsCount = 6;
             battler2PartyId = gBattlerPartyIndexes[gBattlerTarget];
             battler1PartyId = gBattlerPartyIndexes[BATTLE_PARTNER(gBattlerTarget)];
         }
@@ -15498,7 +15495,6 @@ static void Cmd_forcerandomswitch(void)
                 firstMonId = 0;
                 lastMonId = PARTY_SIZE / 2;
             }
-            monsCount = PARTY_SIZE / 2;
             battler2PartyId = gBattlerPartyIndexes[gBattlerTarget];
             battler1PartyId = gBattlerPartyIndexes[BATTLE_PARTNER(gBattlerTarget)];
         }
@@ -15515,7 +15511,6 @@ static void Cmd_forcerandomswitch(void)
                 firstMonId = 0;
                 lastMonId = PARTY_SIZE / 2;
             }
-            monsCount = PARTY_SIZE / 2;
             battler2PartyId = gBattlerPartyIndexes[gBattlerTarget];
             battler1PartyId = gBattlerPartyIndexes[BATTLE_PARTNER(gBattlerTarget)];
         }
@@ -15525,7 +15520,6 @@ static void Cmd_forcerandomswitch(void)
             {
                 firstMonId = 0;
                 lastMonId = PARTY_SIZE;
-                monsCount = PARTY_SIZE;
             }
             else
             {
@@ -15539,7 +15533,6 @@ static void Cmd_forcerandomswitch(void)
                     firstMonId = 0;
                     lastMonId = PARTY_SIZE / 2;
                 }
-                monsCount = PARTY_SIZE / 2;
             }
             battler2PartyId = gBattlerPartyIndexes[gBattlerTarget];
             battler1PartyId = gBattlerPartyIndexes[BATTLE_PARTNER(gBattlerTarget)];
@@ -15548,7 +15541,6 @@ static void Cmd_forcerandomswitch(void)
         {
             firstMonId = 0;
             lastMonId = PARTY_SIZE;
-            monsCount = PARTY_SIZE;
             battler2PartyId = gBattlerPartyIndexes[gBattlerTarget];
             battler1PartyId = gBattlerPartyIndexes[BATTLE_PARTNER(gBattlerTarget)];
         }
@@ -15556,8 +15548,7 @@ static void Cmd_forcerandomswitch(void)
         {
             firstMonId = 0;
             lastMonId = PARTY_SIZE;
-            monsCount = PARTY_SIZE;
-            battler2PartyId = gBattlerPartyIndexes[gBattlerTarget]; // there is only one pokemon out in single battles
+            battler2PartyId = gBattlerPartyIndexes[gBattlerTarget]; // there is only one Pokémon out in single battles
             battler1PartyId = gBattlerPartyIndexes[gBattlerTarget];
         }
 
@@ -15579,7 +15570,7 @@ static void Cmd_forcerandomswitch(void)
         }
         else
         {
-            *(gBattleStruct->battlerPartyIndexes + gBattlerTarget) = gBattlerPartyIndexes[gBattlerTarget];
+            gBattleStruct->battlerPartyIndexes[gBattlerTarget] = gBattlerPartyIndexes[gBattlerTarget];
             if (gCurrentMove == MOVE_DEARLY_DEPART)
             {
                 gBattlescriptCurrInstr = BattleScript_DearlyDepartSuccessSwitch;
@@ -15597,7 +15588,7 @@ static void Cmd_forcerandomswitch(void)
                 gBattlescriptCurrInstr = BattleScript_RoarSuccessSwitch;
             }
             gBattleStruct->forcedSwitch |= gBitTable[gBattlerTarget];
-            *(gBattleStruct->monToSwitchIntoId + gBattlerTarget) = validMons[RandomUniform(RNG_FORCE_RANDOM_SWITCH, 0, validMonsCount - 1)];
+            gBattleStruct->monToSwitchIntoId[gBattlerTarget] = validMons[RandomUniform(RNG_FORCE_RANDOM_SWITCH, 0, validMonsCount - 1)];
 
             if (!IsMultiBattle())
                 SwitchPartyOrder(gBattlerTarget);

@@ -13847,7 +13847,7 @@ static inline uq4_12_t GetScreensModifier(u32 move, u32 battlerAtk, u32 battlerD
         return UQ_4_12(1.0);
     if (reflect || lightScreen || auroraVeil)
         return (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) ? UQ_4_12(0.667) : UQ_4_12(0.5);
-    else if (googooScreenDef)
+    if (googooScreenDef)
         return UQ_4_12(0.7);
     return UQ_4_12(1.0);
 }
@@ -14558,7 +14558,8 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
     {
         *modifier = UQ_4_12(3.0);
     }
-    else if (*modifier > UQ_4_12(4.0))
+
+    if (*modifier > UQ_4_12(4.0))
     {
         *modifier = UQ_4_12(4.0);
     }
