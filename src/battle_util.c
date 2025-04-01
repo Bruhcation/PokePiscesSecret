@@ -3292,30 +3292,31 @@ u8 DoBattlerEndTurnEffects(void)
             gBattleStruct->turnEffectsTracker++;
             break;
         case ENDTURN_EMERGENCY_EXIT:
-            if (gBattleResources->flags->flags[battler] & RESOURCE_FLAG_EMERGENCY_EXIT)
+            for (i = 0; i < gBattlersCount; i++)
             {
                 if (gBattleStruct->redCardActivates)
                 {
-                    gBattleResources->flags->flags[battler] &= ~RESOURCE_FLAG_EMERGENCY_EXIT;
+                    gDisableStructs[i].startEmergencyExit = FALSE;
                     continue;
                 }
-                else
+                if (gDisableStructs[i].startEmergencyExit)
                 {
-                    gBattleResources->flags->flags[battler] &= ~RESOURCE_FLAG_EMERGENCY_EXIT;
-                    gSpecialStatuses[battler].emergencyExited = TRUE;
+                    gDisableStructs[i].startEmergencyExit = FALSE;
+                    gSpecialStatuses[i].emergencyExited = TRUE;
                     gBattlerTarget = gBattlerAbility = i;
+                    BattleScriptPushCursor();
                     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER || GetBattlerSide(i) == B_SIDE_PLAYER)
                     {
-                        BattleScriptExecute(BattleScript_EmergencyExit);
+                        gBattlescriptCurrInstr = BattleScript_EmergencyExit;
                     }
                     else
                     {
-                        BattleScriptExecute(BattleScript_EmergencyExitWild);
+                        gBattlescriptCurrInstr = BattleScript_EmergencyExitWild;
                     }
-                    effect++;
+                    return;
                 }
             }
-            gBattleStruct->turnEffectsTracker++;
+            gBattleScripting.moveendState++;
             break;
         case ENDTURN_INFERNAL_REIGN:
             if ((IsAbilityOnField(ABILITY_INFERNAL_REIGN))
@@ -6410,19 +6411,19 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             break;
         case ABILITY_EMERGENCY_EXIT:
         case ABILITY_WIMP_OUT:
-            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT) 
-                && TARGET_TURN_DAMAGED 
-                && IsBattlerAlive(battler)
-                && gBattleStruct->hpBefore[battler] > gBattleMons[battler].maxHP / 2
-                && gBattleMons[battler].hp < gBattleMons[battler].maxHP / 2
-                && (gMultiHitCounter == 0 || gMultiHitCounter == 1) 
-                && !(TestSheerForceFlag(gBattlerAttacker, gCurrentMove)) 
-                && (CanBattlerSwitch(battler) || !(gBattleTypeFlags & BATTLE_TYPE_TRAINER)) 
-                && !(gBattleTypeFlags & BATTLE_TYPE_ARENA) 
-                && CountUsablePartyMons(battler) > 0
-                && !(gStatuses3[battler] & STATUS3_SKY_DROPPED))
+            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+             && TARGET_TURN_DAMAGED
+             && IsBattlerAlive(battler)
+             && gBattleStruct->hpBefore[battler] >= gBattleMons[battler].maxHP / 2 
+             && gBattleMons[battler].hp < gBattleMons[battler].maxHP / 2
+             && (gMultiHitCounter == 0 || gMultiHitCounter == 1)
+             && !(TestSheerForceFlag(gBattlerAttacker, gCurrentMove))
+             && (CanBattlerSwitch(battler) || !(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+             && !(gBattleTypeFlags & BATTLE_TYPE_ARENA)
+             && CountUsablePartyMons(battler) > 0
+             && !(gStatuses3[battler] & STATUS3_SKY_DROPPED))
             {
-                gBattleResources->flags->flags[battler] |= RESOURCE_FLAG_EMERGENCY_EXIT;
+                gDisableStructs[battler].startEmergencyExit = TRUE;
                 effect++;
             }
             break;
@@ -8904,9 +8905,9 @@ static u8 ItemHealHp(u32 battler, u32 itemId, bool32 end2, bool32 percentHeal)
             gBattlescriptCurrInstr = BattleScript_ItemHealHP_RemoveItemRet;
         }
 
-        if (gBattleResources->flags->flags[battler] & RESOURCE_FLAG_EMERGENCY_EXIT
+        if (gDisableStructs[battler].startEmergencyExit
          && gBattleMons[battler].hp >= gBattleMons[battler].maxHP / 2)
-            gBattleResources->flags->flags[battler] &= ~RESOURCE_FLAG_EMERGENCY_EXIT;
+             gDisableStructs[battler].startEmergencyExit = FALSE;
 
         return ITEM_HP_CHANGE;
     }

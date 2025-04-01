@@ -1233,10 +1233,10 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_DARK_VOID:
             if (!AI_CanPutToSleep(battlerAtk, battlerDef, aiData->abilities[battlerDef], move, aiData->partnerMove))
                 score -= 10;
-            if (CountBattlerStatDecreases(battlerAtk, TRUE) < 1)
-                score -= 10;
+            if (CountBattlerStatDecreases(battlerAtk, TRUE) < 1 && CountBattlerStatDecreases(battlerDef, TRUE) < 1)
+                score -= 20;
             else
-                score += CountBattlerStatDecreases(battlerAtk, TRUE);
+                score += CountBattlerStatDecreases(battlerAtk, TRUE) + CountBattlerStatDecreases(battlerDef, TRUE);
             break;
         case EFFECT_SLEEP_POWDER:
             if (!AI_CanPutToSleep(battlerAtk, battlerDef, aiData->abilities[battlerDef], move, aiData->partnerMove))

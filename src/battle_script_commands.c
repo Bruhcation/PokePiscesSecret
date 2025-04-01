@@ -7342,27 +7342,25 @@ static void Cmd_moveend(void)
                             || gBattleMoves[gCurrentMove].effect == EFFECT_MANEUVER
                             || gBattleMoves[gCurrentMove].effect == EFFECT_SNOWFADE)
                             gBattlescriptCurrInstr = BattleScript_MoveEnd;  // Prevent user switch-in selection
-                            effect = TRUE;
-                            BattleScriptPushCursor();
-                            gBattleStruct->usedEjectItem |= 1u << battler;
                             if (ejectButtonBattlers & (1u << battler))
                             {
+                                effect = TRUE;
+                                gBattleStruct->usedEjectItem |= 1u << battler;
+                                BattleScriptPushCursor();
                                 gBattlescriptCurrInstr = BattleScript_EjectButtonActivates;
                             }
                             else // Eject Pack
                             {
-                                if (gBattleResources->flags->flags[gBattlerTarget] & RESOURCE_FLAG_EMERGENCY_EXIT)
+                                if (!gDisableStructs[gBattlerTarget].startEmergencyExit
+                                    && !(gBattleMoves[gCurrentMove].effect == EFFECT_PARTING_SHOT && CanBattlerSwitch(gBattlerAttacker)))
                                 {
-                                    gBattlescriptCurrInstr = BattleScript_EjectPackMissesTiming;
-                                    gProtectStructs[battler].statFell = FALSE;
-                                }
-                                else
-                                {
+                                    effect = TRUE;
+                                    gBattleStruct->usedEjectItem |= 1u << battler;
+                                    BattleScriptPushCursor();
                                     gBattlescriptCurrInstr = BattleScript_EjectPackActivates;
-                                    // Are these 2 lines below needed?
-                                    gProtectStructs[battler].statFell = FALSE;
                                     gSpecialStatuses[gBattlerAttacker].preventLifeOrbDamage = TRUE;
                                 }
+                                gProtectStructs[battler].statFell = FALSE;
                             }
                             break; // Only the fastest Eject item activates
                         }
@@ -20629,7 +20627,7 @@ void BS_ItemRestoreHP(void)
         gBattleScripting.battler = battler;
     else
         gBattleScripting.battler = gBattlerAttacker;
-    PREPARE_SPECIES_BUFFER(gBattleTextBuff1, GetMonData(mon, MON_DATA_SPECIES));
+    PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gBattleScripting.battler, gBattlerPartyIndexes[gBattleScripting.battler]);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
@@ -20655,7 +20653,7 @@ void BS_ItemCureStatus(void)
         gBattleScripting.battler = battler;
     else
         gBattleScripting.battler = gBattlerAttacker;
-    PREPARE_SPECIES_BUFFER(gBattleTextBuff1, GetMonData(mon, MON_DATA_SPECIES));
+        PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gBattleScripting.battler, gBattlerPartyIndexes[gBattleScripting.battler]);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
@@ -20720,7 +20718,7 @@ void BS_ItemRestorePP(void)
         gBattleScripting.battler = battler;
     else
         gBattleScripting.battler = gBattlerAttacker;
-    PREPARE_SPECIES_BUFFER(gBattleTextBuff1, GetMonData(mon, MON_DATA_SPECIES));
+        PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gBattleScripting.battler, gBattlerPartyIndexes[gBattleScripting.battler]);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
