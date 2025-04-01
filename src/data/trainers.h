@@ -3032,7 +3032,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Dyna"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE,
         .party = TRAINER_PARTY(sParty_PDyna),
     },
 
@@ -3296,7 +3296,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Kray"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE,
         .party = TRAINER_PARTY(sParty_PKray),
     },
 
@@ -3308,7 +3308,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Zii"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE,
         .party = TRAINER_PARTY(sParty_PZii),
     },
 
@@ -3320,7 +3320,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Ivan"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE,
         .party = TRAINER_PARTY(sParty_PIvan),
     },
 
@@ -3332,7 +3332,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Libya"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE,
         .party = TRAINER_PARTY(sParty_PLibya),
     },
 
@@ -3344,7 +3344,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Carville"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE,
         .party = TRAINER_PARTY(sParty_PCarville),
     },
 
@@ -3356,7 +3356,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Boom"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE,
         .party = TRAINER_PARTY(sParty_PBoom),
     },
 
@@ -3368,7 +3368,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Iwan"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE,
         .party = TRAINER_PARTY(sParty_PIwan),
     },
 
@@ -3704,7 +3704,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Beat"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE,
         .party = TRAINER_PARTY(sParty_PBeat),
     },
 
@@ -4052,7 +4052,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Anton"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE,
         .party = TRAINER_PARTY(sParty_PAnton),
     },
 
@@ -4088,7 +4088,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Cotton"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_WILL_SUICIDE,
         .party = TRAINER_PARTY(sParty_PCotton),
     },
 
@@ -8420,7 +8420,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Jacobi"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_ACE_POKEMON | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SETUP_FIRST_TURN | AI_FLAG_HP_AWARE | AI_FLAG_SMART_SWITCHING,
+        .aiFlags = AI_FLAG_TRY_TO_FAINT | AI_FLAG_ACE_POKEMON | AI_FLAG_WILL_SUICIDE,
         .party = TRAINER_PARTY(sParty_PJacobi),
     },
 

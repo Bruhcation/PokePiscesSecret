@@ -14728,7 +14728,7 @@ BattleScript_MistProtected::
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_PKMNPROTECTEDBYMIST
 	waitmessage B_WAIT_TIME_LONG
-	end2
+	return
 
 BattleScript_RageIsBuilding::
 	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_RageIsBuildingEnd

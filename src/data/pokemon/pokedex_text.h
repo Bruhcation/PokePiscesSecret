@@ -5486,9 +5486,9 @@ const u8 gSaintisowPokedexText[] = _(
 
 const u8 gSanctisowPokedexText[] = _(
     "Their feathers are so soft that they're used in\n"
-    "high-quality cushions. Saintisow spread and\n"
+    "high-quality cushions. Sanctisow spread and\n"
     "raise their many wings when they recognize\n"
-    "danger. Saintisow then whip up strong winds to\n"
+    "danger. Sanctisow then whip up strong winds to\n"
     "fend off attackers.");
 
 const u8 gSowphirothPokedexText[] = _(
