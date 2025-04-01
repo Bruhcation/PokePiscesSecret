@@ -61,6 +61,14 @@ Gym2Corridor_Movement_MoveAway:
 	walk_down
 	step_end
 
+Gym2Corridor_EventScript_GymSign::
+	msgbox Gym2Corridor_Text_GymSign, MSGBOX_SIGN
+	end
+
+Gym2Corridor_Text_GymSign:
+	.string "MOSSDEEP GYM\n"
+	.string "Psychic Specialization$"
+
 Gym2Corridor_Text_AreYouReady:
 	.string "Welcome to the\n"
 	.string "Mossdeep Gym, challenger.\p"

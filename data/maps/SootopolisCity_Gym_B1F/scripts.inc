@@ -450,7 +450,7 @@ SootopolisCity_Gym_B1F_Text_BattleBegins:
 	.string "Let us find out.$"
 
 SootopolisCity_Gym_B1F_Text_GetOuttaHere:
-	.string "You showed us your meddle, challenger.\p"
+	.string "You showed us your mettle, challenger.\p"
 	.string "And now, I ask you to bid us adieu.$"
 
 SootopolisCity_Gym_B1F_Text_DontGoOnStage:

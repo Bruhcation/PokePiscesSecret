@@ -227,7 +227,9 @@ HatchloamDayCare_Text_ThanksForTrading:
 	.string "Thanks for the trade.$"
 
 HatchloamDayCare_Text_WelcomeToBerryShop:
-	.string "$"
+	.string "Welcome to the Hatchloam Field\n"
+	.string "Berry Shop! What kind of\l"
+	.string "Berry would you like to have?$"
 
 HatchloamDayCare_Text_HaveAGoodDay:
-	.string "$"
+	.string "Have a splendid day!$"

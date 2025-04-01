@@ -75,6 +75,14 @@ Gym8Corridor_Movement_MoveAway:
 	walk_down
 	step_end
 
+Gym8Corridor_EventScript_GymSign::
+	msgbox Gym8Corridor_Text_GymSign, MSGBOX_SIGN
+	end
+
+Gym8Corridor_Text_GymSign:
+	.string "RUSTBORO GYM\n"
+	.string "Rock and Bug Specialization$"
+
 Gym8Corridor_Text_AreYouReady:
 	.string "Welcome to the\n"
 	.string "Rustboro Gym, challenger.\p"

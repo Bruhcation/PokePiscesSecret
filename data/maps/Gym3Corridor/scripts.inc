@@ -73,6 +73,16 @@ Gym3Corridor_Movement_MoveAway:
 	walk_down
 	step_end
 
+Gym3Corridor_EventScript_GymSign::
+	msgbox Gym3Corridor_Text_GymSign, MSGBOX_SIGN
+	end
+
+Gym3Corridor_Text_GymSign:
+	.string "ZOTPYRE GYM\n"
+	.string "Ghost and . . . Specialization\p"
+	.string "(The second type has been\n"
+	.string "scratched out...)$"
+
 Gym3Corridor_Text_AreYouReady:
 	.string "Welcome to the\n"
 	.string "Zotpyre Gym, challenger.\p"

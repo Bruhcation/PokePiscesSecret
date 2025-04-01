@@ -40,6 +40,7 @@ TheColdMines_OnLoad:
 	call_if_eq VAR_MINES_MERALCORE_STATE, 0, TheColdMines_EventScript_SetupMeralcorePuzzle1
 	call_if_gt VAR_MINES_MERALCORE_STATE, 0, TheColdMines_EventScript_RemoveMeralcorePuzzle1
 	call_if_lt VAR_MINES_MERALCORE_STATE, 3, TheColdMines_EventScript_SetupMeralcorePuzzle2
+	call_if_eq VAR_MINES_MERALCORE_STATE, 2, TheColdMines_EventScript_RemoveMeralcorePuzzle2Early
 	call_if_gt VAR_MINES_MERALCORE_STATE, 2, TheColdMines_EventScript_RemoveMeralcorePuzzle2
 	call_if_lt VAR_MINES_MERALCORE_STATE, 4, TheColdMines_EventScript_SetupMeralcorePuzzle3
 	call_if_gt VAR_MINES_MERALCORE_STATE, 3, TheColdMines_EventScript_RemoveMeralcorePuzzle3
@@ -220,6 +221,22 @@ TheColdMines_EventScript_RemoveMeralcorePuzzle2::
 	setmetatile 17, 32, METATILE_Snow_MeralSnow, FALSE
 	setmetatile 16, 32, METATILE_Snow_MeralSnow, FALSE
 	setmetatile 18, 32, METATILE_Snow_MeralSnow, FALSE
+	special DrawWholeMapView
+	return
+
+TheColdMines_EventScript_RemoveMeralcorePuzzle2Early::
+	setflag FLAG_TEMP_A
+	setflag FLAG_TEMP_B
+	removeobject LOCALID_MERAL6
+	removeobject LOCALID_MERAL7
+	setmetatile 29, 26, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 29, 27, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 28, 27, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 30, 27, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 31, 27, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 31, 28, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 30, 28, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 32, 28, METATILE_Snow_MeralSnow, FALSE
 	special DrawWholeMapView
 	return
 
@@ -935,9 +952,28 @@ TheColdMines_EventScript_ClearedPuzzle2Part2::
 	release
 	end
 
+TheColdMines_EventScript_MeralcoreCantBeHere::
+	msgbox TheColdMines_Text_MeralcoreCantBeHere, MSGBOX_DEFAULT
+	setflag FLAG_TEMP_A
+	setflag FLAG_TEMP_B
+	removeobject LOCALID_MERAL6
+	removeobject LOCALID_MERAL7
+	setmetatile 29, 26, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 29, 27, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 28, 27, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 30, 27, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 31, 27, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 31, 28, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 30, 28, METATILE_Snow_MeralSnow, FALSE
+	setmetatile 32, 28, METATILE_Snow_MeralSnow, FALSE
+	special DrawWholeMapView
+	release
+	end
+
 TheColdMines_EventScript_M6FlashCheck::
 	lock
-	goto_if_gt VAR_MINES_MERALCORE_STATE, 1, TheColdMines_EventScript_OnceWasMeralcore
+	goto_if_eq VAR_MINES_MERALCORE_STATE, 2, TheColdMines_EventScript_MeralcoreCantBeHere
+	goto_if_ge VAR_MINES_MERALCORE_STATE, 3, TheColdMines_EventScript_OnceWasMeralcore
 	msgbox TheColdMines_Text_ThereIsMeralcore, MSGBOX_DEFAULT
 	goto_if_unset FLAG_BADGE02_GET, TheColdMines_EventScript_CantFlash
 	checkpartymove MOVE_FLASH
@@ -991,7 +1027,8 @@ TheColdMines_EventScript_M6SetOffM7::
 
 TheColdMines_EventScript_M7FlashCheck::
 	lock
-	goto_if_gt VAR_MINES_MERALCORE_STATE, 1, TheColdMines_EventScript_OnceWasMeralcore
+	goto_if_eq VAR_MINES_MERALCORE_STATE, 2, TheColdMines_EventScript_MeralcoreCantBeHere
+	goto_if_ge VAR_MINES_MERALCORE_STATE, 3, TheColdMines_EventScript_OnceWasMeralcore
 	msgbox TheColdMines_Text_ThereIsMeralcore, MSGBOX_DEFAULT
 	goto_if_unset FLAG_BADGE02_GET, TheColdMines_EventScript_CantFlash
 	checkpartymove MOVE_FLASH
@@ -2657,3 +2694,7 @@ TheColdMines_Text_NoCut:
 
 TheColdMines_Text_AlreadyCut:
 	.string "(The path is now open.)$"
+
+TheColdMines_Text_MeralcoreCantBeHere:
+	.string "(Meralcore shouldn't be here\n"
+	.string "anymore...)$"

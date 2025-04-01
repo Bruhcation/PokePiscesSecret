@@ -72,6 +72,14 @@ Gym1Corridor_Movement_MoveAway:
 	walk_down
 	step_end
 
+Gym1Corridor_EventScript_GymSign::
+	msgbox Gym1Corridor_Text_GymSign, MSGBOX_SIGN
+	end
+
+Gym1Corridor_Text_GymSign:
+	.string "SOOTOPOLIS GYM\n"
+	.string "Ice and Fairy Specialization$"
+
 Gym1Corridor_Text_AreYouReady:
 	.string "Welcome to the\n"
 	.string "Sootopolis Gym, challenger.\p"

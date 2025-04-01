@@ -86,6 +86,14 @@ Gym7Corridor_Movement_MoveAway:
 	walk_down
 	step_end
 
+Gym7Corridor_EventScript_GymSign::
+	msgbox Gym7Corridor_Text_GymSign, MSGBOX_SIGN
+	end
+
+Gym7Corridor_Text_GymSign:
+	.string "DEWFORD GYM\n"
+	.string "Fighting and Water Specialization$"
+
 Gym7Corridor_Text_AreYouReady:
 	.string "Welcome to the\n"
 	.string "Dewford Gym, challenger.\p"

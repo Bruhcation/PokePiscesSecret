@@ -240,21 +240,18 @@ LavaridgeInt_EventScript_DurinResistanceCheck::
 
 LavaridgeInt_EventScript_EatResist0::
 	playse SE_FIELD_POISON
-	poisonplayerparty
 	msgbox LavaridgeInt_Text_EatResist0, MSGBOX_DEFAULT
 	addvar VAR_DURIN_RESISTANCE, 1
 	return
 
 LavaridgeInt_EventScript_EatResist1::
 	playse SE_FIELD_POISON
-	poisonplayerparty
 	msgbox LavaridgeInt_Text_EatResist1, MSGBOX_DEFAULT
 	addvar VAR_DURIN_RESISTANCE, 1
 	return
 
 LavaridgeInt_EventScript_EatResist2::
 	playse SE_FIELD_POISON
-	poisonplayerparty
 	msgbox LavaridgeInt_Text_EatResist2, MSGBOX_DEFAULT
 	addvar VAR_DURIN_RESISTANCE, 1
 	return
@@ -287,6 +284,30 @@ LavaridgeInt_EventScript_Lavarizzler4::
 LavaridgeInt_EventScript_Lavarizzler5::
 	msgbox LavaridgeInt_Text_Lavarizzler5, MSGBOX_NPC
 	end
+
+LavaridgeInt_EventScript_GymSign::
+	msgbox LavaridgeInt_Text_GymSign, MSGBOX_SIGN
+	end
+
+LavaridgeInt_EventScript_LavaSign::
+	msgbox LavaridgeInt_Text_LavaSign, MSGBOX_SIGN
+	end
+
+LavaridgeInt_EventScript_CrimneyCatSign::
+	msgbox LavaridgeInt_Text_CrimneyCatSign, MSGBOX_SIGN
+	end
+
+LavaridgeInt_Text_GymSign:
+	.string "LAVARIDGE GYM\n"
+	.string "Home of the Moore Family$"
+
+LavaridgeInt_Text_LavaSign:
+	.string "LAVARIDGE TOWN\n"
+	.string "A Cave Dwelling Settlement,\l"
+	.string "Where We NEVER Want To Beat The Heat!$"
+
+LavaridgeInt_Text_CrimneyCatSign:
+	.string "EXIT TO CRIMNEY CATACOMBS$"
 
 LavaridgeInt_Text_Lavarizzler1:
 	.string "The people of Lavaridge inhale a\n"

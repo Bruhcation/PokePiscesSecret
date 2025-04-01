@@ -165,6 +165,14 @@ FortreeGymNew_EventScript_Fuji::
     msgbox FortreeGymNew_Text_FujiPostBattle, MSGBOX_AUTOCLOSE
     end
 
+FortreeGymNew_EventScript_GymSign::
+	msgbox Gym1Corridor_Text_GymSign, MSGBOX_SIGN
+	end
+
+FortreeGymNew_Text_GymSign:
+	.string "FORTREE GYM\n"
+	.string "Ground and Flying Specialization$"
+
 FortreeGymNew_Text_EverestIntro:
 	.string "Here I can stand proud and tall!$"
 
