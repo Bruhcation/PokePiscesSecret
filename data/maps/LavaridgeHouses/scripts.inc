@@ -43,21 +43,18 @@ LavaridgeHouses_EventScript_DurinResistanceCheck::
 
 LavaridgeHouses_EventScript_EatResist0::
 	playse SE_FIELD_POISON
-	poisonplayerparty
 	msgbox LavaridgeHouses_Text_EatResist0, MSGBOX_DEFAULT
 	addvar VAR_DURIN_RESISTANCE, 1
 	return
 
 LavaridgeHouses_EventScript_EatResist1::
 	playse SE_FIELD_POISON
-	poisonplayerparty
 	msgbox LavaridgeHouses_Text_EatResist1, MSGBOX_DEFAULT
 	addvar VAR_DURIN_RESISTANCE, 1
 	return
 
 LavaridgeHouses_EventScript_EatResist2::
 	playse SE_FIELD_POISON
-	poisonplayerparty
 	msgbox LavaridgeHouses_Text_EatResist2, MSGBOX_DEFAULT
 	addvar VAR_DURIN_RESISTANCE, 1
 	return

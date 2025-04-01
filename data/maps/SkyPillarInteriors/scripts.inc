@@ -95,7 +95,7 @@ SkyPillarInteriors_Text_BuriedPast:
 	.string "often wondered about what may lie\l"
 	.string "buried right under our well-\l"
 	.string "travelled daily paths.\p"
-	.string "Maybe its down there for a reason!$"
+	.string "Maybe it's down there for a reason!$"
 
 SkyPillarInteriors_Text_Healing:
 	.string "Kid, what brings you\n"

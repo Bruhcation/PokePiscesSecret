@@ -43,7 +43,7 @@ RustGymDarkLockers_Text_WhoIsLivra:
 	.string "Who the heck is this Livra person?\n"
 	.string "Been seein' graffiti sayin' that\l"
 	.string "on a bunch of lockers.\p"
-	.string "Maybe its code for something.\n"
+	.string "Maybe it's code for something.\n"
 	.string "Or an alias!$"
 
 RustGymDarkLockers_Text_ImGonnaMakeItOut:

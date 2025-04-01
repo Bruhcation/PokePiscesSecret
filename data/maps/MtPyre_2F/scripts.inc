@@ -153,7 +153,7 @@ MtPyre_2F_Text_MistyIntro:
 	.string "It will not be long before the\n"
 	.string "malevolent spirits leave their\l"
 	.string "bodies... thank you.\p"
-	.string "I simply must test the meddle\n"
+	.string "I simply must test the mettle\n"
 	.string "of a trainer of your caliber...\l"
 	.string "If you could handle the others\l"
 	.string "of the Fey Family, surely\l"

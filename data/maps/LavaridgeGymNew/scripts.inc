@@ -78,7 +78,6 @@ LavaridgeGymNew_EventScript_Eat0Resist::
 	pike_flashscreen
 	playse SE_M_NIGHTMARE
 	msgbox LavaridgeGymNew_Text_Eat0Resist, MSGBOX_DEFAULT
-	poisonplayerparty
 	goto LavaridgeGymNew_EventScript_InterrogationPart2
 	release
 	end
@@ -89,7 +88,6 @@ LavaridgeGymNew_EventScript_Eat1Resist::
 	pike_flashscreen
 	playse SE_M_NIGHTMARE
 	msgbox LavaridgeGymNew_Text_Eat1Resist, MSGBOX_DEFAULT
-	poisonplayerparty
 	goto LavaridgeGymNew_EventScript_InterrogationPart2
 	release
 	end
@@ -100,7 +98,6 @@ LavaridgeGymNew_EventScript_Eat2Resist::
 	pike_flashscreen
 	playse SE_M_NIGHTMARE
 	msgbox LavaridgeGymNew_Text_Eat2Resist, MSGBOX_DEFAULT
-	poisonplayerparty
 	goto LavaridgeGymNew_EventScript_InterrogationPart2
 	release
 	end

@@ -70,6 +70,37 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LavaridgeTown_EventScript_LavaridgeSign"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LavaridgeTown_EventScript_OutpostSign"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 23,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LavaridgeTown_EventScript_SweltornSign"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LavaridgeTown_EventScript_CableCarSign"
+    }
   ]
 }

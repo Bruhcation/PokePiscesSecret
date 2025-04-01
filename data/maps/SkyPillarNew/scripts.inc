@@ -154,7 +154,7 @@ SkyPillarNew_Text_RickyAllDone:
 SkyPillarNew_Text_JeannieIntro:
 	.string "Oh-ho-ho! Crashing right on the scene\n"
 	.string "is the lovely {PLAYER}!\p"
-	.string "I'd love to test your meddle in\n"
+	.string "I'd love to test your mettle in\n"
 	.string "a quick battle!$"
 
 SkyPillarNew_Text_JeannieDefeat:

@@ -70,6 +70,14 @@ Gym5Corridor_Movement_MoveAway:
 	walk_down
 	step_end
 
+Gym5Corridor_EventScript_GymSign::
+	msgbox Gym5Corridor_Text_GymSign, MSGBOX_SIGN
+	end
+
+Gym2Corridor_Text_GymSign:
+	.string "LAVARIDGE GYM\n"
+	.string "Fire and Dragon Specialization$"
+
 Gym5Corridor_Text_AreYouReady:
 	.string "Welcome to the\n"
 	.string "Lavaridge Gym, challenger.\p"
