@@ -134,7 +134,7 @@ FallarborInteriors_Text_Fallarborite3:
 	.string "I don't leave my house!$"
 
 FallarborInteriors_Text_Fallarborite4:
-	.string "Have you been able to find a Pokemon\n"
+	.string "Have you been able to find a Pokémon\n"
 	.string "called Infairno? It is quite\l"
 	.string "the cheerful sort.\p"
 	.string "It sounds like a ticking clock! I\n"
@@ -169,7 +169,7 @@ FallarborInteriors_Text_Fallarborite7:
 FallarborInteriors_Text_Fallarborite8:
 	.string "I used to help run a small\n"
 	.string "mom and pop shop in this building\l"
-	.string "before Pokemon Centers remodelled\l"
+	.string "before Pokémon Centers remodelled\l"
 	.string "to have Marts inside them all.\p"
 	.string "Of course, that made business\n"
 	.string "all but dry up. Monopolies...$"

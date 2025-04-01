@@ -233,7 +233,7 @@ OzoneInt_Text_ThingsHaveGottenSerious:
 	.string "these two locations, is a place\l"
 	.string "for only the best of the best\l"
 	.string "trainers to battle with their\l"
-	.string "Pokemon. It will be a trek\l"
+	.string "Pokémon. It will be a trek\l"
 	.string "most grueling.\p"
 	.string "I strongly suggest that you\n"
 	.string "tie up any loose ends that you\l"

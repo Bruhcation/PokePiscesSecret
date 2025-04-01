@@ -2668,7 +2668,7 @@ TheColdMines_Text_WantToUseFlash:
 	.string "to direct its current?)$"
 
 TheColdMines_Text_NoFlash:
-	.string "(Perhaps a Pokemon that can use\n"
+	.string "(Perhaps a Pokémon that can use\n"
 	.string "the Flash field move could\l"
 	.string "direct its current...)$"
 
@@ -2686,7 +2686,7 @@ TheColdMines_Text_ThereIsTape:
 
 TheColdMines_Text_WantToUseCut:
 	.string "(Would you like to have one of\n"
-	.string "your Pokemon cut down this tape?)$"
+	.string "your Pokémon cut down this tape?)$"
 
 TheColdMines_Text_NoCut:
 	.string "(You have no means of cutting\n"

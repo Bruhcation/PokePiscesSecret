@@ -102,7 +102,7 @@ SootopolisCity_Mart_Text_PurplinaLore:
 	.string "Only tidbit I ever wrung outta her\n"
 	.string "was that the little charm on her\l"
 	.string "phone was given to her by the head\l"
-	.string "manager of Hoenn's Pokemon Centers.\l"
+	.string "manager of Hoenn's Pokémon Centers.\l"
 	.string "Strange connection, huh?$"
 
 SootopolisCity_Mart_Text_NamePhillipe:

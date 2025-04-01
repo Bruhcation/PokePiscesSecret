@@ -638,7 +638,7 @@ MangrottoTunnel_Text_RockSmashKid:
 	.string "You can use Rock Smash now, right?\n"
 	.string "So, try and use it on those\l"
 	.string "breakable rocks! There's sometimes\l"
-	.string "Pokemon inside that you can't\l"
+	.string "Pokémon inside that you can't\l"
 	.string "find anywhere else!$"
 
 MangrottoTunnel_Text_ToSootopolis:
@@ -738,7 +738,7 @@ MangrottoTunnel_Text_MokaPostBattle:
 	.string "is so distracting!$"
 
 MangrottoTunnel_Text_WoodsIntro:
-	.string "My Pokemon love to eat Oran Berries!\n"
+	.string "My Pokémon love to eat Oran Berries!\n"
 	.string "What about yours?$"
 
 MangrottoTunnel_Text_WoodsDefeated:
@@ -747,7 +747,7 @@ MangrottoTunnel_Text_WoodsDefeated:
 
 MangrottoTunnel_Text_WoodsPostBattle:
 	.string "Oran Berries are really useful when\n"
-	.string "your Pokemon are low in level,\l"
+	.string "your Pokémon are low in level,\l"
 	.string "since they don't have much health.\p"
 	.string "But when they get bigger and stronger,\n"
 	.string "Sitrus Berries are the way to go.$"
@@ -781,7 +781,7 @@ MangrottoTunnel_Text_DeclanPostBattle:
 
 MangrottoTunnel_Text_ShinjiIntro:
 	.string "Get your head in the game, Shinji...\n"
-	.string "your evolved Bug Pokemon can\l"
+	.string "your evolved Bug Pokémon can\l"
 	.string "easily handle this...!$"
 
 MangrottoTunnel_Text_ShinjiDefeated:
@@ -810,7 +810,7 @@ MangrottoTunnel_Text_JajaIntro:
 	.string "(The odd creature seems to be\n"
 	.string "under command of this small child.)\p"
 	.string "Hey! Let me show you how cool\n"
-	.string "my Dragon Pokemon is!$"
+	.string "my Dragon Pokémon is!$"
 
 MangrottoTunnel_Text_JajaDefeated:
 	.string "No way!$"
@@ -821,7 +821,7 @@ MangrottoTunnel_Text_JajaPostBattle:
 
 MangrottoTunnel_Text_JaneIntro:
 	.string "Do you keep your first partner\n"
-	.string "Pokemon? Or do you try and use\l"
+	.string "Pokémon? Or do you try and use\l"
 	.string "other ones you find on the way?$"
 
 MangrottoTunnel_Text_JaneDefeated:
@@ -838,7 +838,7 @@ MangrottoTunnel_Text_LaytonIntro:
 MangrottoTunnel_Text_LaytonDefeated:
 	.string "The puzzle was supposed to be how\n"
 	.string "you could get past my indestructable\l"
-	.string "Pokemon, but...\p"
+	.string "Pokémon, but...\p"
 	.string "It, uhm, turns out they were\n"
 	.string "very destructable...$"
 
@@ -864,5 +864,5 @@ MangrottoTunnel_Text_JoAndJoPostBattle:
 
 MangrottoTunnel_Text_JoAndJoNeedTwoMons:
 	.string "No, you're not seeing double.\n"
-	.string "But you need two Pokemon with you\l"
+	.string "But you need two Pokémon with you\l"
 	.string "to take us on!$"

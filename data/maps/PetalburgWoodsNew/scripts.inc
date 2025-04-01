@@ -476,7 +476,7 @@ PetalburgWoodsNew_Text_ElizabethPostBattle:
 	.string "seek power, no matter the cost...$"
 
 PetalburgWoodsNew_Text_ArtieIntro:
-	.string "Let me guess, your Pokemon\n"
+	.string "Let me guess, your Pokémon\n"
 	.string "were wild-caught, right?\l"
 	.string "Hmph, to be expected.$"
 
@@ -485,7 +485,7 @@ PetalburgWoodsNew_Text_ArtieDefeated:
 	.string "bred and raised team, taken down!?$"
 
 PetalburgWoodsNew_Text_ArtiePostBattle:
-	.string "How could my Pokemon be trounced\n"
+	.string "How could my Pokémon be trounced\n"
 	.string "by a bunch of wild savages? It\l"
 	.string "just doesn't make any sense!$"
 
@@ -528,7 +528,7 @@ PetalburgWoodsNew_Text_MioPostBattle:
 
 PetalburgWoodsNew_Text_LemmyIntro:
 	.string "With my brother and I on the prowl,\n"
-	.string "we'll collect every Pokemon\l"
+	.string "we'll collect every Pokémon\l"
 	.string "in Hoenn!$"
 
 PetalburgWoodsNew_Text_LemmyDefeated:
@@ -537,11 +537,11 @@ PetalburgWoodsNew_Text_LemmyDefeated:
 PetalburgWoodsNew_Text_LemmyPostBattle:
 	.string "My brother and I really could\n"
 	.string "do better if he wasn't so obsessed\l"
-	.string "with hunting Shiny Pokemon.$"
+	.string "with hunting Shiny Pokémon.$"
 
 PetalburgWoodsNew_Text_IchiIntro:
 	.string "Nyee-hee...! I have a PARTICULARLY\n"
-	.string "rare Pokemon to show off!\l"
+	.string "rare Pokémon to show off!\l"
 	.string "It will look amazing as it\l"
 	.string "PUMMELS you!$"
 
@@ -549,13 +549,13 @@ PetalburgWoodsNew_Text_IchiDefeated:
 	.string "M-M-M-MY PRIZED POSSESSION!$"
 
 PetalburgWoodsNew_Text_IchiPostBattle:
-	.string "Shiny Pokemon are the ONLY ONES\n"
+	.string "Shiny Pokémon are the ONLY ONES\n"
 	.string "that really matter. Those common\l"
 	.string "colored variants... forget them!$"
 
 PetalburgWoodsNew_Text_InuAndPersiaIntro:
-	.string "INU: Canine Pokemon...\n"
-	.string "PERSIA: Feline Pokemon...\p"
+	.string "INU: Canine Pokémon...\n"
+	.string "PERSIA: Feline Pokémon...\p"
 	.string "INU: Together...\n"
 	.string "PERSIA: They dominate!$"
 
@@ -565,7 +565,7 @@ PetalburgWoodsNew_Text_InuAndPersiaDefeated:
 
 PetalburgWoodsNew_Text_InuAndPersiaPostBattle:
 	.string "INU: Maybe we should switch to\n"
-	.string "     training equine Pokemon instead.\l"
+	.string "     training equine Pokémon instead.\l"
 	.string "PERSIA: I'll start looking!$"
 
 PetalburgWoodsNew_Text_InuAndPersiaNeedTwoMons:
@@ -627,17 +627,17 @@ PetalburgWoodsNew_Text_ProbablyShouldnt:
 PetalburgWoodsNew_Text_PunishingPresence:
 	.string "(You sense a punishing aura\n"
 	.string "emanating from the birdhouse...!)\p"
-	.string "(A Pokemon came out to attack you!)$"
+	.string "(A Pokémon came out to attack you!)$"
 
 PetalburgWoodsNew_Text_BigPresence:
 	.string "(You sense a large presence\n"
 	.string "emanating from the birdhouse...!)\p"
-	.string "(A Pokemon came out to attack you!)$"
+	.string "(A Pokémon came out to attack you!)$"
 
 PetalburgWoodsNew_Text_JudgingPresence:
 	.string "(You sense a feeling of judgment\n"
 	.string "emanating from the birdhouse...!)\p"
-	.string "(A Pokemon came out to attack you!)$"
+	.string "(A Pokémon came out to attack you!)$"
 
 PetalburgWoodsNew_Text_ShishimaBecameEgg:
 	.string "(The felled Wild Shishima\n"
@@ -661,5 +661,5 @@ PetalburgWoodsNew_Text_PlayerReceivedEgg:
 	.string "{PLAYER} received an Egg!$"
 
 PetalburgWoodsNew_Text_BirdIsGone:
-	.string "(That abnormal avian Pokemon\n"
+	.string "(That abnormal avian Pokémon\n"
 	.string "is no longer in its birdhouse.)$"

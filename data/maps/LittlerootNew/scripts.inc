@@ -26,7 +26,7 @@ LittlerootNew_Text_NormanSign:
 	.string "Norman's House\n$"
 
 LittlerootNew_Text_PenultimaSign:
-	.string "Home of the Starter Pokemon\n"
+	.string "Home of the Starter Pokémon\n"
 	.string "Move Tutor, Penultima$"
 
 LittlerootNew_Text_LittlerootSign:

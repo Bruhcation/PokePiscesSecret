@@ -93,7 +93,7 @@ SlateportShore_Text_Toxic:
 	.string "tellin' me I'm toxic! I don't\l"
 	.string "know what that means!\p"
 	.string "Maybe, like, they're sayin' I use\n"
-	.string "the Pokemon move too much?\l"
+	.string "the Pokémon move too much?\l"
 	.string "But it's so good! Don't be stupid!\p"
 	.string "Y'know what, screw it! I am toxic,\n"
 	.string "and I am PROUD! Take this, so\l"
@@ -159,7 +159,7 @@ SlateportShore_Text_RoseAndThornPostBattle:
 	.string "ROSE: Stop talking in platitudes...$"
 
 SlateportShore_Text_RoseAndThornNeedTwoMons:
-	.string "ROSE: Aw, you only have one Pokemon?\n"
+	.string "ROSE: Aw, you only have one Pokémon?\n"
 	.string "THORN: You'll need the peanut butter\l"
 	.string "       to your jelly!$"
 
@@ -198,7 +198,7 @@ SlateportShore_Text_LouiseDefeated:
 
 SlateportShore_Text_LouisePostBattle:
 	.string "If you want to catch water-dwelling\n"
-	.string "Pokemon in big batches, I suggest\l"
+	.string "Pokémon in big batches, I suggest\l"
 	.string "investing in Lure Balls.$"
 
 SlateportShore_Text_PragIntro:

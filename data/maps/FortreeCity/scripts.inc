@@ -60,7 +60,7 @@ FortreeCity_Text_TerrainHouseSign:
 	.string "All visitors welcome\n"
 	.string "to the Fortree City Terrain House!\p"
 	.string "Want moves to help your\n"
-	.string "Pokemon in various terrains?\l"
+	.string "Pokémon in various terrains?\l"
 	.string "We are happy to help!$"
 
 FortreeCity_Text_WestToGymSign:
@@ -75,10 +75,10 @@ FortreeCity_Text_Ozoner1:
 	.string "...Just don't pass us!$"
 
 FortreeCity_Text_Ozoner2:
-	.string "We're letting our Pokemon roam\n"
+	.string "We're letting our Pokémon roam\n"
 	.string "around here to monitor their\l"
 	.string "reactions to the rain.\p"
-	.string "Fire Pokemon really dislike\n"
+	.string "Fire Pokémon really dislike\n"
 	.string "the rain. Thats why those\l"
 	.string "Parasol Ladies love to train them.\l"
 	.string "Their umbrellas keep them dry.$"

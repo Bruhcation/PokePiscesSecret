@@ -78,13 +78,13 @@ ShoalCaveNewFloor1_Text_LunaPostBattle:
 ShoalCaveNewFloor1_Text_WuIntro:
 	.string "Back in my day, trainers would\n"
 	.string "train THEMSELVES alongside\l"
-	.string "their Pokemon!$"
+	.string "their Pokémon!$"
 
 ShoalCaveNewFloor1_Text_WuDefeated:
 	.string "Hmm. How peculiar.$"
 
 ShoalCaveNewFloor1_Text_WuPostBattle:
-	.string "You train your Pokemon well,\n"
+	.string "You train your Pokémon well,\n"
 	.string "child. But remember, there is\l"
 	.string "always room to improve!$"
 

@@ -38,8 +38,8 @@ BattleFrontier_PokemonCenter_1F_EventScript_SuperCharged::
 
 BattleFrontier_PokemonCenter_1F_Text_GearUp:
 	.string "There are certain moves that let\n"
-	.string "Pokemon become Geared Up. And when\l"
-	.string "a Pokemon is Geared Up, the power\l"
+	.string "Pokémon become Geared Up. And when\l"
+	.string "a Pokémon is Geared Up, the power\l"
 	.string "of their Steel type moves increase.\p"
 	.string "This can also cause certain moves\n"
 	.string "like Shift Gear and Autotomize\l"
@@ -50,7 +50,7 @@ BattleFrontier_PokemonCenter_1F_Text_GearUp:
 
 BattleFrontier_PokemonCenter_1F_Text_SuperCharged:
 	.string "Gzzzrt! I'm SUPERCHARGED! Just\n"
-	.string "like my Pokemon after I use Charge!\p"
+	.string "like my Pokémon after I use Charge!\p"
 	.string "It makes Electric type moves more\n"
 	.string "powerful and also adds neat side\l"
 	.string "effects to moves like Magnet Rise\l"
@@ -70,15 +70,15 @@ BattleFrontier_PokemonCenter_1F_EventScript_Skitty::
 
 BattleFrontier_PokemonCenter_1F_Text_NeverSeenPokemon:
 	.string "There was someone here using a \n"
-	.string "POKéMON I've never seen before.\p"
+	.string "Pokémon I've never seen before.\p"
 	.string "I never learned about it at\n"
 	.string "TRAINER'S SCHOOL at least.\p"
-	.string "I wonder where you can catch POKéMON\n"
+	.string "I wonder where you can catch Pokémon\n"
 	.string "like that.$"
 
 BattleFrontier_PokemonCenter_1F_Text_NextStopBattleArena:
 	.string "Okay! Next stop, the BATTLE ARENA!\n"
-	.string "I'd better get the right POKéMON from\l"
+	.string "I'd better get the right Pokémon from\l"
 	.string "the PC Storage System.$"
 
 BattleFrontier_PokemonCenter_1F_Text_GoingThroughEveryChallenge:

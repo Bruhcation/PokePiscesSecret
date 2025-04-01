@@ -38,7 +38,7 @@ BattleStudioLobby_EventScript_LobbyAttendant::
 BattleStudioLobby_Text_LobbyAttendant:
 	.string "Through here is where you can\n"
 	.string "take the Battle Swap Challenge!\l"
-	.string "It is rental Pokemon only.\l"
+	.string "It is rental Pokémon only.\l"
 	.string "The attendant should explain\l"
 	.string "the rules to you. Have fun!$"
 

@@ -98,7 +98,7 @@ SailorsPauseShips_Text_MarcyDefeated:
 	.string "Owwwwwch! No fair!$"
 
 SailorsPauseShips_Text_MarcyPostBattle:
-	.string "Ghost type Pokemon feed on\n"
+	.string "Ghost type Pokémon feed on\n"
 	.string "human energy, don't they?\l"
 	.string "Hmm. Maybe that's why I'm all\l"
 	.string "worn out...$"
@@ -174,7 +174,7 @@ SailorsPauseShips_Text_JackDefeated:
 	.string "aren't for sale?$"
 
 SailorsPauseShips_Text_JackPostBattle:
-	.string "Whatever! If your Pokemon are\n"
+	.string "Whatever! If your Pokémon are\n"
 	.string "anything like you, they'll\l"
 	.string "attract Flague in droves!$"
 

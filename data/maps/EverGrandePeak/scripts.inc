@@ -580,7 +580,7 @@ EverGrandePeak_Text_Welcome:
 
 EverGrandePeak_Text_YouveDoneWell:
 	.string "This used to be where the\n"
-	.string "Pokemon League challenge in\l"
+	.string "Pokémon League challenge in\l"
 	.string "Ever Grande City was located...\l"
 	.string "before the decision was made\l"
 	.string "to do away with it.\p"
@@ -598,7 +598,7 @@ EverGrandePeak_Text_DoYouHaveTheOrbs:
 	.string "containing the dormant souls\l"
 	.string "of Sha-Yon and Luo-Shan.\l"
 	.string "With these, we should be able to\l"
-	.string "restore the two Legendary Pokemon\l"
+	.string "restore the two Legendary Pokémon\l"
 	.string "and hopefully reap the divine\l"
 	.string "rewards of their bond once more.$"
 
@@ -665,7 +665,7 @@ EverGrandePeak_Text_LuoshanShrineOrbSet:
 	.string "(Luo-Shan's orb has been placed.)$"
 
 EverGrandePeak_Text_BothOrbsSet:
-	.string "(Both of the Legendary Pokemon's\n"
+	.string "(Both of the Legendary Pokémon's\n"
 	.string "red orbs have been placed correctly.)\p"
 	.string "(You should head back to\n"
 	.string "the central fountain...)$"
@@ -692,7 +692,7 @@ EverGrandePeak_Text_YouLockEyes:
 	.string "the former champion...)\p"
 	.string "(The two of you lock eyes.\n"
 	.string "And, when two trainers lock eyes...)\p"
-	.string "(It's time for a Pokemon Battle.)$"
+	.string "(It's time for a Pokémon Battle.)$"
 
 EverGrandePeak_Text_MayDefeated:
 	.string "(May closes her eyes in defeat.)$"
@@ -750,7 +750,7 @@ EverGrandePeak_Text_TheMeaningOfItAll:
 EverGrandePeak_Text_GoToTheHallOfFame:
 	.string "Let us go enshrine your name\n"
 	.string "within the Hall of Fame.\l"
-	.string "While we lack the Pokemon League\l"
+	.string "While we lack the Pokémon League\l"
 	.string "these days, I still wish to\l"
 	.string "uphold that tradition.\p"
 	.string "Come, I will escort you.\n$"

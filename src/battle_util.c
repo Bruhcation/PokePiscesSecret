@@ -3316,7 +3316,7 @@ u8 DoBattlerEndTurnEffects(void)
                     return;
                 }
             }
-            gBattleScripting.moveendState++;
+            gBattleStruct->turnEffectsTracker++;
             break;
         case ENDTURN_INFERNAL_REIGN:
             if ((IsAbilityOnField(ABILITY_INFERNAL_REIGN))
@@ -10098,10 +10098,10 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                 && CanStartBlooming(gBattlerTarget)
                 && gBattleMons[gBattlerTarget].hp)
             {
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STATUSED_BY_ITEM;
                 gBattleScripting.moveEffect = MOVE_EFFECT_BLOOMING;
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_ItemSecondaryEffect;
-                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STATUSED_BY_ITEM;
                 effect++;
             }
             else if (gBattleMoveDamage != 0 // Need to have done damage
@@ -10193,7 +10193,6 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
             && RandomPercentage(RNG_HOLD_EFFECT_BLACK_GLASSES, 20))
             {
                 gBattleScripting.moveEffect = MOVE_EFFECT_CONFUSION;
-                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STATUSED_BY_ITEM;
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_ItemSecondaryEffect;
                 gHitMarker |= HITMARKER_IGNORE_SAFEGUARD;

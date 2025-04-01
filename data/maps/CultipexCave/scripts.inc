@@ -61,9 +61,9 @@ CultipexCave_Movement_CultipexLeave2:
 	step_end
 
 CultipexCave_Text_BigBug:
-	.string "(It's a massive Bug Pokemon.\n"
+	.string "(It's a massive Bug Pokémon.\n"
 	.string "It appears to be commanding the\l"
-	.string "Pokemon in its cave through\l"
+	.string "Pokémon in its cave through\l"
 	.string "multiple different tongues...)\p"
 	.string "(It begins to speak English to you.)\p"
 	.string "YOU DO NOT BELONG HERE.\n"

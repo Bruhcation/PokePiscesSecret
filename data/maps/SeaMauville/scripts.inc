@@ -679,7 +679,7 @@ SeaMauville_Text_SleepTalk:
 	.string "asleep, like my friend here,\l"
 	.string "is a science. The human brain can\l"
 	.string "never truly fully de-activate,\l"
-	.string "and the same goes for Pokemon.\p"
+	.string "and the same goes for Pokémon.\p"
 	.string "To use that kind of knowledge in\n"
 	.string "battle, just make use of this TM!$"
 
@@ -705,7 +705,7 @@ SeaMauville_Text_MarketSign2:
 	.string "you don't recognize any names.)$"
 
 SeaMauville_Text_FanClubSign:
-	.string "The Pokemon Card Fan Club$"
+	.string "The Pokémon Card Fan Club$"
 
 SeaMauville_Text_OceanicMuseumSign:
 	.string "OCEANIC MUSEUM$"
@@ -720,7 +720,7 @@ SeaMauville_Text_BeachSign:
 	.string "SOUTH - SLATEPORT SHORE\n"
 	.string "During high tide, the sands may\l"
 	.string "become engulfed in water.\l"
-	.string "Bring a Pokemon that can Surf!$"
+	.string "Bring a Pokémon that can Surf!$"
 
 SeaMauville_Text_WelcomeToShopMints:
 	.string "Welcome to the Mint Shop!$"
@@ -951,7 +951,7 @@ SeaMauville_Text_GoGetMeASuitcase:
 	.string "I'll give ya some of what's in there.\p"
 	.string "Now, a friend'a mine is gonna come\n"
 	.string "strolling down the road behind\l"
-	.string "the Pokemon Center in a bit.\l"
+	.string "the Pokémon Center in a bit.\l"
 	.string "You go and loiter back there.\l"
 	.string "When she pops up, you can't miss her.\l"
 	.string "Lady with sheet-white hair.\p"
@@ -966,7 +966,7 @@ SeaMauville_Text_GoGetMeASuitcase:
 SeaMauville_Text_SuitcaseInstructions:
 	.string "Now, a friend'a mine is gonna come\n"
 	.string "strolling down the road behind\l"
-	.string "the Pokemon Center in a bit.\l"
+	.string "the Pokémon Center in a bit.\l"
 	.string "You go and loiter back there.\l"
 	.string "When she pops up, you can't miss her.\l"
 	.string "Lady with sheet-white hair.\p"
@@ -1008,7 +1008,7 @@ SeaMauville_Text_MyCreamHasTroubleWakingUp:
 SeaMauville_Text_TradeFlute:
 	.string "Hmmm? A Poke Flute, you say?\p"
 	.string "Why, yes, I have seen how they\n"
-	.string "can keep Pokemon energetic.\p"
+	.string "can keep Pokémon energetic.\p"
 	.string "That's very sweet of you to offer!\n"
 	.string "...Let's see, what could I give\l"
 	.string "you in return...\p"

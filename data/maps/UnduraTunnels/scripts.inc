@@ -69,7 +69,7 @@ UnduraTunnels_Text_GuntildaPostBattle:
 
 UnduraTunnels_Text_LaiosIntro:
 	.string "I have been searching for a\n"
-	.string "delicious Pokemon... battle.\l"
+	.string "delicious Pokémon... battle.\l"
 	.string "Yes, a battle...$"
 
 UnduraTunnels_Text_LaiosDefeated:

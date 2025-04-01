@@ -238,7 +238,7 @@ PrecipikeInteriors_Text_GiveYouOneOfMyRods:
 
 PrecipikeInteriors_Text_ThrowInFishingAdvice:
 	.string "This rod is more enticing\n"
-	.string "to a broad range of aquatic Pokemon.\l"
+	.string "to a broad range of aquatic Pokémon.\l"
 	.string "I'd advise usin' it whenever\l"
 	.string "you see water. You'll haul in\l"
 	.string "quite a few new catches.$"
@@ -257,7 +257,7 @@ PrecipikeInteriors_Text_PostNoOld:
 PrecipikeInteriors_Text_FishingAdviceNoOld:
 	.string "Take them there rods out to any\n"
 	.string "shoreline and let 'em rip.\l"
-	.string "Huge variety of Pokemon in\l"
+	.string "Huge variety of Pokémon in\l"
 	.string "the water that you can't be\l"
 	.string "gettin' anywhere else.\p"
 	.string "Don't remain ignorant to the\n"
@@ -265,7 +265,7 @@ PrecipikeInteriors_Text_FishingAdviceNoOld:
 	.string "...n' best of luck to ya.$"
 
 PrecipikeInteriors_Text_HowsYourFishing:
-	.string "Sadsod's my most liked Pokemon.\n"
+	.string "Sadsod's my most liked Pokémon.\n"
 	.string "There's somethin' in their\l"
 	.string "demeanor that makes ya want\l"
 	.string "to care for 'em.\p"
@@ -302,11 +302,11 @@ PrecipikeInteriors_Text_PlayerReceivedEgg:
 PrecipikeInteriors_Text_HelloILikeEggs:
 	.string "Salutations. I am what you\n"
 	.string "may call an Egg Connoisseur.\p"
-	.string "Hatching Pokemon Eggs used to be\n"
+	.string "Hatching Pokémon Eggs used to be\n"
 	.string "a lot more common in Hoenn.\l"
 	.string "Though, recently, no one likes\l"
 	.string "to do it anymore.\p"
-	.string "The Pokemon Eggneggma has been\n"
+	.string "The Pokémon Eggneggma has been\n"
 	.string "taking advantage of\l"
 	.string "peoples' lethargy, and stealing\l"
 	.string "Eggs from breeders whenever\l"

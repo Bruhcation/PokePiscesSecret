@@ -78,7 +78,7 @@ DetermaniteQuarB1F_Text_AugustPostBattle:
 	.string "(August is bowing to you.)$"
 
 DetermaniteQuarB1F_Text_MildredIntro:
-	.string "Awful lot of Relic type Pokemon\n"
+	.string "Awful lot of Relic type Pokémon\n"
 	.string "'round these parts, eh?$"
 
 DetermaniteQuarB1F_Text_MildredDefeated:

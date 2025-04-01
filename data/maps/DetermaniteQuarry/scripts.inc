@@ -120,7 +120,7 @@ DetermaniteQuarry_Text_MichikoDefeated:
 
 DetermaniteQuarry_Text_MichikoPostBattle:
 	.string "I have been trying fruitlessly\n"
-	.string "to make my Pokemon learn a\l"
+	.string "to make my Pokémon learn a\l"
 	.string "fifth move. I have heard rumblings\l"
 	.string "that Abarbinash has some hidden\l"
 	.string "potential... could that be true?$"

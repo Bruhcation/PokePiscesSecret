@@ -159,7 +159,7 @@ CrimneyClimb_Text_JinPostBattle:
 	.string "if you know what's good for you.$"
 
 CrimneyClimb_Text_AkiAndMitsuIntro:
-	.string "AKI: You have to make your Pokemon\n"
+	.string "AKI: You have to make your Pokémon\n"
 	.string "     really EARN their evolution!\l"
 	.string "MITSU: This will be the battle\l"
 	.string "       that proves their worth!$"
@@ -171,14 +171,14 @@ CrimneyClimb_Text_AkiAndMitsuDefeated:
 
 CrimneyClimb_Text_AkiAndMitsuPostBattle:
 	.string "AKI: It's important to make sure\n"
-	.string "    your Pokemon stay humble.\l"
+	.string "    your Pokémon stay humble.\l"
 	.string "MITSU: Don't let them evolve\l"
 	.string "   until they've proved themselves!$"
 
 CrimneyClimb_Text_AkiAndMitsuNeedTwoMons:
 	.string "MISTU: Aki, I don't think there'd\n"
 	.string "       be any honor in challenging\l"
-	.string "       someone with one Pokemon...\l"
+	.string "       someone with one Pokémon...\l"
 	.string "AKI: That, you are right!$"
 
 CrimneyClimb_Text_DaisyIntro:

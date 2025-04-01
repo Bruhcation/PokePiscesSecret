@@ -353,7 +353,7 @@ DewfordGymNew_Text_TahoeDefeated:
 	.string "couldn't win us this one...$"
 
 DewfordGymNew_Text_TahoePostBattle:
-	.string "Colfin are such kind Pokemon.\n"
+	.string "Colfin are such kind Pokémon.\n"
 	.string "I recommend giving yours a\l"
 	.string "Friend Ribbon! I have a friend\l"
 	.string "who is giving them away\l"
@@ -458,7 +458,7 @@ DewfordGymNew_Text_InTheWater:
 
 DewfordGymNew_Text_CaspianIntro:
 	.string "Let me guess. You're thinking,\n"
-	.string "“It's a man. A Pokemon\l"
+	.string "“It's a man. A Pokémon\l"
 	.string "may be able to push him aside.”\l"
 	.string "Is that right?\l"
 	.string "Well, I just think that's\l"
@@ -517,7 +517,7 @@ DewfordGymNew_Text_ReceivedBeachBadge:
 
 DewfordGymNew_Text_AndHeresTheTMs:
 	.string "The Beach Badge allows your\n"
-	.string "Pokemon to dive underwater whenever\l"
+	.string "Pokémon to dive underwater whenever\l"
 	.string "you see deep, dark patches\l"
 	.string "in the water. It's pretty\l"
 	.string "dang fun, but a bit too slow-\l"
@@ -535,7 +535,7 @@ DewfordGymNew_Text_ByeBye:
 
 DewfordGymNew_Text_NotEnoughPokemon:
 	.string "But like, what gives?\n"
-	.string "You're outta Pokemon who\l"
+	.string "You're outta Pokémon who\l"
 	.string "can fight? 'Cept one?\p"
 	.string "Bummer... like, yeah, I don't\n"
 	.string "think I'll be fightin' ya without\l"

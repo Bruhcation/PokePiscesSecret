@@ -336,13 +336,13 @@ BattleFrontier_BattleFactoryLobby_Text_TakeSinglesChallenge:
 BattleFrontier_BattleFactoryLobby_Text_ExplainSinglesChallenge:
 	.string "The Battle Swap Single Tournament\n"
 	.string "is a SINGLE BATTLE competition using\l"
-	.string "only rental POKéMON.\p"
+	.string "only rental Pokémon.\p"
 	.string "First, you will be loaned three\n"
-	.string "POKéMON specifically for this event.\p"
-	.string "Using the supplied rental POKéMON,\n"
+	.string "Pokémon specifically for this event.\p"
+	.string "Using the supplied rental Pokémon,\n"
 	.string "you must conduct a SINGLE BATTLE.\p"
 	.string "If you win, you are permitted to trade\n"
-	.string "one of your rental POKéMON.\p"
+	.string "one of your rental Pokémon.\p"
 	.string "Repeat this cycle of battling and\n"
 	.string "trading--if you win seven times in\l"
 	.string "a row, you will earn Battle Points.\p"
@@ -364,7 +364,7 @@ BattleFrontier_BattleFactoryLobby_Text_OkayToSaveBeforeChallenge:
 
 @ Unused
 BattleFrontier_BattleFactoryLobby_Text_WillHoldMonsForSafekeeping:
-	.string "Okay, I will hold your POKéMON for\n"
+	.string "Okay, I will hold your Pokémon for\n"
 	.string "safekeeping while you compete.$"
 
 BattleFrontier_BattleFactoryLobby_Text_StepThisWay:
@@ -372,15 +372,15 @@ BattleFrontier_BattleFactoryLobby_Text_StepThisWay:
 
 BattleFrontier_BattleFactoryLobby_Text_ReturnMonsSaveResults:
 	.string "Thank you for participating!\p"
-	.string "I will return your POKéMON in exchange\n"
-	.string "for our rental POKéMON.\p"
+	.string "I will return your Pokémon in exchange\n"
+	.string "for our rental Pokémon.\p"
 	.string "I must also save the event results.\n"
 	.string "Please wait.$"
 
 @ Unused
 BattleFrontier_BattleFactoryLobby_Text_ReturnMons:
-	.string "I will return your POKéMON in exchange\n"
-	.string "for our rental POKéMON.$"
+	.string "I will return your Pokémon in exchange\n"
+	.string "for our rental Pokémon.$"
 
 BattleFrontier_BattleFactoryLobby_Text_CongratsSevenWins:
 	.string "Congratulations! You've won seven\n"
@@ -411,7 +411,7 @@ BattleFrontier_BattleFactoryLobby_Text_DidntSaveBeforeQuitting:
 
 @ Unused
 BattleFrontier_BattleFactoryLobby_Text_WellReturnMons:
-	.string "We'll return your personal POKéMON.$"
+	.string "We'll return your personal Pokémon.$"
 
 @ Unused
 BattleFrontier_BattleFactoryLobby_Text_ReceivedPrizeItem:
@@ -432,13 +432,13 @@ BattleFrontier_BattleFactoryLobby_Text_TakeDoublesChallenge:
 BattleFrontier_BattleFactoryLobby_Text_ExplainDoublesChallenge:
 	.string "The Battle Swap Double Tournament\n"
 	.string "is a DOUBLE BATTLE competition using\l"
-	.string "only rental POKéMON.\p"
+	.string "only rental Pokémon.\p"
 	.string "First, you will be loaned three\n"
-	.string "POKéMON specifically for this event.\p"
-	.string "Using the supplied rental POKéMON,\n"
+	.string "Pokémon specifically for this event.\p"
+	.string "Using the supplied rental Pokémon,\n"
 	.string "you must conduct a DOUBLE BATTLE.\p"
 	.string "If you win, you are permitted to trade\n"
-	.string "one of your rental POKéMON.\p"
+	.string "one of your rental Pokémon.\p"
 	.string "Repeat this cycle of battling and\n"
 	.string "trading--if you win seven times in\l"
 	.string "a row, you will earn Battle Points.\p"
@@ -458,8 +458,8 @@ BattleFrontier_BattleFactoryLobby_Text_AwardBattlePoints:
 	.string "we award you these Battle Point(s).$"
 
 BattleFrontier_BattleFactoryLobby_Text_ExchangeMonsAndSave:
-	.string "Let me exchange your POKéMON\n"
-	.string "for our rental POKéMON.\p"
+	.string "Let me exchange your Pokémon\n"
+	.string "for our rental Pokémon.\p"
 	.string "I need to save the battle data,\n"
 	.string "so please wait.$"
 
@@ -473,15 +473,15 @@ BattleFrontier_BattleFactoryLobby_Text_NeedKnowledgeOfMonsMoves:
 	.string "You, there!\p"
 	.string "Are you thinking that the events here\n"
 	.string "are easy since you don't need to have\l"
-	.string "a raised team of POKéMON?\p"
+	.string "a raised team of Pokémon?\p"
 	.string "I wouldn't be too sure about winning\n"
 	.string "that easily.\p"
 	.string "If you don't have thorough knowledge\n"
-	.string "about POKéMON and their moves,\l"
+	.string "about Pokémon and their moves,\l"
 	.string "it will be tough to keep winning.$"
 
 BattleFrontier_BattleFactoryLobby_Text_SwappedForWeakMon:
-	.string "I swapped for a weak POKéMON…\n"
+	.string "I swapped for a weak Pokémon…\n"
 	.string "I thought it was a good kind to have…\p"
 	.string "They wiped the floor with us…$"
 
@@ -489,7 +489,7 @@ BattleFrontier_BattleFactoryLobby_Text_NeedToCheckOpponentsMons:
 	.string "Things haven't been going my way\n"
 	.string "at all.\p"
 	.string "You need to check your opponent's\n"
-	.string "POKéMON during battle to see if\l"
+	.string "Pokémon during battle to see if\l"
 	.string "they're any good.$"
 
 BattleFrontier_BattleFactoryLobby_Text_CantFigureOutStaffHints:
@@ -505,7 +505,7 @@ BattleFrontier_BattleFactoryLobby_Text_RentalMonsAreVaried:
 	.string "and battling over and over.\p"
 	.string "So anyway, when I kept entering\n"
 	.string "Battle Swap events, I noticed they\l"
-	.string "varied the rental POKéMON.$"
+	.string "varied the rental Pokémon.$"
 
 BattleFrontier_BattleFactoryLobby_Text_RulesAreListed:
 	.string "The Battle Swap rules are listed.$"

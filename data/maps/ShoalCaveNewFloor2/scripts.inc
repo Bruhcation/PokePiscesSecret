@@ -186,7 +186,7 @@ ShoalCaveNewFloor2_EventScript_Alaska::
 ShoalCaveNewFloor2_Text_MagnusIntro:
 	.string "You must weild a titanic sword\n"
 	.string "to slay a titanic beast!\p"
-	.string "My Pokemon are my sword...\n"
+	.string "My Pokémon are my sword...\n"
 	.string "and you are the beast!$"
 
 ShoalCaveNewFloor2_Text_MagnusDefeated:
@@ -195,7 +195,7 @@ ShoalCaveNewFloor2_Text_MagnusDefeated:
 
 ShoalCaveNewFloor2_Text_MagnusPostBattle:
 	.string "Try all you want, but Dragon\n"
-	.string "type Pokemon cannot be intimidated!$"
+	.string "type Pokémon cannot be intimidated!$"
 
 ShoalCaveNewFloor2_Text_JuneauIntro:
 	.string "Lottabats... assemble...$"

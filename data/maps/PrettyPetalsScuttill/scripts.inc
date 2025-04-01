@@ -432,7 +432,7 @@ PrettyPetalsScuttill_Text_DoYouHaveKickMove:
 
 PrettyPetalsScuttill_Text_YouHaveKickMove:
 	.string "Oh! You're into kickboxing too?\n"
-	.string "Your Pokemon have kicking moves,\l"
+	.string "Your Pokémon have kicking moves,\l"
 	.string "so I assume you train with 'em.\p"
 	.string "I'll have to teach you some\n"
 	.string "of my tried-and-true techniques!\p"
@@ -442,7 +442,7 @@ PrettyPetalsScuttill_Text_NoKickMove:
 	.string "Eh... you don't seem to\n"
 	.string "be into kickboxing at all.\p"
 	.string "If you WERE, I'd imagine\n"
-	.string "one of your Pokemon knew like,\l"
+	.string "one of your Pokémon knew like,\l"
 	.string "at least one kicking move...$"
 
 PrettyPetalsScuttill_Text_PostTropKick:
@@ -453,7 +453,7 @@ PrettyPetalsScuttill_Text_PostTropKick:
 PrettyPetalsScuttill_Text_NicPreBloom:
 	.string "I have been doing research on\n"
 	.string "status effects...\l"
-	.string "Is there any that you prefer\l"
+	.string "Are there any that you prefer\l"
 	.string "to use in battle?$"
 
 PrettyPetalsScuttill_Text_DoYouHaveIngrain:
@@ -466,7 +466,7 @@ PrettyPetalsScuttill_Text_DoYouHaveIngrain:
 PrettyPetalsScuttill_Text_YouHaveIngrain:
 	.string "That's great! It seems like you\n"
 	.string "have been using Blooming, given\l"
-	.string "that you possess a Pokemon\l"
+	.string "that you possess a Pokémon\l"
 	.string "with the move Ingrain.\p"
 	.string "Have one of these, I made it myself!\n"
 	.string "It'll help you use Blooming\l"
@@ -476,7 +476,7 @@ PrettyPetalsScuttill_Text_NoIngrain:
 	.string "A move that is easy to set Blooming\n"
 	.string "with is Ingrain.\l"
 	.string "You should come see me if\l"
-	.string "you have a Pokemon with Ingrain!\l"
+	.string "you have a Pokémon with Ingrain!\l"
 	.string "I'll give you something nice.$"
 
 PrettyPetalsScuttill_Text_PostFairyRing:

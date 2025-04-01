@@ -135,7 +135,7 @@ FortreeGymBattleLocation_Text_NotEnoughPokemon:
 	.string "thanks and all, but... uh, you're\l"
 	.string "not lookin' in too good of\l"
 	.string "a shape, huh?\p"
-	.string "Only one healthy Pokemon? That\n"
+	.string "Only one healthy Pokémon? That\n"
 	.string "won't make for an epic gym battle!\p"
 	.string "Sorry, pal, but I am going to\n"
 	.string "have to send you away.\l"

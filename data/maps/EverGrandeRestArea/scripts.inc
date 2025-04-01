@@ -51,7 +51,7 @@ EverGrandeRestArea_Text_NameArchie:
 	.string "Archie$"
 
 EverGrandeRestArea_Text_WantToRest:
-	.string "Want to rest your Pokemon\n"
+	.string "Want to rest your Pokémon\n"
 	.string "for a bit, {PLAYER}?$"
 
 EverGrandeRestArea_Text_IveRestoredThem:

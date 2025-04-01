@@ -426,10 +426,11 @@ const struct SpriteTemplate gSavageWingDragonSpriteTemplate =
 // same as AnimEllipticalGust but centered on targets
 static void AnimEllipticalGustCentered(struct Sprite *sprite)
 {
-    if (IsDoubleBattle())
+    if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
         InitSpritePosToAnimTargetsCentre(sprite, FALSE);
     else
         InitSpritePosToAnimTarget(sprite, FALSE);
+
     sprite->y += 20;
     sprite->data[1] = 191;
     sprite->callback = AnimEllipticalGust_Step;

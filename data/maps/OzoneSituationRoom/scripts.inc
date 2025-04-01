@@ -112,7 +112,7 @@ OzoneSituationRoom_Text_ToTheCaveOfOrigin:
 	.string "Cave of Origin, and converse\l"
 	.string "with Deacon Wallace.\l"
 	.string "He possesses countless knowledge\l"
-	.string "about the Legendary Pokemon\l"
+	.string "about the Legendary Pokémon\l"
 	.string "of Hoenn. In addition, the last\l"
 	.string "time Groudon and Kyogre battled,\l"
 	.string "it was in front of the\l"
@@ -154,6 +154,6 @@ OzoneSituationRoom_Text_MakingAPlan:
 
 OzoneSituationRoom_Text_ThisRilesMeUp:
 	.string "This really riles me up, man!\n"
-	.string "Just who do these Pokemon think\l"
+	.string "Just who do these Pokémon think\l"
 	.string "they are that they can just\l"
 	.string "cause an apocalypse on a whim!?$"

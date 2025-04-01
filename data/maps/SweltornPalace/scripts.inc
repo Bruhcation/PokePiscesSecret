@@ -72,14 +72,14 @@ SweltornPalace_Text_IFoundTreasure:
 	.string "rare treasures...!\p"
 	.string "These treasures, however, are of\n"
 	.string "no practical use to me, as\l"
-	.string "they are meant for Pokemon evolution.\l"
+	.string "they are meant for Pokémon evolution.\l"
 	.string "I am no trainer. However,\l"
 	.string "you seem to be!\p"
 	.string "I will offer you one of my two\n"
 	.string "treasures, and I will keep the\l"
 	.string "remaining one as a souvenier.\l"
 	.string "Each of them evolves a\l"
-	.string "certain Pokemon, Pebbler.\p"
+	.string "certain Pokémon, Pebbler.\p"
 	.string "Which of them would you like?\n"
 	.string "The Sandbag, or the Sandstone?$"
 
@@ -100,21 +100,21 @@ SweltornPalace_Text_CantTakeAnother:
 SweltornPalace_Text_ReliIntro:
 	.string "We came here on special assignment\n"
 	.string "to investigate this Palace\l"
-	.string "for signs of Relic type Pokemon.\l"
+	.string "for signs of Relic type Pokémon.\l"
 	.string "Have you seen any?$"
 
 SweltornPalace_Text_ReliDefeated:
 	.string "I meant, other than ours!$"
 
 SweltornPalace_Text_ReliPostBattle:
-	.string "Relic type Pokemon tend to guard\n"
+	.string "Relic type Pokémon tend to guard\n"
 	.string "ancient places... though, I fear\l"
 	.string "that tomb raiders may have defeated\l"
 	.string "them all already...$"
 
 SweltornPalace_Text_CastleIntro:
 	.string "Tell us anything you know\n"
-	.string "about the Pokemon that reside here!$"
+	.string "about the Pokémon that reside here!$"
 
 SweltornPalace_Text_CastleDefeated:
 	.string "Hmm, that didn't go as planned.$"

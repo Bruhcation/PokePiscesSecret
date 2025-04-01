@@ -695,7 +695,7 @@ Route126_Text_RikaDefeated:
 
 Route126_Text_RikaPostBattle:
 	.string "Hopefully the others don't mind if\n"
-	.string "I visit the Pokemon Center before\l"
+	.string "I visit the Pokémon Center before\l"
 	.string "we set sail...$"
 
 Route126_Text_PeteIntro:

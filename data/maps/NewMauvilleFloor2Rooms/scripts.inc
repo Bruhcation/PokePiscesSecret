@@ -91,9 +91,9 @@ NewMauvilleFloor2Rooms_EventScript_GaveYouMyCard::
 NewMauvilleFloor2Rooms_Text_WhatINeed:
 	.string "Man, I tell you what.\n"
 	.string "I'm officially ready to hang\l"
-	.string "up my hat as a Pokemon Trainer!\p"
+	.string "up my hat as a Pokémon Trainer!\p"
 	.string "I am much more interested in\n"
-	.string "becoming a Pokemon Card battler\l"
+	.string "becoming a Pokémon Card battler\l"
 	.string "and entering in tournaments!\l"
 	.string "I just need like, one card.\l"
 	.string "One! Then I can get started.\p"
@@ -102,14 +102,14 @@ NewMauvilleFloor2Rooms_Text_WhatINeed:
 	.string "right now. They've been flying\l"
 	.string "off the shelves!\p"
 	.string "What's a guy gotta do to get\n"
-	.string "himself a Pokemon Card, huh...$"
+	.string "himself a Pokémon Card, huh...$"
 
 NewMauvilleFloor2Rooms_Text_WillYouTradeCards:
 	.string "Man, I tell you what.\n"
 	.string "I'm officially ready to hang\l"
-	.string "up my hat as a Pokemon Trainer!\p"
+	.string "up my hat as a Pokémon Trainer!\p"
 	.string "I am much more interested in\n"
-	.string "becoming a Pokemon Card battler\l"
+	.string "becoming a Pokémon Card battler\l"
 	.string "and entering in tournaments!\l"
 	.string "I just need like, one card.\l"
 	.string "One! Then I can get started.\p"
@@ -117,7 +117,7 @@ NewMauvilleFloor2Rooms_Text_WillYouTradeCards:
 	.string "around here have them in stock\l"
 	.string "right now. They've been flying\l"
 	.string "off the shelves!\p"
-	.string "(You flash your Pokemon Card\n"
+	.string "(You flash your Pokémon Card\n"
 	.string "at the aspiring tourneygoer.)\p"
 	.string "Y-You got one? For me?\n"
 	.string "That's... so kind.\l"
@@ -131,7 +131,7 @@ NewMauvilleFloor2Rooms_Text_AboutThatCard:
 	.string "isn't from any card battler\l"
 	.string "I know of. I just found it one day.\l"
 	.string "Turns out, this thing can be used\l"
-	.string "by your Pokemon in battle!$"
+	.string "by your Pokémon in battle!$"
 
 NewMauvilleFloor2Rooms_Text_GaveYouMyCard:
 	.string "Glad to have passed the torch\n"

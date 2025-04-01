@@ -349,7 +349,7 @@ SootopolisCity_Gym_B1F_Text_HasparothPostBattle:
 
 SootopolisCity_Gym_B1F_Text_EmilyIntro:
 	.string "I purchased this specially bred\n"
-	.string "Pokemon for a high price!\l"
+	.string "Pokémon for a high price!\l"
 	.string "She won't be losing, trust me!$"
 
 SootopolisCity_Gym_B1F_Text_EmilyDefeat:
@@ -462,11 +462,11 @@ SootopolisCity_Gym_B1F_Text_NotEnoughPokemon:
 	.string "Ah! Hah-hah-hah! Sebastian,\n"
 	.string "are you seeing what I am seeing?\p"
 	.string "This cur dares to challenge us\n"
-	.string "with only one Pokemon?\l"
+	.string "with only one Pokémon?\l"
 	.string "A MOCKERY of this stage.\l"
 	.string "We would fell you in an instant.\p"
 	.string "Challenger, do not show your\n"
 	.string "face here again unless you are\l"
-	.string "able to face me with two Pokemon,\l"
+	.string "able to face me with two Pokémon,\l"
 	.string "at the very least.\l"
 	.string "Guards, escort them away!$"

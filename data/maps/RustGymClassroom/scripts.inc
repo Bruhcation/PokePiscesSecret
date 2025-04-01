@@ -394,7 +394,7 @@ RustGymClassroom_Text_Lesson1:
 	.string "Within the Cave of Origin in\n"
 	.string "Sootopolis, the site at which\l"
 	.string "the giants had their tussle,\l"
-	.string "swims two fish Pokemon of\l"
+	.string "swims two fish Pokémon of\l"
 	.string "considerable power and mystery.\p"
 	.string "Some say that the duo had always\n"
 	.string "been there; others say that they\l"
@@ -402,7 +402,7 @@ RustGymClassroom_Text_Lesson1:
 	.string "Whatever the answer, they seem\l"
 	.string "to represent our region's recent\l"
 	.string "firm unity, in contrast to the\l"
-	.string "dueling Pokemon of old that\l"
+	.string "dueling Pokémon of old that\l"
 	.string "once resided there.$"
 
 RustGymClassroom_Text_ClassOver1:
@@ -428,7 +428,7 @@ RustGymClassroom_Text_Lesson2:
 	.string "again, to page 277. Another\l"
 	.string "history lesson for you all!\p"
 	.string "After the era of time known as\n"
-	.string "the Great Pokemon Suppression\l"
+	.string "the Great Pokémon Suppression\l"
 	.string "- GPS for short - an intense\l"
 	.string "plague swept the region of Hoenn.\p"
 	.string "It was a disease called White Eye,\n"
@@ -489,7 +489,7 @@ RustGymClassroom_Text_TestQuestion1:
 
 RustGymClassroom_Text_TestQuestion2:
 	.string "Question 2\p"
-	.string "What do the two fish Pokemon in\n"
+	.string "What do the two fish Pokémon in\n"
 	.string "Sootopolis represent to Hoenn?$"
 
 RustGymClassroom_Text_TestQuestion3:
@@ -510,17 +510,17 @@ RustGymClassroom_Text_TestQuestion5:
 
 RustGymClassroom_Text_TestQuestion6:
 	.string "Question 6\p"
-	.string "What Pokemon caused the\n"
+	.string "What Pokémon caused the\n"
 	.string "White Eye plague of 1873?$"
 
 RustGymClassroom_Text_TestQuestion7:
 	.string "Question 7\p"
-	.string "What type of Pokemon did Onda\n"
+	.string "What type of Pokémon did Onda\n"
 	.string "Mushinaga specialize in?$"
 
 RustGymClassroom_Text_TestQuestion8:
 	.string "Question 8\p"
-	.string "What Pokemon did Mushinaga use\n"
+	.string "What Pokémon did Mushinaga use\n"
 	.string "to dispatch his uncle's line?$"
 
 RustGymClassroom_Text_TestQuestion9:

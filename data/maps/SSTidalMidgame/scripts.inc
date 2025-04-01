@@ -165,7 +165,7 @@ SSTidalMidgame_Text_TidalPerson6:
 	.string "there's no competition!$"
 
 SSTidalMidgame_Text_TidalPerson7:
-	.string "There are Pokemon like Raitaic that\n"
+	.string "There are Pokémon like Raitaic that\n"
 	.string "can only be found on the high seas...\p"
 	.string "I need to get on top of earning the\n"
 	.string "Mauville gym badge so I can\l"

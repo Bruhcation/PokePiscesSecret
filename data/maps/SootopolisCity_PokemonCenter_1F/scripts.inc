@@ -67,7 +67,7 @@ SootopolisCity_PokemonCenter_1F_EventScript_FairyResistDragon::
 SootopolisCity_PokemonCenter_1F_Text_LevelCap1:
 	.string "Seen some folk 'round here get\n"
 	.string "frustrated n' all that when their\l"
-	.string "Pokemon stop gainin' levels.\p"
+	.string "Pokémon stop gainin' levels.\p"
 	.string "'S only natural them critters want\n"
 	.string "to see some results of their\l"
 	.string "trainin' before growin' more.\p"
@@ -75,7 +75,7 @@ SootopolisCity_PokemonCenter_1F_Text_LevelCap1:
 	.string "big ol' target like a gym leader!$"
 
 SootopolisCity_PokemonCenter_1F_Text_LevelCap2:
-	.string "The Pokemon squad I have assembled\n"
+	.string "The Pokémon squad I have assembled\n"
 	.string "have all just about plateaued in EXP.\l"
 	.string "Admittedly, I've been a bit scared\l"
 	.string "to challenge the gym...\l"
@@ -88,14 +88,14 @@ SootopolisCity_PokemonCenter_1F_Text_IceFrostbite:
 	.string "I know about the Ice type?\p"
 	.string "Obviously, Ice completely frosts\n"
 	.string "over Grass, Dragon, Ground, and\l"
-	.string "Flying type Pokemon. And yes,\l"
+	.string "Flying type Pokémon. And yes,\l"
 	.string "it can be a frail type. However,\l"
 	.string "contrary to popular belief,\l"
 	.string "Ice does resist Water. And, even\l"
 	.string "though Steel type moves shatter\l"
-	.string "Ice type Pokemon, Steel 'mons\l"
+	.string "Ice type Pokémon, Steel 'mons\l"
 	.string "do not resist Ice moves.\p"
-	.string "Ice type Pokemon have access to\n"
+	.string "Ice type Pokémon have access to\n"
 	.string "a status called Frostbite.\l"
 	.string "It damages the afflicted every\l"
 	.string "turn, and dulls their mental\l"
@@ -106,7 +106,7 @@ SootopolisCity_PokemonCenter_1F_Text_IceFrostbite:
 	.string "the full use of the type against\l"
 	.string "any who challenge him.\l"
 	.string "If you have a Fire or Rock type\l"
-	.string "Pokemon, those could be\l"
+	.string "Pokémon, those could be\l"
 	.string "your best bet.$"
 
 SootopolisCity_PokemonCenter_1F_Text_SEAndSTAB:
@@ -130,13 +130,13 @@ SootopolisCity_PokemonCenter_1F_Text_SEAndSTAB:
 	.string "my Pokémon. Those moves\l"
 	.string "get a lil' bonus in power...\l"
 	.string "I'd say about a quarter more?\p"
-	.string "But get this! Normal type Pokemon\n"
+	.string "But get this! Normal type Pokémon\n"
 	.string "get a bigger same type attack\l"
 	.string "bonus on their moves!$"
 
 SootopolisCity_PokemonCenter_1F_Text_FairyResistDragon:
 	.string "I have a buddy that really likes\n"
-	.string "Fairy type Pokemon. He keeps\l"
+	.string "Fairy type Pokémon. He keeps\l"
 	.string "trying to sell me on the fact\l"
 	.string "that they are immune to Dragon moves.\p"
 	.string "What an exaggeration! Sure, Fairy\n"

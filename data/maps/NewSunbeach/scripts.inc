@@ -137,7 +137,7 @@ NewSunbeach_Text_BeautyOfBlades:
 	.string "as an artform, if you are so\l"
 	.string "inclined to. There is a certain\l"
 	.string "beauty in a clean swing...\p"
-	.string "Should you possess a Pokemon that\n"
+	.string "Should you possess a Pokémon that\n"
 	.string "channels the knowledge of\l"
 	.string "those ancient executions...\l"
 	.string "I have a very important item to bestow.$"

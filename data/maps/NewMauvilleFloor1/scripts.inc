@@ -561,7 +561,7 @@ NewMauvilleFloor1_Text_McKayleighDefeated:
 	.string "UGLY brute strength. Ewww!$"
 
 NewMauvilleFloor1_Text_McKayleighPostBattle:
-	.string "Leave my cute Pokemon alone,\n"
+	.string "Leave my cute Pokémon alone,\n"
 	.string "you brutish buffoon!$"
 
 NewMauvilleFloor1_Text_AidenIntro:
@@ -648,8 +648,8 @@ NewMauvilleFloor1_Text_RydelGuard:
 
 NewMauvilleFloor1_Text_WantCookie:
 	.string "I bake tasty Ability Snacks!\n"
-	.string "Pokemon love them. If you give\l"
-	.string "one to a Pokemon, it can change\l"
+	.string "Pokémon love them. If you give\l"
+	.string "one to a Pokémon, it can change\l"
 	.string "its ability to another!\p"
 	.string "Would you like to buy one?\n"
 	.string "They cost ¥5000 each.$"

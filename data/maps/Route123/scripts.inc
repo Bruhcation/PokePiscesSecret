@@ -507,7 +507,7 @@ Route123_Text_WantToThrowStick:
 Route123_Text_YouThrowTheStick:
 	.string "(You toss the stick in front\n"
 	.string "of you in an attempt to lure over\l"
-	.string "the odd Pokemon.)$"
+	.string "the odd Pokémon.)$"
 
 Route123_Text_TheFuzkyWantsToBattle:
 	.string "(The Fuzky is attacking!)$"

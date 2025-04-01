@@ -281,7 +281,7 @@ SmokingArea_Text_IndulgeMe:
 	.string "to test it on the battlefield.\l"
 	.string "I have grown quite fond of you,\l"
 	.string "and I hope that we will have\l"
-	.string "a Pokemon battle that will\l"
+	.string "a Pokémon battle that will\l"
 	.string "shake the very earth.\p"
 	.string "I will be awaiting your arrival\n"
 	.string "at the rooftop battling arena\l"

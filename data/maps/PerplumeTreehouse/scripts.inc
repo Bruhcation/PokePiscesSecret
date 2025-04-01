@@ -138,7 +138,7 @@ PerplumeTreehouse_Text_LeadYourBugs:
 	.string "they can tussle with even\l"
 	.string "the biggest of foes.\p"
 	.string "Be a good leader for your\n"
-	.string "Pokemon, okay? They deserve it!$"
+	.string "Pokémon, okay? They deserve it!$"
 
 PerplumeTreehouse_Text_HowsYourJourney:
 	.string "How is your journey?\n"

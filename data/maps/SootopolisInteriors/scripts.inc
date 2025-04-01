@@ -318,7 +318,7 @@ SootopolisInteriors_Text_LunasterDefeated:
 	.string "throne as the Bell Master!$"
 
 SootopolisInteriors_Text_SaintisowChild:
-	.string "Saintisow is my favorite Pokemon!\n"
+	.string "Saintisow is my favorite Pokémon!\n"
 	.string "Such a cute lil piggy!$"
 
 SootopolisInteriors_Text_ReligiousSister:
@@ -343,9 +343,9 @@ SootopolisInteriors_Text_BellLiker:
 
 SootopolisInteriors_Text_BerriesComeBackWoman:
 	.string "Don't be afraid to give your\n"
-	.string "Pokemon berries to hold.\l"
+	.string "Pokémon berries to hold.\l"
 	.string "They have many different effects,\l"
-	.string "and your Pokemon can use them\l"
+	.string "and your Pokémon can use them\l"
 	.string "in many battles; they don't just\l"
 	.string "get used up permanently!$"
 

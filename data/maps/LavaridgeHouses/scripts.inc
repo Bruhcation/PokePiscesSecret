@@ -117,7 +117,7 @@ LavaridgeHouses_Text_TrickRoom:
 	.string "I'm pretty slow. Not like, mind wise,\n"
 	.string "don't start snickering.\l"
 	.string "I meant feet wise. I like to\l"
-	.string "take my time, and my Pokemon do too.\p"
+	.string "take my time, and my Pokémon do too.\p"
 	.string "The perfect move for them is\n"
 	.string "Trick Room! ...And you know what,\l"
 	.string "since you didn't laugh at me,\l"

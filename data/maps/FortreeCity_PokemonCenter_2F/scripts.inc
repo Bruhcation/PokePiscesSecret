@@ -87,18 +87,18 @@ FortreeCity_PokemonCenter_2F_EventScript_Minimize::
 
 FortreeCity_PokemonCenter_2F_Text_EvoMenu:
 	.string "Hey, have you been checking if your\n"
-	.string "Pokemon can evolve in your\l"
+	.string "Pokémon can evolve in your\l"
 	.string "party menu? It can be easy to miss,\l"
 	.string "sometimes.\p"
 	.string "You should even check this with\n"
-	.string "Pokemon you just caught! They could\l"
+	.string "Pokémon you just caught! They could\l"
 	.string "maybe evolve right away.$"
 
 FortreeCity_PokemonCenter_2F_Text_Minimize:
 	.string "Minimize can be a fun move to use.\n"
 	.string "It really lets you become able\l"
 	.string "to dodge lots of attacks! But just\l"
-	.string "be aware, that making your Pokemon\l"
+	.string "be aware, that making your Pokémon\l"
 	.string "become so small brings in a risk.\p"
 	.string "Moves that involve crushing, like\n"
 	.string "Stomp, Body Slam, or Steamroller,\l"

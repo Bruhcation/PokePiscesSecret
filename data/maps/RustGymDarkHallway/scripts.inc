@@ -425,7 +425,7 @@ RustGymDarkHallway_Text_PlatoAndArisPostBattle:
 	.string "studying for tests.$"
 
 RustGymDarkHallway_Text_PlatoAndArisNeedTwoMons:
-	.string "You possess but one Pokemon\n"
+	.string "You possess but one Pokémon\n"
 	.string "soul on your person.\p"
 	.string "Two are needed to challenge us!$"
 

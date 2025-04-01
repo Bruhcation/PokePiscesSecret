@@ -96,7 +96,7 @@ EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions:
 	.string "and now, you as well.$"
 
 EverGrandeCity_HallOfFame_Text_LetsRecordYouAndYourPartnersNames:
-	.string "Your Pokemon team... I can tell\n"
+	.string "Your Pokémon team... I can tell\n"
 	.string "they trust you entirely.\l"
 	.string "They deserve to be enshrined.\l"
 	.string "Set their Pokeballs into\l"

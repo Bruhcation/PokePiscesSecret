@@ -124,7 +124,7 @@ PendingDev_Text_RexIntro:
 
 PendingDev_Text_RexDefeated:
 	.string "I couldn't just spam my legendary\n"
-	.string "Pokemon and win!!! What is going\l"
+	.string "Pokémon and win!!! What is going\l"
 	.string "ON here!!???$"
 
 PendingDev_Text_RexPostBattle:
@@ -144,12 +144,12 @@ PendingDev_Text_GuindaDefeated:
 
 PendingDev_Text_GuindaPostBattle:
 	.string "I'll never stop loving\n"
-	.string "these Pokemon! E-Ever!$"
+	.string "these Pokémon! E-Ever!$"
 
 PendingDev_Text_GunderIntro:
 	.string "Abarbinash is just about the\n"
 	.string "most hideous, terrible looking\l"
-	.string "Pokemon I have ever seen...\l"
+	.string "Pokémon I have ever seen...\l"
 	.string "but, my mom gave me it, so...$"
 
 PendingDev_Text_GunderDefeated:

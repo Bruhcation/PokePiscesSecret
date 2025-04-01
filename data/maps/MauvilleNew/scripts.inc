@@ -425,7 +425,7 @@ MauvilleNew_Text_Mauvillite4:
 	.string "really bother anybody.$"
 
 MauvilleNew_Text_Mauvillite5:
-	.string "My Pokemon love their Ability\n"
+	.string "My Pokémon love their Ability\n"
 	.string "Snacks! It's such a convenient way\l"
 	.string "to change up their Abilities on\l"
 	.string "the go, without having to catch\l"
@@ -467,7 +467,7 @@ MauvilleNew_Text_MindBreak:
 	.string "with this TM. Here, have one.$"
 
 MauvilleNew_Text_GaveMindBreak:
-	.string "Maybe I should get my Pokemon\n"
+	.string "Maybe I should get my Pokémon\n"
 	.string "to toy with my bosses as my\l"
 	.string "own brand of revenge...$"
 
@@ -621,13 +621,13 @@ MauvilleNew_Text_BondingIntro:
 
 MauvilleNew_Text_BondingDefeated:
 	.string "Much like how you defeated\n"
-	.string "six Pokemon just now, you have\l"
+	.string "six Pokémon just now, you have\l"
 	.string "likewise defeated six men.\p"
 	.string "Bravo.$"
 
 MauvilleNew_Text_WellDone:
 	.string "The bond between you and your\n"
-	.string "Pokemon shows no bounds.\l"
+	.string "Pokémon shows no bounds.\l"
 	.string "I am happy to call you\l"
 	.string "a friend, {PLAYER}.$"
 

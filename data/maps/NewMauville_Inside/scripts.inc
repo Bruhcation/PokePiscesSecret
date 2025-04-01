@@ -322,7 +322,7 @@ NewMauville_Inside_Text_VegetablePostBattle:
 	.string "are valid colors, too.$"
 
 NewMauville_Inside_Text_AlexaIntro:
-	.string "Starting “Pokemon Battle”, from\n"
+	.string "Starting “Pokémon Battle”, from\n"
 	.string "list of commands.$"
 
 NewMauville_Inside_Text_AlexaDefeated:

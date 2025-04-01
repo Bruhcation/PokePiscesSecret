@@ -99,7 +99,7 @@ StraeSeapath_Text_JeanPostBattle:
 	.string "a Choice Specs user...$"
 
 StraeSeapath_Text_LynnIntro:
-	.string "I raised these Pokemon from eggs!\n$"
+	.string "I raised these Pokémon from eggs!\n$"
 
 StraeSeapath_Text_LynnDefeated:
 	.string "You crack me up...$"
@@ -121,7 +121,7 @@ StraeSeapath_Text_AiofeDefeated:
 	.string "personally kick your shins.$"
 
 StraeSeapath_Text_AiofePostBattle:
-	.string "Calling a Pokemon for assistance\n"
+	.string "Calling a Pokémon for assistance\n"
 	.string "by using a telephone...\l"
 	.string "it would be absurdly inconvenient.$"
 
@@ -169,7 +169,7 @@ StraeSeapath_Text_RosieAndPalmsNeedTwoMons:
 
 StraeSeapath_Text_MaomaoIntro:
 	.string "There is naught a more elegant\n"
-	.string "Pokemon than Solasu...$"
+	.string "Pokémon than Solasu...$"
 
 StraeSeapath_Text_MaomaoDefeated:
 	.string "Perhaps I needed to show\n"

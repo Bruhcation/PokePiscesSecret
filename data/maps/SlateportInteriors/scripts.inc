@@ -155,7 +155,7 @@ SlateportInteriors_Text_GaveChillyAir:
 
 SlateportInteriors_Text_CoolMist:
 	.string "That cool, ocean breeze...\n"
-	.string "my Pokemon seem to love it.\l"
+	.string "my Pokémon seem to love it.\l"
 	.string "So much so, that they use this\l"
 	.string "move in battle pretty often.\l"
 	.string "Why don't your little guys\l"
@@ -170,27 +170,27 @@ SlateportInteriors_Text_GaveCoolMist:
 
 SlateportInteriors_Text_WhatINeed:
 	.string "The other guys in the fan club\n"
-	.string "are really into Pokemon Card\l"
+	.string "are really into Pokémon Card\l"
 	.string "battles. But, even though I liked\l"
 	.string "them when I was little, they've\l"
 	.string "really slipped in my mind.\p"
 	.string "I really want to get into\n"
 	.string "Buddy Cards instead. But all\l"
 	.string "I have to trade are weak\l"
-	.string "Pokemon Cards...\p"
+	.string "Pokémon Cards...\p"
 	.string "Maybe somebody out there\n"
 	.string "is willing to trade...$"
 
 SlateportInteriors_Text_WillYouTradeCards:
 	.string "The other guys in the fan club\n"
-	.string "are really into Pokemon Card\l"
+	.string "are really into Pokémon Card\l"
 	.string "battles. But, even though I liked\l"
 	.string "them when I was little, they've\l"
 	.string "really slipped in my mind.\p"
 	.string "I really want to get into\n"
 	.string "Buddy Cards instead. But all\l"
 	.string "I have to trade are weak\l"
-	.string "Pokemon Cards...\p"
+	.string "Pokémon Cards...\p"
 	.string "(You flash your Buddy Card\n"
 	.string "at the burnt out card battler.)\p"
 	.string "Wow! I like the design on this one!\n"
@@ -198,7 +198,7 @@ SlateportInteriors_Text_WillYouTradeCards:
 	.string "for my new deck...\p"
 	.string "...That is, of course, if you'll\n"
 	.string "take it for this stage 1\l"
-	.string "Pokemon Card...$"
+	.string "Pokémon Card...$"
 
 SlateportInteriors_Text_AboutThatCard:
 	.string "Yyyyyesss! Awesome!\n"
@@ -234,7 +234,7 @@ SlateportInteriors_Text_ILovePrimo:
 	.string "over the years!\p"
 	.string "Nowadays, these younger inductees\n"
 	.string "are really into their\l"
-	.string "Pokemon cards and whatnot.\p"
+	.string "Pokémon cards and whatnot.\p"
 	.string "But during the club's heyday?\n"
 	.string "Primo's program on the Teachy TV\l"
 	.string "was all the rage...!\p"

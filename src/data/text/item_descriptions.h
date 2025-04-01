@@ -2489,7 +2489,7 @@ static const u8 sLuminousMossDesc[] = _(
 
 static const u8 sSnowballDesc[] = _(
     "A single-use snowball\n"
-    "that boosts Attack\n"
+    "that boosts Sp. Atk\n"
     "and Speed if hit by a\n"
     "Ice-type move.");
 

@@ -133,7 +133,7 @@ DewfordInteriors_Text_WereCryptidEnthusiasts:
 	.string "So, you're wanting to join\n"
 	.string "our Cryptid Club, huh...\p"
 	.string "We all are convinced that there\n"
-	.string "are Pokemon out there that exist\l"
+	.string "are Pokémon out there that exist\l"
 	.string "when many say they don't!\l"
 	.string "Even though I've never seen\l"
 	.string "one, I know that Spitfax HAS to\l"
@@ -176,7 +176,7 @@ DewfordInteriors_Text_CodeEntrySuccess:
 	.string "Now you can know all of our\l"
 	.string "juicy Spitfax intel!\p"
 	.string "Here's all the information we\n"
-	.string "know about that elusive Pokemon.\l"
+	.string "know about that elusive Pokémon.\l"
 	.string "It lives in heavily forested areas,\l"
 	.string "where it collects berries to hoard.\l"
 	.string "It is a simple and small creature.\l"
@@ -204,7 +204,7 @@ DewfordInteriors_Text_CodeEntryFail:
 
 DewfordInteriors_Text_SpitfaxDirections:
 	.string "Here's all the information we\n"
-	.string "know about that elusive Pokemon.\l"
+	.string "know about that elusive Pokémon.\l"
 	.string "It lives in heavily forested areas,\l"
 	.string "where it collects berries to hoard.\l"
 	.string "It is a simple and small creature.\l"
@@ -242,7 +242,7 @@ DewfordInteriors_Text_IllTradeIfYouWant:
 	.string "a {STR_VAR_1} if you want.$"
 
 DewfordInteriors_Text_PleaseBeGoodToMyPokemon:
-	.string "Please be good to my POKéMON.$"
+	.string "Please be good to my Pokémon.$"
 
 DewfordInteriors_Text_DoesntLookLikeMonToMe:
 	.string "Huh? That doesn't look anything like\n"

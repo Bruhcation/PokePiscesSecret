@@ -18,7 +18,7 @@ ScuttillHuts_Text_VespaDefeated:
 	.string "No... they failed me!?$"
 
 ScuttillHuts_Text_VespaPostBattle:
-	.string "Didja know that Bug type Pokemon\n"
+	.string "Didja know that Bug type Pokémon\n"
 	.string "can infiltrate through\l"
 	.string "screens and Substitutes?\l"
 	.string "They have a way of getting\l"

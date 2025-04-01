@@ -345,7 +345,7 @@ LavaridgeInt_Text_Lavarizzler4:
 LavaridgeInt_Text_Lavarizzler5:
 	.string "Gosh, I REALLY want to get into\n"
 	.string "the Desert to catch some of\l"
-	.string "the Pokemon there. But to get\l"
+	.string "the Pokémon there. But to get\l"
 	.string "through the cave that leads there,\l"
 	.string "I need to push a boulder out\l"
 	.string "of the way. Lame!\p"

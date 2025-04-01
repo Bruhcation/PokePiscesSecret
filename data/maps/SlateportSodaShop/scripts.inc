@@ -76,7 +76,7 @@ SlateportSodaShop_Text_KaiSenatIntro:
 	.string "What's UP guys, Kai here,\n"
 	.string "and to-DAY, we're gonna be\l"
 	.string "CRUSHING these NPCs in\l"
-	.string "Pokemon Battles!\p"
+	.string "Pokémon Battles!\p"
 	.string "Oh look what we got here, guys!\n"
 	.string "Some rando! They'll go down easy!$"
 

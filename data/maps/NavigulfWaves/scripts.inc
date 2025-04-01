@@ -89,7 +89,7 @@ NavigulfWaves_Text_LibraIntro:
 	.string "natural for someone of my\l"
 	.string "psychic caliber.\p"
 	.string "Don't worry, I won't hurt\n"
-	.string "your Pokemon... too much...$"
+	.string "your Pokémon... too much...$"
 
 NavigulfWaves_Text_LibraDefeated:
 	.string "Gh...! My levitation took\n"

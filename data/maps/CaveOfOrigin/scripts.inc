@@ -139,7 +139,7 @@ CaveOfOrigin_Text_AboutTheLegends:
 	.string "Those who pray here in the Cave\n"
 	.string "of Origin are beheld to a pair\l"
 	.string "of water-dwelling Legendary\l"
-	.string "Pokemon named Sha-yon\l"
+	.string "Pokémon named Sha-yon\l"
 	.string "and Luo-shan.\p"
 	.string "This period of peace we've had\n"
 	.string "in Hoenn, some believe to be\l"

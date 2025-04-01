@@ -99,20 +99,20 @@ RustGymCafeteria_Text_WeAreHavingADiscussion:
 	.string "(You nod your head no.)\p"
 	.string "Great! So, we were just\n"
 	.string "pontificating about releasing\l"
-	.string "our Pokemon from their balls\l"
+	.string "our Pokémon from their balls\l"
 	.string "for good. Would that not be\l"
 	.string "the best thing for them?\l"
-	.string "Complete Pokemon Liberation?\p"
+	.string "Complete Pokémon Liberation?\p"
 	.string "(You shrug with a very\n"
 	.string "annoyed expression on your face.)\p"
 	.string "You know, you're awfully quiet.\n"
-	.string "I wonder if your Pokemon wish\l"
+	.string "I wonder if your Pokémon wish\l"
 	.string "to be let go into the wild, too.\p"
 	.string "Let's send 'em all out and see\n"
 	.string "what they end up choosing!$"
 
 RustGymCafeteria_Text_MarxDefeat:
-	.string "Your Pokemon started a violent\n"
+	.string "Your Pokémon started a violent\n"
 	.string "insurrection... against us???$"
 
 RustGymCafeteria_Text_QiuDefeat:

@@ -204,11 +204,11 @@ OldaleInteriors_Text_FriendIsHuntingTreasure:
 OldaleInteriors_Text_AskToSeeDunewich:
 	.string "I have a question for you.\n"
 	.string "Have you been in possession\l"
-	.string "of the Pokemon Pebbler?\l"
+	.string "of the Pokémon Pebbler?\l"
 	.string "If so, have you evolved it\l"
 	.string "into Dunewich?\p"
 	.string "I hear the item needed to evolve\n"
-	.string "that Pokemon is rather rare.\l"
+	.string "that Pokémon is rather rare.\l"
 	.string "I would love to see its Pokedex\l"
 	.string "entry if you managed it!$"
 
@@ -230,11 +230,11 @@ OldaleInteriors_Text_ThereIsDunewich:
 OldaleInteriors_Text_AskToSeeMajadijunn:
 	.string "I have a question for you.\n"
 	.string "Have you been in possession\l"
-	.string "of the Pokemon Pebbler?\l"
+	.string "of the Pokémon Pebbler?\l"
 	.string "If so, have you evolved it\l"
 	.string "into Majadijunn?\p"
 	.string "I hear the item needed to evolve\n"
-	.string "that Pokemon is rather rare.\l"
+	.string "that Pokémon is rather rare.\l"
 	.string "I would love to see its Pokedex\l"
 	.string "entry if you managed it!$"
 
@@ -261,7 +261,7 @@ OldaleInteriors_Text_AlsoCouldUseThis:
 	.string "I'm sure yours will too!$"
 
 OldaleInteriors_Text_AllItemsGiven:
-	.string "Pebbler is a Pokemon that\n"
+	.string "Pebbler is a Pokémon that\n"
 	.string "is very susceptible to stimuli!\l"
 	.string "It can evolve in a couple of ways.\l"
 	.string "The Sandbag and Sandstone being\l"

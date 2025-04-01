@@ -139,7 +139,7 @@ SecretMeadow_Text_ItsTheQueen:
 SecretMeadow_Text_ItLeftBehindSomething:
 	.string "(The queen has departed from\n"
 	.string "this meadow, taking her\l"
-	.string "stash of Pokemon Eggs with her...)\p"
+	.string "stash of Pokémon Eggs with her...)\p"
 	.string "(...However, she did leave\n"
 	.string "one behind...)$"
 

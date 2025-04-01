@@ -467,14 +467,14 @@ SweltornDesert_Text_SantoPostBattle:
 
 SweltornDesert_Text_DorothyIntro:
 	.string "Do you have the grace and serenity\n"
-	.string "to withstand my Pokemon?$"
+	.string "to withstand my Pokémon?$"
 
 SweltornDesert_Text_DorothyDefeated:
 	.string "Even with my myriad of\n"
 	.string "added effects...?$"
 
 SweltornDesert_Text_DorothyPostBattle:
-	.string "If you happen upon a Pokemon\n"
+	.string "If you happen upon a Pokémon\n"
 	.string "with Serene Grace, you shalt not\l"
 	.string "find yourself dissapointed...$"
 
@@ -500,7 +500,7 @@ SweltornDesert_Text_AaronDefeated:
 	.string "Loud and clear.$"
 
 SweltornDesert_Text_AaronPostBattle:
-	.string "Craverave is a great Pokemon to\n"
+	.string "Craverave is a great Pokémon to\n"
 	.string "have as a partner, as a blind guy.\l"
 	.string "They're great at communicating.$"
 

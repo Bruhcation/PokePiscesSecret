@@ -86,7 +86,7 @@ OzoneOutsideCutscene_Text_OriginIsUnderSiege:
 	.string "And, yes... they commenced a battle\l"
 	.string "within the Cave of Origin.\l"
 	.string "I was, at least, able to fend them\l"
-	.string "off with my Pokemon, but...\l"
+	.string "off with my Pokémon, but...\l"
 	.string "there were... complications...$"
 
 OzoneOutsideCutscene_Text_LetsGetTherePostHaste:

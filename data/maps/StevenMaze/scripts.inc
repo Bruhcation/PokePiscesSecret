@@ -162,7 +162,7 @@ StevenMaze_Text_AllDone:
 	.string "moves used by the afflicted by\l"
 	.string "a small amount, a good amount less\l"
 	.string "than Burn would do to Attack, but\l"
-	.string "enough to make your Pokemon not\l"
+	.string "enough to make your Pokémon not\l"
 	.string "hit quite as hard.\p"
 	.string "All panicking Pokémon spend twice as\n"
 	.string "much PP when choosing moves, as well.\p"

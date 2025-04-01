@@ -640,7 +640,7 @@ Route125_Text_AprilMaeDefeated:
 Route125_Text_AprilMaeNeedTwoMons:
 	.string "We won't give you the time of\n"
 	.string "day unless you have more than\l"
-	.string "one Pokemon with you!$"
+	.string "one Pokémon with you!$"
 
 Route125_Text_AprilMaePostBattle:
 	.string "APRIL: We were supposed to be\n"
@@ -692,7 +692,7 @@ Route125_Text_SkyePostBattle:
 Route125_Text_GuuntherIntro:
 	.string "You can't beat me!\n"
 	.string "I have studied and learned the\l"
-	.string "best styles of Pokemon battling\l"
+	.string "best styles of Pokémon battling\l"
 	.string "from only the GREATEST Unovan\l"
 	.string "films ever made!\p"
 	.string "Feel my wrath!!$"
@@ -754,7 +754,7 @@ Route125_Text_JoanDefeated:
 	.string "my feedback.$"
 
 Route125_Text_JoanPostBattle:
-	.string "My practice scares the Pokemon\n"
+	.string "My practice scares the Pokémon\n"
 	.string "away sometimes.\p"
 	.string "At least the Gravelito\n"
 	.string "seem to enjoy it!$"
@@ -770,7 +770,7 @@ Route125_Text_ShellRiddle1:
 	.string "and earn your precious sheen$"
 
 Route125_Text_HereIsShellPolish:
-	.string "(This Pokemon seems pleased\n"
+	.string "(This Pokémon seems pleased\n"
 	.string "with you. She is gesturing towards\l"
 	.string "your Pearl String.)\p"
 	.string "(You hand the String over, and she\n"
@@ -830,7 +830,7 @@ Route125_Text_ItsHumming:
 	.string "to be humming a tune...)$"
 
 Route125_Text_ItsBellowing:
-	.string "(Your Pokemon used a singing move\n"
+	.string "(Your Pokémon used a singing move\n"
 	.string "to add to the harmony...)$"
 
 Route125_Text_NoSingingMove:
@@ -839,4 +839,4 @@ Route125_Text_NoSingingMove:
 
 Route125_Text_ItBecameLively:
 	.string "(The plant became lively!\n"
-	.string "It's a Wild Pokemon!)$"
+	.string "It's a Wild Pokémon!)$"

@@ -572,7 +572,7 @@ LilycoveMuseumNew_Text_PhillipePreQuest:
 	.string "gathering inspiration as we speak.\p"
 	.string "If you would like to help me\n"
 	.string "kindle my artistic mind, come to\l"
-	.string "the Basalin Coast Pokemon Center.\l"
+	.string "the Basalin Coast Pokémon Center.\l"
 	.string "Until then, étrangére...\l"
 	.string "I bid you adieu!$"
 
@@ -585,7 +585,7 @@ LilycoveMuseumNew_Text_PhillipeInCosmoss:
 	.string "your eye, amie! You wish to help\l"
 	.string "me paint more!\p"
 	.string "If that is the case, we shall\n"
-	.string "rendezvous at the Pokemon Center\l"
+	.string "rendezvous at the Pokémon Center\l"
 	.string "in Cosmoss Bridge.\p"
 	.string "Until then, au revoir!$"
 
@@ -598,7 +598,7 @@ LilycoveMuseumNew_Text_PhillipeInSunbeach:
 	.string "your eye, amie! You wish to help\l"
 	.string "me paint more!\p"
 	.string "If that is the case, we shall\n"
-	.string "rendezvous at the Pokemon Center\l"
+	.string "rendezvous at the Pokémon Center\l"
 	.string "in Sunbeach Strait.\p"
 	.string "Until then, au revoir!$"
 
@@ -611,7 +611,7 @@ LilycoveMuseumNew_Text_PhillipeInBrumist:
 	.string "your eye, amie! You wish to help\l"
 	.string "me paint more!\p"
 	.string "If that is the case, we shall\n"
-	.string "rendezvous at the Pokemon Center\l"
+	.string "rendezvous at the Pokémon Center\l"
 	.string "in Brumist Cliffs.\p"
 	.string "Until then, au revoir!$"
 
@@ -624,7 +624,7 @@ LilycoveMuseumNew_Text_PhillipeInScuttill:
 	.string "your eye, amie! You wish to help\l"
 	.string "me paint more!\p"
 	.string "If that is the case, we shall\n"
-	.string "rendezvous at the Pokemon Center\l"
+	.string "rendezvous at the Pokémon Center\l"
 	.string "in Scuttill Way.\p"
 	.string "Until then, au revoir!$"
 
@@ -637,7 +637,7 @@ LilycoveMuseumNew_Text_PhillipeInPerplume:
 	.string "your eye, amie! You wish to help\l"
 	.string "me paint more!\p"
 	.string "If that is the case, we shall\n"
-	.string "rendezvous at the Pokemon Center\l"
+	.string "rendezvous at the Pokémon Center\l"
 	.string "in Perplume Maze.\p"
 	.string "Until then, au revoir!$"
 
@@ -650,7 +650,7 @@ LilycoveMuseumNew_Text_PhillipeInAshlands:
 	.string "your eye, amie! You wish to help\l"
 	.string "me paint more!\p"
 	.string "If that is the case, we shall\n"
-	.string "rendezvous at the Pokemon Center\l"
+	.string "rendezvous at the Pokémon Center\l"
 	.string "in The Ashlands.\p"
 	.string "Until then, au revoir!$"
 
@@ -663,7 +663,7 @@ LilycoveMuseumNew_Text_PhillipeInCrimney:
 	.string "your eye, amie! You wish to help\l"
 	.string "me paint more!\p"
 	.string "If that is the case, we shall\n"
-	.string "rendezvous at the Pokemon Center\l"
+	.string "rendezvous at the Pokémon Center\l"
 	.string "in Crimney Climb.\p"
 	.string "Until then, au revoir!$"
 
@@ -676,7 +676,7 @@ LilycoveMuseumNew_Text_PhillipeInJaggro:
 	.string "your eye, amie! You wish to help\l"
 	.string "me paint more!\p"
 	.string "If that is the case, we shall\n"
-	.string "rendezvous at the Pokemon Center\l"
+	.string "rendezvous at the Pokémon Center\l"
 	.string "in Jaggro Pass.\p"
 	.string "Until then, au revoir!$"
 
@@ -689,7 +689,7 @@ LilycoveMuseumNew_Text_PhillipeInSweltorn:
 	.string "your eye, amie! You wish to help\l"
 	.string "me paint more!\p"
 	.string "If that is the case, we shall\n"
-	.string "rendezvous at the Pokemon Center\l"
+	.string "rendezvous at the Pokémon Center\l"
 	.string "in Sweltorn Desert.\p"
 	.string "Until then, au revoir!$"
 
@@ -702,7 +702,7 @@ LilycoveMuseumNew_Text_PhillipeInCyclingRoad:
 	.string "your eye, amie! You wish to help\l"
 	.string "me paint more!\p"
 	.string "If that is the case, we shall\n"
-	.string "rendezvous at the Pokemon Center\l"
+	.string "rendezvous at the Pokémon Center\l"
 	.string "in Cycling Road.\p"
 	.string "Until then, au revoir!$"
 
@@ -715,7 +715,7 @@ LilycoveMuseumNew_Text_PhillipeInStrae:
 	.string "your eye, amie! You wish to help\l"
 	.string "me paint more!\p"
 	.string "If that is the case, we shall\n"
-	.string "rendezvous at the Pokemon Center\l"
+	.string "rendezvous at the Pokémon Center\l"
 	.string "in Strae Seapath.\p"
 	.string "Until then, au revoir!$"
 
@@ -728,7 +728,7 @@ LilycoveMuseumNew_Text_PhillipeInGranipline:
 	.string "your eye, amie! You wish to help\l"
 	.string "me paint more!\p"
 	.string "If that is the case, we shall\n"
-	.string "rendezvous at the Pokemon Center\l"
+	.string "rendezvous at the Pokémon Center\l"
 	.string "in Granipline Beach.\p"
 	.string "Until then, au revoir!$"
 
@@ -741,7 +741,7 @@ LilycoveMuseumNew_Text_PhillipeInLittleroot:
 	.string "your eye, amie! You wish to help\l"
 	.string "me paint more!\p"
 	.string "If that is the case, we shall\n"
-	.string "rendezvous at the Pokemon Center\l"
+	.string "rendezvous at the Pokémon Center\l"
 	.string "in Littleroot Town.\p"
 	.string "Until then, au revoir!$"
 

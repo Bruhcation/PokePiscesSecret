@@ -101,7 +101,7 @@ PiratesGrotto_EventScript_UselessItem::
 	end
 
 PiratesGrotto_Text_BigGhost:
-	.string "(It's an imposing Ghost Pokemon.)\p"
+	.string "(It's an imposing Ghost Pokémon.)\p"
 	.string "(It appears to want to guard\n"
 	.string "its hoard of treasure...)$"
 

@@ -45,12 +45,12 @@ PacifidlogTown_EventScript_MoveNerd::
 	end
 
 PacifidlogTown_Text_MoveNerd:
-	.string "Ever make your Pokemon forget\n"
+	.string "Ever make your Pokémon forget\n"
 	.string "a move, and regret that decision\l"
 	.string "later? Boy have I!\p"
 	.string "You just gotta remember to check\n"
 	.string "the relearning menu in your party.\l"
-	.string "Your Pokemon are able to relearn\l"
+	.string "Your Pokémon are able to relearn\l"
 	.string "any move they could have gotten\l"
 	.string "via level-up. It comes in\l"
 	.string "super handy if you want to test\l"
@@ -75,14 +75,14 @@ PacifidlogTown_Text_BlackSheepWoman:
 	.string "find you, no doubt.$"
 
 PacifidlogTown_Text_BoredKidsWoman:
-	.string "My Pokemon are so eager to\n"
+	.string "My Pokémon are so eager to\n"
 	.string "evolve when their time comes!\l"
 	.string "They will signal to me when\l"
 	.string "they reach their requirement.\l"
 	.string "Nevertheless, it always helps\l"
 	.string "to check your party once in\l"
 	.string "a while to see if one of your\l"
-	.string "Pokemon can evolve. Especially\l"
+	.string "Pokémon can evolve. Especially\l"
 	.string "if they need high friendship,\l"
 	.string "like Saintisow!$"
 
@@ -90,7 +90,7 @@ PacifidlogTown_Text_VisitSadFisher:
 	.string "You a trainer? Ya got that\n"
 	.string "look in your eye.\p"
 	.string "If you're wantin' to train\n"
-	.string "some fish Pokemon, maybe go hit\l"
+	.string "some fish Pokémon, maybe go hit\l"
 	.string "up that one angler at the\l"
 	.string "southeastern part of town.\l"
 	.string "He's been advertisin'.$"
