@@ -6741,8 +6741,12 @@ Move_VOLT_SWITCH::
 	call VoltSwitchElectricFlashes
 	waitforvisualfinish
 	createvisualtask AnimTask_CanBattlerSwitch, 1, ANIM_ATTACKER
-	jumprettrue UTurnLast
+	jumprettrue VoltSwitchLast
 	visible ANIM_ATTACKER
+	blendoff
+	waitforvisualfinish
+	end
+VoltSwitchLast:
 	blendoff
 	waitforvisualfinish
 	end
@@ -26439,7 +26443,7 @@ Move_GLACIAL_SHIFT::
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	createvisualtask AnimTask_CanBattlerSwitch, 1, ANIM_ATTACKER
-	jumprettrue UTurnLast
+	jumprettrue VoltSwitchLast
 	visible ANIM_ATTACKER
 	blendoff
 	waitforvisualfinish

@@ -2119,9 +2119,7 @@ s32 CalcCritChanceStageArgs(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
 {
     s32 critChance = 0;
 
-    if ((gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT 
-    && abilityAtk != ABILITY_INFILTRATOR 
-    && !(IS_BATTLER_OF_TYPE(battlerAtk, TYPE_BUG)))
+    if ((gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT && abilityAtk != ABILITY_INFILTRATOR && (!(IS_BATTLER_OF_TYPE(battlerAtk, TYPE_BUG))))
     || gStatuses3[battlerAtk] & STATUS3_CANT_SCORE_A_CRIT
     || abilityDef == ABILITY_SHELL_ARMOR
     || (abilityDef == ABILITY_INNER_FOCUS && gDisableStructs[battlerDef].focusEnergy)
@@ -7854,7 +7852,7 @@ static void Cmd_switchinanim(void)
                                  | BATTLE_TYPE_RECORDED_LINK
                                  | BATTLE_TYPE_TRAINER_HILL
                                  | BATTLE_TYPE_FRONTIER)))
-        HandleSetPokedexFlag(SpeciesToHoennPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
+        HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
 
     gAbsentBattlerFlags &= ~(1u << battler);
 
@@ -19474,12 +19472,12 @@ static void Cmd_trysetcaughtmondexflags(void)
     }
     else if (!FlagGet(FLAG_SYS_POKEDEX_GET))
     {
-        HandleSetPokedexFlag(SpeciesToHoennPokedexNum(species), FLAG_SET_CAUGHT, personality);  
+        HandleSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_CAUGHT, personality);  
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
     }
     else
     {
-        HandleSetPokedexFlag(SpeciesToHoennPokedexNum(species), FLAG_SET_CAUGHT, personality);
+        HandleSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_CAUGHT, personality);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
 }
@@ -20513,36 +20511,52 @@ void ApplyExperienceMultipliers(s32 *expAmount, u8 expGetterMonId, u8 faintedBat
 {
     u32 holdEffect = GetMonHoldEffect(&gPlayerParty[expGetterMonId]);
 
+    if (IsTradedMon(&gPlayerParty[expGetterMonId]))
+        *expAmount = (*expAmount * 125) / 100;
+    if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
+        *expAmount = (*expAmount * 200) / 100;
+    if (GetMonData(&gPlayerParty[expGetterMonId], MON_DATA_LEVEL) < GetPreviousLevelCap())
+        *expAmount = (*expAmount * 250) / 100;
+    if (B_UNEVOLVED_EXP_MULTIPLIER >= GEN_6 && IsMonPastEvolutionLevel(&gPlayerParty[expGetterMonId]))
+        *expAmount = (*expAmount * 4915) / 4096;
+    if (B_AFFECTION_MECHANICS == TRUE && GetBattlerFriendshipScore(expGetterMonId) >= FRIENDSHIP_50_TO_99)
+        *expAmount = (*expAmount * 4915) / 4096;
+    if (CheckBagHasItem(ITEM_EXP_CHARM, 1)) //is also for other exp boosting Powers if/when implemented
+        *expAmount = (*expAmount * 150) / 100;
     if (gMapHeader.regionMapSectionId == MAPSEC_SCORCHED_SLAB)
-    {
-        *expAmount = 1;
-    }
-    else
-    {
-        if (IsTradedMon(&gPlayerParty[expGetterMonId]))
-            *expAmount = (*expAmount * 125) / 100;
-        if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
-            *expAmount = *expAmount * 2;
-        if (GetMonData(&gPlayerParty[expGetterMonId], MON_DATA_LEVEL) < GetPreviousLevelCap())
-            *expAmount = *expAmount * 3;
-        if (B_UNEVOLVED_EXP_MULTIPLIER >= GEN_6 && IsMonPastEvolutionLevel(&gPlayerParty[expGetterMonId]))
-            *expAmount = (*expAmount * 12) / 10;
-        if (GetBattlerFriendshipScore(expGetterMonId) == FRIENDSHIP_MAX)
-            *expAmount = (*expAmount * 12) / 10;
-        if (CheckBagHasItem(ITEM_EXP_CHARM, 1)) //is also for other exp boosting Powers if/when implemented
-            *expAmount = (*expAmount * 15) / 10;
-        if ((FlagGet(FLAG_VISITED_SOOTOPOLIS_CITY) && !FlagGet(FLAG_BADGE01_GET))
-        || (FlagGet(FLAG_VISITED_MOSSDEEP_CITY) && !FlagGet(FLAG_BADGE02_GET))
-        || (FlagGet(FLAG_VISITED_LILYCOVE_CITY) && !FlagGet(FLAG_DEFEATED_OZONE_BRANCH))
-        || (FlagGet(FLAG_VISITED_ZOTPYRE) && !FlagGet(FLAG_BADGE03_GET))
-        || (FlagGet(FLAG_VISITED_FORTREE_CITY) && !FlagGet(FLAG_BADGE04_GET))
-        || (FlagGet(FLAG_VISITED_LAVARIDGE_TOWN) && !FlagGet(FLAG_BADGE05_GET))
-        || (FlagGet(FLAG_VISITED_VERDANTURF_TOWN) && !FlagGet(FLAG_BADGE06_GET))
-        || (FlagGet(FLAG_FOUND_SHELLY) && FlagGet(FLAG_FOUND_BRAWLY) && !FlagGet(FLAG_BADGE07_GET))
-        || (FlagGet(FLAG_VISITED_RUSTBORO_CITY) && !FlagGet(FLAG_BADGE08_GET))
-        || (FlagGet(FLAG_VISITED_LITTLEROOT_TOWN) && !FlagGet(FLAG_DEFEATED_EVIL_WALLY)))
-            *expAmount = *expAmount * 2;
-    }
+        *expAmount = (*expAmount * 1) / 100;
+    if (FlagGet(FLAG_VISITED_SOOTOPOLIS_CITY))
+        if (!FlagGet(FLAG_BADGE01_GET))
+            *expAmount = (*expAmount * 200) / 100;
+    if (FlagGet(FLAG_VISITED_MOSSDEEP_CITY))
+        if (!FlagGet(FLAG_BADGE02_GET))
+            *expAmount = (*expAmount * 200) / 100;
+    if (FlagGet(FLAG_VISITED_LILYCOVE_CITY))
+        if (!FlagGet(FLAG_DEFEATED_OZONE_BRANCH))
+            *expAmount = (*expAmount * 200) / 100;
+    if (FlagGet(FLAG_VISITED_ZOTPYRE))
+        if (!FlagGet(FLAG_BADGE03_GET))
+            *expAmount = (*expAmount * 250) / 100;
+    if (FlagGet(FLAG_VISITED_FORTREE_CITY))
+        if (!FlagGet(FLAG_BADGE04_GET))
+            *expAmount = (*expAmount * 250) / 100;
+    if (FlagGet(FLAG_VISITED_LAVARIDGE_TOWN))
+        if (!FlagGet(FLAG_BADGE05_GET))
+            *expAmount = (*expAmount * 250) / 100;
+    if (FlagGet(FLAG_VISITED_VERDANTURF_TOWN))
+        if (!FlagGet(FLAG_BADGE06_GET))
+            *expAmount = (*expAmount * 300) / 100;
+    if (FlagGet(FLAG_FOUND_SHELLY))
+        if (FlagGet(FLAG_FOUND_BRAWLY))
+            if (!FlagGet(FLAG_BADGE07_GET))
+                *expAmount = (*expAmount * 300) / 100;
+    if (FlagGet(FLAG_VISITED_RUSTBORO_CITY))
+        if (!FlagGet(FLAG_BADGE08_GET))
+            *expAmount = (*expAmount *  350) / 100;
+    if (FlagGet(FLAG_VISITED_LITTLEROOT_TOWN))
+        if (!FlagGet(FLAG_DEFEATED_EVIL_WALLY))
+            *expAmount = (*expAmount * 350) / 100;
+
     if (B_SCALED_EXP >= GEN_5 && B_SCALED_EXP != GEN_6)
     {
         // Note: There is an edge case where if a pokemon receives a large amount of exp, it wouldn't be properly calculated

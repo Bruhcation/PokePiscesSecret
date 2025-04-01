@@ -738,7 +738,6 @@ static const struct TrainerMon sParty_PIsaac[] = {
     .lvl = 14,
     .ev = TRAINER_PARTY_EVS(20, 20, 20, 20, 20, 20),
     .species = SPECIES_RAITAIC,
-    .moves = {MOVE_CHARGE, MOVE_THUNDER_WAVE, MOVE_BUBBLE, MOVE_WRAP},
     }
 };
 
@@ -1069,7 +1068,6 @@ static const struct TrainerMon sParty_PAprilMae[] = {
     .ev = TRAINER_PARTY_EVS(32, 32, 32, 32, 32, 32),
     .species = SPECIES_RAITAIC,
     .ability = ABILITY_DRIZZLE,
-    .moves = {MOVE_THUNDER_WAVE, MOVE_BUBBLE, MOVE_WRAP, MOVE_SHOCK_WAVE},
     },
     {
     .lvl = 17,
@@ -1222,7 +1220,6 @@ static const struct TrainerMon sParty_PDolly[] = {
     .ev = TRAINER_PARTY_EVS(32, 32, 32, 32, 32, 32),
     .species = SPECIES_COLFIN,
     .ability = ABILITY_TELEPATHY,
-    .moves = {MOVE_WATER_PULSE, MOVE_CONFUSION, MOVE_WATER_GUN, MOVE_WATER_SPORT},
     },
     {
     .lvl = 19,
@@ -1559,7 +1556,6 @@ static const struct TrainerMon sParty_POzoneSean[] = {
     .ev = TRAINER_PARTY_EVS(8, 0, 0, 84, 96, 4),
     .species = SPECIES_RAITAIC,
     .ability = ABILITY_WIND_POWER,
-    .moves = {MOVE_BUBBLE, MOVE_WRAP, MOVE_SHOCK_WAVE, MOVE_MINIMIZE},
     .nature = NATURE_TIMID,
     },
     {
@@ -2541,17 +2537,17 @@ static const struct TrainerMon sParty_PMisaki[] = {
     {
     .lvl = 27,
     .ev = TRAINER_PARTY_EVS(32, 32, 32, 32, 32, 32),
-    .species = SPECIES_MAERACHOLY,
-    .ability = ABILITY_MELANCHOLIA,
-    .heldItem = ITEM_CURSED_AMULET,
-    .moves = {MOVE_GLACIATE, MOVE_THUNDER_WAVE, MOVE_WILL_O_WISP, MOVE_MISERY_WAIL},
+    .species = SPECIES_RETROROACH,
+    .ability = ABILITY_TRANSISTOR,
+    .heldItem = ITEM_BLUK_BERRY,
+    .moves = {MOVE_POWER_DRAIN, MOVE_STRUGGLE_BUG, MOVE_ZAPPER, MOVE_ELECTROWEB},
     },
     {
-    .lvl = 27,
+    .lvl = 26,
     .ev = TRAINER_PARTY_EVS(32, 32, 32, 32, 32, 32),
     .species = SPECIES_FROSLASS,
     .ability = ABILITY_CURSED_BODY,
-    .moves = {MOVE_HEX, MOVE_DRAINING_KISS, MOVE_ATTRACT, MOVE_PHANTASM},
+    .moves = {MOVE_HEX, MOVE_DRAINING_KISS, MOVE_ATTRACT, MOVE_ICY_WIND},
     }
 };
 
