@@ -3292,29 +3292,26 @@ u8 DoBattlerEndTurnEffects(void)
             gBattleStruct->turnEffectsTracker++;
             break;
         case ENDTURN_EMERGENCY_EXIT:
-            for (i = 0; i < gBattlersCount; i++)
+            if (gBattleStruct->redCardActivates)
             {
-                if (gBattleStruct->redCardActivates)
+                gDisableStructs[i].startEmergencyExit = FALSE;
+                continue;
+            }
+            if (gDisableStructs[i].startEmergencyExit)
+            {
+                gDisableStructs[i].startEmergencyExit = FALSE;
+                gSpecialStatuses[i].emergencyExited = TRUE;
+                gBattlerTarget = gBattlerAbility = i;
+                BattleScriptPushCursor();
+                if (gBattleTypeFlags & BATTLE_TYPE_TRAINER || GetBattlerSide(i) == B_SIDE_PLAYER)
                 {
-                    gDisableStructs[i].startEmergencyExit = FALSE;
-                    continue;
+                    gBattlescriptCurrInstr = BattleScript_EmergencyExit;
                 }
-                if (gDisableStructs[i].startEmergencyExit)
+                else
                 {
-                    gDisableStructs[i].startEmergencyExit = FALSE;
-                    gSpecialStatuses[i].emergencyExited = TRUE;
-                    gBattlerTarget = gBattlerAbility = i;
-                    BattleScriptPushCursor();
-                    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER || GetBattlerSide(i) == B_SIDE_PLAYER)
-                    {
-                        gBattlescriptCurrInstr = BattleScript_EmergencyExit;
-                    }
-                    else
-                    {
-                        gBattlescriptCurrInstr = BattleScript_EmergencyExitWild;
-                    }
-                    return;
+                    gBattlescriptCurrInstr = BattleScript_EmergencyExitWild;
                 }
+                break;
             }
             gBattleStruct->turnEffectsTracker++;
             break;
