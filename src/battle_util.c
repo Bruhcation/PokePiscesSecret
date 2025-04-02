@@ -3297,7 +3297,7 @@ u8 DoBattlerEndTurnEffects(void)
                 gDisableStructs[i].startEmergencyExit = FALSE;
                 continue;
             }
-            if (gDisableStructs[i].startEmergencyExit)
+            else if (gDisableStructs[i].startEmergencyExit)
             {
                 gDisableStructs[i].startEmergencyExit = FALSE;
                 gSpecialStatuses[i].emergencyExited = TRUE;

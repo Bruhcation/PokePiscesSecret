@@ -551,7 +551,7 @@ CosmossSpaceCenter_Text_EnterCode3:
 	.string "here's code number 3.$"
 
 CosmossSpaceCenter_Text_EnterCode4:
-	.string "On more left to get right!\n"
+	.string "One more left to get right!\n"
 	.string "I know you've probably got it!$"
 
 CosmossSpaceCenter_Text_CodeEntrySuccess:
