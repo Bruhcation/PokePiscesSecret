@@ -105,7 +105,7 @@ SeasideCasinoVIPLounges_Text_SkylerDefeated:
 	.string "We lost together...$"
 
 SeasideCasinoVIPLounges_Text_SkylerPostBattle:
-	.string "When two Pokemon have the Dancer\n"
+	.string "When two Pokémon have the Dancer\n"
 	.string "ability, they can dance together\l"
 	.string "all the time!$"
 
@@ -115,7 +115,7 @@ SeasideCasinoVIPLounges_Text_WalterIntro:
 
 SeasideCasinoVIPLounges_Text_WalterDefeated:
 	.string "A Waltzer opens his door and gets\n"
-	.string "beaten in a Pokemon battle,\l"
+	.string "beaten in a Pokémon battle,\l"
 	.string "and you think that of ME!?$"
 
 SeasideCasinoVIPLounges_Text_WalterPostBattle:
@@ -128,7 +128,7 @@ SeasideCasinoVIPLounges_Text_KnucklesIntro:
 
 SeasideCasinoVIPLounges_Text_KnucklesDefeated:
 	.string "Eh... yeah, I punch a lot\n"
-	.string "better than I command Pokemon.$"
+	.string "better than I command Pokémon.$"
 
 SeasideCasinoVIPLounges_Text_KnucklesPostBattle:
 	.string "Unlike Fingers, I don't chuckle.\n"

@@ -112,8 +112,8 @@ VerdanturfTown_Mart_Text_Trick:
 	.string "I like to set up a Room!\n"
 	.string "And my favorite is Trick Room!\p"
 	.string "In Trick Room, the Speed stats of\n"
-	.string "Pokemon matter in reverse order.\l"
-	.string "So, a Pokemon with a slower Speed\l"
+	.string "Pokémon matter in reverse order.\l"
+	.string "So, a Pokémon with a slower Speed\l"
 	.string "will actually move before one\l"
 	.string "that has the higher Speed stat!$"
 
@@ -122,7 +122,7 @@ VerdanturfTown_Mart_Text_Inverse:
 	.string "And my favorite is Inverse Room!\p"
 	.string "In Inverse Room, the entire type\n"
 	.string "chart gets flipped on its head!\l"
-	.string "Fire type Pokemon become weak\l"
+	.string "Fire type Pokémon become weak\l"
 	.string "to Grass moves, and resistant\l"
 	.string "to Water moves, for example!$"
 
@@ -159,7 +159,7 @@ VerdanturfTown_Mart_Text_GoCatchIt:
 VerdanturfTown_Mart_Text_YouveUnlockedNewBall:
 	.string "...\p"
 	.string "Ah! There they are! Lovely catches!\p"
-	.string "Pawniard, the sharpest Pokemon...\n"
+	.string "Pawniard, the sharpest Pokémon...\n"
 	.string "Blotta's inkblot patterns...\l"
 	.string "Goltigator, the enigma...\p"
 	.string "Inspiration strikes! Incroyable!\n"

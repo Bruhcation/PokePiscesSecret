@@ -457,7 +457,7 @@ EverGrandeRoad_Text_MaxDefeated:
 	.string "I went and over-exerted again...$"
 
 EverGrandeRoad_Text_MaxPostBattle:
-	.string "Sha-yon is a Legendary Pokemon\n"
+	.string "Sha-yon is a Legendary Pokémon\n"
 	.string "that represents everything related\l"
 	.string "to rising. However, there must\l"
 	.string "be some sort of ceiling to this...$"
@@ -604,7 +604,7 @@ EverGrandeRoad_Text_ImmyPostBattle:
 
 EverGrandeRoad_Text_ParponixIntro:
 	.string "Are you fully prepared to take\n"
-	.string "on every Hoenn-native Pokemon?\l"
+	.string "on every Hoenn-native Pokémon?\l"
 	.string "Even the rare ones like these?$"
 
 EverGrandeRoad_Text_ParponixDefeated:
@@ -654,10 +654,10 @@ EverGrandeRoad_Text_BreadwinnerIntro:
 	.string "would stay out of each other's way...\p"
 	.string "N-No! It's time... time for me\n"
 	.string "to really toughen up here!\l"
-	.string "This Pokemon Center...\l"
+	.string "This Pokémon Center...\l"
 	.string "I'm the manager! W-Well, that isn't\l"
 	.string "entirely correct...\p"
-	.string "I'm the manager of EVERY Pokemon\n"
+	.string "I'm the manager of EVERY Pokémon\n"
 	.string "Center in Hoenn...! This is just\l"
 	.string "the one I personally run myself.\p"
 	.string "Every Nurse you've ran into in\n"
@@ -684,6 +684,6 @@ EverGrandeRoad_Text_BreadwinnerRunAway:
 	.string "Well. At least I'm not\n"
 	.string "late for work anymore...\p"
 	.string "If you want a heal for your\n"
-	.string "Pokemon, my eldest daughter\l"
+	.string "Pokémon, my eldest daughter\l"
 	.string "will gladly assist you inside.\p"
 	.string "Just p-please, no fighting indoors!$"

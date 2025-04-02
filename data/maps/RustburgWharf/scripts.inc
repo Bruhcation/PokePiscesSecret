@@ -227,7 +227,7 @@ RustburgWharf_Text_JeanAndJackittDefeated:
 	.string "         issue...$"
 
 RustburgWharf_Text_JeanAndJackittPostBattle:
-	.string "JEAN: Pokemon come in all shapes\n"
+	.string "JEAN: Pokémon come in all shapes\n"
 	.string "      and sizes.\l"
 	.string "JACKITT: Big or small doesn't\l"
 	.string "         matter. What does is how\l"

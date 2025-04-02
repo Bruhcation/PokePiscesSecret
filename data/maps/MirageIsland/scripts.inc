@@ -67,7 +67,7 @@ MirageIsland_Text_WhoAreYou:
 	.string "doing well? In good health?\p"
 	.string "...That's a relief.\n"
 	.string "I'm glad that one of my\l"
-	.string "Pokemon is getting to explore\l"
+	.string "Pokémon is getting to explore\l"
 	.string "the region with you.\p"
 	.string "Take good care of that Zorua.\n"
 	.string "...Hm, hold on one second...\p"

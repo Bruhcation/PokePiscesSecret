@@ -153,6 +153,7 @@ struct DisableStruct
     u8 reformFairy:1;
     u8 reformRelic:1;
     u8 focusEnergy:1;
+    u8 startEmergencyExit:1;
 };
 
 struct ProtectStruct

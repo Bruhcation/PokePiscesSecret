@@ -66,7 +66,7 @@ ScuttillInteriors_Text_Scutillion1:
 	.string "a little over there...\p"
 	.string "Gah! My charcoal drawing... it\n"
 	.string "just never turns out right!\l"
-	.string "I guess a colorful Pokemon like\l"
+	.string "I guess a colorful Pokémon like\l"
 	.string "Ebibi just doesn't look right\l"
 	.string "in jet black...$"
 
@@ -155,7 +155,7 @@ ScuttillInteriors_Text_IHearAMonEvolves:
 	.string "for drawing, but I also hear that\l"
 	.string "some trainers use them for battling.\p"
 	.string "There is a particular Grass type\n"
-	.string "Pokemon that has an affinity for it!$"
+	.string "Pokémon that has an affinity for it!$"
 
 ScuttillInteriors_Text_AlreadyGaveBurntBranch:
 	.string "If you manage to make some cool\n"

@@ -52,7 +52,7 @@ SweltornPalaceOutside_Text_UpForAToughBattle:
 	.string "you desire a battle with me?\p"
 	.string "I must warn you, I have never\n"
 	.string "once been slain. And I train\l"
-	.string "only one solitary Pokemon...\p"
+	.string "only one solitary Pokémon...\p"
 	.string "Does your resolve\n"
 	.string "still stand resolutely?$"
 

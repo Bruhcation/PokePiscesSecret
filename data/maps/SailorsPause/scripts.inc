@@ -214,13 +214,13 @@ SailorsPause_Text_NeedMiragePokemon:
 	.string "its location, dead on.\p"
 	.string "Problem is, if I'm gonna head\n"
 	.string "out there, I would want a\l"
-	.string "Pokemon with me that has\l"
+	.string "Pokémon with me that has\l"
 	.string "an affinity for mirages.\l"
 	.string "Y'know... in case I somehow\l"
 	.string "get my tuckus trapped there.$"
 
 SailorsPause_Text_ComeBackIfYouFind:
-	.string "If you can find me a Pokemon\n"
+	.string "If you can find me a Pokémon\n"
 	.string "that's a veritable mirage expert,\l"
 	.string "head on back here n' I'll\l"
 	.string "take ya to the island with me.$"

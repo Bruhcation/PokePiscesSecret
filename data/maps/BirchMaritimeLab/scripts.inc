@@ -394,7 +394,7 @@ BirchMaritimeLab_Text_TakeBalls:
 	.string "You'll find them atop Sky Pillar\n"
 	.string "to the north.\p"
 	.string "...Oh! And if you want to\n"
-	.string "catch any more POKéMON along the\l"
+	.string "catch any more Pokémon along the\l"
 	.string "way there, you'll need, uhm...\p"
 	.string "Oh, and you'd also maybe like...\n"
 	.string "some... hmm, some healing items...\l"
@@ -457,7 +457,7 @@ BirchMaritimeLab_Text_GrangerPostSkyPillar:
 
 BirchMaritimeLab_Text_JeanniePostSkyPillar:
 	.string "Well, what are you waiting for?\n"
-	.string "the world's your oyster!\l"
+	.string "The world's your oyster!\l"
 	.string "Make us proud!$"
 
 BirchMaritimeLab_Text_RickyPostSkyPillar:
@@ -499,17 +499,17 @@ BirchMaritimeLab_Text_HowsCatchingPokemon:
 	.string "your Pokedex progress!$"
 
 BirchMaritimeLab_Text_BirchTellDexCount:
-	.string "So, you've seen {STR_VAR_1} Pokemon\n"
+	.string "So, you've seen {STR_VAR_1} Pokémon\n"
 	.string "and caught {STR_VAR_2} of them...$"
 
 BirchMaritimeLab_Text_KeepOnCatching:
 	.string "That is a respectable amount so far!\n"
 	.string "Try and aim for registering\l"
-	.string "100 Pokemon in your 'Dex...\l"
+	.string "100 Pokémon in your 'Dex...\l"
 	.string "I'll gift you a special somethin'!$"
 
 BirchMaritimeLab_Text_Wow100HaveFavorScarf:
-	.string "You've caught over 100 Pokemon?\n"
+	.string "You've caught over 100 Pokémon?\n"
 	.string "That's amazing, kiddo! An\l"
 	.string "accomplishment like that deserves\l"
 	.string "a reward, so here, I want you\l"
@@ -539,14 +539,14 @@ BirchMaritimeLab_Text_Wow200HaveCatchingCharm:
 
 BirchMaritimeLab_Text_GoForAllCaught:
 	.string "You're getting close to registering\n"
-	.string "all 280 Pokemon in the Hoenn Pokedex...\l"
+	.string "all 280 Pokémon in the Hoenn Pokedex...\l"
 	.string "That'll be a herculean task\l"
 	.string "to finish out, but I know you're\l"
 	.string "tenacious enough to see it through!\l"
 	.string "Go get 'em, champ!$"
 
 BirchMaritimeLab_Text_WowAllCaught:
-	.string "You've caught every single Pokemon!\n"
+	.string "You've caught every single Pokémon!\n"
 	.string "What a legendary kid you turned\l"
 	.string "out to be... oh, who am I kidding?\l"
 	.string "I always knew you had it in you!$"

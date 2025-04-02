@@ -215,7 +215,7 @@ void PrepareBufferDataTransferLink(u32 battler, u32 bufferId, u16 size, u8 *data
 void BtlController_EmitGetMonData(u32 battler, u32 bufferId, u8 requestId, u8 monToCheck);
 void BtlController_EmitSetMonData(u32 battler, u32 bufferId, u8 requestId, u8 monToCheck, u8 bytes, void *data);
 void BtlController_EmitLoadMonSprite(u32 battler, u32 bufferId);
-void BtlController_EmitSwitchInAnim(u32 battler, u32 bufferId, u8 partyId, bool8 dontClearSubstituteBit);
+void BtlController_EmitSwitchInAnim(u32 battler, u32 bufferId, u8 partyId, bool8 dontClearTransform, bool8 dontClearSubstituteBit);
 void BtlController_EmitReturnMonToBall(u32 battler, u32 bufferId, bool8 skipAnim);
 void BtlController_EmitDrawTrainerPic(u32 battler, u32 bufferId);
 void BtlController_EmitTrainerSlide(u32 battler, u32 bufferId);

@@ -95,7 +95,7 @@ NoviceWalk_Text_GunkShot:
 	.string "and-a I can-a shoot Gunk from-a\l"
 	.string "my hands!\p"
 	.string "Have a Gunk Flower for your-a\n"
-	.string "Pokemon, wahoo!$"
+	.string "Pokémon, wahoo!$"
 
 NoviceWalk_Text_GaveGunkShot:
 	.string "Thank you so much for-to\n"
@@ -109,12 +109,12 @@ NoviceWalk_Text_NWSign:
 	.string "SOUTH for LITTLEROOT TOWN$"
 
 NoviceWalk_Text_JoeyIntro:
-	.string "ALL of my Pokemon are in the\n"
+	.string "ALL of my Pokémon are in the\n"
 	.string "top percentage of their species!\l"
 	.string "I think I have you beat!$"
 
 NoviceWalk_Text_JoeyDefeated:
-	.string "Oh... I'm out of Pokemon\n"
+	.string "Oh... I'm out of Pokémon\n"
 	.string "that can fight.$"
 
 NoviceWalk_Text_JoeyPostBattle:
@@ -148,7 +148,7 @@ NoviceWalk_Text_LennyPostBattle:
 	.string "kick in the nose...$"
 
 NoviceWalk_Text_BridgetIntro:
-	.string "I just obtained these Pokemon\n"
+	.string "I just obtained these Pokémon\n"
 	.string "30 minutes ago! Let's try 'em\l"
 	.string "out in my first battle!$"
 
@@ -157,7 +157,7 @@ NoviceWalk_Text_BridgetDefeated:
 	.string "learn from it!$"
 
 NoviceWalk_Text_BridgetPostBattle:
-	.string "I got these Pokemon from my Mama!\n"
+	.string "I got these Pokémon from my Mama!\n"
 	.string "She was training to be a Grass\l"
 	.string "type Gym Leader!$"
 
@@ -167,7 +167,7 @@ NoviceWalk_Text_DarwinIntro:
 NoviceWalk_Text_DarwinDefeated:
 	.string "I won.\p"
 	.string "(The kid is showing you a picture\n"
-	.string "of the faces of four bird Pokemon.)\p"
+	.string "of the faces of four bird Pokémon.)\p"
 	.string "(You don't know what this means.)$"
 
 NoviceWalk_Text_DarwinPostBattle:
@@ -209,7 +209,7 @@ NoviceWalk_Text_TimmyDefeated:
 	.string "I wish everything was back to normal!$"
 
 NoviceWalk_Text_TimmyPostBattle:
-	.string "Your Pokemon are really magical!\n"
+	.string "Your Pokémon are really magical!\n"
 	.string "We were really not gonna stand\l"
 	.string "a chance.$"
 
@@ -263,11 +263,11 @@ NoviceWalk_Text_TayDefeated:
 	.string "up my sleeves...$"
 
 NoviceWalk_Text_TayPostBattle:
-	.string "Make sure your Pokemon have the\n"
+	.string "Make sure your Pokémon have the\n"
 	.string "held item most suited for them.\l"
 	.string "Don't ever just leave that slot\l"
 	.string "open. A good item can make or\l"
-	.string "break a Pokemon's usefulness.$"
+	.string "break a Pokémon's usefulness.$"
 
 NoviceWalk_Text_EthanAndKaiIntro:
 	.string "ETHAN: I am Kai's strongest soldier!\n"
@@ -287,4 +287,4 @@ NoviceWalk_Text_EthanAndKaiPostBattle:
 
 NoviceWalk_Text_EthanAndKaiNeedTwoMons:
 	.string "ETHAN: I can easily defend\n"
-	.string "my love against one Pokemon!$"
+	.string "my love against one Pokémon!$"

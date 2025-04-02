@@ -237,7 +237,7 @@ CanopourWilds_Text_IllTradeIfYouWant:
 	.string "a {STR_VAR_1} if you want.$"
 
 CanopourWilds_Text_PleaseBeGoodToMyPokemon:
-	.string "Please be good to my POKéMON.$"
+	.string "Please be good to my Pokémon.$"
 
 CanopourWilds_Text_DoesntLookLikeMonToMe:
 	.string "Huh? That doesn't look anything like\n"
@@ -331,7 +331,7 @@ CanopourWilds_Text_CameronDefeated:
 	.string "Looks like they were!$"
 
 CanopourWilds_Text_CameronPostBattle:
-	.string "Keep your Pokemon healthy on\n"
+	.string "Keep your Pokémon healthy on\n"
 	.string "long journeys, trainer.\p"
 	.string "Before you realize it, your\n"
 	.string "team can find themselves\l"
@@ -362,7 +362,7 @@ CanopourWilds_Text_JamperPostBattle:
 	.string "I've got lots to learn still.$"
 
 CanopourWilds_Text_EnglatereIntro:
-	.string "Grass-type Pokemon are at their\n"
+	.string "Grass-type Pokémon are at their\n"
 	.string "best when surrounded by greenery.\l"
 	.string "Think you can beat them\l"
 	.string "in their natural territory?$"
@@ -386,7 +386,7 @@ CanopourWilds_Text_KoizumiDefeated:
 
 CanopourWilds_Text_KoizumiPostBattle:
 	.string "Lucy is one of my idols.\n"
-	.string "She uses Poison type Pokemon\l"
+	.string "She uses Poison type Pokémon\l"
 	.string "to the best of their abilities.$"
 
 CanopourWilds_Text_CharliIntro:
@@ -494,7 +494,7 @@ CanopourWilds_Text_PathThroughBush:
 
 CanopourWilds_Text_WantToUseCut:
 	.string "(Would you like to have your\n"
-	.string "Pokemon cut through the branches?)$"
+	.string "Pokémon cut through the branches?)$"
 
 CanopourWilds_Text_NoCut:
 	.string "(...But you have no means of\n"

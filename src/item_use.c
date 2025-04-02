@@ -1102,7 +1102,7 @@ static u32 GetBallThrowableState(void)
     else if (gStatuses3[GetCatchingBattler()] & STATUS3_SEMI_INVULNERABLE)
         return BALL_THROW_UNABLE_SEMI_INVULNERABLE;
 #endif
-    else if (FlagGet(B_FLAG_NO_CATCHING))
+    else if (FlagGet(B_FLAG_NO_CATCHING) || gBattleTypeFlags & BATTLE_TYPE_SHUNYONG)
         return BALL_THROW_UNABLE_DISABLED_FLAG;
 
     return BALL_THROW_ABLE;
@@ -1217,8 +1217,9 @@ bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon *mon)
     u16 hp = GetMonData(mon, MON_DATA_HP);
 
     // Embargo Check
-    if ((gPartyMenu.slotId == 0 && gStatuses3[B_POSITION_PLAYER_LEFT] & STATUS3_EMBARGO)
+    if (((gPartyMenu.slotId == 0 && gStatuses3[B_POSITION_PLAYER_LEFT] & STATUS3_EMBARGO)
         || (gPartyMenu.slotId == 1 && gStatuses3[B_POSITION_PLAYER_RIGHT] & STATUS3_EMBARGO))
+        && battleUsage != EFFECT_ITEM_THROW_BALL)
     {
         return TRUE;
     }

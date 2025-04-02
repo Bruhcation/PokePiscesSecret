@@ -29,7 +29,7 @@ SweltornInteriors_Text_Sweltornmin1:
 	.string "I'm supposed to be the door guard\n"
 	.string "for this checkpoint. But like,\l"
 	.string "what am I even guarding for?\l"
-	.string "No Pokemon come past the cave,\l"
+	.string "No Pokémon come past the cave,\l"
 	.string "and there aren't really\l"
 	.string "criminals looking to ravage\l"
 	.string "the desert, or whatever.\p"
@@ -57,10 +57,10 @@ SweltornInteriors_Text_Sweltornmin3:
 	.string "The writing is really off the wall.$"
 
 SweltornInteriors_Text_Sweltornmin4:
-	.string "Combun is a Pokemon from up north\n"
+	.string "Combun is a Pokémon from up north\n"
 	.string "that some trainers bring along\l"
 	.string "to Sweltorn Desert. That's because\l"
-	.string "it evolves into a particular Pokemon\l"
+	.string "it evolves into a particular Pokémon\l"
 	.string "when it battles here!\p"
 	.string "I know there's other places that\n"
 	.string "cause Combun to evolve, too,\l"

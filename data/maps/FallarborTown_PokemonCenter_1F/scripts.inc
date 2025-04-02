@@ -120,19 +120,19 @@ FallarborTown_PokemonCenter_1F_Text_Relic:
 
 FallarborTown_PokemonCenter_1F_Text_Poison:
 	.string "Yaaaa-shaawww! Imma Poison you!\n"
-	.string "With my Poison type Pokemon!\p"
+	.string "With my Poison type Pokémon!\p"
 	.string "...Eh. I will let you live.\n"
 	.string "As long as you carry on my ninja\l"
 	.string "way, and Poison anything that moves!$"
 
 FallarborTown_PokemonCenter_1F_Text_PokenavFly:
 	.string "If you have the Fortree City\n"
-	.string "gym badge, your Pokemon can Fly\l"
+	.string "gym badge, your Pokémon can Fly\l"
 	.string "to any city you have visited straight\l"
 	.string "from your PokeNav's Map!$"
 
 FallarborTown_PokemonCenter_1F_Text_Retroroach:
-	.string "Retroroach... what an odd Pokemon.\n"
+	.string "Retroroach... what an odd Pokémon.\n"
 	.string "They are seldom seen enough to\l"
 	.string "reach folklore status, yet reports\l"
 	.string "of them being sighted come from\l"

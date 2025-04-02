@@ -74,7 +74,7 @@ Gym5Corridor_EventScript_GymSign::
 	msgbox Gym5Corridor_Text_GymSign, MSGBOX_SIGN
 	end
 
-Gym2Corridor_Text_GymSign:
+Gym5Corridor_Text_GymSign:
 	.string "LAVARIDGE GYM\n"
 	.string "Fire and Dragon Specialization$"
 
@@ -106,9 +106,9 @@ Gym5Corridor_Text_YouAlreadyDidThis:
 Gym5Corridor_Text_NotEnoughMons:
 	.string "Oh? I am very sorry, but you\n"
 	.string "appear to only have one non-fainted\l"
-	.string "Pokemon in your party. As this is\l"
+	.string "Pokémon in your party. As this is\l"
 	.string "a gym that culminates in a\l"
 	.string "double battle, having more than\l"
-	.string "one Pokemon is required.\p"
+	.string "one Pokémon is required.\p"
 	.string "Please come back with more than\n"
-	.string "one non-fainted Pokemon.$"
+	.string "one non-fainted Pokémon.$"

@@ -267,7 +267,7 @@ OzoneInstitute_Text_DessAndEmberPostBattle:
 	.string "EMBER: Maybe I should have worn\n"
 	.string "       more layers...\p"
 	.string "DESS: Um, Ember? You train\n"
-	.string "      Ice type Pokemon.$"
+	.string "      Ice type Pokémon.$"
 
 OzoneInstitute_Text_DessAndEmberNeedTwoMons:
 	.string "DESS: You're not ready to hear\n"

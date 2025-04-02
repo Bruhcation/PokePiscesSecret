@@ -886,7 +886,7 @@ ScuttillSecretTreeHouse_Text_TakeCareOfThis:
 	.string "them hatch somewhat quicker.\l"
 	.string "Then, the Coffiddle gets\l"
 	.string "a new dance partner!\p"
-	.string "You seem to be a Pokemon Trainer.\n"
+	.string "You seem to be a Pokémon Trainer.\n"
 	.string "Take one of these eggs and\l"
 	.string "give it a good home.$"
 
@@ -894,7 +894,7 @@ ScuttillSecretTreeHouse_Text_PlayerReceivedWanegg:
 	.string "{PLAYER} took one of the Eggs!$"
 
 ScuttillSecretTreeHouse_Text_HatchThatEgg:
-	.string "Even I don't know what Pokemon\n"
+	.string "Even I don't know what Pokémon\n"
 	.string "could hatch from that Egg...\l"
 	.string "They were all abandoned,\l"
 	.string "so it's anybody's guess.$"

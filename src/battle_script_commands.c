@@ -2119,9 +2119,7 @@ s32 CalcCritChanceStageArgs(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
 {
     s32 critChance = 0;
 
-    if ((gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT 
-    && abilityAtk != ABILITY_INFILTRATOR 
-    && !(IS_BATTLER_OF_TYPE(battlerAtk, TYPE_BUG)))
+    if ((gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT && abilityAtk != ABILITY_INFILTRATOR && (!(IS_BATTLER_OF_TYPE(battlerAtk, TYPE_BUG))))
     || gStatuses3[battlerAtk] & STATUS3_CANT_SCORE_A_CRIT
     || abilityDef == ABILITY_SHELL_ARMOR
     || (abilityDef == ABILITY_INNER_FOCUS && gDisableStructs[battlerDef].focusEnergy)
@@ -2262,6 +2260,7 @@ static void Cmd_damagecalc(void)
 
     // Counter for EVO_HIT_BY_SLASH_MOVE.
     partySlot = gBattlerPartyIndexes[gBattlerTarget];
+
     if (gBattleMoves[gCurrentMove].slicingMove
         && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER
         && !(gBattleTypeFlags & BATTLE_TYPE_MULTI
@@ -2274,7 +2273,7 @@ static void Cmd_damagecalc(void)
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
     // Counter for EVO_HIT_BY_PIERCE_MOVE.
-    if (gBattleMoves[gCurrentMove].piercingMove 
+    else if (gBattleMoves[gCurrentMove].piercingMove 
         && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER
         && !(gBattleTypeFlags & BATTLE_TYPE_MULTI 
         && GetBattlerPosition(gBattlerTarget) == B_POSITION_PLAYER_LEFT)
@@ -2285,9 +2284,8 @@ static void Cmd_damagecalc(void)
             gHitByBluntMove[partySlot] = 0;
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
-
     // Counter for EVO_HIT_BY_BLUNT_MOVE.
-    if ((gBattleMoves[gCurrentMove].punchingMove
+    else if ((gBattleMoves[gCurrentMove].punchingMove
         || gBattleMoves[gCurrentMove].kickingMove
         || gBattleMoves[gCurrentMove].ballisticMove)
         && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER
@@ -2531,6 +2529,10 @@ static void Cmd_attackanimation(void)
             gBattlescriptCurrInstr = cmd->nextInstr;
             return;
         }
+
+        // handle special move animations
+        if (gBattleMoves[gCurrentMove].effect == EFFECT_EXPANDING_FORCE && moveTarget & MOVE_TARGET_BOTH && CountAliveMonsInBattle(BATTLE_ALIVE_SIDE, BATTLE_OPPOSITE(gBattlerAttacker) > 1))
+            gBattleScripting.animTurn = 1;
 
         if ((moveTarget & MOVE_TARGET_BOTH
              || moveTarget & MOVE_TARGET_FOES_AND_ALLY
@@ -7342,27 +7344,25 @@ static void Cmd_moveend(void)
                             || gBattleMoves[gCurrentMove].effect == EFFECT_MANEUVER
                             || gBattleMoves[gCurrentMove].effect == EFFECT_SNOWFADE)
                             gBattlescriptCurrInstr = BattleScript_MoveEnd;  // Prevent user switch-in selection
-                            effect = TRUE;
-                            BattleScriptPushCursor();
-                            gBattleStruct->usedEjectItem |= 1u << battler;
                             if (ejectButtonBattlers & (1u << battler))
                             {
+                                effect = TRUE;
+                                gBattleStruct->usedEjectItem |= 1u << battler;
+                                BattleScriptPushCursor();
                                 gBattlescriptCurrInstr = BattleScript_EjectButtonActivates;
                             }
                             else // Eject Pack
                             {
-                                if (gBattleResources->flags->flags[gBattlerTarget] & RESOURCE_FLAG_EMERGENCY_EXIT)
+                                if (!gDisableStructs[gBattlerTarget].startEmergencyExit
+                                    && !(gBattleMoves[gCurrentMove].effect == EFFECT_PARTING_SHOT && CanBattlerSwitch(gBattlerAttacker)))
                                 {
-                                    gBattlescriptCurrInstr = BattleScript_EjectPackMissesTiming;
-                                    gProtectStructs[battler].statFell = FALSE;
-                                }
-                                else
-                                {
+                                    effect = TRUE;
+                                    gBattleStruct->usedEjectItem |= 1u << battler;
+                                    BattleScriptPushCursor();
                                     gBattlescriptCurrInstr = BattleScript_EjectPackActivates;
-                                    // Are these 2 lines below needed?
-                                    gProtectStructs[battler].statFell = FALSE;
                                     gSpecialStatuses[gBattlerAttacker].preventLifeOrbDamage = TRUE;
                                 }
+                                gProtectStructs[battler].statFell = FALSE;
                             }
                             break; // Only the fastest Eject item activates
                         }
@@ -7839,7 +7839,7 @@ static void Cmd_switchinanim(void)
 {
     u32 battler;
 
-    CMD_ARGS(u8 battler, bool8 dontClearSubstitute);
+    CMD_ARGS(u8 battler, bool8 dontClearTransform, bool8 dontClearSubstitute);
 
     if (gBattleControllerExecFlags)
         return;
@@ -7854,9 +7854,9 @@ static void Cmd_switchinanim(void)
                                  | BATTLE_TYPE_FRONTIER)))
         HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
 
-    gAbsentBattlerFlags &= ~(gBitTable[battler]);
+    gAbsentBattlerFlags &= ~(1u << battler);
 
-    BtlController_EmitSwitchInAnim(battler, BUFFER_A, gBattlerPartyIndexes[battler], cmd->dontClearSubstitute);
+    BtlController_EmitSwitchInAnim(battler, BUFFER_A, gBattlerPartyIndexes[battler], cmd->dontClearTransform, cmd->dontClearSubstitute);
     MarkBattlerForControllerExec(battler);
 
     gBattlescriptCurrInstr = cmd->nextInstr;
@@ -8685,15 +8685,18 @@ static void Cmd_endlinkbattle(void)
 
 static void Cmd_returntoball(void)
 {
-    CMD_ARGS(u8 battler);
+    CMD_ARGS(u8 battler, bool8 changingForm);
 
     u32 battler = GetBattlerForBattleScript(cmd->battler);
     BtlController_EmitReturnMonToBall(battler, BUFFER_A, TRUE);
     MarkBattlerForControllerExec(battler);
-    
+
+    // Don't always execute a form change here otherwise we can stomp gigantamax
+    if(!cmd->changingForm)
+        TryBattleFormChange(battler, FORM_CHANGE_BATTLE_SWITCH);
+
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
-
 static void Cmd_handlelearnnewmove(void)
 {
     CMD_ARGS(const u8 *learnedMovePtr, const u8 *nothingToLearnPtr, bool8 isFirstMove);
@@ -15418,13 +15421,11 @@ static void Cmd_forcerandomswitch(void)
 {
     CMD_ARGS(const u8 *failInstr);
 
-    u32 i;
     s32 battler1PartyId = 0;
     s32 battler2PartyId = 0;
-
+    u32 i;
     s32 firstMonId;
     s32 lastMonId = 0; // + 1
-    s32 monsCount;
     struct Pokemon *party = NULL;
     u8 validMons[PARTY_SIZE];
     s32 validMonsCount = 0;
@@ -15480,7 +15481,6 @@ static void Cmd_forcerandomswitch(void)
         {
             firstMonId = 0;
             lastMonId = 6;
-            monsCount = 6;
             battler2PartyId = gBattlerPartyIndexes[gBattlerTarget];
             battler1PartyId = gBattlerPartyIndexes[BATTLE_PARTNER(gBattlerTarget)];
         }
@@ -15498,7 +15498,6 @@ static void Cmd_forcerandomswitch(void)
                 firstMonId = 0;
                 lastMonId = PARTY_SIZE / 2;
             }
-            monsCount = PARTY_SIZE / 2;
             battler2PartyId = gBattlerPartyIndexes[gBattlerTarget];
             battler1PartyId = gBattlerPartyIndexes[BATTLE_PARTNER(gBattlerTarget)];
         }
@@ -15515,7 +15514,6 @@ static void Cmd_forcerandomswitch(void)
                 firstMonId = 0;
                 lastMonId = PARTY_SIZE / 2;
             }
-            monsCount = PARTY_SIZE / 2;
             battler2PartyId = gBattlerPartyIndexes[gBattlerTarget];
             battler1PartyId = gBattlerPartyIndexes[BATTLE_PARTNER(gBattlerTarget)];
         }
@@ -15525,7 +15523,6 @@ static void Cmd_forcerandomswitch(void)
             {
                 firstMonId = 0;
                 lastMonId = PARTY_SIZE;
-                monsCount = PARTY_SIZE;
             }
             else
             {
@@ -15539,7 +15536,6 @@ static void Cmd_forcerandomswitch(void)
                     firstMonId = 0;
                     lastMonId = PARTY_SIZE / 2;
                 }
-                monsCount = PARTY_SIZE / 2;
             }
             battler2PartyId = gBattlerPartyIndexes[gBattlerTarget];
             battler1PartyId = gBattlerPartyIndexes[BATTLE_PARTNER(gBattlerTarget)];
@@ -15548,7 +15544,6 @@ static void Cmd_forcerandomswitch(void)
         {
             firstMonId = 0;
             lastMonId = PARTY_SIZE;
-            monsCount = PARTY_SIZE;
             battler2PartyId = gBattlerPartyIndexes[gBattlerTarget];
             battler1PartyId = gBattlerPartyIndexes[BATTLE_PARTNER(gBattlerTarget)];
         }
@@ -15556,8 +15551,7 @@ static void Cmd_forcerandomswitch(void)
         {
             firstMonId = 0;
             lastMonId = PARTY_SIZE;
-            monsCount = PARTY_SIZE;
-            battler2PartyId = gBattlerPartyIndexes[gBattlerTarget]; // there is only one pokemon out in single battles
+            battler2PartyId = gBattlerPartyIndexes[gBattlerTarget]; // there is only one Pokémon out in single battles
             battler1PartyId = gBattlerPartyIndexes[gBattlerTarget];
         }
 
@@ -15579,7 +15573,7 @@ static void Cmd_forcerandomswitch(void)
         }
         else
         {
-            *(gBattleStruct->battlerPartyIndexes + gBattlerTarget) = gBattlerPartyIndexes[gBattlerTarget];
+            gBattleStruct->battlerPartyIndexes[gBattlerTarget] = gBattlerPartyIndexes[gBattlerTarget];
             if (gCurrentMove == MOVE_DEARLY_DEPART)
             {
                 gBattlescriptCurrInstr = BattleScript_DearlyDepartSuccessSwitch;
@@ -15597,7 +15591,7 @@ static void Cmd_forcerandomswitch(void)
                 gBattlescriptCurrInstr = BattleScript_RoarSuccessSwitch;
             }
             gBattleStruct->forcedSwitch |= gBitTable[gBattlerTarget];
-            *(gBattleStruct->monToSwitchIntoId + gBattlerTarget) = validMons[RandomUniform(RNG_FORCE_RANDOM_SWITCH, 0, validMonsCount - 1)];
+            gBattleStruct->monToSwitchIntoId[gBattlerTarget] = validMons[RandomUniform(RNG_FORCE_RANDOM_SWITCH, 0, validMonsCount - 1)];
 
             if (!IsMultiBattle())
                 SwitchPartyOrder(gBattlerTarget);
@@ -20517,36 +20511,52 @@ void ApplyExperienceMultipliers(s32 *expAmount, u8 expGetterMonId, u8 faintedBat
 {
     u32 holdEffect = GetMonHoldEffect(&gPlayerParty[expGetterMonId]);
 
+    if (IsTradedMon(&gPlayerParty[expGetterMonId]))
+        *expAmount = (*expAmount * 125) / 100;
+    if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
+        *expAmount = (*expAmount * 200) / 100;
+    if (GetMonData(&gPlayerParty[expGetterMonId], MON_DATA_LEVEL) < GetPreviousLevelCap())
+        *expAmount = (*expAmount * 250) / 100;
+    if (B_UNEVOLVED_EXP_MULTIPLIER >= GEN_6 && IsMonPastEvolutionLevel(&gPlayerParty[expGetterMonId]))
+        *expAmount = (*expAmount * 4915) / 4096;
+    if (B_AFFECTION_MECHANICS == TRUE && GetBattlerFriendshipScore(expGetterMonId) >= FRIENDSHIP_50_TO_99)
+        *expAmount = (*expAmount * 4915) / 4096;
+    if (CheckBagHasItem(ITEM_EXP_CHARM, 1)) //is also for other exp boosting Powers if/when implemented
+        *expAmount = (*expAmount * 150) / 100;
     if (gMapHeader.regionMapSectionId == MAPSEC_SCORCHED_SLAB)
-    {
-        *expAmount = 1;
-    }
-    else
-    {
-        if (IsTradedMon(&gPlayerParty[expGetterMonId]))
-            *expAmount = (*expAmount * 125) / 100;
-        if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
-            *expAmount = *expAmount * 2;
-        if (GetMonData(&gPlayerParty[expGetterMonId], MON_DATA_LEVEL) < GetPreviousLevelCap())
-            *expAmount = *expAmount * 3;
-        if (B_UNEVOLVED_EXP_MULTIPLIER >= GEN_6 && IsMonPastEvolutionLevel(&gPlayerParty[expGetterMonId]))
-            *expAmount = (*expAmount * 12) / 10;
-        if (GetBattlerFriendshipScore(expGetterMonId) == FRIENDSHIP_MAX)
-            *expAmount = (*expAmount * 12) / 10;
-        if (CheckBagHasItem(ITEM_EXP_CHARM, 1)) //is also for other exp boosting Powers if/when implemented
-            *expAmount = (*expAmount * 15) / 10;
-        if ((FlagGet(FLAG_VISITED_SOOTOPOLIS_CITY) && !FlagGet(FLAG_BADGE01_GET))
-        || (FlagGet(FLAG_VISITED_MOSSDEEP_CITY) && !FlagGet(FLAG_BADGE02_GET))
-        || (FlagGet(FLAG_VISITED_LILYCOVE_CITY) && !FlagGet(FLAG_DEFEATED_OZONE_BRANCH))
-        || (FlagGet(FLAG_VISITED_ZOTPYRE) && !FlagGet(FLAG_BADGE03_GET))
-        || (FlagGet(FLAG_VISITED_FORTREE_CITY) && !FlagGet(FLAG_BADGE04_GET))
-        || (FlagGet(FLAG_VISITED_LAVARIDGE_TOWN) && !FlagGet(FLAG_BADGE05_GET))
-        || (FlagGet(FLAG_VISITED_VERDANTURF_TOWN) && !FlagGet(FLAG_BADGE06_GET))
-        || (FlagGet(FLAG_FOUND_SHELLY) && FlagGet(FLAG_FOUND_BRAWLY) && !FlagGet(FLAG_BADGE07_GET))
-        || (FlagGet(FLAG_VISITED_RUSTBORO_CITY) && !FlagGet(FLAG_BADGE08_GET))
-        || (FlagGet(FLAG_VISITED_LITTLEROOT_TOWN) && !FlagGet(FLAG_DEFEATED_EVIL_WALLY)))
-            *expAmount = *expAmount * 2;
-    }
+        *expAmount = (*expAmount * 1) / 100;
+    if (FlagGet(FLAG_VISITED_SOOTOPOLIS_CITY))
+        if (!FlagGet(FLAG_BADGE01_GET))
+            *expAmount = (*expAmount * 200) / 100;
+    if (FlagGet(FLAG_VISITED_MOSSDEEP_CITY))
+        if (!FlagGet(FLAG_BADGE02_GET))
+            *expAmount = (*expAmount * 200) / 100;
+    if (FlagGet(FLAG_VISITED_LILYCOVE_CITY))
+        if (!FlagGet(FLAG_DEFEATED_OZONE_BRANCH))
+            *expAmount = (*expAmount * 200) / 100;
+    if (FlagGet(FLAG_VISITED_ZOTPYRE))
+        if (!FlagGet(FLAG_BADGE03_GET))
+            *expAmount = (*expAmount * 250) / 100;
+    if (FlagGet(FLAG_VISITED_FORTREE_CITY))
+        if (!FlagGet(FLAG_BADGE04_GET))
+            *expAmount = (*expAmount * 250) / 100;
+    if (FlagGet(FLAG_VISITED_LAVARIDGE_TOWN))
+        if (!FlagGet(FLAG_BADGE05_GET))
+            *expAmount = (*expAmount * 250) / 100;
+    if (FlagGet(FLAG_VISITED_VERDANTURF_TOWN))
+        if (!FlagGet(FLAG_BADGE06_GET))
+            *expAmount = (*expAmount * 300) / 100;
+    if (FlagGet(FLAG_FOUND_SHELLY))
+        if (FlagGet(FLAG_FOUND_BRAWLY))
+            if (!FlagGet(FLAG_BADGE07_GET))
+                *expAmount = (*expAmount * 300) / 100;
+    if (FlagGet(FLAG_VISITED_RUSTBORO_CITY))
+        if (!FlagGet(FLAG_BADGE08_GET))
+            *expAmount = (*expAmount *  350) / 100;
+    if (FlagGet(FLAG_VISITED_LITTLEROOT_TOWN))
+        if (!FlagGet(FLAG_DEFEATED_EVIL_WALLY))
+            *expAmount = (*expAmount * 350) / 100;
+
     if (B_SCALED_EXP >= GEN_5 && B_SCALED_EXP != GEN_6)
     {
         // Note: There is an edge case where if a pokemon receives a large amount of exp, it wouldn't be properly calculated
@@ -20638,7 +20648,7 @@ void BS_ItemRestoreHP(void)
         gBattleScripting.battler = battler;
     else
         gBattleScripting.battler = gBattlerAttacker;
-    PREPARE_SPECIES_BUFFER(gBattleTextBuff1, GetMonData(mon, MON_DATA_SPECIES));
+    PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gBattleScripting.battler, gBattlerPartyIndexes[gBattleScripting.battler]);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
@@ -20664,7 +20674,7 @@ void BS_ItemCureStatus(void)
         gBattleScripting.battler = battler;
     else
         gBattleScripting.battler = gBattlerAttacker;
-    PREPARE_SPECIES_BUFFER(gBattleTextBuff1, GetMonData(mon, MON_DATA_SPECIES));
+        PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gBattleScripting.battler, gBattlerPartyIndexes[gBattleScripting.battler]);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
@@ -20729,7 +20739,7 @@ void BS_ItemRestorePP(void)
         gBattleScripting.battler = battler;
     else
         gBattleScripting.battler = gBattlerAttacker;
-    PREPARE_SPECIES_BUFFER(gBattleTextBuff1, GetMonData(mon, MON_DATA_SPECIES));
+        PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gBattleScripting.battler, gBattlerPartyIndexes[gBattleScripting.battler]);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 

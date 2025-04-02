@@ -163,7 +163,7 @@ Flotshore_Text_VacuumingTheWater:
 	.string "work for a janitor!\p"
 	.string "You're a trainer, right? Why\n"
 	.string "not take this TM with you?\l"
-	.string "That way your Pokemon can...\l"
+	.string "That way your Pokémon can...\l"
 	.string "giggle... clean up\l"
 	.string "the competition!$"
 

@@ -60,7 +60,7 @@ SkyPillarInteriors_Text_Researcher:
 	.string "There seemed to have existed an\n"
 	.string "ancient tribe of Dragon-loving\l"
 	.string "people that worshipped\l"
-	.string "the Pokemon Rayquaza, with\l"
+	.string "the Pokémon Rayquaza, with\l"
 	.string "this structure being their\l"
 	.string "magnum opus.\p"
 	.string "That tribe has since all\n"
@@ -102,7 +102,7 @@ SkyPillarInteriors_Text_Healing:
 	.string "up this far?\l"
 	.string "Going to meet somebody at\l"
 	.string "the top or something?\p"
-	.string "Your Pokemon must be weary.\n"
+	.string "Your Pokémon must be weary.\n"
 	.string "I will do you a favor\l"
 	.string "and heal your party.$"
 

@@ -80,7 +80,7 @@ WishwellOcean_Text_XerxesDefeated:
 
 WishwellOcean_Text_XerxesPostBattle:
 	.string "I'll make a wish here in these\n"
-	.string "waters, that my next Pokemon battle\l"
+	.string "waters, that my next Pokémon battle\l"
 	.string "ends in success for me.$"
 
 WishwellOcean_Text_YvetteIntro:
@@ -138,13 +138,13 @@ WishwellOcean_Text_KuAndMoriNeedTwoMons:
 WishwellOcean_Text_PersephoneIntro:
 	.string "I just surfaced from a diving\n"
 	.string "expedition down real deep!\l"
-	.string "Here's some Pokemon I found!$"
+	.string "Here's some Pokémon I found!$"
 
 WishwellOcean_Text_PersephoneDefeated:
 	.string "I took a dive...$"
 
 WishwellOcean_Text_PersephonePostBattle:
-	.string "There are some Pokemon that\n"
+	.string "There are some Pokémon that\n"
 	.string "can only be found very deep\l"
 	.string "underwater! Try lookin' for them!$"
 
@@ -199,7 +199,7 @@ WishwellOcean_Text_EnriquePostBattle:
 
 WishwellOcean_Text_MariaIntro:
 	.string "There are so many fascinating\n"
-	.string "Pokemon in this world. Let me\l"
+	.string "Pokémon in this world. Let me\l"
 	.string "show you some of my favorites.$"
 
 WishwellOcean_Text_MariaDefeated:

@@ -53,7 +53,7 @@ FallarborSteepleInterior_Text_HeySlick:
 	.string "Slick! Then you'll be joinin'\l"
 	.string "the ranks of the hogs!\p"
 	.string "(This isn't a person...!\n"
-	.string "It's a Pokemon!)$"
+	.string "It's a Pokémon!)$"
 
 FallarborSteepleInterior_Text_LunasterWasHoldingOrb:
 	.string "(That Lunaster seemed to have\n"

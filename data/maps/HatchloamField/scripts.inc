@@ -282,13 +282,13 @@ HatchloamField_Text_JiyuAndShirouIntro:
 	.string "        technique? O-Okay...$"
 
 HatchloamField_Text_JiyuAndShirouDefeated:
-	.string "SHIROU: Our Pokemon's blades\n"
+	.string "SHIROU: Our Pokémon's blades\n"
 	.string "        were too dull...\l"
 	.string "JIYU: That is perfectly fine!\l"
 	.string "      They'll sharpen with time.$"
 
 HatchloamField_Text_JiyuAndShirouPostBattle:
-	.string "JIYU: Shirou and I and our Pokemon\n"
+	.string "JIYU: Shirou and I and our Pokémon\n"
 	.string "      train by dueling, blades drawn!\l"
 	.string "SHIROU: Pawniard and its evolutions\l"
 	.string "        are precise, if you train\l"

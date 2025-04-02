@@ -112,7 +112,7 @@ OldaleTown_PokemonCenter_2F_Text_YouveUnlockedNewBall:
 	.string "Ah! There they are! Lovely catches!\p"
 	.string "These tres anormale birds\n"
 	.string "are some of the most powerful\l"
-	.string "Pokemon in Hoenn, amie.\p"
+	.string "Pokémon in Hoenn, amie.\p"
 	.string "Inspiration strikes! Incroyable!\n"
 	.string "I must get to painting.\p"
 	.string "Merci, trainer. I will put in a good\n"

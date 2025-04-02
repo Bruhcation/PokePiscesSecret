@@ -1210,15 +1210,11 @@ static void Task_FieldPoisonEffect(u8 taskId)
     switch (tState)
     {
     case 0:
-        tMosaic += 2;
-        if (tMosaic > 8)
-            tState++;
-        break;
+        DestroyTask(taskId);
+        return;
     case 1:
-        tMosaic -= 2;
-        if (tMosaic == 0)
-            tState++;
-        break;
+        DestroyTask(taskId);
+        return;
     case 2:
         DestroyTask(taskId);
         return;

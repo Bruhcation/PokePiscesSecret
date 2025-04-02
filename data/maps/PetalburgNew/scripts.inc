@@ -151,7 +151,7 @@ PetalburgNew_Text_WoodsSign:
 	.string "PETALBURG WOODS AHEAD\n"
 	.string "CAUTION: Petalburg City is NOT\l"
 	.string "responsible for the violence\l"
-	.string "of the Pokemon in the forest.$"
+	.string "of the Pokémon in the forest.$"
 
 PetalburgNew_Text_NameSteven:
 	.string "Steven$"

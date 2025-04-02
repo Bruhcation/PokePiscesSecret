@@ -945,7 +945,7 @@ NewSooto_Text_AboutTheGym:
 	.string "for it all before going in!\p"
 	.string "It tends to be easier to prepare\n"
 	.string "your team once you have reached a\l"
-	.string "city with a gym in it. Your Pokemon\l"
+	.string "city with a gym in it. Your Pokémon\l"
 	.string "will feel a deep resolve to beat it,\l"
 	.string "and will gain experience at a much\l"
 	.string "faster rate until you get the badge!\p"
@@ -955,12 +955,12 @@ NewSooto_Text_AboutTheGym:
 	.string "help getting lower leveled team\l"
 	.string "members all caught up.\p"
 	.string "Speaking of helping low leveled\n"
-	.string "Pokemon, have one of these!$"
+	.string "Pokémon, have one of these!$"
 
 NewSooto_Text_AboutRareCandies:
 	.string "Rare Candies are a good way to\n"
 	.string "level without battling. They don't\l"
-	.string "let your Pokemon go above the\l"
+	.string "let your Pokémon go above the\l"
 	.string "level threshold for a gym, but they\l"
 	.string "certainly help with catch-up.\p"
 	.string "One last thing is that losing in\n"

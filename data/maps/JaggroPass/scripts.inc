@@ -268,7 +268,7 @@ JaggroPass_Text_NoSingingMove:
 	.string "do with it right now.)$"
 
 JaggroPass_Text_ItBecameLively:
-	.string "(Your Pokemon used a singing move\n"
+	.string "(Your Pokémon used a singing move\n"
 	.string "to add to the harmony...)\p"
 	.string "(The plant became lively!\n"
-	.string "It's a Wild Pokemon!)$"
+	.string "It's a Wild Pokémon!)$"

@@ -96,7 +96,7 @@ MossdeepCity_PokemonCenter_2F_EventScript_Infatuation::
     end
 
 MossdeepCity_PokemonCenter_2F_Text_WaterType:
-	.string "I like Water type Pokemon!\n"
+	.string "I like Water type Pokémon!\n"
 	.string "What about you?\l"
 	.string "They really do good in battle!\p"
 	.string "Only thing about it that is\n"
@@ -114,7 +114,7 @@ MossdeepCity_PokemonCenter_2F_Text_FightingType:
 	.string "At ease. My stance is always\n"
 	.string "at the ready, but I will not\l"
 	.string "attack you out of the blue.\p"
-	.string "Do you enjoy Fighting type Pokemon?\n"
+	.string "Do you enjoy Fighting type Pokémon?\n"
 	.string "They are the only ones that\l"
 	.string "can keep up with my training regimen.\p"
 	.string "Their moves hit hard when super\n"
@@ -126,16 +126,16 @@ MossdeepCity_PokemonCenter_2F_Text_FightingType:
 	.string "a stonewalling foe.$"
 
 MossdeepCity_PokemonCenter_2F_Text_Infatuation:
-	.string "Oh, to be a Pokemon in love...\n"
+	.string "Oh, to be a Pokémon in love...\n"
 	.string "they are so very clumsy when\l"
 	.string "they get Infatuated!\p"
 	.string "Moves like Attract can cause\n"
 	.string "the Infatuation status on\l"
-	.string "opposite-gender Pokemon.\l"
-	.string "When a Pokemon is in love, it will\l"
+	.string "opposite-gender Pokémon.\l"
+	.string "When a Pokémon is in love, it will\l"
 	.string "have a 25 percent chance to choose\l"
 	.string "not to attack because of its love.\p"
-	.string "In addition, Infatuated Pokemon\n"
+	.string "In addition, Infatuated Pokémon\n"
 	.string "take slightly more damage, and\l"
 	.string "deal slightly less damage.\l"
 	.string "They just can't bare to hurt the\l"

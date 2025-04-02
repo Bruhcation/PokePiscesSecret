@@ -4646,9 +4646,9 @@ static const u8 sVigorRootDescription[] = _(
     "once, but leaves it cursed.");
 
 static const u8 sSpiritAwayDescription[] = _(
-    "The user grabs the foe and\n"
-    "changes it to a Ghost-type.\n"
-    "Absorbs 3/4 the damage dealt.");
+    "Changes the foe into a Ghost-\n"
+    "type. Absorbs 3/4 damage done.\n"
+    "Can't be used consecutively.");
 
 static const u8 sPhantasmDescription[] = _(
     "Becomes a Phantom by cutting HP,\n"

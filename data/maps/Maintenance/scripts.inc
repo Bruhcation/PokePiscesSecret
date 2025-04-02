@@ -92,18 +92,18 @@ Maintenance_Text_FloorPlan:
 
 Maintenance_Text_ResearchBreakthrough:
 	.string "I have been doing intense research\n"
-	.string "into the Pokemon genome...\l"
+	.string "into the Pokémon genome...\l"
 	.string "and through that...! I have made\l"
 	.string "a discovery!\p"
 	.string "An... unpopular, discovery.\n"
-	.string "There is a certain gene in Pokemon\l"
+	.string "There is a certain gene in Pokémon\l"
 	.string "DNA that has been bred out\l"
 	.string "over decades... but I have found a\l"
 	.string "way to re-introduce it temporarily.\p"
 	.string "The Berserk Gene...\n"
 	.string "it grants power at the cost of sanity.\l"
 	.string "Naturally, I can't go public\l"
-	.string "with this. It'll be a Pokemon rights\l"
+	.string "with this. It'll be a Pokémon rights\l"
 	.string "kerfuffle and all that.\p"
 	.string "Buuuuuttt...... I DO want to\n"
 	.string "get field testing for the gene...\l"
@@ -113,13 +113,13 @@ Maintenance_Text_ResearchBreakthrough:
 	.string "Thanks.\n$"
 
 Maintenance_Text_HurtsTheirBrains:
-	.string "Use that on whatever Pokemon\n"
+	.string "Use that on whatever Pokémon\n"
 	.string "you want to go berserk...\l"
 	.string "as, uh, ethically as possible...\l"
 	.string "I guess...$"
 
 Maintenance_Text_AlreadyGaveBerserkGene:
-	.string "It seems certain Bug Pokemon\n"
+	.string "It seems certain Bug Pokémon\n"
 	.string "react to that gene stronger than\l"
 	.string "other species...$"
 
@@ -178,7 +178,7 @@ Maintenance_Text_YancyIntro:
 Maintenance_Text_YancyDefeated:
 	.string "Ah! I see now!\p"
 	.string "It also takes two to beat me;\n"
-	.string "you, AND, your Pokemon!$"
+	.string "you, AND, your Pokémon!$"
 
 Maintenance_Text_YancyPostBattle:
 	.string "The tango has always been hard\n"
@@ -232,7 +232,7 @@ Maintenance_Text_AnonPostBattle:
 
 Maintenance_Text_RobinIntro:
 	.string "You're no match for these\n"
-	.string "Pokemon I “acquired”!$"
+	.string "Pokémon I “acquired”!$"
 
 Maintenance_Text_RobinDefeated:
 	.string "Oops, ehhh... may have\n"

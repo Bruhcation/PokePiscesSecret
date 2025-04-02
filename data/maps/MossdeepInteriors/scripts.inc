@@ -114,7 +114,7 @@ MossdeepInteriors_Text_MossIntNPC1:
 MossdeepInteriors_Text_MossIntNPC2:
 	.string "The trainers that call Mossdeep\n"
 	.string "City's Gym their home all train\l"
-	.string "Psychic type Pokemon.\l"
+	.string "Psychic type Pokémon.\l"
 	.string "They're avid meditators, so they\l"
 	.string "are quite the silent types.\p"
 	.string "My little girl really wants to\n"
@@ -123,7 +123,7 @@ MossdeepInteriors_Text_MossIntNPC2:
 
 MossdeepInteriors_Text_MossIntNPC3:
 	.string "Hey, um, have you seen some\n"
-	.string "sort of egg-like Pokemon sneaking\l"
+	.string "sort of egg-like Pokémon sneaking\l"
 	.string "around the city? About yay high?\p"
 	.string "What a nuisance it has been. Someone\n"
 	.string "should corner that thing and teach\l"
@@ -134,10 +134,10 @@ MossdeepInteriors_Text_MossIntNPC3:
 	.string "to think of a different angle.$"
 
 MossdeepInteriors_Text_MossIntNPC4:
-	.string "Pokemon Eggs are pretty rare\n"
+	.string "Pokémon Eggs are pretty rare\n"
 	.string "in Hoenn these days. No places\l"
-	.string "do Pokemon breeding much.\p"
-	.string "Only wild Pokemon lay Eggs, I guess.\n"
+	.string "do Pokémon breeding much.\p"
+	.string "Only wild Pokémon lay Eggs, I guess.\n"
 	.string "But it's hard to find them!\l"
 	.string "Maybe you can try and re-claim\l"
 	.string "a stolen one from an egg thief?$"

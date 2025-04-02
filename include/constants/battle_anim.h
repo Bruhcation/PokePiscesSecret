@@ -446,6 +446,7 @@
 #define ANIM_TAG_TORPEDO                    (ANIM_SPRITES_START + 432)
 #define ANIM_TAG_SHRIMP                     (ANIM_SPRITES_START + 433)
 #define ANIM_TAG_SHOOTING_NAIL              (ANIM_SPRITES_START + 434)
+#define ANIM_TAG_SALT_PARTICLE              (ANIM_SPRITES_START + 435)
 
 // battlers
 #define ANIM_ATTACKER         0

@@ -4756,6 +4756,7 @@ const u16 gEggMoves[] = {
         MOVE_SPIRIT_DANCE,
         MOVE_PHANTASM,
         MOVE_ALLURING_VOICE,
+        MOVE_ICY_WIND,
         MOVE_DESTINY_BOND,
         MOVE_DEARLY_DEPART),
 

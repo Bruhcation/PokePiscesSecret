@@ -74,7 +74,7 @@ MeteorNadir_Text_TimeToStepIn:
 MeteorNadir_Text_BreakThemUp:
 	.string "(Through a tough battle,\n"
 	.string "you manage to split up and\l"
-	.string "weaken the two Legendary Pokemon!)\p"
+	.string "weaken the two Legendary Pokémon!)\p"
 	.string "(Kyogre begins its retreat,\n"
 	.string "and Luo-Shan starts to glow a\l"
 	.string "bright white...)$"

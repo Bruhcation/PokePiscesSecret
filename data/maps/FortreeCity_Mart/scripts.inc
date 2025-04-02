@@ -90,13 +90,13 @@ FortreeCity_Mart_Text_Freeze:
 	.string "status's rarer relative, Freeze?\l"
 	.string "It's definitely not as common,\l"
 	.string "but has a more unique effect.\p"
-	.string "Frozen Pokemon get disabled\n"
+	.string "Frozen Pokémon get disabled\n"
 	.string "completely for 2 to 3 turns.\l"
 	.string "They take about half the damage they\l"
 	.string "normally would from special attacks\l"
 	.string "during this time. Any physical\l"
 	.string "or Fire type move will thaw out\l"
-	.string "the Pokemon, doing extra damage\l"
+	.string "the Pokémon, doing extra damage\l"
 	.string "in the process.$"
 
 FortreeCity_Mart_Text_AcroBike:

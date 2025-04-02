@@ -214,7 +214,7 @@ RustboroNew_Text_BridgeSign:
 	.string "city limits! The bridge will\l"
 	.string "link you up with the Mt. Chimney\l"
 	.string "region to the north. Be sure\l"
-	.string "to bring a Pokemon who can take\l"
+	.string "to bring a Pokémon who can take\l"
 	.string "you across the water!$"
 
 RustboroNew_Text_WhisperCliffSign:

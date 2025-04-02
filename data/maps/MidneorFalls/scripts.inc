@@ -301,7 +301,7 @@ MidneorFalls_Text_ErkinAndKayaPostBattle:
 MidneorFalls_Text_ErkinAndKayaNeedTwoMons:
 	.string "ERKIN: I will reserve myself\n"
 	.string "       from this battle.\l"
-	.string "KAYA: ...One Pokemon is too little.$"
+	.string "KAYA: ...One Pokémon is too little.$"
 
 MidneorFalls_Text_GriseldaIntro:
 	.string "Halt, stranger! I cannot allow\n"
@@ -340,9 +340,9 @@ MidneorFalls_Text_ZephyrDefeated:
 	.string "Maybe you have what it takes!$"
 
 MidneorFalls_Text_ZephyrPostBattle:
-	.string "Watch out for Water type Pokemon\n"
+	.string "Watch out for Water type Pokémon\n"
 	.string "with Drizzle, and Fire type\l"
-	.string "Pokemon with Drought...\l"
+	.string "Pokémon with Drought...\l"
 	.string "they can be particularly deadly.$"
 
 MidneorFalls_Text_AnthreenyIntro:
@@ -368,14 +368,14 @@ MidneorFalls_Text_SchuliDefeated:
 	.string "Ah, the time flew by!$"
 
 MidneorFalls_Text_SchuliPostBattle:
-	.string "Be kind to your family of Pokemon,\n"
+	.string "Be kind to your family of Pokémon,\n"
 	.string "while on this journey. Sometimes\l"
 	.string "in life... you won't realize how\l"
 	.string "fast the good times will go on by.$"
 
 MidneorFalls_Text_GerierIntro:
 	.string "Have you been paying proper\n"
-	.string "attention to your Pokemon's EVs?\l"
+	.string "attention to your Pokémon's EVs?\l"
 	.string "I strive to have them be perfect!$"
 
 MidneorFalls_Text_GerierDefeated:
@@ -408,7 +408,7 @@ MidneorFalls_Text_OzoneDoingResearch:
 	.string "weaker looking trainers like you\l"
 	.string "to be around while we test\l"
 	.string "the effectiveness of powerful\l"
-	.string "Pokemon deep underwater.\p"
+	.string "Pokémon deep underwater.\p"
 	.string "Maybe get a few more battling\n"
 	.string "notches under your belt?\l"
 	.string "Then I could consider it.$"

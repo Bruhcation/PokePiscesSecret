@@ -5486,9 +5486,9 @@ const u8 gSaintisowPokedexText[] = _(
 
 const u8 gSanctisowPokedexText[] = _(
     "Their feathers are so soft that they're used in\n"
-    "high-quality cushions. Saintisow spread and\n"
+    "high-quality cushions. Sanctisow spread and\n"
     "raise their many wings when they recognize\n"
-    "danger. Saintisow then whip up strong winds to\n"
+    "danger. Sanctisow then whip up strong winds to\n"
     "fend off attackers.");
 
 const u8 gSowphirothPokedexText[] = _(
@@ -5795,8 +5795,8 @@ const u8 gMannikoPokedexText[] = _(
     "Slowly, Manniko absorbs the life force of the\n"
     "unfortunate girl who loves it, gradually losing\n"
     "its rigid wooden features. The victim eventually\n"
-    "becomes lethargic and anti-social, lashing out at\n"
-    "those who attempt to separate her and the doll.");
+    "becomes lethargic and anti-social, lashing out\n"
+    "at those who try to separate her and the doll.");
 
 const u8 gKowakoPokedexText[] = _(
     "The girl is left as a husk, a wooden doll with no\n"

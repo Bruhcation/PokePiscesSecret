@@ -106,7 +106,7 @@ SSTidalMidTeriors_Text_TidalTer3:
 	.string "Just because we encourage trainers\n"
 	.string "to not evolve their Colfin, does\l"
 	.string "not mean their evolved form deserves\l"
-	.string "to be mistreated! All Pokemon\l"
+	.string "to be mistreated! All Pokémon\l"
 	.string "should earn our care and respect.$"
 
 SSTidalMidTeriors_Text_TidalTer4:
@@ -145,13 +145,13 @@ SSTidalMidTeriors_Text_ThanksForTrading:
 	.string "real well, kid!$"
 
 SSTidalMidTeriors_Text_ColfinNeedGoodRoleModel:
-	.string "My absolute favorite Pokemon\n"
+	.string "My absolute favorite Pokémon\n"
 	.string "is Colfin. What a cutie-patootie!\p"
 	.string "Their brains are like childrens'.\n"
 	.string "Very susceptible to influence.\l"
 	.string "Let one fall in with the\l"
 	.string "wrong crowd... and it may evolve\l"
-	.string "to become a pretty mean Pokemon.\p"
+	.string "to become a pretty mean Pokémon.\p"
 	.string "I have been starting a movement\n"
 	.string "for trainers to be more caring\l"
 	.string "towards their Colfin! We give\l"

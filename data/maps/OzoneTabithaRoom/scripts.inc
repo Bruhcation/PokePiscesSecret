@@ -47,7 +47,7 @@ OzoneTabithaRoom_Text_TabithaIntro:
 	.string "I knew the trainer we would be\l"
 	.string "battling would be you, {PLAYER}.\p"
 	.string "I am inclined to believe you may\n"
-	.string "well be the best Pokemon Trainer\l"
+	.string "well be the best Pokémon Trainer\l"
 	.string "Hoenn has seen in some time.\l"
 	.string "It is an honor to have sparred\l"
 	.string "with you in the past, and it will\l"

@@ -158,7 +158,7 @@ AshlandsHouse_Text_TakePearlString:
 
 AshlandsHouse_Text_IHearAMonLikesThat:
 	.string "Pearl enthusiasts talk a lot\n"
-	.string "about a specific Pokemon that\l"
+	.string "about a specific Pokémon that\l"
 	.string "likes Pearl Strings. Maybe that'd\l"
 	.string "be something you'd want to check out?$"
 

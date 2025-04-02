@@ -63,7 +63,7 @@ RustboroInteriors_Text_GaveDoubleWing:
 	.string "Dual Wingbeat would sound way worse.$"
 
 RustboroInteriors_Text_WhatINeed:
-	.string "Heyo! Do you have a Pokemon\n"
+	.string "Heyo! Do you have a Pokémon\n"
 	.string "that you particularly have a\l"
 	.string "strong bond with? Your best buddy?\p"
 	.string "This here Garzilla is my trusted\n"
@@ -79,7 +79,7 @@ RustboroInteriors_Text_WhatINeed:
 	.string "trade cards if you have one!$"
 
 RustboroInteriors_Text_WillYouTradeCards:
-	.string "Heyo! Do you have a Pokemon\n"
+	.string "Heyo! Do you have a Pokémon\n"
 	.string "that you particularly have a\l"
 	.string "strong bond with? Your best buddy?\p"
 	.string "This here Garzilla is my trusted\n"

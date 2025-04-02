@@ -65,7 +65,7 @@ FossilShore_Text_ShellRiddle:
 	.string "A craftsman shall take the call$"
 
 FossilShore_Text_HereIsReward:
-	.string "(This Pokemon seems pleased\n"
+	.string "(This Pokémon seems pleased\n"
 	.string "with you. She is gesturing towards\l"
 	.string "your Pearl String.)\p"
 	.string "(You hand the String over, and she\n"

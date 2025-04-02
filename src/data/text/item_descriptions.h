@@ -1189,9 +1189,10 @@ static const u8 sFireStoneDesc[] = _(
     "evolve.");
 
 static const u8 sWaterStoneDesc[] = _(
-    "Could evolve a Pokémon.\n"
-    "Or, you could choose\n"
-    "to sell this item.");
+    "Could evolve a\n"
+    "Pokémon. Or, you\n"
+    "could choose to sell\n"
+    "this item.");
 
 static const u8 sThunderStoneDesc[] = _(
     "An elemental stone\n"
@@ -2488,7 +2489,7 @@ static const u8 sLuminousMossDesc[] = _(
 
 static const u8 sSnowballDesc[] = _(
     "A single-use snowball\n"
-    "that boosts Attack\n"
+    "that boosts Sp. Atk\n"
     "and Speed if hit by a\n"
     "Ice-type move.");
 
@@ -2858,7 +2859,7 @@ static const u8 sLeppaBerryDesc[] = _(
 static const u8 sOranBerryDesc[] = _(
     "If a Pokémon holds\n"
     "this Berry, it can\n"
-    "heal 10 HP to iself.");
+    "heal 10 HP to itself.");
 
 static const u8 sPersimBerryDesc[] = _(
     "If a Pokémon holds\n"
@@ -4546,7 +4547,7 @@ static const u8 sAThingDesc[] = _(
 
 static const u8 sSaltyTearDesc[] = _(
     "A crystallized tear\n"
-    "that halves a Sadsod's\n"
+    "that halves Sadsod's\n"
     "stats and makes it\n"
     "less friendly.");
 
@@ -4761,10 +4762,10 @@ static const u8 sPokerCardDesc[] = _(
     "love of real magic.");
 
 static const u8 sCrypticPlateDesc[] = _(
-    "An otherworldly tablet\n"
-    "for a Uhefoe. Sets up\n"
-    "Gravity and Safeguard.\n"
-    "Boosts Sp. Atk.");
+    "A tablet for Uhefoe.\n"
+    "Sets up Gravity and\n"
+    "Safeguard. Boosts\n"
+    "its Sp. Atk stat.");
 
 static const u8 sChupacabraDesc[] = _(
     "A doll drained of life\n"

@@ -369,7 +369,7 @@ ZotpyreGym_Text_TomieDefeated:
 
 ZotpyreGym_Text_TomiePostBattle:
 	.string "I must say I am built like\n"
-	.string "a Relic-type Pokemon.\l"
+	.string "a Relic-type Pokémon.\l"
 	.string "They're also immune to\l"
 	.string "falling asleep!$"
 
@@ -392,7 +392,7 @@ ZotpyreGym_Text_MisakiDefeated:
 ZotpyreGym_Text_MisakiPostBattle:
 	.string "If only I could take some cues\n"
 	.string "from my Maeracholy and Froslass...\p"
-	.string "As Ghost type Pokemon, they are\n"
+	.string "As Ghost type Pokémon, they are\n"
 	.string "not easily scared...\l"
 	.string "they can't be trapped,\l"
 	.string "or made to panic.$"
@@ -534,8 +534,8 @@ ZotpyreGym_Text_NotEnoughPokemon:
 	.string "Who is this mighty weak\n"
 	.string "lookin' youngin'?\p"
 	.string "Why, they've only got one\n"
-	.string "healthy Pokemon to their name!\l"
+	.string "healthy Pokémon to their name!\l"
 	.string "Iddn't that laughable! Bah!\p"
 	.string "Get yer tuckus outta my gym!\n"
 	.string "Come back if ya manage to round\l"
-	.string "up more than just one Pokemon!$"
+	.string "up more than just one Pokémon!$"

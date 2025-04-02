@@ -424,6 +424,6 @@ VerdanturfInteriors_Text_NotEnoughPokemon:
 	.string "...Is what I would say, if you\n"
 	.string "actually came here for a fight.\l"
 	.string "You make me laugh. One healthy\l"
-	.string "Pokemon, and you have the gall to\l"
+	.string "Pokémon, and you have the gall to\l"
 	.string "pester me to fight you? Bollocks.\p"
 	.string "Leave.$"

@@ -58,7 +58,7 @@ FortreeCity_PokemonCenter_1F_Text_Grassy:
 	.string "Grassy Terrain the most.\p"
 	.string "It boosts the power of Grass moves\n"
 	.string "and restores a bit of HP for\l"
-	.string "all grounded Pokemon every turn!$"
+	.string "all grounded Pokémon every turn!$"
 
 FortreeCity_PokemonCenter_1F_Text_Electric:
 	.string "Hey, we're a part of the\n"
@@ -66,7 +66,7 @@ FortreeCity_PokemonCenter_1F_Text_Electric:
 	.string "Electric Terrain the most.\p"
 	.string "It boosts the power of Electric moves\n"
 	.string "and prevents all grounded\l"
-	.string "Pokemon from falling asleep!$"
+	.string "Pokémon from falling asleep!$"
 
 FortreeCity_PokemonCenter_1F_Text_Psychic:
 	.string "Hey, we're a part of the\n"
@@ -74,7 +74,7 @@ FortreeCity_PokemonCenter_1F_Text_Psychic:
 	.string "Psychic Terrain the most.\p"
 	.string "It boosts the power of Psychic moves\n"
 	.string "and prevents all grounded\l"
-	.string "Pokemon from using priority moves!$"
+	.string "Pokémon from using priority moves!$"
 
 FortreeCity_PokemonCenter_1F_Text_Misty:
 	.string "Hey, we're a part of the\n"
@@ -83,18 +83,18 @@ FortreeCity_PokemonCenter_1F_Text_Misty:
 	.string "It boosts the power of Fairy moves\n"
 	.string "and increases the secondary effect\l"
 	.string "chances of moves for all grounded\l"
-	.string "Pokemon! ...Except for flinch!$"
+	.string "Pokémon! ...Except for flinch!$"
 
 FortreeCity_PokemonCenter_1F_Text_Ground:
 	.string "The Ground type is a phenomenal\n"
 	.string "attacking type. I like using those\l"
-	.string "Pokemon the best.\l"
+	.string "Pokémon the best.\l"
 	.string "As an added bonus, Ground type\l"
-	.string "Pokemon receive slightly less\l"
+	.string "Pokémon receive slightly less\l"
 	.string "damage when a Terrain is present.$"
 
 FortreeCity_PokemonCenter_1F_Text_Flying:
-	.string "Flying type Pokemon are really\n"
+	.string "Flying type Pokémon are really\n"
 	.string "crafty! No way for them to be\l"
 	.string "bamboozled by entry hazards,\l"
 	.string "they just fly right over them!\l"

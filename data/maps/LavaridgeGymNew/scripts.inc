@@ -1088,7 +1088,7 @@ LavaridgeGymNew_Text_ItBurns:
 	.string "This is the most searing hot food\l"
 	.string "you have ever let into your mouth.)\p"
 	.string "(It not only burned your esophagus,\n"
-	.string "but your party Pokemon got\l"
+	.string "but your party Pokémon got\l"
 	.string "burned by association...)$"
 
 LavaridgeGymNew_Text_OhYouEatEnoughSoup:
@@ -1175,7 +1175,7 @@ LavaridgeGymNew_Text_ByeBye:
 	.string "easy on you. Was worried you'd\l"
 	.string "have a heart attack or somethin'\l"
 	.string "if I went at 100 percent.\p"
-	.string "So, with that badge, your Pokemon\n"
+	.string "So, with that badge, your Pokémon\n"
 	.string "can use the Strength field move\l"
 	.string "outside of battle. I don't\l"
 	.string "PERSONALLY need it, since I\l"
@@ -1190,7 +1190,7 @@ LavaridgeGymNew_Text_NotEnoughPokemon:
 	.string "Oh... but you are not actually\n"
 	.string "prepared for this battle.\l"
 	.string "That is quite unfortunate.\p"
-	.string "Your Pokemon team is not nearly\n"
+	.string "Your Pokémon team is not nearly\n"
 	.string "healthy enough to fight...\p"
 	.string "No, we will not be healing you\n"
 	.string "before the battle. In fact, we\l"

@@ -360,7 +360,7 @@ MasonriedHike_Text_ImABiter:
 	.string "(This man is gnashing his teeth.)\p"
 	.string "I'm a BITER. I like to BITE!\n"
 	.string "Don't look at me like that's weird!\p"
-	.string "I like to have my Pokemon BITE\n"
+	.string "I like to have my Pokémon BITE\n"
 	.string "in battle too. Chomp-chomp!$"
 
 MasonriedHike_Text_NoBiteMove:
@@ -378,7 +378,7 @@ MasonriedHike_Text_YouHaveBiteMove:
 
 MasonriedHike_Text_AlreadyGaveRazorFang:
 	.string "Gligar can bite the best\n"
-	.string "out of any Pokemon!\l"
+	.string "out of any Pokémon!\l"
 	.string "And that's a Fang Fact!$"
 
 MasonriedHike_Text_MichaelIntro:
@@ -452,9 +452,9 @@ MasonriedHike_Text_NameTabitha:
 MasonriedHike_Text_HowToWakeEmUp:
 	.string "{PLAYER}, it appears our path\n"
 	.string "has been blocked.\p"
-	.string "This Pokemon is called Bolterock.\n"
+	.string "This Pokémon is called Bolterock.\n"
 	.string "It is, barring few, one of the\l"
-	.string "largest species of Pokemon\l"
+	.string "largest species of Pokémon\l"
 	.string "I have laid eyes on.\p"
 	.string "As you might surmise... a\n"
 	.string "sleeping Bolterock is no easy\l"
@@ -517,7 +517,7 @@ MasonriedHike_Text_BolterockGone:
 	.string "Bolte-blocked.)$"
 
 MasonriedHike_Text_CantPassBolterock:
-	.string "(This ginormous Pokemon is\n"
+	.string "(This ginormous Pokémon is\n"
 	.string "gently snoring.\l"
 	.string "And is also blocking your way.)$"
 

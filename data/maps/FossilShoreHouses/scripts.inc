@@ -232,7 +232,7 @@ FossilShoreHouses_Text_PostNoOld:
 FossilShoreHouses_Text_FishingAdviceNoOld:
 	.string "Take them there rods out to any\n"
 	.string "shoreline and let 'em rip.\l"
-	.string "Huge variety of Pokemon in\l"
+	.string "Huge variety of Pokémon in\l"
 	.string "the water that you can't be\l"
 	.string "gettin' anywhere else.\p"
 	.string "Don't remain ignorant to the\n"
@@ -248,13 +248,13 @@ FossilShoreHouses_Text_FishingAdviceNoGood:
 	.string "You've gotten so used to the Old Rod\n"
 	.string "that these rods'll blown your\l"
 	.string "dang mind with how enticing they\l"
-	.string "are to water-dwellin' Pokemon.\p"
+	.string "are to water-dwellin' Pokémon.\p"
 	.string "Try 'em in all sorts'a places.\n"
 	.string "Good luck out there... n' never\l"
 	.string "stray too far from the shores.$"
 
 FossilShoreHouses_Text_HowsYourFishing:
-	.string "Sadsod's my most liked Pokemon.\n"
+	.string "Sadsod's my most liked Pokémon.\n"
 	.string "There's somethin' in their\l"
 	.string "demeanor that makes ya want\l"
 	.string "to care for 'em.\p"

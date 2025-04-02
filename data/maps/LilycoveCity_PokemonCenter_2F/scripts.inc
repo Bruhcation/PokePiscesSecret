@@ -119,11 +119,11 @@ LilycoveCity_PokemonCenter_2F_EventScript_Panic::
 LilycoveCity_PokemonCenter_2F_Text_CheckPP:
 	.string "Have you been keeping a close eye\n"
 	.string "of the PP of the moves on\l"
-	.string "your Pokemon?\p"
+	.string "your Pokémon?\p"
 	.string "When you go on long treks, it can be\n"
 	.string "easy to lose track of how\l"
 	.string "much PP you are using.\l"
-	.string "Especially if your Pokemon have\l"
+	.string "Especially if your Pokémon have\l"
 	.string "gotten afflicted with the Panic\l"
 	.string "status, or have been targetted\l"
 	.string "by moves like Spite and Grudge.\p"
@@ -146,13 +146,13 @@ LilycoveCity_PokemonCenter_2F_Text_PurplinaBalls:
 LilycoveCity_PokemonCenter_2F_Text_Panic:
 	.string "Don't panic about Panic!\n"
 	.string "The status, I mean.\p"
-	.string "When your Pokemon are Panicking,\n"
+	.string "When your Pokémon are Panicking,\n"
 	.string "not only do they have their\l"
 	.string "PP usage upped by 1, but they\l"
 	.string "also deal slightly less damage\l"
 	.string "than they normally would.\p"
 	.string "Get yourself a Ghost or Dark\n"
-	.string "type Pokemon... both of them\l"
+	.string "type Pokémon... both of them\l"
 	.string "are immune to the status.$"
 
 LilycoveCity_PokemonCenter_2F_Text_NamePhillipe:

@@ -816,15 +816,12 @@ BattleScript_EffectSpikeCannon::
 	moveendall
 	end
 BattleScript_EffectSpikeCannonMiss::
-	setbyte sB_ANIM_TURN, 1
 	attackstring
 	pause B_WAIT_TIME_SHORT
 	effectivenesssound
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
 	bichalfword gMoveResultFlags, MOVE_RESULT_MISSED
-	attackanimation
-	waitanimation
 	trysetspikes BS_TARGET, BattleScript_SpikeCannonSkipEffect
 	printstring STRINGID_SPIKESSCATTERED
 	waitmessage B_WAIT_TIME_LONG
@@ -856,7 +853,6 @@ BattleScript_EffectFocusBlast::
 	moveendall
 	end
 BattleScript_EffectFocusBlastMiss::
-	setbyte sB_ANIM_TURN, 1
 	attackstring
 	pause B_WAIT_TIME_SHORT
 	effectivenesssound
@@ -876,8 +872,6 @@ BattleScript_FocusBlastStatUp::
 	pause B_WAIT_TIME_SHORT
 	goto BattleScript_FocusBlastStatUpPrintString
 BattleScript_FocusBlastStatUpAttackAnim::
-	attackanimation
-	waitanimation
 	setgraphicalstatchangevalues
 	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 BattleScript_FocusBlastStatUpPrintString::
@@ -5614,7 +5608,7 @@ BattleScript_SpookSuccessSwitch::
 	trytoclearprimalweather
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
-	switchinanim BS_TARGET, FALSE
+	switchinanim BS_TARGET, FALSE, FALSE
 	waitstate
 	printstring STRINGID_PKMNWASDRAGGEDOUT
 	switchineffects BS_TARGET
@@ -5672,7 +5666,7 @@ BattleScript_DearlyDepartSuccessSwitch::
 	trytoclearprimalweather
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
-	switchinanim BS_TARGET, FALSE
+	switchinanim BS_TARGET, FALSE, FALSE
 	waitstate
 	printstring STRINGID_PKMNWASDRAGGEDOUT
 	switchineffects BS_TARGET
@@ -5933,12 +5927,12 @@ BattleScript_MoveSwitch:
 	jumpifcantswitch SWITCH_IGNORE_ESCAPE_PREVENTION | BS_ATTACKER, BattleScript_MoveSwitchEnd
 	printstring STRINGID_PKMNWENTBACK
 	waitmessage B_WAIT_TIME_SHORT
-BattleScript_MoveSwitchOpenPartyScreen:
+BattleScript_MoveSwitchOpenPartyScreen::
 	openpartyscreen BS_ATTACKER, BattleScript_MoveSwitchEnd
 	switchoutabilities BS_ATTACKER
 	waitstate
 	switchhandleorder BS_ATTACKER, 2
-	returntoball BS_ATTACKER
+	returntoball BS_ATTACKER, FALSE
 	getswitchedmondata BS_ATTACKER
 	switchindataupdate BS_ATTACKER
 	hpthresholds BS_ATTACKER
@@ -5946,7 +5940,7 @@ BattleScript_MoveSwitchOpenPartyScreen:
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
-	switchinanim BS_ATTACKER, TRUE
+	switchinanim BS_ATTACKER, FALSE, TRUE
 	waitstate
 	switchineffects BS_ATTACKER
 BattleScript_MoveSwitchEnd:
@@ -6170,7 +6164,7 @@ BattleScript_EffectRevivalBlessing::
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectRevivalBlessingSendOut:
-    switchinanim BS_SCRIPTING, FALSE
+    switchinanim BS_SCRIPTING, FALSE, FALSE
 	waitstate
 	switchineffects BS_SCRIPTING
     goto BattleScript_MoveEnd
@@ -7530,6 +7524,8 @@ BattleScript_VCreateStatLossRet:
 	return
 
 BattleScript_SpectralThiefSteal::
+	attackanimation
+	waitanimation
 	printstring STRINGID_SPECTRALTHIEFSTEAL
 	waitmessage B_WAIT_TIME_LONG
 	setbyte sB_ANIM_ARG2, 0
@@ -9197,7 +9193,7 @@ BattleScript_EffectHealingWish:
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
-	switchinanim BS_ATTACKER, TRUE
+	switchinanim BS_ATTACKER, FALSE, TRUE
 	waitstate
 	switchineffects BS_ATTACKER
 .endif
@@ -12176,7 +12172,7 @@ BattleScript_EffectBatonPass::
 	switchoutabilities BS_ATTACKER
 	waitstate
 	switchhandleorder BS_ATTACKER, 2
-	returntoball BS_ATTACKER
+	returntoball BS_ATTACKER, FALSE
 	getswitchedmondata BS_ATTACKER
 	switchindataupdate BS_ATTACKER
 	hpthresholds BS_ATTACKER
@@ -12184,7 +12180,7 @@ BattleScript_EffectBatonPass::
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
-	switchinanim BS_ATTACKER, TRUE
+	switchinanim BS_ATTACKER, FALSE, TRUE
 	waitstate
 	switchineffects BS_ATTACKER
 	goto BattleScript_MoveEnd
@@ -13835,7 +13831,7 @@ BattleScript_FaintedMonTryChoose:
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
 	hidepartystatussummary BS_ATTACKER
-	switchinanim BS_ATTACKER, 0
+	switchinanim BS_ATTACKER, FALSE, FALSE
 	waitstate
 	setbyte sSHIFT_SWITCHED, 1
 BattleScript_FaintedMonSendOutNew:
@@ -13848,7 +13844,7 @@ BattleScript_FaintedMonSendOutNew:
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
 	hidepartystatussummary BS_FAINTED
-	switchinanim BS_FAINTED, FALSE
+	switchinanim BS_FAINTED, FALSE, FALSE
 	waitstate
 	resetplayerfainted
 	trytrainerslidelastonmsg BS_FAINTED
@@ -13883,7 +13879,7 @@ BattleScript_LinkHandleFaintedMonLoop::
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
 	hidepartystatussummary BS_FAINTED
-	switchinanim BS_FAINTED, FALSE
+	switchinanim BS_FAINTED, FALSE, FALSE
 	waitstate
 	switchineffects BS_FAINTED_LINK_MULTIPLE_1
 	jumpifbytenotequal gBattlerFainted, gBattlersCount, BattleScript_LinkHandleFaintedMonLoop
@@ -14110,7 +14106,7 @@ BattleScript_DoSwitchOut::
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
 	hidepartystatussummary BS_ATTACKER
-	switchinanim BS_ATTACKER, FALSE
+	switchinanim BS_ATTACKER, FALSE, FALSE
 	waitstate
 	switchineffects BS_ATTACKER
 	moveendcase MOVEEND_STATUS_IMMUNITY_ABILITIES
@@ -14359,61 +14355,63 @@ BattleScript_SafeguardEnds::
 	waitmessage B_WAIT_TIME_LONG
 	end2
 
-BattleScript_TickedTurnDrain::
-	playanimation BS_ATTACKER, B_ANIM_LEECH_SEED_DRAIN, sB_ANIM_ARG1
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
-	healthbarupdate BS_ATTACKER
-	datahpupdate BS_ATTACKER
-	copyword gBattleMoveDamage, gHpDealt
-	jumpifability BS_ATTACKER, ABILITY_LIQUID_OOZE, BattleScript_TickedTurnPrintLiquidOoze
-	setbyte cMULTISTRING_CHOOSER, B_MSG_LEECH_SEED_DRAIN
-	jumpifstatus3 BS_TARGET, STATUS3_HEAL_BLOCK, BattleScript_TickedHealBlock
-	manipulatedamage DMG_BIG_ROOT
-	goto BattleScript_TickedTurnPrintAndUpdateHp
-BattleScript_TickedTurnPrintLiquidOoze::
+BattleScript_LeechSeedTurnDrainLiquidOoze::
+	call BattleScript_LeechSeedTurnDrain
+	manipulatedamage DMG_CHANGE_SIGN
 	copybyte gBattlerAbility, gBattlerAttacker
 	call BattleScript_AbilityPopUp
-	setbyte cMULTISTRING_CHOOSER, B_MSG_LEECH_SEED_OOZE
-BattleScript_TickedTurnPrintAndUpdateHp::
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
-	healthbarupdate BS_TARGET
-	datahpupdate BS_TARGET
-	printfromtable gTickedStringIds
-	waitmessage B_WAIT_TIME_LONG
-	tryfaintmon BS_ATTACKER
-	tryfaintmon BS_TARGET
-	end2
-BattleScript_TickedHealBlock:
-	setword gBattleMoveDamage, 0
-	goto BattleScript_TickedTurnPrintAndUpdateHp
+	goto BattleScript_LeechSeedTurnDrainGainHp
 
-BattleScript_LeechSeedTurnDrain::
-	playanimation BS_ATTACKER, B_ANIM_LEECH_SEED_DRAIN, sB_ANIM_ARG1
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
-	healthbarupdate BS_ATTACKER
-	datahpupdate BS_ATTACKER
-	copyword gBattleMoveDamage, gHpDealt
-	jumpifability BS_ATTACKER, ABILITY_LIQUID_OOZE, BattleScript_LeechSeedTurnPrintLiquidOoze
-	setbyte cMULTISTRING_CHOOSER, B_MSG_LEECH_SEED_DRAIN
-	jumpifstatus3 BS_TARGET, STATUS3_HEAL_BLOCK, BattleScript_LeechSeedHealBlock
+BattleScript_LeechSeedTurnDrainHealBlock::
+	call BattleScript_LeechSeedTurnDrain
+	end2
+
+BattleScript_LeechSeedTurnDrainRecovery::
+	call BattleScript_LeechSeedTurnDrain
+BattleScript_LeechSeedTurnDrainGainHp:
 	manipulatedamage DMG_BIG_ROOT
-	goto BattleScript_LeechSeedTurnPrintAndUpdateHp
-BattleScript_LeechSeedTurnPrintLiquidOoze::
-	copybyte gBattlerAbility, gBattlerAttacker
-	call BattleScript_AbilityPopUp
-	setbyte cMULTISTRING_CHOOSER, B_MSG_LEECH_SEED_OOZE
-BattleScript_LeechSeedTurnPrintAndUpdateHp::
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	healthbarupdate BS_TARGET
 	datahpupdate BS_TARGET
 	printfromtable gLeechSeedStringIds
 	waitmessage B_WAIT_TIME_LONG
-	tryfaintmon BS_ATTACKER
 	tryfaintmon BS_TARGET
 	end2
-BattleScript_LeechSeedHealBlock:
-	setword gBattleMoveDamage, 0
-	goto BattleScript_LeechSeedTurnPrintAndUpdateHp
+
+BattleScript_LeechSeedTurnDrain:
+	playanimation BS_ATTACKER, B_ANIM_LEECH_SEED_DRAIN, sB_ANIM_ARG1
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	tryfaintmon BS_ATTACKER
+	return
+
+BattleScript_TickedTurnDrainLiquidOoze::
+	call BattleScript_TickedTurnDrain
+	manipulatedamage DMG_CHANGE_SIGN
+	copybyte gBattlerAbility, gBattlerAttacker
+	call BattleScript_AbilityPopUp
+	goto BattleScript_TickedTurnDrainGainHp
+
+BattleScript_TickedTurnDrainHealBlock::
+	call BattleScript_TickedTurnDrain
+	end2
+
+BattleScript_TickedTurnDrainRecovery::
+	call BattleScript_TickedTurnDrain
+BattleScript_TickedTurnDrainGainHp:
+	manipulatedamage DMG_BIG_ROOT
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printfromtable gLeechSeedStringIds
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_TARGET
+	end2
+
+BattleScript_TickedTurnDrain:
+	playanimation BS_ATTACKER, B_ANIM_LEECH_SEED_DRAIN, sB_ANIM_ARG1
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	tryfaintmon BS_ATTACKER
+	return
 
 BattleScript_BideStoringEnergy::
 	printstring STRINGID_PKMNSTORINGENERGY
@@ -14459,7 +14457,7 @@ BattleScript_RoarSuccessSwitch::
 	trytoclearprimalweather
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
-	switchinanim BS_TARGET, FALSE
+	switchinanim BS_TARGET, FALSE, FALSE
 	waitstate
 	printstring STRINGID_PKMNWASDRAGGEDOUT
 	switchineffects BS_TARGET
@@ -14487,7 +14485,7 @@ BattleScript_RoarSuccessRet:
 	waitanimation
 BattleScript_RoarSuccessRet_Ret:
 	switchoutabilities BS_TARGET
-	returntoball BS_TARGET
+	returntoball BS_TARGET, FALSE
 	waitstate
 	return
 
@@ -14498,7 +14496,7 @@ BattleScript_WhirlwindSuccessSwitch::
 	trytoclearprimalweather
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
-	switchinanim BS_TARGET, FALSE
+	switchinanim BS_TARGET, FALSE, FALSE
 	waitstate
 	printstring STRINGID_PKMNWASDRAGGEDOUT
 	switchineffects BS_TARGET
@@ -14734,7 +14732,7 @@ BattleScript_MistProtected::
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_PKMNPROTECTEDBYMIST
 	waitmessage B_WAIT_TIME_LONG
-	end2
+	return
 
 BattleScript_RageIsBuilding::
 	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_RageIsBuildingEnd
@@ -16801,12 +16799,12 @@ BattleScript_EmergencyExitNoPopUp::
 	switchoutabilities BS_TARGET
 	waitstate
 	switchhandleorder BS_TARGET, 2
-	returntoball BS_TARGET
+	returntoball BS_TARGET, FALSE
 	getswitchedmondata BS_TARGET
 	switchindataupdate BS_TARGET
 	hpthresholds BS_TARGET
 	printstring STRINGID_SWITCHINMON
-	switchinanim BS_TARGET, TRUE
+	switchinanim BS_TARGET, FALSE, TRUE
 	waitstate
 	switchineffects BS_TARGET
 BattleScript_EmergencyExitEnd:
@@ -20001,7 +19999,7 @@ BattleScript_EjectButtonActivates::
 	copybyte sBATTLER, sSAVED_BATTLER
 	waitstate
 	switchhandleorder BS_SCRIPTING 0x2
-	returntoball BS_SCRIPTING
+	returntoball BS_SCRIPTING, FALSE
 	getswitchedmondata BS_SCRIPTING
 	switchindataupdate BS_SCRIPTING
 	hpthresholds BS_SCRIPTING
@@ -20009,7 +20007,7 @@ BattleScript_EjectButtonActivates::
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring 0x3
-	switchinanim BS_SCRIPTING 0x1
+	switchinanim BS_SCRIPTING, FALSE, TRUE
 	waitstate
 	switchineffects BS_SCRIPTING
 BattleScript_EjectButtonEnd:

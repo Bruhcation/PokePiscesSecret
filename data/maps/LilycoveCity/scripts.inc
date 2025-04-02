@@ -163,7 +163,7 @@ LilycoveCity_Text_Lilycovian4:
 	.string "the adorable little guy.\p"
 	.string "I hear some trainers evolve\n"
 	.string "Slickslice further into some\l"
-	.string "kind of burnt toast Pokemon.\l"
+	.string "kind of burnt toast Pokémon.\l"
 	.string "But it looks like the poor guy\l"
 	.string "gets charred! I would feel bad!$"
 
@@ -231,9 +231,9 @@ LilycoveCity_Text_ThisIsMyWorkplace:
 	.string "with a southern drawl!$"
 
 LilycoveCity_Text_WantToSee40CaughtMons:
-	.string "Catching Pokemon is fun, yeah?\n"
+	.string "Catching Pokémon is fun, yeah?\n"
 	.string "Well, most of the time.\p"
-	.string "Some Pokemon can be a pain to\n"
+	.string "Some Pokémon can be a pain to\n"
 	.string "whittle down without\l"
 	.string "having them faint.\p"
 	.string "Now, I DO have a spare TM\n"
@@ -256,7 +256,7 @@ LilycoveCity_Text_GaveFS:
 	.string "Combining False Swipe with\n"
 	.string "a status move that causes\l"
 	.string "paralysis or sleep is one of\l"
-	.string "the best ways to weaken Pokemon\l"
+	.string "the best ways to weaken Pokémon\l"
 	.string "for a quick capture.$"
 
 LilycoveCity_Text_ShowMeYourMuscles:
@@ -268,7 +268,7 @@ LilycoveCity_Text_ShowMeYourMuscles:
 	.string "(You half-heartedly tense up\n"
 	.string "the muscles in your chest.)\p"
 	.string "AWESOME! I still got a ways to go.\p"
-	.string "You know the Pokemon Shockore?\n"
+	.string "You know the Pokémon Shockore?\n"
 	.string "Man, that thing is just a\l"
 	.string "LIVING SIX PACK. Nothing can\l"
 	.string "penetrate THOSE abs. So if you\l"

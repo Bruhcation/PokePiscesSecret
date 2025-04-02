@@ -90,7 +90,7 @@ CaveOfOriginCutscene_Text_YouMayComePlayer:
 	.string "endeavor. Please, do seek out\l"
 	.string "the places I have mentioned,\l"
 	.string "and do what you must with these\l"
-	.string "Legendary Pokemon.\l"
+	.string "Legendary Pokémon.\l"
 	.string "A truly master-level trainer\l"
 	.string "like you... I think can\l"
 	.string "handle them.$"

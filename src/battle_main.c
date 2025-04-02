@@ -5018,8 +5018,8 @@ s8 GetMovePriority(u32 battler, u16 move)
         priority = 4;
     }
     else if (gBattleMoves[move].effect == EFFECT_CLEAR_SMOG 
-    && (CountBattlerStatIncreases(gBattlerTarget, TRUE) > 0
-    || CountBattlerStatDecreases(gBattlerTarget, TRUE) > 0)) 
+    && (CountBattlerStatIncreases(gBattlerTarget, TRUE) != 0
+    || CountBattlerStatDecreases(gBattlerTarget, TRUE) != 0)) 
     {
         priority++;
     }
@@ -5049,6 +5049,7 @@ s8 GetMovePriority(u32 battler, u16 move)
         case EFFECT_BLACK_BUFFET:
         case EFFECT_VENOM_DRAIN:
         case EFFECT_LONE_SHARK:
+        case EFFECT_DRAINING_KISS:
             priority += 3;
             break;
         }

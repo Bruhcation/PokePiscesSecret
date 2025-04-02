@@ -329,7 +329,7 @@ Route120_Text_JuniePostBattle:
 
 Route120_Text_KiwiIntro:
 	.string "I'm supposed to be a bird watcher,\n"
-	.string "but I like other Flying type Pokemon\l"
+	.string "but I like other Flying type Pokémon\l"
 	.string "much better!\p"
 	.string "Let me show you some!$"
 
@@ -431,7 +431,7 @@ Route120_Text_PathThroughTree:
 
 Route120_Text_WantToUseCut:
 	.string "(Would you like to have your\n"
-	.string "Pokemon cut through the branches?)$"
+	.string "Pokémon cut through the branches?)$"
 
 Route120_Text_NoCut:
 	.string "(...But you have no means of\n"
@@ -451,5 +451,5 @@ Route120_Text_CutPathTutorial:
 	.string "it like you would one of those\l"
 	.string "smaller cut trees like the one you\l"
 	.string "cut down to get here. If you\l"
-	.string "have a Pokemon with cut, it will\l"
+	.string "have a Pokémon with cut, it will\l"
 	.string "open up a path into the trees!$"

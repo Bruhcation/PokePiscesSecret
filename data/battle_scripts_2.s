@@ -64,7 +64,7 @@ BattleScript_ItemRestoreHP::
     end
 
 BattleScript_ItemRestoreHP_SendOutRevivedBattler:
-    switchinanim BS_SCRIPTING, FALSE
+    switchinanim BS_SCRIPTING, FALSE, FALSE
     waitstate
     switchineffects BS_SCRIPTING
     end

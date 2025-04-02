@@ -84,7 +84,7 @@ RustGymDarkClassroom_Text_GoCrabberbabber:
 RustGymDarkClassroom_Text_MyCoffiddleCheats:
 	.string "That girl's a nitwit.\n"
 	.string "She ain't even recognize my\l"
-	.string "Pokemon's been cheatin' the\l"
+	.string "Pokémon's been cheatin' the\l"
 	.string "whole race. Layin' small fibers\l"
 	.string "down to slow down the other\l"
 	.string "over time. Easy money!$"

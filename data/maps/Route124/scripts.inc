@@ -765,5 +765,5 @@ Route124_Text_HaveATeruCharm:
 
 Route124_Text_AlreadyGaveTeruCharm:
 	.string "Take good care of your umbrella!\n"
-	.string "AND any umbrella-shaped Pokemon,\l"
+	.string "AND any umbrella-shaped Pokémon,\l"
 	.string "don't forget!$"

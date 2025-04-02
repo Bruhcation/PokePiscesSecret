@@ -4025,12 +4025,14 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 {
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
     u32 personality;
+    bool32 isShiny;
     u32 value;
     u16 checksum;
     u8 i;
     u8 availableIVs[NUM_STATS];
     u8 selectedIvs[LEGENDARY_PERFECT_IV_COUNT];
     fixedIV = 31;
+
     ZeroBoxMonData(boxMon);
 
     if (hasFixedPersonality)
@@ -4041,17 +4043,13 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     // Determine original trainer ID
     if (otIdType == OT_ID_RANDOM_NO_SHINY)
     {
-        u32 shinyValue;
-        do
-        {
-            // Choose random OT IDs until one that results in a non-shiny Pokémon
-            value = Random32();
-            shinyValue = GET_SHINY_VALUE(value, personality);
-        } while (shinyValue < SHINY_ODDS);
+        value = Random32();
+        isShiny = FALSE;
     }
     else if (otIdType == OT_ID_PRESET)
     {
         value = fixedOtId;
+        isShiny = GET_SHINY_VALUE(value, personality) < SHINY_ODDS;
     }
     else // Player is the OT
     {
@@ -4060,26 +4058,15 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
               | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
               | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
 
-#if P_FLAG_FORCE_NO_SHINY != 0
-        if (FlagGet(P_FLAG_FORCE_NO_SHINY))
+        if (P_FLAG_FORCE_NO_SHINY != 0 && FlagGet(P_FLAG_FORCE_NO_SHINY))
         {
-            while (GET_SHINY_VALUE(value, personality) < SHINY_ODDS)
-                personality = Random32();
+            isShiny = FALSE;
         }
-#endif
-#if P_FLAG_FORCE_SHINY != 0
-    #if P_FLAG_FORCE_NO_SHINY != 0
-        else
-    #endif
-        if (FlagGet(P_FLAG_FORCE_SHINY))
+        else if (P_FLAG_FORCE_SHINY != 0 && FlagGet(P_FLAG_FORCE_SHINY))
         {
-            while (GET_SHINY_VALUE(value, personality) >= SHINY_ODDS)
-                personality = Random32();
+            isShiny = TRUE;
         }
-#endif
-#if P_FLAG_FORCE_SHINY != 0 || P_FLAG_FORCE_NO_SHINY != 0
         else
-#endif
         {
             u32 totalRerolls = 15;
             if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
@@ -4090,6 +4077,8 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
                 personality = Random32();
                 totalRerolls--;
             }
+
+            isShiny = GET_SHINY_VALUE(value, personality) < SHINY_ODDS;
         }
     }
 
@@ -4746,29 +4735,19 @@ void CalculateMonStats(struct Pokemon *mon)
     CALC_STAT(baseSpAttack, spAttackIV, spAttackEV, STAT_SPATK, MON_DATA_SPATK)
     CALC_STAT(baseSpDefense, spDefenseIV, spDefenseEV, STAT_SPDEF, MON_DATA_SPDEF)
 
-    if (species == SPECIES_SHEDINJA)
+    if (currentHP == 0 && oldMaxHP == 0)
+        currentHP = newMaxHP;
+    else if (currentHP != 0)
     {
-        if (currentHP != 0 || oldMaxHP == 0 || currentHP != 1 || oldMaxHP == 1 || currentHP != 2 || oldMaxHP == 2 || currentHP != 3 || oldMaxHP == 3 || currentHP != 4 || oldMaxHP == 4)
-            currentHP = 5;
-        else
-            return;
+        if (newMaxHP > oldMaxHP)
+            currentHP += newMaxHP - oldMaxHP;
+        if (currentHP <= 0)
+            currentHP = 1;
+        if (currentHP > newMaxHP)
+            currentHP = newMaxHP;
     }
     else
-    {
-        if (currentHP == 0 && oldMaxHP == 0)
-            currentHP = newMaxHP;
-        else if (currentHP != 0)
-        {
-            if (newMaxHP > oldMaxHP)
-                currentHP += newMaxHP - oldMaxHP;
-            if (currentHP <= 0)
-                currentHP = 1;
-            if (currentHP > newMaxHP)
-                currentHP = newMaxHP;
-        }
-        else
-            return;
-    }
+        return;
 
     SetMonData(mon, MON_DATA_HP, &currentHP);
 }

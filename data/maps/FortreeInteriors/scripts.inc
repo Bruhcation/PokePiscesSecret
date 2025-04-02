@@ -252,11 +252,11 @@ FortreeInteriors_Text_NuzzlingNyarly:
 	.string "my Nyarly and watching some TV\l"
 	.string "backed by the sounds of the rain.\l"
 	.string "Maxxing the relaxing!\p"
-	.string "When we do Pokemon battles,\n"
+	.string "When we do Pokémon battles,\n"
 	.string "my Nyarly nuzzles then, too.\l"
 	.string "But in those cases, it hurts!\l"
 	.string "Here, take this TM.\l"
-	.string "Your Pokemon can Nuzzle too!$"
+	.string "Your Pokémon can Nuzzle too!$"
 
 FortreeInteriors_Text_GaveNuzzle:
 	.string "Nyarly are so affectionate!\n"
@@ -303,7 +303,7 @@ FortreeInteriors_Text_ThanksForTrading:
 	.string "Thanks for the trade.$"
 
 FortreeInteriors_Text_YandemicWantsToBeWithYou:
-	.string "(It's that Pokemon that has\n"
+	.string "(It's that Pokémon that has\n"
 	.string "been following you...)\p"
 	.string "(It seems to yearn to be\n"
 	.string "with you on your journey.)$"

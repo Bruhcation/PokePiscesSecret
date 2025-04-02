@@ -212,7 +212,7 @@ DewfordNew_Text_EnergyBall:
 	.string "Just soakin' up the energy\n"
 	.string "from these trees, man...\l"
 	.string "It's hella relaxing...\p"
-	.string "Grass type Pokemon, man...\n"
+	.string "Grass type Pokémon, man...\n"
 	.string "they really can soak up the\l"
 	.string "energy of nature...\l"
 	.string "if you use this TM, they can\l"
