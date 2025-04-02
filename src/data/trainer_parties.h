@@ -462,6 +462,7 @@ static const struct TrainerMon sParty_PJuan[] = {
     .species = SPECIES_SNURROWL,
     .ability = ABILITY_SLUSH_RUSH,
     .gender = TRAINER_MON_FEMALE,
+    .heldItem = ITEM_ORAN_BERRY,
     .ev = TRAINER_PARTY_EVS(0, 24, 0, 12, 16, 12),
     .lvl = 12,
     .moves = {MOVE_ICE_SHARD, MOVE_MUD_SHOT, MOVE_SAND_ATTACK, MOVE_LUCKY_CHANT},
@@ -481,7 +482,7 @@ static const struct TrainerMon sParty_PJuan[] = {
 static const struct TrainerMon sParty_PSebastian[] = {
     {
     .species = SPECIES_HEMOKO,
-    .ability = ABILITY_POWER_OF_ALCHEMY,
+    .ability = ABILITY_TRIAGE,
     .gender = TRAINER_MON_FEMALE,
     .ev = TRAINER_PARTY_EVS(0, 16, 4, 4, 16, 24),
     .lvl = 12,
