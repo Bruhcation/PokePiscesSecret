@@ -466,7 +466,7 @@ struct BattleResults
     u8 caughtMonNick[POKEMON_NAME_LENGTH + 1];     // 0x2A
     u8 filler35;           // 0x35
     u8 catchAttempts[POKEBALL_COUNT];     // 0x36
-    u8 shunyongStatusCounter;     
+    u8 shunyongStatusCounter;
 };
 
 struct BattleTv_Side
@@ -626,6 +626,7 @@ struct BattleStruct
     u32 expValue;
     u8 expGettersOrder[PARTY_SIZE]; // First battlers which were sent out, then via exp-share
     u8 expGetterMonId;
+    u8 hasBattleInputStarted:1; // Speed up battle
     u8 expOrderId:3;
     u8 expGetterBattlerId:2;
     u8 teamGotExpMsgPrinted:1; // The 'Rest of your team got msg' has been printed.

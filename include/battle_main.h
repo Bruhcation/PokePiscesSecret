@@ -75,6 +75,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 void ModifyPersonalityForNature(u32 *personality, u32 newNature);
 u32 GeneratePersonalityForGender(u32 gender, u32 species);
 void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon *partyEntry);
+
+bool32 InBattleChoosingMoves();
+bool32 InBattleRunningActions();
+
 bool32 ShouldSkipTrainerClassMusic(u16 trainerId);
 bool32 ShouldSkipBattleMusic(void);
 

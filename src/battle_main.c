@@ -1926,11 +1926,66 @@ static void CB2_HandleStartMultiBattle(void)
 
 void BattleMainCB2(void)
 {
-    AnimateSprites();
-    BuildOamBuffer();
-    RunTextPrinters();
-    UpdatePaletteFade();
-    RunTasks();
+    u32 speedScale = Rogue_GetBattleSpeedScale(FALSE);
+
+    // If we are processing a palette fade we need to temporarily fall back to 1x speed otherwise there is graphical corruption
+    if(PrevPaletteFadeResult() == PALETTE_FADE_STATUS_LOADING)
+        speedScale = 1;
+
+    if (gBattleResults.caughtMonSpecies)
+        speedScale = 1;
+
+    if(speedScale <= 1)
+    {
+        // Maintain OG order for compat
+        AnimateSprites();
+        BuildOamBuffer();
+        RunTextPrinters();
+        UpdatePaletteFade();
+        RunTasks();
+    }
+    else
+    {
+        u32 s;
+        u32 fadeResult;
+
+        // Update select entries at higher speed
+        // disable speed up during palette fades otherwise we run into issues with blending
+        //(e.g. moves that change background like Psychic can get stuck or have their colours overflow)
+        for(s = 1; s < speedScale; ++s)
+        {
+            AnimateSprites();
+            RunTextPrinters();
+            fadeResult = UpdatePaletteFade();
+
+            if(fadeResult == PALETTE_FADE_STATUS_LOADING)
+            {
+                // minimal final update as we've just started a fade
+                BuildOamBuffer();
+                RunTasks();
+                break;
+            }
+            else
+            {
+                RunTasks();
+                VBlankCB_Battle();
+
+                // Call it again to make sure everything is behaving as it should (this is crazy town now)
+                if (gMain.callback1)
+                    gMain.callback1();
+            }
+        }
+
+        if (fadeResult != PALETTE_FADE_STATUS_LOADING)
+        {
+            // final update
+            AnimateSprites();
+            BuildOamBuffer();
+            RunTextPrinters();
+            UpdatePaletteFade();
+            RunTasks();
+        }
+    }
 
     if (JOY_HELD(B_BUTTON) && gBattleTypeFlags & BATTLE_TYPE_RECORDED && RecordedBattle_CanStopPlayback())
     {
@@ -3133,6 +3188,16 @@ void BeginBattleIntro(void)
     gBattleMainFunc = DoBattleIntro;
 }
 
+bool32 InBattleChoosingMoves()
+{
+    return gBattleMainFunc == HandleTurnActionSelectionState;
+}
+
+bool32 InBattleRunningActions()
+{
+    return gBattleMainFunc == RunTurnActionsFunctions;
+}
+
 static void BattleMainCB1(void)
 {
     u32 battler;
@@ -4285,7 +4350,7 @@ static void HandleTurnActionSelectionState(void)
                 else
                 {
                     if (gBattleMons[battler].status2 & STATUS2_MULTIPLETURNS
-                        || gBattleMons[battler].status2 & STATUS2_RECHARGE 
+                        || gBattleMons[battler].status2 & STATUS2_RECHARGE
                         || gStatuses4[battler] & STATUS4_RECHARGE_REDUCE
                         || gStatuses4[battler] & STATUS4_RECHARGE_BURN
                         || gStatuses4[battler] & STATUS4_RECHARGE_STATS
@@ -4890,7 +4955,7 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, u32 holdEffect)
     if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TAILWIND)
         speed *= 2;
     if (gBattleResources->flags->flags[battler] & RESOURCE_FLAG_UNBURDEN)
-        speed *= 2;    
+        speed *= 2;
 
     // paralysis drop
     if (gBattleMons[battler].status1 & STATUS1_PARALYSIS && ability != ABILITY_QUICK_FEET)
@@ -4961,9 +5026,9 @@ s8 GetMovePriority(u32 battler, u16 move)
         priority++;
     }
     //else if (ability == )
-    else if (ability == ABILITY_PRANKSTER 
-    && IS_MOVE_STATUS(move) 
-    && (!(IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_DARK))) 
+    else if (ability == ABILITY_PRANKSTER
+    && IS_MOVE_STATUS(move)
+    && (!(IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_DARK)))
     && (!(IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_FAIRY))))
     {
         gProtectStructs[battler].pranksterElevated = 1;
@@ -5017,9 +5082,9 @@ s8 GetMovePriority(u32 battler, u16 move)
     {
         priority = 4;
     }
-    else if (gBattleMoves[move].effect == EFFECT_CLEAR_SMOG 
+    else if (gBattleMoves[move].effect == EFFECT_CLEAR_SMOG
     && (CountBattlerStatIncreases(gBattlerTarget, TRUE) != 0
-    || CountBattlerStatDecreases(gBattlerTarget, TRUE) != 0)) 
+    || CountBattlerStatDecreases(gBattlerTarget, TRUE) != 0))
     {
         priority++;
     }
@@ -5057,7 +5122,7 @@ s8 GetMovePriority(u32 battler, u16 move)
 
     if (gProtectStructs[battler].quash)
         priority = -8;
-    
+
     if (gDisableStructs[battler].lethalChainTimer == 1)
         priority = -8;
 
@@ -5292,7 +5357,7 @@ static void TurnValuesCleanUp(bool8 var0)
 
             if (gDisableStructs[i].isFirstTurn)
                 gDisableStructs[i].isFirstTurn--;
-            
+
             if (gDisableStructs[i].stormBrewCounter)
                 gDisableStructs[i].stormBrewCounter = 0;
 
@@ -6260,6 +6325,6 @@ bool32 ShouldSkipTrainerClassMusic(u16 trainerId)
 bool32 ShouldSkipBattleMusic(void)
 {
     return gMapHeader.regionMapSectionId == MAPSEC_VICTORY_ROAD
-        || ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) 
+        || ((gBattleTypeFlags & BATTLE_TYPE_TRAINER)
         && ShouldSkipTrainerClassMusic(gTrainerBattleOpponent_A));
 }

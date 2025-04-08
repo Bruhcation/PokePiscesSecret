@@ -161,7 +161,7 @@
 #define VAR_NEW_LOTTERY_STATE                               0x407E // Unused Var
 #define VAR_GABBY_AND_TY_STATE                               0x407F // Unused Var
 #define VAR_ROUTE133_STATE                               0x4080 // Unused Var
-#define VAR_ROUTE134_STATE                               0x4081 // Unused Var
+#define VAR_BATTLE_SPEED                               0x4081 // Unused Var
 #define VAR_LITTLEROOT_HOUSES_STATE_MAY                  0x4082
 #define VAR_TESTINGHAHA                                  0x4083 // Unused Var
 #define VAR_BIRCH_LAB_STATE                              0x4084

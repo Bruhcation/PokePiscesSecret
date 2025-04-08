@@ -2415,7 +2415,7 @@ static void UpdateStatusIconInHealthbox(u8 healthboxSpriteId)
         status = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerId]], MON_DATA_STATUS);
         tileNumAdder = 0x11;
     }
-    
+
     if (status & STATUS1_REST)
     {
         statusGfxPtr = GetHealthboxElementGfxPtr(GetStatusIconForBattlerId(HEALTHBOX_GFX_STATUS_RST_BATTLER0, battlerId));
@@ -2720,34 +2720,38 @@ void UpdateHealthboxAttribute(u8 healthboxSpriteId, struct Pokemon *mon, u8 elem
 
 s32 MoveBattleBar(u8 battlerId, u8 healthboxSpriteId, u8 whichBar, u8 unused)
 {
-    s32 currentBarValue;
+    u32 s;
+    u32 speedScale = Rogue_GetBattleSpeedScale(TRUE);
+    s32 currentBarValue = 0;
 
-    if (whichBar == HEALTH_BAR) // health bar
+    for(s = 0; s < speedScale; ++s)
     {
-        currentBarValue = CalcNewBarValue(gBattleSpritesDataPtr->battleBars[battlerId].maxValue,
-                    gBattleSpritesDataPtr->battleBars[battlerId].oldValue,
-                    gBattleSpritesDataPtr->battleBars[battlerId].receivedValue,
-                    &gBattleSpritesDataPtr->battleBars[battlerId].currValue,
-                #if B_FAST_HP_DRAIN == TRUE
-                    B_HEALTHBAR_PIXELS / 8, max(gBattleSpritesDataPtr->battleBars[battlerId].maxValue / B_HEALTHBAR_PIXELS, 1));
-                #else
-                    B_HEALTHBAR_PIXELS / 8, 1);
-                #endif
-    }
-    else // exp bar
-    {
-        u16 expFraction = GetScaledExpFraction(gBattleSpritesDataPtr->battleBars[battlerId].oldValue,
+        if (whichBar == HEALTH_BAR) // health bar
+        {
+            currentBarValue = CalcNewBarValue(gBattleSpritesDataPtr->battleBars[battlerId].maxValue,
+                        gBattleSpritesDataPtr->battleBars[battlerId].oldValue,
+                        gBattleSpritesDataPtr->battleBars[battlerId].receivedValue,
+                        &gBattleSpritesDataPtr->battleBars[battlerId].currValue,
+                        B_HEALTHBAR_PIXELS / 8, 1);
+        }
+        else // exp bar
+        {
+            u16 expFraction = GetScaledExpFraction(gBattleSpritesDataPtr->battleBars[battlerId].oldValue,
                     gBattleSpritesDataPtr->battleBars[battlerId].receivedValue,
                     gBattleSpritesDataPtr->battleBars[battlerId].maxValue, 8);
-        if (expFraction == 0)
-            expFraction = 1;
-        expFraction = abs(gBattleSpritesDataPtr->battleBars[battlerId].receivedValue / expFraction);
 
-        currentBarValue = CalcNewBarValue(gBattleSpritesDataPtr->battleBars[battlerId].maxValue,
-                    gBattleSpritesDataPtr->battleBars[battlerId].oldValue,
-                    gBattleSpritesDataPtr->battleBars[battlerId].receivedValue,
-                    &gBattleSpritesDataPtr->battleBars[battlerId].currValue,
-                    B_EXPBAR_PIXELS / 8, expFraction);
+            if (expFraction == 0)
+                expFraction = 1;
+            expFraction = abs(gBattleSpritesDataPtr->battleBars[battlerId].receivedValue / expFraction);
+            currentBarValue = CalcNewBarValue(gBattleSpritesDataPtr->battleBars[battlerId].maxValue,
+                        gBattleSpritesDataPtr->battleBars[battlerId].oldValue,
+                        gBattleSpritesDataPtr->battleBars[battlerId].receivedValue,
+                        &gBattleSpritesDataPtr->battleBars[battlerId].currValue,
+                        B_EXPBAR_PIXELS / 8, expFraction);
+        }
+
+        if(currentBarValue == -1)
+            break;
     }
 
     if (whichBar == EXP_BAR || (whichBar == HEALTH_BAR && !gBattleSpritesDataPtr->battlerData[battlerId].hpNumbersNoBars))
@@ -2946,24 +2950,20 @@ static u8 CalcBarFilledPixels(s32 maxValue, s32 oldValue, s32 receivedValue, s32
 }
 
 static u8 GetScaledExpFraction(s32 oldValue, s32 receivedValue, s32 maxValue, u8 scale)
-{
-    s32 newVal, result;
-    s8 oldToMax, newToMax;
-
-    scale *= 8;
-    newVal = oldValue - receivedValue;
-
-    if (newVal < 0)
-        newVal = 0;
-    else if (newVal > maxValue)
-        newVal = maxValue;
-
-    oldToMax = oldValue * scale / maxValue;
-    newToMax = newVal * scale / maxValue;
-    result = oldToMax - newToMax;
-
-    return abs(result);
-}
+ {
+     s32 newVal, result;
+     s8 oldToMax, newToMax;
+     scale *= 8;
+     newVal = oldValue - receivedValue;
+     if (newVal < 0)
+         newVal = 0;
+     else if (newVal > maxValue)
+         newVal = maxValue;
+     oldToMax = oldValue * scale / maxValue;
+     newToMax = newVal * scale / maxValue;
+     result = oldToMax - newToMax;
+     return abs(result);
+ }
 
 u8 GetScaledHPFraction(s16 hp, s16 maxhp, u8 scale)
 {
@@ -3226,7 +3226,7 @@ static void PrintBattlerOnAbilityPopUp(u8 battlerId, u8 spriteId1, u8 spriteId2)
 
 static void PrintAbilityOnAbilityPopUp(u32 ability, u8 spriteId1, u8 spriteId2)
 {
-    ClearAbilityName(spriteId1, spriteId2); 
+    ClearAbilityName(spriteId1, spriteId2);
     PrintOnAbilityPopUp(gAbilityNames[ability],
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32) + 256,
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32) + 256,
@@ -3795,13 +3795,13 @@ static void Task_BounceBall(u8 taskId)
             sprite->callback = SpriteCB_LastUsedBallBounce; //Show and bounce down
             task->sState++;
         }
-        break;     
+        break;
     case 4:  // Destroy Task
         if(!sprite->sMoving)
         {
             sprite->callback = SpriteCB_LastUsedBall;
             DestroyTask(taskId);
-        }        
+        }
     }
     if (!gLastUsedBallMenuPresent)
     {
