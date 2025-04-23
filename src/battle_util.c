@@ -13627,10 +13627,10 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(u32 battlerAtk, u32 moveTy
     else if (IS_BATTLER_OF_TYPE(battlerAtk, moveType) && gFieldStatuses & STATUS_FIELD_WONDER_ROOM)
         return UQ_4_12(1.0);
     else if (!IS_BATTLER_OF_TYPE(battlerAtk, moveType) && gFieldStatuses & STATUS_FIELD_WONDER_ROOM)
-        return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(1.5) : UQ_4_12(1.25);
+        return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(2) : UQ_4_12(1.5);
     else if (!IS_BATTLER_OF_TYPE(battlerAtk, moveType) || move == MOVE_STRUGGLE || move == MOVE_NONE)
         return UQ_4_12(1.0);
-    return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(1.5) : UQ_4_12(1.25);
+    return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(2) : UQ_4_12(1.5);
 }
 
 // Utility Umbrella holders take normal damage from what would be rain- and sun-weakened attacks.
@@ -14378,7 +14378,7 @@ static inline s32 DoFutureSightAttackDamageCalcVars(u32 move, u32 battlerAtk, u3
     }
     // Same type attack bonus
     if (gSpeciesInfo[partyMonSpecies].types[0] == moveType || gSpeciesInfo[partyMonSpecies].types[1] == moveType)
-        DAMAGE_APPLY_MODIFIER(UQ_4_12(1.25));
+        DAMAGE_APPLY_MODIFIER(UQ_4_12(1.5));
     else
         DAMAGE_APPLY_MODIFIER(UQ_4_12(1.0));
     DAMAGE_APPLY_MODIFIER(typeEffectivenessModifier);
