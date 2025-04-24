@@ -12969,9 +12969,9 @@
                 "species": "SPECIES_UMBRAT"
               },
               {
-                "min_level": 20,
-                "max_level": 22,
-                "species": "SPECIES_FUZKY"
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_MARILL"
               },
               {
                 "min_level": 20,
